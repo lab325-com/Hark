@@ -1,0 +1,12 @@
+query Me {
+	me {
+		age
+		gender
+		id
+		isAnonymous
+		nickName
+		totalFavoriteTalks
+		totalTalks
+		verified
+	}
+}
