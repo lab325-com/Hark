@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: BaseController {
     
     //----------------------------------------------
     // MARK: - IBOutlet
@@ -17,10 +17,17 @@ class LoginController: UIViewController {
     @IBOutlet weak var guestView: UIView!
     
     //----------------------------------------------
+    // MARK: - Property
+    //----------------------------------------------
+    
+    private lazy var presenter = AuthPresenter(view: self)
+    
+    //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
     
     override func viewDidLoad() {
+        hiddenNavigationBar = true
         super.viewDidLoad()
 
         setup()
@@ -49,10 +56,20 @@ class LoginController: UIViewController {
     }
     
     @IBAction func actionGuestMode(_ sender: UIButton) {
+        presenter.guest()
     }
     
     @IBAction func actionLogin(_ sender: UIButton) {
         AuthRouter(presenter: navigationController).pushLoginPhone()
+    }
+}
 
+//----------------------------------------------
+// MARK: - AuthPhoneOutputProtocol
+//----------------------------------------------
+
+extension LoginController: AuthPhoneOutputProtocol {
+    func successGuest(authToken: String) {
+        
     }
 }

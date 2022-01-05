@@ -1,5 +1,7 @@
 
 import UIKit
+import NVActivityIndicatorView
+import NVActivityIndicatorViewExtended
 
 final class NavigationController: UINavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -7,7 +9,7 @@ final class NavigationController: UINavigationController {
     }
 }
 
-class BaseController: UIViewController {
+class BaseController: UIViewController, NVActivityIndicatorViewable {
     
     //----------------------------------------------
     // MARK: - IBOutlets
@@ -66,9 +68,9 @@ class BaseController: UIViewController {
             navBarAppearance.configureWithOpaqueBackground()
 //            navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorTitleNavigation]
             navBarAppearance.backgroundColor = transparentNavigationBar ? backgroundNavigationColor : UIColor.clear
-            if transparentNavigationBar {
+           // if transparentNavigationBar {
                 navBarAppearance.shadowColor = .clear
-            }
+           // }
             navigationController?.navigationBar.standardAppearance = navBarAppearance
             navigationController?.navigationBar.compactAppearance = navBarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
@@ -154,11 +156,14 @@ class BaseController: UIViewController {
     //----------------------------------------------
     
     func startLoader() {
-//        LillActivityIndicator.shared.show()
+        let size = CGSize(width: 50, height: 50)
+        let allTypes = NVActivityIndicatorType.allCases
+        
+        startAnimating(size, message: "", type: allTypes.randomElement() ?? .orbit, fadeInAnimation: nil)
     }
     
     func stopLoading() {
-//        LillActivityIndicator.shared.hide()
+        stopAnimating()
     }
 }
 

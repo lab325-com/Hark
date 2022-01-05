@@ -19,10 +19,17 @@ class LoginPhoneController: BaseController {
     @IBOutlet weak var phoneLabel: UILabel!
     
     //----------------------------------------------
+    // MARK: - Property
+    //----------------------------------------------
+    
+    private lazy var presenter = AuthPresenter(view: self)
+    
+    //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
     
     override func viewDidLoad() {
+        hiddenNavigationBar = false
         super.viewDidLoad()
         setup()
     }
@@ -58,7 +65,18 @@ class LoginPhoneController: BaseController {
     
     @IBAction func actionConfirm(_ sender: UIButton) {
         if phoneLabel.text!.count > 7 {
-            AuthRouter(presenter: navigationController).pushLoginVerification(phoneNumber: "+\(phoneLabel.text!)")
+            let result = phoneLabel.text!.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
+            presenter.registePhone(phone: result.replacingOccurrences( of:" ", with: "", options: .regularExpression))
         }
+    }
+}
+
+//----------------------------------------------
+// MARK: - AuthPhoneOutputProtocol
+//----------------------------------------------
+
+extension LoginPhoneController: AuthPhoneOutputProtocol {
+    func successRegister(smsToken: String) {
+        AuthRouter(presenter: navigationController).pushLoginVerification(phoneNumber: "+\(phoneLabel.text!)", smsToken: smsToken)
     }
 }

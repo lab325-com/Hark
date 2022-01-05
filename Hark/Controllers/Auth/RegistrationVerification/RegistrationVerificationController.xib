@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,6 +13,9 @@
         </array>
         <array key="SF-Compact-Rounded-Medium.ttf">
             <string>SFCompactRounded-Medium</string>
+        </array>
+        <array key="SF-Compact-Rounded-Regular.ttf">
+            <string>SFCompactRounded-Regular</string>
         </array>
         <array key="SF-Compact-Rounded-Thin.ttf">
             <string>SFCompactRounded-Thin</string>
@@ -25,10 +27,15 @@
                 <outlet property="confirmButton" destination="rfU-qe-bu5" id="RqZ-Sb-VCv"/>
                 <outlet property="phoneLabel" destination="2UA-Bj-eko" id="y76-fd-5m8"/>
                 <outlet property="view" destination="Rfr-83-50o" id="5iI-sG-zti"/>
+                <outlet property="wrongView" destination="nvo-ak-O6X" id="XJk-Cg-YOo"/>
                 <outletCollection property="numbersLabel" destination="TMs-sF-suC" collectionClass="NSMutableArray" id="1Tg-81-cGp"/>
                 <outletCollection property="numbersLabel" destination="aF3-mj-tfK" collectionClass="NSMutableArray" id="5q8-39-3CY"/>
                 <outletCollection property="numbersLabel" destination="mjT-yX-EbI" collectionClass="NSMutableArray" id="KcR-vR-07d"/>
                 <outletCollection property="numbersLabel" destination="D3I-yk-ZDn" collectionClass="NSMutableArray" id="oM6-II-ykS"/>
+                <outletCollection property="numbersViews" destination="OO6-Wu-YOW" collectionClass="NSMutableArray" id="8an-i3-tYA"/>
+                <outletCollection property="numbersViews" destination="7Kj-9f-j1S" collectionClass="NSMutableArray" id="yMY-9T-09e"/>
+                <outletCollection property="numbersViews" destination="xfW-8f-nKm" collectionClass="NSMutableArray" id="VLU-aj-n6C"/>
+                <outletCollection property="numbersViews" destination="eYp-ef-xYf" collectionClass="NSMutableArray" id="cTB-qg-PD2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -246,7 +253,7 @@ SMS code</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="TMs-sF-suC" firstAttribute="top" secondItem="OO6-Wu-YOW" secondAttribute="top" id="9Tr-pb-diq"/>
                                 <constraint firstAttribute="width" secondItem="OO6-Wu-YOW" secondAttribute="height" multiplier="56:72" id="RD5-gl-KO9"/>
@@ -270,7 +277,7 @@ SMS code</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="aF3-mj-tfK" firstAttribute="leading" secondItem="7Kj-9f-j1S" secondAttribute="leading" id="1O7-dm-su5"/>
                                 <constraint firstAttribute="trailing" secondItem="aF3-mj-tfK" secondAttribute="trailing" id="6Iz-dW-ysS"/>
@@ -293,7 +300,7 @@ SMS code</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="mjT-yX-EbI" secondAttribute="bottom" id="9KC-R6-wWp"/>
                                 <constraint firstItem="mjT-yX-EbI" firstAttribute="top" secondItem="xfW-8f-nKm" secondAttribute="top" id="BeR-5g-Sze"/>
@@ -316,7 +323,7 @@ SMS code</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="D3I-yk-ZDn" secondAttribute="trailing" id="GnQ-Ux-n4l"/>
                                 <constraint firstItem="D3I-yk-ZDn" firstAttribute="top" secondItem="eYp-ef-xYf" secondAttribute="top" id="Zly-lh-SaV"/>
@@ -331,6 +338,29 @@ SMS code</string>
                         </view>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvo-ak-O6X">
+                    <rect key="frame" x="137.66666666666666" y="289" width="99.666666666666657" height="19.666666666666686"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A4-tm-qaL">
+                            <rect key="frame" x="16" y="1.9999999999999991" width="67.666666666666671" height="15.666666666666664"/>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="5A4-tm-qaL" secondAttribute="bottom" constant="2" id="9Tr-SS-Wca"/>
+                        <constraint firstItem="5A4-tm-qaL" firstAttribute="top" secondItem="nvo-ak-O6X" secondAttribute="top" constant="2" id="biO-BL-RGs"/>
+                        <constraint firstItem="5A4-tm-qaL" firstAttribute="leading" secondItem="nvo-ak-O6X" secondAttribute="leading" constant="16" id="g0G-Js-uQw"/>
+                        <constraint firstAttribute="trailing" secondItem="5A4-tm-qaL" secondAttribute="trailing" constant="16" id="jat-7g-dby"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+38 (093) 911 5252" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UA-Bj-eko">
                     <rect key="frame" x="126.99999999999999" y="167.66666666666666" width="158.66666666666663" height="24"/>
                     <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="20"/>
@@ -353,8 +383,10 @@ SMS code</string>
                 <constraint firstItem="lfY-vd-eeR" firstAttribute="top" secondItem="ysy-bo-ger" secondAttribute="top" constant="24" id="2N7-0y-IiF"/>
                 <constraint firstItem="lfY-vd-eeR" firstAttribute="leading" secondItem="ysy-bo-ger" secondAttribute="leading" constant="24" id="6mx-1n-DBU"/>
                 <constraint firstItem="LMl-vZ-JvK" firstAttribute="leading" secondItem="lfY-vd-eeR" secondAttribute="leading" id="7rt-s4-5X4"/>
+                <constraint firstItem="nvo-ak-O6X" firstAttribute="bottom" secondItem="Qk9-9b-via" secondAttribute="bottom" constant="9" id="8v7-Sc-Bqx"/>
                 <constraint firstItem="Oq1-0p-hKu" firstAttribute="centerX" secondItem="ysy-bo-ger" secondAttribute="centerX" id="94X-EP-bU9"/>
                 <constraint firstItem="Qk9-9b-via" firstAttribute="top" secondItem="2UA-Bj-eko" secondAttribute="bottom" constant="30" id="B2E-k3-UZ2"/>
+                <constraint firstItem="nvo-ak-O6X" firstAttribute="centerX" secondItem="Qk9-9b-via" secondAttribute="centerX" id="EmR-Kg-eda"/>
                 <constraint firstItem="SNZ-sL-o0y" firstAttribute="leading" secondItem="ysy-bo-ger" secondAttribute="leading" constant="40" id="FMG-mw-kl3"/>
                 <constraint firstItem="LMl-vZ-JvK" firstAttribute="top" secondItem="lfY-vd-eeR" secondAttribute="bottom" constant="24" id="FdD-Je-ZG3"/>
                 <constraint firstItem="rfU-qe-bu5" firstAttribute="leading" secondItem="ysy-bo-ger" secondAttribute="leading" constant="30" id="G14-Ka-DAX"/>
@@ -381,8 +413,5 @@ SMS code</string>
     <resources>
         <image name="phone_register_back_ic" width="390" height="417"/>
         <image name="phone_register_delete_phone_ic" width="32.666667938232422" height="19.333333969116211"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

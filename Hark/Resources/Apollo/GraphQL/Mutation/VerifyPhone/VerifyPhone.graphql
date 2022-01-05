@@ -1,0 +1,5 @@
+mutation VerifyPhone($smsToken: String!, $code: Int!) {
+    verifyPhone(smsToken: $smsToken, code: $code) {
+        authToken
+    }
+}

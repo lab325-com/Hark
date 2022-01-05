@@ -10,5 +10,7 @@
 		<string>SF-Compact-Rounded-Bold</string>
 		<string>SF-Compact-Rounded-Thin</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 </dict>
 </plist>

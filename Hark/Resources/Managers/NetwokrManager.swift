@@ -220,12 +220,15 @@ extension Network {
         }
         
         private func addTokenAndProceed<Operation: GraphQLOperation>(
-            _ token: AuthModel,
+            _ token: AuthModel?,
             to request: HTTPRequest<Operation>,
             chain: RequestChain,
             response: HTTPResponse<Operation>?,
             completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
-                request.addHeader(name: "Authorization", value: "Bearer \(token.token)")
+                if let token = token?.token {
+                    request.addHeader(name: "Authorization", value: "Bearer \(token)")
+                }
+                
                 chain.proceedAsync(request: request,
                                    response: response,
                                    completion: completion)
@@ -237,16 +240,16 @@ extension Network {
             response: HTTPResponse<Operation>?,
             completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
                 
-                guard let token = KeychainService.standard.newAuthToken else {
-                    chain.handleErrorAsync(UserError.noUserLoggedIn,
-                                           request: request,
-                                           response: response,
-                                           completion: completion)
-                    return
-                }
+//                guard let token = KeychainService.standard.newAuthToken else {
+//                    chain.handleErrorAsync(UserError.noUserLoggedIn,
+//                                           request: request,
+//                                           response: response,
+//                                           completion: completion)
+//                    return
+//                }
                 
                 // If we've gotten here, there is a token!
-                if token.isExpired == true {
+               // if token.isExpired == true {
                     // Call an async method to renew the token
                     //                UserManager.shared.renewToken { [weak self] tokenRenewResult in
                     //                    guard let self = self else {
@@ -271,13 +274,13 @@ extension Network {
                     //                                                completion: completion)
                     //                    }
                     //                }
-                } else {
-                    self.addTokenAndProceed(token,
+             //   } else {
+                    self.addTokenAndProceed(KeychainService.standard.newAuthToken,
                                             to: request,
                                             chain: chain,
                                             response: response,
                                             completion: completion)
-                }
+               // }
             }
     }
     

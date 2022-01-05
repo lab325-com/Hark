@@ -19,13 +19,13 @@ class AuthRouter: BaseRouter {
         push(controller: controller)
     }
     
-    func pushRegistrationVerification(phoneNumber: String) {
-        let controller = RegistrationVerificationController(phoneNumber: phoneNumber)
+    func pushRegistrationVerification(phoneNumber: String, smsToken: String) {
+        let controller = RegistrationVerificationController(phoneNumber: phoneNumber, smsToken: smsToken)
         push(controller: controller)
     }
     
-    func pushLoginVerification(phoneNumber: String) {
-        let controller = LoginVerificationController(phoneNumber: phoneNumber)
+    func pushLoginVerification(phoneNumber: String, smsToken: String) {
+        let controller = LoginVerificationController(phoneNumber: phoneNumber, smsToken: smsToken)
         push(controller: controller)
     }
     

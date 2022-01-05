@@ -17,19 +17,25 @@ class LoginVerificationController: BaseController {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet var numbersLabel: [UILabel]!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet var numbersViews: [UIView]!
+    @IBOutlet weak var wrongView: UIView!
     
     //----------------------------------------------
     // MARK: - Property
     //----------------------------------------------
     
     private let phoneNumber: String
+    private let smsToken: String
+    
+    private lazy var presenter = AuthPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(phoneNumber: String) {
+    init(phoneNumber: String, smsToken: String) {
         self.phoneNumber = phoneNumber
+        self.smsToken = smsToken
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -52,6 +58,8 @@ class LoginVerificationController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        wrongView.isHidden = true
+        
         phoneLabel.text = phoneNumber
         setCustomNavigationTitle("Verification")
         confirmButton.alpha = 0.3
@@ -69,6 +77,20 @@ class LoginVerificationController: BaseController {
             return true
         }
     }
+    
+    private func isWrongCode(_ value: Bool) {
+        wrongView.isHidden = !value
+        
+        for view in numbersViews {
+            view.layer.borderWidth = value ? 1 : 0
+            view.layer.borderColor = value ? UIColor(red: 1, green: 0, blue: 0, alpha: 1).cgColor : UIColor.clear.cgColor
+        }
+        
+        for label in numbersLabel {
+            label.textColor = value ? UIColor(red: 1, green: 0, blue: 0, alpha: 1) : UIColor.black
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - IBAction
     //----------------------------------------------
@@ -84,6 +106,7 @@ class LoginVerificationController: BaseController {
     
     @IBAction func actionDelete(_ sender: UIButton) {
         AudioServicesPlaySystemSound(1155)
+        isWrongCode(false)
         if let label = numbersLabel.last(where: {$0.text?.count != 0}) {
             label.text = ""
             let _ = checkButton()
@@ -91,9 +114,24 @@ class LoginVerificationController: BaseController {
     }
     
     @IBAction func actionConfirm(_ sender: UIButton) {
-        if checkButton() {
-            
+        if checkButton(), let code = Int(numbersLabel.compactMap({$0.text!}).joined(separator: "")) {
+            presenter.validate(smsToken: smsToken, code: code)
         }
     }
     
+}
+
+
+//----------------------------------------------
+// MARK: - AuthPhoneOutputProtocol
+//----------------------------------------------
+
+extension LoginVerificationController: AuthPhoneOutputProtocol {
+    func successValidata() {
+        
+    }
+    
+    func failureValidate() {
+        isWrongCode(true)
+    }
 }

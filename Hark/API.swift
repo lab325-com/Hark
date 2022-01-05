@@ -252,6 +252,101 @@ public final class LoginMutation: GraphQLMutation {
   }
 }
 
+public final class VerifyPhoneMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation VerifyPhone($smsToken: String!, $code: Int!) {
+      verifyPhone(smsToken: $smsToken, code: $code) {
+        __typename
+        authToken
+      }
+    }
+    """
+
+  public let operationName: String = "VerifyPhone"
+
+  public var smsToken: String
+  public var code: Int
+
+  public init(smsToken: String, code: Int) {
+    self.smsToken = smsToken
+    self.code = code
+  }
+
+  public var variables: GraphQLMap? {
+    return ["smsToken": smsToken, "code": code]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("verifyPhone", arguments: ["smsToken": GraphQLVariable("smsToken"), "code": GraphQLVariable("code")], type: .object(VerifyPhone.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(verifyPhone: VerifyPhone? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "verifyPhone": verifyPhone.flatMap { (value: VerifyPhone) -> ResultMap in value.resultMap }])
+    }
+
+    public var verifyPhone: VerifyPhone? {
+      get {
+        return (resultMap["verifyPhone"] as? ResultMap).flatMap { VerifyPhone(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "verifyPhone")
+      }
+    }
+
+    public struct VerifyPhone: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["AuthToken"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("authToken", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(authToken: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "AuthToken", "authToken": authToken])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var authToken: String? {
+        get {
+          return resultMap["authToken"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "authToken")
+        }
+      }
+    }
+  }
+}
+
 public final class MeQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
