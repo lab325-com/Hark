@@ -5,9 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Thin.ttf">
+            <string>SFCompactRounded-Thin</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashController" customModule="Hark" customModuleProvider="target">
             <connections>
@@ -19,25 +23,56 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Hark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6t4-ak-VTS">
-                    <rect key="frame" x="153.5" y="438.5" width="107.5" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-Rk-kx5">
+                    <rect key="frame" x="0.0" y="222.5" width="414" height="451"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-ch-4CP">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="451"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="4jT-Pv-9Ir">
+                            <rect key="frame" x="145.5" y="164" width="123" height="123"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_hark_label_ic" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-dc-iY4">
+                            <rect key="frame" x="175.5" y="312" width="63.5" height="16.5"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1M-aC-lHT">
+                            <rect key="frame" x="144" y="392.5" width="126" height="38.5"/>
+                            <string key="text">Totally anonymous
+place to talk</string>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="YGh-ch-4CP" secondAttribute="bottom" id="4l2-Vy-NPd"/>
+                        <constraint firstItem="cVX-dc-iY4" firstAttribute="top" secondItem="4jT-Pv-9Ir" secondAttribute="bottom" constant="25" id="5HR-u9-VBI"/>
+                        <constraint firstItem="4jT-Pv-9Ir" firstAttribute="centerX" secondItem="ddg-Rk-kx5" secondAttribute="centerX" id="HQA-Wu-kId"/>
+                        <constraint firstItem="4jT-Pv-9Ir" firstAttribute="centerY" secondItem="ddg-Rk-kx5" secondAttribute="centerY" id="JUZ-WX-F2L"/>
+                        <constraint firstItem="L1M-aC-lHT" firstAttribute="centerX" secondItem="cVX-dc-iY4" secondAttribute="centerX" id="YwP-77-1vn"/>
+                        <constraint firstAttribute="trailing" secondItem="YGh-ch-4CP" secondAttribute="trailing" id="fIe-qZ-3wW"/>
+                        <constraint firstItem="YGh-ch-4CP" firstAttribute="top" secondItem="ddg-Rk-kx5" secondAttribute="top" id="igy-5G-eZs"/>
+                        <constraint firstItem="YGh-ch-4CP" firstAttribute="leading" secondItem="ddg-Rk-kx5" secondAttribute="leading" id="kuc-uO-esX"/>
+                        <constraint firstItem="cVX-dc-iY4" firstAttribute="centerX" secondItem="4jT-Pv-9Ir" secondAttribute="centerX" id="oMs-WL-dLL"/>
+                        <constraint firstAttribute="bottom" secondItem="L1M-aC-lHT" secondAttribute="bottom" constant="20" id="yjh-2n-WFt"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="6t4-ak-VTS" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="04j-fG-vHa"/>
-                <constraint firstItem="6t4-ak-VTS" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Vz1-qg-nI6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ddg-Rk-kx5" secondAttribute="trailing" id="33W-ct-9aG"/>
+                <constraint firstItem="ddg-Rk-kx5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KOF-s4-alS"/>
+                <constraint firstItem="ddg-Rk-kx5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ve2-XW-9hd"/>
+                <constraint firstItem="ddg-Rk-kx5" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="rPd-zk-222"/>
             </constraints>
             <point key="canvasLocation" x="139" y="100"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="login_back_ic" width="390" height="451"/>
+        <image name="login_hark_label_ic" width="63.5" height="16.5"/>
+        <image name="login_logo_ic" width="123" height="123"/>
     </resources>
 </document>

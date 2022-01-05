@@ -33,6 +33,12 @@
 		02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */; };
 		FA1E690B27848D0600030600 /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1E690A27848D0600030600 /* Me.graphql */; };
 		FA1E690E278494DF00030600 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E690D278494DF00030600 /* API.swift */; };
+		FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69192785B3A600030600 /* NetwokrManager.swift */; };
+		FA1E691D2785B48E00030600 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E691C2785B48E00030600 /* Toast */; };
+		FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E691F2785B5CD00030600 /* KeychainService.swift */; };
+		FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E69222785B61600030600 /* SwiftKeychainWrapper */; };
+		FA1E69262785B71F00030600 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69252785B71F00030600 /* AuthModel.swift */; };
+		FA1E69282785B75200030600 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69272785B75200030600 /* MeModel.swift */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
 		FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF6C277C6ED8009F652E /* SplashController.swift */; };
 		FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF6E277C6ED8009F652E /* Main.storyboard */; };
@@ -73,6 +79,10 @@
 		02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVerificationController.xib; sourceTree = "<group>"; };
 		FA1E690A27848D0600030600 /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
 		FA1E690D278494DF00030600 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FA1E69192785B3A600030600 /* NetwokrManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwokrManager.swift; sourceTree = "<group>"; };
+		FA1E691F2785B5CD00030600 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		FA1E69252785B71F00030600 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		FA1E69272785B75200030600 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
 		FA9BCF65277C6ED8009F652E /* Hark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9BCF68277C6ED8009F652E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9BCF6C277C6ED8009F652E /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -93,7 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1E691D2785B48E00030600 /* Toast in Frameworks */,
 				FADA714E2784886D00A784FA /* Apollo in Frameworks */,
+				FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */,
 				02EEBD492785A6B4001DA462 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,21 +201,14 @@
 			isa = PBXGroup;
 			children = (
 				FA1E690727848C9E00030600 /* GraphQL */,
-				FA1E690627848C9500030600 /* Network */,
 			);
 			path = Apollo;
-			sourceTree = "<group>";
-		};
-		FA1E690627848C9500030600 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		FA1E690727848C9E00030600 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				FA1E69242785B6FA00030600 /* GlobalModels */,
 				FA1E690C27848DD700030600 /* Mutation */,
 				FA1E690827848CAE00030600 /* Query */,
 			);
@@ -222,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				FA1E690A27848D0600030600 /* Me.graphql */,
+				FA1E69272785B75200030600 /* MeModel.swift */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -232,6 +238,22 @@
 				02EEBD4D2785AE7E001DA462 /* Login */,
 			);
 			path = Mutation;
+			sourceTree = "<group>";
+		};
+		FA1E691E2785B5AD00030600 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA1E691F2785B5CD00030600 /* KeychainService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA1E69242785B6FA00030600 /* GlobalModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA1E69252785B71F00030600 /* AuthModel.swift */,
+			);
+			path = GlobalModels;
 			sourceTree = "<group>";
 		};
 		FA9BCF5C277C6ED8009F652E = {
@@ -298,12 +320,9 @@
 			children = (
 				02EEBD2F27858F2C001DA462 /* Fonts */,
 				FA1E690527848C2C00030600 /* Apollo */,
-				FA9BCF8B277C7E68009F652E /* Protocols */,
 				FA9BCF80277C71C5009F652E /* Managers */,
-				FA9BCF81277C71CD009F652E /* Services */,
+				FA1E691E2785B5AD00030600 /* Services */,
 				FA9BCF83277C7202009F652E /* Extension */,
-				FA9BCF84277C7243009F652E /* Structs */,
-				FA9BCF82277C71F5009F652E /* Enums */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -311,22 +330,9 @@
 		FA9BCF80277C71C5009F652E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FA1E69192785B3A600030600 /* NetwokrManager.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		FA9BCF81277C71CD009F652E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		FA9BCF82277C71F5009F652E /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enums;
 			sourceTree = "<group>";
 		};
 		FA9BCF83277C7202009F652E /* Extension */ = {
@@ -336,20 +342,6 @@
 				FA9BCF89277C7614009F652E /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		FA9BCF84277C7243009F652E /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Structs;
-			sourceTree = "<group>";
-		};
-		FA9BCF8B277C7E68009F652E /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		FA9BCF92277C82AD009F652E /* SplashController */ = {
@@ -381,6 +373,8 @@
 			packageProductDependencies = (
 				FADA714D2784886D00A784FA /* Apollo */,
 				02EEBD482785A6B4001DA462 /* PhoneNumberKit */,
+				FA1E691C2785B48E00030600 /* Toast */,
+				FA1E69222785B61600030600 /* SwiftKeychainWrapper */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -398,6 +392,7 @@
 				TargetAttributes = {
 					FA9BCF64277C6ED8009F652E = {
 						CreatedOnToolsVersion = 13.2;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -413,6 +408,8 @@
 			packageReferences = (
 				FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -483,6 +480,7 @@
 			files = (
 				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
+				FA1E69282785B75200030600 /* MeModel.swift in Sources */,
 				FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
@@ -490,10 +488,13 @@
 				FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */,
 				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
 				FA9BCF8A277C7614009F652E /* UIViewController+Extension.swift in Sources */,
+				FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */,
+				FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */,
 				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
 				02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */,
+				FA1E69262785B71F00030600 /* AuthModel.swift in Sources */,
 				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,
 				02EEBD562785B346001DA462 /* LoginPhoneController.swift in Sources */,
 				02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */,
@@ -643,6 +644,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J544E3RJX6;
@@ -662,7 +665,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.hark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -673,6 +679,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J544E3RJX6;
@@ -692,7 +700,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.hark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -730,6 +740,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -745,6 +771,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
 			productName = PhoneNumberKit;
+		};
+		FA1E691C2785B48E00030600 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		FA1E69222785B61600030600 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 		FADA714D2784886D00A784FA /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
