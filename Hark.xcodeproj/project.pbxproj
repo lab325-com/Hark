@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02EEBD2327857E57001DA462 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD2127857E57001DA462 /* LoginController.swift */; };
+		02EEBD2427857E57001DA462 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD2227857E57001DA462 /* LoginController.xib */; };
+		02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD2627857E91001DA462 /* AuthRouter.swift */; };
+		02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3027858F41001DA462 /* SF-Compact-Rounded-Regular.ttf */; };
+		02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3127858F42001DA462 /* SF-Compact-Rounded-Semibold.ttf */; };
+		02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3227858F43001DA462 /* SF-Compact-Rounded-Ultralight.ttf */; };
+		02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3327858F43001DA462 /* SF-Compact-Rounded-Light.ttf */; };
+		02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3427858F44001DA462 /* SF-Compact-Rounded-Black.ttf */; };
+		02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3527858F45001DA462 /* SF-Compact-Rounded-Medium.ttf */; };
+		02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3627858F47001DA462 /* SF-Compact-Rounded-Heavy.ttf */; };
+		02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3727858F47001DA462 /* SF-Compact-Rounded-Bold.ttf */; };
+		02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3827858F48001DA462 /* SF-Compact-Rounded-Thin.ttf */; };
+		02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD43278596B6001DA462 /* RegistrationPhoneController.swift */; };
+		02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD44278596B6001DA462 /* RegistrationPhoneController.xib */; };
+		02EEBD492785A6B4001DA462 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02EEBD482785A6B4001DA462 /* PhoneNumberKit */; };
+		02EEBD4C2785AD26001DA462 /* RegistrationPhonePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD4B2785AD26001DA462 /* RegistrationPhonePresenter.swift */; };
+		02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD4E2785AE9B001DA462 /* Login.graphql */; };
+		02EEBD522785B069001DA462 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD512785B069001DA462 /* LoginModel.swift */; };
 		FA1E690B27848D0600030600 /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1E690A27848D0600030600 /* Me.graphql */; };
 		FA1E690E278494DF00030600 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E690D278494DF00030600 /* API.swift */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
@@ -24,6 +42,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02EEBD2127857E57001DA462 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		02EEBD2227857E57001DA462 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		02EEBD2627857E91001DA462 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		02EEBD3027858F41001DA462 /* SF-Compact-Rounded-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Regular.ttf"; sourceTree = "<group>"; };
+		02EEBD3127858F42001DA462 /* SF-Compact-Rounded-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Semibold.ttf"; sourceTree = "<group>"; };
+		02EEBD3227858F43001DA462 /* SF-Compact-Rounded-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Ultralight.ttf"; sourceTree = "<group>"; };
+		02EEBD3327858F43001DA462 /* SF-Compact-Rounded-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Light.ttf"; sourceTree = "<group>"; };
+		02EEBD3427858F44001DA462 /* SF-Compact-Rounded-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Black.ttf"; sourceTree = "<group>"; };
+		02EEBD3527858F45001DA462 /* SF-Compact-Rounded-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Medium.ttf"; sourceTree = "<group>"; };
+		02EEBD3627858F47001DA462 /* SF-Compact-Rounded-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Heavy.ttf"; sourceTree = "<group>"; };
+		02EEBD3727858F47001DA462 /* SF-Compact-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Bold.ttf"; sourceTree = "<group>"; };
+		02EEBD3827858F48001DA462 /* SF-Compact-Rounded-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.ttf"; sourceTree = "<group>"; };
+		02EEBD43278596B6001DA462 /* RegistrationPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhoneController.swift; sourceTree = "<group>"; };
+		02EEBD44278596B6001DA462 /* RegistrationPhoneController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationPhoneController.xib; sourceTree = "<group>"; };
+		02EEBD4B2785AD26001DA462 /* RegistrationPhonePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhonePresenter.swift; sourceTree = "<group>"; };
+		02EEBD4E2785AE9B001DA462 /* Login.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
+		02EEBD512785B069001DA462 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		FA1E690A27848D0600030600 /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
 		FA1E690D278494DF00030600 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FA9BCF65277C6ED8009F652E /* Hark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hark.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,12 +82,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADA714E2784886D00A784FA /* Apollo in Frameworks */,
+				02EEBD492785A6B4001DA462 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02EEBD2027857E36001DA462 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD2127857E57001DA462 /* LoginController.swift */,
+				02EEBD2227857E57001DA462 /* LoginController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		02EEBD2827857E9B001DA462 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD2627857E91001DA462 /* AuthRouter.swift */,
+				02EEBD2027857E36001DA462 /* Login */,
+				02EEBD4227859696001DA462 /* Phone */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		02EEBD2F27858F2C001DA462 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD3427858F44001DA462 /* SF-Compact-Rounded-Black.ttf */,
+				02EEBD3727858F47001DA462 /* SF-Compact-Rounded-Bold.ttf */,
+				02EEBD3627858F47001DA462 /* SF-Compact-Rounded-Heavy.ttf */,
+				02EEBD3327858F43001DA462 /* SF-Compact-Rounded-Light.ttf */,
+				02EEBD3527858F45001DA462 /* SF-Compact-Rounded-Medium.ttf */,
+				02EEBD3027858F41001DA462 /* SF-Compact-Rounded-Regular.ttf */,
+				02EEBD3127858F42001DA462 /* SF-Compact-Rounded-Semibold.ttf */,
+				02EEBD3827858F48001DA462 /* SF-Compact-Rounded-Thin.ttf */,
+				02EEBD3227858F43001DA462 /* SF-Compact-Rounded-Ultralight.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		02EEBD4227859696001DA462 /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD4B2785AD26001DA462 /* RegistrationPhonePresenter.swift */,
+				02EEBD43278596B6001DA462 /* RegistrationPhoneController.swift */,
+				02EEBD44278596B6001DA462 /* RegistrationPhoneController.xib */,
+			);
+			path = Phone;
+			sourceTree = "<group>";
+		};
+		02EEBD4D2785AE7E001DA462 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD4E2785AE9B001DA462 /* Login.graphql */,
+				02EEBD512785B069001DA462 /* LoginModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		FA1E690527848C2C00030600 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +187,7 @@
 		FA1E690C27848DD700030600 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				02EEBD4D2785AE7E001DA462 /* Login */,
 			);
 			path = Mutation;
 			sourceTree = "<group>";
@@ -145,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9BCF92277C82AD009F652E /* SplashController */,
+				02EEBD2827857E9B001DA462 /* Auth */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +254,7 @@
 		FA9BCF7F277C71B3009F652E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				02EEBD2F27858F2C001DA462 /* Fonts */,
 				FA1E690527848C2C00030600 /* Apollo */,
 				FA9BCF8B277C7E68009F652E /* Protocols */,
 				FA9BCF80277C71C5009F652E /* Managers */,
@@ -245,6 +338,7 @@
 			name = Hark;
 			packageProductDependencies = (
 				FADA714D2784886D00A784FA /* Apollo */,
+				02EEBD482785A6B4001DA462 /* PhoneNumberKit */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -276,6 +370,7 @@
 			mainGroup = FA9BCF5C277C6ED8009F652E;
 			packageReferences = (
 				FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -292,10 +387,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
+				02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */,
+				02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */,
+				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
+				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
+				02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */,
+				02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */,
 				FA9BCF75277C6EDA009F652E /* LaunchScreen.storyboard in Resources */,
 				FA9BCF72277C6EDA009F652E /* Assets.xcassets in Resources */,
+				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
+				02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */,
+				02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */,
 				FA1E690B27848D0600030600 /* Me.graphql in Resources */,
+				02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */,
 				FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */,
+				02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */,
+				02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +427,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://faker.graphqleditor.com/3knbh/hark/graphql\"\n\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://faker.graphqleditor.com/3knbh/hark/graphql\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -329,14 +436,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
 				FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
+				02EEBD4C2785AD26001DA462 /* RegistrationPhonePresenter.swift in Sources */,
 				FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */,
+				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
 				FA9BCF8A277C7614009F652E /* UIViewController+Extension.swift in Sources */,
+				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
 				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,
+				02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +674,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -573,6 +693,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		02EEBD482785A6B4001DA462 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
 		FADA714D2784886D00A784FA /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */;

@@ -4,6 +4,105 @@
 import Apollo
 import Foundation
 
+public struct LoginRecordInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - authType
+  ///   - lang
+  ///   - timezone
+  ///   - udid
+  ///   - phone
+  public init(authType: Swift.Optional<AuthType?> = nil, lang: Swift.Optional<String?> = nil, timezone: Swift.Optional<String?> = nil, udid: Swift.Optional<String?> = nil, phone: Swift.Optional<String?> = nil) {
+    graphQLMap = ["authType": authType, "lang": lang, "timezone": timezone, "udid": udid, "phone": phone]
+  }
+
+  public var authType: Swift.Optional<AuthType?> {
+    get {
+      return graphQLMap["authType"] as? Swift.Optional<AuthType?> ?? Swift.Optional<AuthType?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "authType")
+    }
+  }
+
+  public var lang: Swift.Optional<String?> {
+    get {
+      return graphQLMap["lang"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "lang")
+    }
+  }
+
+  public var timezone: Swift.Optional<String?> {
+    get {
+      return graphQLMap["timezone"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "timezone")
+    }
+  }
+
+  public var udid: Swift.Optional<String?> {
+    get {
+      return graphQLMap["udid"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "udid")
+    }
+  }
+
+  public var phone: Swift.Optional<String?> {
+    get {
+      return graphQLMap["phone"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "phone")
+    }
+  }
+}
+
+public enum AuthType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case accountTypeSms
+  case accountTypeUdid
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "ACCOUNT_TYPE_SMS": self = .accountTypeSms
+      case "ACCOUNT_TYPE_UDID": self = .accountTypeUdid
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .accountTypeSms: return "ACCOUNT_TYPE_SMS"
+      case .accountTypeUdid: return "ACCOUNT_TYPE_UDID"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: AuthType, rhs: AuthType) -> Bool {
+    switch (lhs, rhs) {
+      case (.accountTypeSms, .accountTypeSms): return true
+      case (.accountTypeUdid, .accountTypeUdid): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [AuthType] {
+    return [
+      .accountTypeSms,
+      .accountTypeUdid,
+    ]
+  }
+}
+
 public enum GenderType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   case genderTypeCommon
@@ -46,6 +145,110 @@ public enum GenderType: RawRepresentable, Equatable, Hashable, CaseIterable, Apo
       .genderTypeMan,
       .genderTypeWoman,
     ]
+  }
+}
+
+public final class LoginMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation Login($record: LoginRecordInput!) {
+      login(record: $record) {
+        __typename
+        authToken
+        smsToken
+      }
+    }
+    """
+
+  public let operationName: String = "Login"
+
+  public var record: LoginRecordInput
+
+  public init(record: LoginRecordInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("login", arguments: ["record": GraphQLVariable("record")], type: .object(Login.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(login: Login? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "login": login.flatMap { (value: Login) -> ResultMap in value.resultMap }])
+    }
+
+    public var login: Login? {
+      get {
+        return (resultMap["login"] as? ResultMap).flatMap { Login(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "login")
+      }
+    }
+
+    public struct Login: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["LoginResponse"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("authToken", type: .scalar(String.self)),
+          GraphQLField("smsToken", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(authToken: String? = nil, smsToken: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "LoginResponse", "authToken": authToken, "smsToken": smsToken])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var authToken: String? {
+        get {
+          return resultMap["authToken"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "authToken")
+        }
+      }
+
+      public var smsToken: String? {
+        get {
+          return resultMap["smsToken"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "smsToken")
+        }
+      }
+    }
   }
 }
 

@@ -43,6 +43,7 @@ class BaseController: UIViewController {
 //            swipeLeftView.alpha = 0.7
 //            timeline = TimelineSwipeLeft(view: swipeLeftView, duration: 2)
 //        }
+        setBackButton()
         
         if addTapOnScreen {
             setupTapOnScreen()
@@ -64,7 +65,7 @@ class BaseController: UIViewController {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
 //            navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorTitleNavigation]
-//            navBarAppearance.backgroundColor = transparentNavigationBar ? backgroundNavigationColor : UIColor(rgb: 0xF9F9F9).withAlphaComponent(0.94)
+            navBarAppearance.backgroundColor = transparentNavigationBar ? backgroundNavigationColor : UIColor.clear
             if transparentNavigationBar {
                 navBarAppearance.shadowColor = .clear
             }
@@ -88,6 +89,26 @@ class BaseController: UIViewController {
                 navigationController?.navigationBar.barTintColor = .white
             }
         }
+    }
+    
+    func setCustomNavigationTitle(_ text: String) {
+        let navLabel = UILabel()
+        let navTitle = NSMutableAttributedString(string: text, attributes:[
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "SFCompactRounded-Thin", size: 24.0)!])
+
+        navLabel.attributedText = navTitle
+        self.navigationItem.titleView = navLabel
+    }
+    
+    private func setBackButton() {
+        navigationController?.navigationItem.hidesBackButton = true
+        let backButton = UIBarButtonItem(image: UIImage(named: "back_button_ic"), style: .plain, target: self, action: #selector(actionBack))
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    @objc func actionBack() {
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Deinit

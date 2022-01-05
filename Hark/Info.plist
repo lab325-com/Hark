@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-Compact-Rounded-Regular</string>
+		<string>SF-Compact-Rounded-Semibold</string>
+		<string>SF-Compact-Rounded-Medium</string>
+		<string>SF-Compact-Rounded-Bold</string>
+		<string>SF-Compact-Rounded-Thin</string>
+	</array>
+</dict>
 </plist>

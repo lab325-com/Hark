@@ -61,14 +61,14 @@ extension RootRouter {
 //                                                      completion: nil)
 //    }
 //    
-//    func loadLogin(toWindow window: UIWindow) {
-//        let viewController = LoginController()
-//        let navigationController = NavigationController(rootViewController: viewController)
-//        UIApplication.shared.switchRootViewController(window: window,
-//                                                      rootViewController: navigationController,
-//                                                      animated: true,
-//                                                      completion: nil)
-//    }
+    func loadLogin(toWindow window: UIWindow) {
+        let viewController = LoginController()
+        let navigationController = NavigationController(rootViewController: viewController)
+        UIApplication.shared.switchRootViewController(window: window,
+                                                      rootViewController: navigationController,
+                                                      animated: true,
+                                                      completion: nil)
+    }
 //    
 //    func loadPlants(toWindow window: UIWindow) {
 //        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
