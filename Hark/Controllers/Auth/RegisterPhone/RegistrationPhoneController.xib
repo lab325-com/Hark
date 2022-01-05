@@ -22,6 +22,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationPhoneController" customModule="Hark" customModuleProvider="target">
             <connections>
+                <outlet property="confirmButton" destination="gb9-Wh-FEC" id="TIm-0z-tu3"/>
                 <outlet property="phoneLabel" destination="7y7-cz-qQw" id="EeN-oR-eix"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,13 +36,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="417"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill your phone number to receive verification code" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81Q-5R-Dxh">
-                    <rect key="frame" x="24" y="68" width="366" height="169"/>
+                    <rect key="frame" x="24" y="68" width="366" height="115"/>
                     <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31f-zo-USl">
-                    <rect key="frame" x="175.5" y="287" width="63.5" height="37"/>
+                    <rect key="frame" x="191.5" y="287" width="31.5" height="37"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4M3-qY-r8U">
                             <rect key="frame" x="0.0" y="0.0" width="15.5" height="37"/>
@@ -49,14 +50,14 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y7-cz-qQw">
-                            <rect key="frame" x="19.5" y="0.0" width="32" height="37"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y7-cz-qQw">
+                            <rect key="frame" x="19.5" y="0.0" width="0.0" height="37"/>
                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="28"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehe-ue-hOE">
-                            <rect key="frame" x="62.5" y="0.0" width="1" height="37"/>
+                            <rect key="frame" x="30.5" y="0.0" width="1" height="37"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="37" id="FVf-nE-pcl"/>
@@ -94,6 +95,9 @@
                             <integer key="value" value="6"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionConfirm:" destination="-1" eventType="touchUpInside" id="OYg-9H-aeG"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="s8q-1U-aLC">
                     <rect key="frame" x="40" y="516" width="334" height="272"/>
@@ -260,8 +264,9 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Bw5-k0-HqX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2Uz-Qr-KVN"/>
-                <constraint firstItem="31f-zo-USl" firstAttribute="top" secondItem="81Q-5R-Dxh" secondAttribute="bottom" constant="50" id="9bc-Vp-WGW"/>
+                <constraint firstItem="31f-zo-USl" firstAttribute="top" secondItem="81Q-5R-Dxh" secondAttribute="bottom" priority="250" constant="50" id="9bc-Vp-WGW"/>
                 <constraint firstItem="81Q-5R-Dxh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="AYG-Dn-dum"/>
+                <constraint firstItem="31f-zo-USl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="81Q-5R-Dxh" secondAttribute="bottom" constant="15" id="DW4-Q4-T4h"/>
                 <constraint firstItem="gMC-q5-1FC" firstAttribute="top" secondItem="s8q-1U-aLC" secondAttribute="bottom" constant="20" id="LY8-YH-gQM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s8q-1U-aLC" secondAttribute="trailing" constant="40" id="NaY-cv-RHC"/>
                 <constraint firstItem="gb9-Wh-FEC" firstAttribute="top" secondItem="Bw5-k0-HqX" secondAttribute="bottom" constant="5" id="RQG-08-zhB"/>

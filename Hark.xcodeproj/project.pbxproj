@@ -25,6 +25,12 @@
 		02EEBD4C2785AD26001DA462 /* RegistrationPhonePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD4B2785AD26001DA462 /* RegistrationPhonePresenter.swift */; };
 		02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD4E2785AE9B001DA462 /* Login.graphql */; };
 		02EEBD522785B069001DA462 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD512785B069001DA462 /* LoginModel.swift */; };
+		02EEBD562785B346001DA462 /* LoginPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD542785B346001DA462 /* LoginPhoneController.swift */; };
+		02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD552785B346001DA462 /* LoginPhoneController.xib */; };
+		02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD592785BE20001DA462 /* RegistrationVerificationController.swift */; };
+		02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */; };
+		02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */; };
+		02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */; };
 		FA1E690B27848D0600030600 /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1E690A27848D0600030600 /* Me.graphql */; };
 		FA1E690E278494DF00030600 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E690D278494DF00030600 /* API.swift */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
@@ -59,6 +65,12 @@
 		02EEBD4B2785AD26001DA462 /* RegistrationPhonePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhonePresenter.swift; sourceTree = "<group>"; };
 		02EEBD4E2785AE9B001DA462 /* Login.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		02EEBD512785B069001DA462 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		02EEBD542785B346001DA462 /* LoginPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPhoneController.swift; sourceTree = "<group>"; };
+		02EEBD552785B346001DA462 /* LoginPhoneController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPhoneController.xib; sourceTree = "<group>"; };
+		02EEBD592785BE20001DA462 /* RegistrationVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVerificationController.swift; sourceTree = "<group>"; };
+		02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationVerificationController.xib; sourceTree = "<group>"; };
+		02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVerificationController.swift; sourceTree = "<group>"; };
+		02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVerificationController.xib; sourceTree = "<group>"; };
 		FA1E690A27848D0600030600 /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
 		FA1E690D278494DF00030600 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FA9BCF65277C6ED8009F652E /* Hark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hark.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +115,10 @@
 			children = (
 				02EEBD2627857E91001DA462 /* AuthRouter.swift */,
 				02EEBD2027857E36001DA462 /* Login */,
-				02EEBD4227859696001DA462 /* Phone */,
+				02EEBD4227859696001DA462 /* RegisterPhone */,
+				02EEBD582785BDFB001DA462 /* RegistrationVerification */,
+				02EEBD532785B318001DA462 /* LoginPhone */,
+				02EEBD5D2785CAEA001DA462 /* LoginVerification */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -124,14 +139,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		02EEBD4227859696001DA462 /* Phone */ = {
+		02EEBD4227859696001DA462 /* RegisterPhone */ = {
 			isa = PBXGroup;
 			children = (
 				02EEBD4B2785AD26001DA462 /* RegistrationPhonePresenter.swift */,
 				02EEBD43278596B6001DA462 /* RegistrationPhoneController.swift */,
 				02EEBD44278596B6001DA462 /* RegistrationPhoneController.xib */,
 			);
-			path = Phone;
+			path = RegisterPhone;
 			sourceTree = "<group>";
 		};
 		02EEBD4D2785AE7E001DA462 /* Login */ = {
@@ -141,6 +156,33 @@
 				02EEBD512785B069001DA462 /* LoginModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		02EEBD532785B318001DA462 /* LoginPhone */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD542785B346001DA462 /* LoginPhoneController.swift */,
+				02EEBD552785B346001DA462 /* LoginPhoneController.xib */,
+			);
+			path = LoginPhone;
+			sourceTree = "<group>";
+		};
+		02EEBD582785BDFB001DA462 /* RegistrationVerification */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD592785BE20001DA462 /* RegistrationVerificationController.swift */,
+				02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */,
+			);
+			path = RegistrationVerification;
+			sourceTree = "<group>";
+		};
+		02EEBD5D2785CAEA001DA462 /* LoginVerification */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */,
+				02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */,
+			);
+			path = LoginVerification;
 			sourceTree = "<group>";
 		};
 		FA1E690527848C2C00030600 /* Apollo */ = {
@@ -394,12 +436,15 @@
 				02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */,
 				02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */,
 				FA9BCF75277C6EDA009F652E /* LaunchScreen.storyboard in Resources */,
+				02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */,
 				FA9BCF72277C6EDA009F652E /* Assets.xcassets in Resources */,
 				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
+				02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */,
 				02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */,
 				02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */,
 				FA1E690B27848D0600030600 /* Me.graphql in Resources */,
 				02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */,
+				02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */,
 				FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */,
 				02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */,
 				02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */,
@@ -440,6 +485,7 @@
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
 				FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
+				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
 				02EEBD4C2785AD26001DA462 /* RegistrationPhonePresenter.swift in Sources */,
 				FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */,
 				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
@@ -447,7 +493,9 @@
 				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
+				02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */,
 				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,
+				02EEBD562785B346001DA462 /* LoginPhoneController.swift in Sources */,
 				02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

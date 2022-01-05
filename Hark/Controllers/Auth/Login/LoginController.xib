@@ -44,10 +44,7 @@
                             <rect key="frame" x="175.5" y="339" width="63.5" height="16.5"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR8-Su-X92">
-                            <rect key="frame" x="144" y="415" width="126" height="80"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="80" id="8hh-aA-NtQ"/>
-                            </constraints>
+                            <rect key="frame" x="144" y="446.5" width="126" height="38.5"/>
                             <string key="text">Totally anonymous
 place to talk</string>
                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="16"/>
@@ -65,7 +62,7 @@ place to talk</string>
                         <constraint firstItem="cpr-z1-ujT" firstAttribute="leading" secondItem="9EN-TO-dK3" secondAttribute="leading" id="XHA-fs-sy7"/>
                         <constraint firstAttribute="bottom" secondItem="cpr-z1-ujT" secondAttribute="bottom" id="hpM-q7-28d"/>
                         <constraint firstItem="dQW-2E-f3i" firstAttribute="centerY" secondItem="9EN-TO-dK3" secondAttribute="centerY" id="jRO-at-Xbg"/>
-                        <constraint firstAttribute="bottom" secondItem="HR8-Su-X92" secondAttribute="bottom" constant="10" id="ma1-HM-dps"/>
+                        <constraint firstAttribute="bottom" secondItem="HR8-Su-X92" secondAttribute="bottom" constant="20" id="ma1-HM-dps"/>
                         <constraint firstItem="v2b-Jm-iCn" firstAttribute="top" secondItem="dQW-2E-f3i" secondAttribute="bottom" constant="25" id="o30-i5-GRs"/>
                     </constraints>
                 </view>
@@ -159,7 +156,6 @@ ability to add the interlocutor to favorites</string>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <connections>
                                 <action selector="actionGuestMode:" destination="-1" eventType="touchUpInside" id="8ur-dO-pHG"/>
-                                <action selector="actionRegistration:" destination="-1" eventType="touchUpInside" id="Ocl-k5-NMv"/>
                             </connections>
                         </button>
                     </subviews>

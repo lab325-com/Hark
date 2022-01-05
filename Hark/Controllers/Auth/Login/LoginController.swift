@@ -52,6 +52,7 @@ class LoginController: UIViewController {
     }
     
     @IBAction func actionLogin(_ sender: UIButton) {
-        
+        AuthRouter(presenter: navigationController).pushLoginPhone()
+
     }
 }
