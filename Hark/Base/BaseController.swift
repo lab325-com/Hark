@@ -14,7 +14,8 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     //----------------------------------------------
     // MARK: - IBOutlets
     //----------------------------------------------
-
+    @IBOutlet weak var bottomViewConstraint: NSLayoutConstraint!
+    
     var transparentNavigationBar = false
     var hiddenNavigationBar = false
 //    var colorTitleNavigation = UIColor(rgb: 0xC36ED1)
@@ -174,13 +175,13 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
 extension BaseController {
     @objc func keyboardWillHideMain(_ notification : Notification) {
         isShowKeyboard = false
-//        if let bootomConstant = bottomViewConstraint {
-//            bootomConstant.constant = 0
-//            keyboardHeight = 0
-//            UIView.animate(withDuration: 0.4, animations: { () -> Void in
-//                self.view.layoutIfNeeded()
-//            })
-//        }
+        if let bootomConstant = bottomViewConstraint {
+            bootomConstant.constant = 0
+            keyboardHeight = 0
+            UIView.animate(withDuration: 0.4, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+        }
     }
     
     /// Keyboard will show
@@ -189,32 +190,32 @@ extension BaseController {
     @objc func keyboardWillShowMain(_ notification: Notification) {
         isShowKeyboard = true
         
-//        if bottomViewConstraint != nil {
-//            let info = notification.userInfo!
-//            let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-//
-//            let bottomPadding: CGFloat = {
-//
-//                let tabBarHieght: CGFloat = tabBarController?.tabBar.frame.size.height ?? 0
-//
-//                if tabBarHieght == 0 || hidesBottomBarWhenPushed || (tabBarController?.tabBar.isHidden ?? false) {
-//                    if #available(iOS 11.0, *) {
-//                        return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
-//                    } else {
-//                        return 0
-//                    }
-//                } else {
-//                    return tabBarHieght
-//                }
-//            } ()
-//
-//            keyboardHeight = keyboardFrame.size.height
-//
-//            bottomViewConstraint.constant = keyboardHeight - (isNeedBottomPagging ? bottomPadding : 0.0) + correctionKeyboard
-//
-//            UIView.animate(withDuration: 0.4, animations: { () -> Void in
-//                self.view.layoutIfNeeded()
-//            })
-//        }
+        if bottomViewConstraint != nil {
+            let info = notification.userInfo!
+            let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+
+            let bottomPadding: CGFloat = {
+
+                let tabBarHieght: CGFloat = tabBarController?.tabBar.frame.size.height ?? 0
+
+                if tabBarHieght == 0 || hidesBottomBarWhenPushed || (tabBarController?.tabBar.isHidden ?? false) {
+                    if #available(iOS 11.0, *) {
+                        return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+                    } else {
+                        return 0
+                    }
+                } else {
+                    return tabBarHieght
+                }
+            } ()
+
+            keyboardHeight = keyboardFrame.size.height
+
+            bottomViewConstraint.constant = keyboardHeight - (isNeedBottomPagging ? bottomPadding : 0.0) + correctionKeyboard
+
+            UIView.animate(withDuration: 0.4, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+        }
     }
 }

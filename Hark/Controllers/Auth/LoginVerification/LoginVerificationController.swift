@@ -25,7 +25,7 @@ class LoginVerificationController: BaseController {
     //----------------------------------------------
     
     private let phoneNumber: String
-    private let smsToken: String
+    private var smsToken: String
     
     private lazy var presenter = AuthPresenter(view: self)
     
@@ -113,6 +113,11 @@ class LoginVerificationController: BaseController {
         }
     }
     
+    @IBAction func actionResend(_ sender: UIButton) {
+        let result = phoneLabel.text!.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
+        presenter.registePhone(phone: result.replacingOccurrences( of:" ", with: "", options: .regularExpression))
+    }
+    
     @IBAction func actionConfirm(_ sender: UIButton) {
         if checkButton(), let code = Int(numbersLabel.compactMap({$0.text!}).joined(separator: "")) {
             presenter.validate(smsToken: smsToken, code: code)
@@ -127,8 +132,16 @@ class LoginVerificationController: BaseController {
 //----------------------------------------------
 
 extension LoginVerificationController: AuthPhoneOutputProtocol {
+    func successRegister(smsToken: String) {
+        self.smsToken = smsToken
+    }
+    
     func successValidata() {
-        
+        AuthRouter(presenter: navigationController).pushAuthFillNickName()
+    }
+    
+    func successGoToRoot() {
+        RootRouter.sharedInstance.loadMain(toWindow: RootRouter.sharedInstance.window)
     }
     
     func failureValidate() {

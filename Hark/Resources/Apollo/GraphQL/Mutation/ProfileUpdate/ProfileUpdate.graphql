@@ -1,0 +1,13 @@
+mutation ProfileUpdate($record: ProfileUpdateInput!) {
+    profileUpdate(record: $record) {
+        age
+        gender
+        id
+        isAnonymous
+        nickName
+        totalFavoriteTalks
+        totalTalks
+        verified
+    }
+}
+

@@ -70,6 +70,10 @@ class LoginController: BaseController {
 
 extension LoginController: AuthPhoneOutputProtocol {
     func successGuest(authToken: String) {
-        
+        AuthRouter(presenter: navigationController).pushAuthFillNickName()
+    }
+    
+    func successGoToRoot() {
+        RootRouter.sharedInstance.loadMain(toWindow: RootRouter.sharedInstance.window)
     }
 }

@@ -30,12 +30,11 @@ class RootRouter {
     //----------------------------------------------
     func application(didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow) -> Bool {
         
-//        if PreferencesManager.sharedManager.isFirstRun == false {
-//            KeychainService.standard.removeObject(forKey: .newAuthToken)
-//            KeychainService.standard.removeObject(forKey: .me)
-//            AnalyticsHelper.sendFirebaseEvents(events: .first_open)
-//            PreferencesManager.sharedManager.isFirstRun = true
-//        }
+        if PreferencesManager.sharedManager.isFirstRun == false {
+            KeychainService.standard.removeObject(forKey: .newAuthToken)
+            KeychainService.standard.removeObject(forKey: .me)
+            PreferencesManager.sharedManager.isFirstRun = true
+        }
         
         RootRouter.sharedInstance.window = window
         let controller = SplashController()
@@ -52,15 +51,15 @@ class RootRouter {
 // MARK: - Change root controller
 //----------------------------------------------
 extension RootRouter {
-//    func loadOnboarding(toWindow window: UIWindow) {
-//        let viewController = MainOnboardingController()
-//        let navigationController = NavigationController(rootViewController: viewController)
-//        UIApplication.shared.switchRootViewController(window: window,
-//                                                      rootViewController: navigationController,
-//                                                      animated: true,
-//                                                      completion: nil)
-//    }
-//    
+    func loadOnboarding(toWindow window: UIWindow) {
+        let viewController = OnboardingController()
+        let navigationController = NavigationController(rootViewController: viewController)
+        UIApplication.shared.switchRootViewController(window: window,
+                                                      rootViewController: navigationController,
+                                                      animated: true,
+                                                      completion: nil)
+    }
+    
     func loadLogin(toWindow window: UIWindow) {
         let viewController = LoginController()
         let navigationController = NavigationController(rootViewController: viewController)
@@ -69,13 +68,13 @@ extension RootRouter {
                                                       animated: true,
                                                       completion: nil)
     }
-//    
-//    func loadPlants(toWindow window: UIWindow) {
-//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
-//        UIApplication.shared.switchRootViewController(window: RootRouter.sharedInstance.window!,
-//                                                      rootViewController: viewController,
-//                                                      animated: true,
-//                                                      completion: nil)
-//    }
+    
+    func loadMain(toWindow window: UIWindow) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+        UIApplication.shared.switchRootViewController(window: RootRouter.sharedInstance.window!,
+                                                      rootViewController: viewController,
+                                                      animated: true,
+                                                      completion: nil)
+    }
 }

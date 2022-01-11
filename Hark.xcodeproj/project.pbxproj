@@ -11,6 +11,8 @@
 		027629A72785D0B30096DC2E /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */; };
 		027629AA2785DC630096DC2E /* VerifyPhone.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 027629A92785DC630096DC2E /* VerifyPhone.graphql */; };
 		027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */; };
+		027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027629B02785F3030096DC2E /* AuthFillNickNameController.swift */; };
+		027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027629B12785F3030096DC2E /* AuthFillNickNameController.xib */; };
 		02EEBD2327857E57001DA462 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD2127857E57001DA462 /* LoginController.swift */; };
 		02EEBD2427857E57001DA462 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD2227857E57001DA462 /* LoginController.xib */; };
 		02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD2627857E91001DA462 /* AuthRouter.swift */; };
@@ -35,6 +37,21 @@
 		02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */; };
 		02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */; };
 		02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */; };
+		02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */; };
+		02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7EE2786DE8C00595AA6 /* AuthFillAgeController.swift */; };
+		02F8B7F12786DE8C00595AA6 /* AuthFillAgeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B7EF2786DE8C00595AA6 /* AuthFillAgeController.xib */; };
+		02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7F52786FFB900595AA6 /* AuthFillGenderController.swift */; };
+		02F8B7F82786FFB900595AA6 /* AuthFillGenderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B7F62786FFB900595AA6 /* AuthFillGenderController.xib */; };
+		02F8B7FB2787044F00595AA6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7FA2787044F00595AA6 /* MainTabBarController.swift */; };
+		02F8B7FD2787049800595AA6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7FC2787049800595AA6 /* UIColor+Extension.swift */; };
+		02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7FF278709C400595AA6 /* OnboardingController.swift */; };
+		02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B800278709C400595AA6 /* OnboardingController.xib */; };
+		02F8B80427870A1200595AA6 /* AuthFillPesenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B80327870A1200595AA6 /* AuthFillPesenter.swift */; };
+		02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B80627870DFB00595AA6 /* ProfileUpdate.graphql */; };
+		02F8B80927870E5800595AA6 /* ProfileUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B80827870E5800595AA6 /* ProfileUpdateModel.swift */; };
+		02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B80B2787129C00595AA6 /* OnboardingCell.swift */; };
+		02F8B80E2787129C00595AA6 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B80C2787129C00595AA6 /* OnboardingCell.xib */; };
+		02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B80F278714DB00595AA6 /* Collection+Extension.swift */; };
 		FA1E690B27848D0600030600 /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1E690A27848D0600030600 /* Me.graphql */; };
 		FA1E690E278494DF00030600 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E690D278494DF00030600 /* API.swift */; };
 		FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69192785B3A600030600 /* NetwokrManager.swift */; };
@@ -60,6 +77,8 @@
 /* Begin PBXFileReference section */
 		027629A92785DC630096DC2E /* VerifyPhone.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VerifyPhone.graphql; sourceTree = "<group>"; };
 		027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneModel.swift; sourceTree = "<group>"; };
+		027629B02785F3030096DC2E /* AuthFillNickNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillNickNameController.swift; sourceTree = "<group>"; };
+		027629B12785F3030096DC2E /* AuthFillNickNameController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillNickNameController.xib; sourceTree = "<group>"; };
 		02EEBD2127857E57001DA462 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		02EEBD2227857E57001DA462 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		02EEBD2627857E91001DA462 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
@@ -83,6 +102,21 @@
 		02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationVerificationController.xib; sourceTree = "<group>"; };
 		02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVerificationController.swift; sourceTree = "<group>"; };
 		02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVerificationController.xib; sourceTree = "<group>"; };
+		02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		02F8B7EE2786DE8C00595AA6 /* AuthFillAgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillAgeController.swift; sourceTree = "<group>"; };
+		02F8B7EF2786DE8C00595AA6 /* AuthFillAgeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillAgeController.xib; sourceTree = "<group>"; };
+		02F8B7F52786FFB900595AA6 /* AuthFillGenderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillGenderController.swift; sourceTree = "<group>"; };
+		02F8B7F62786FFB900595AA6 /* AuthFillGenderController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillGenderController.xib; sourceTree = "<group>"; };
+		02F8B7FA2787044F00595AA6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		02F8B7FC2787049800595AA6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		02F8B7FF278709C400595AA6 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		02F8B800278709C400595AA6 /* OnboardingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingController.xib; sourceTree = "<group>"; };
+		02F8B80327870A1200595AA6 /* AuthFillPesenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillPesenter.swift; sourceTree = "<group>"; };
+		02F8B80627870DFB00595AA6 /* ProfileUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProfileUpdate.graphql; sourceTree = "<group>"; };
+		02F8B80827870E5800595AA6 /* ProfileUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateModel.swift; sourceTree = "<group>"; };
+		02F8B80B2787129C00595AA6 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		02F8B80C2787129C00595AA6 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
+		02F8B80F278714DB00595AA6 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		FA1E690A27848D0600030600 /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
 		FA1E690D278494DF00030600 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FA1E69192785B3A600030600 /* NetwokrManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwokrManager.swift; sourceTree = "<group>"; };
@@ -128,6 +162,26 @@
 				027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */,
 			);
 			path = VerifyPhone;
+			sourceTree = "<group>";
+		};
+		027629AE2785F2C80096DC2E /* AuthFillProfile */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B80327870A1200595AA6 /* AuthFillPesenter.swift */,
+				027629AF2785F2E20096DC2E /* AuthFillNickName */,
+				02F8B7ED2786DE6700595AA6 /* AuthFillAge */,
+				02F8B7F42786FF9C00595AA6 /*  AuthFillGender */,
+			);
+			path = AuthFillProfile;
+			sourceTree = "<group>";
+		};
+		027629AF2785F2E20096DC2E /* AuthFillNickName */ = {
+			isa = PBXGroup;
+			children = (
+				027629B02785F3030096DC2E /* AuthFillNickNameController.swift */,
+				027629B12785F3030096DC2E /* AuthFillNickNameController.xib */,
+			);
+			path = AuthFillNickName;
 			sourceTree = "<group>";
 		};
 		02EEBD2027857E36001DA462 /* Login */ = {
@@ -214,6 +268,61 @@
 			path = LoginVerification;
 			sourceTree = "<group>";
 		};
+		02F8B7ED2786DE6700595AA6 /* AuthFillAge */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B7EE2786DE8C00595AA6 /* AuthFillAgeController.swift */,
+				02F8B7EF2786DE8C00595AA6 /* AuthFillAgeController.xib */,
+			);
+			path = AuthFillAge;
+			sourceTree = "<group>";
+		};
+		02F8B7F42786FF9C00595AA6 /*  AuthFillGender */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B7F52786FFB900595AA6 /* AuthFillGenderController.swift */,
+				02F8B7F62786FFB900595AA6 /* AuthFillGenderController.xib */,
+			);
+			path = " AuthFillGender";
+			sourceTree = "<group>";
+		};
+		02F8B7F92787042700595AA6 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FA9BCF6E277C6ED8009F652E /* Main.storyboard */,
+				02F8B7FA2787044F00595AA6 /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		02F8B7FE278709A800595AA6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B80A2787128100595AA6 /* Cell */,
+				02F8B7FF278709C400595AA6 /* OnboardingController.swift */,
+				02F8B800278709C400595AA6 /* OnboardingController.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		02F8B80527870DE200595AA6 /* ProfileUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B80627870DFB00595AA6 /* ProfileUpdate.graphql */,
+				02F8B80827870E5800595AA6 /* ProfileUpdateModel.swift */,
+			);
+			path = ProfileUpdate;
+			sourceTree = "<group>";
+		};
+		02F8B80A2787128100595AA6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B80B2787129C00595AA6 /* OnboardingCell.swift */,
+				02F8B80C2787129C00595AA6 /* OnboardingCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FA1E690527848C2C00030600 /* Apollo */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +361,7 @@
 		FA1E690C27848DD700030600 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				02F8B80527870DE200595AA6 /* ProfileUpdate */,
 				027629A82785DC350096DC2E /* VerifyPhone */,
 				02EEBD4D2785AE7E001DA462 /* Login */,
 			);
@@ -262,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				FA1E691F2785B5CD00030600 /* KeychainService.swift */,
+				02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -298,7 +409,6 @@
 				FA9BCF7E277C7199009F652E /* Base */,
 				FA9BCF7D277C7184009F652E /* Controllers */,
 				FA9BCF7F277C71B3009F652E /* Resources */,
-				FA9BCF6E277C6ED8009F652E /* Main.storyboard */,
 				FA9BCF71277C6EDA009F652E /* Assets.xcassets */,
 				FA9BCF73277C6EDA009F652E /* LaunchScreen.storyboard */,
 				FA9BCF76277C6EDA009F652E /* Info.plist */,
@@ -318,7 +428,10 @@
 			isa = PBXGroup;
 			children = (
 				FA9BCF92277C82AD009F652E /* SplashController */,
+				02F8B7FE278709A800595AA6 /* Onboarding */,
 				02EEBD2827857E9B001DA462 /* Auth */,
+				027629AE2785F2C80096DC2E /* AuthFillProfile */,
+				02F8B7F92787042700595AA6 /* TabBar */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -357,7 +470,9 @@
 			isa = PBXGroup;
 			children = (
 				FA9BCF87277C75DB009F652E /* UIApplicathion+Extension.swift */,
+				02F8B7FC2787049800595AA6 /* UIColor+Extension.swift */,
 				FA9BCF89277C7614009F652E /* UIViewController+Extension.swift */,
+				02F8B80F278714DB00595AA6 /* Collection+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -446,22 +561,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
+				027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */,
 				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
 				02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */,
 				02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */,
 				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
+				02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */,
 				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
 				02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */,
+				02F8B7F82786FFB900595AA6 /* AuthFillGenderController.xib in Resources */,
 				02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */,
 				FA9BCF75277C6EDA009F652E /* LaunchScreen.storyboard in Resources */,
 				02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */,
 				FA9BCF72277C6EDA009F652E /* Assets.xcassets in Resources */,
 				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
 				02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */,
+				02F8B7F12786DE8C00595AA6 /* AuthFillAgeController.xib in Resources */,
 				02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */,
 				02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */,
 				FA1E690B27848D0600030600 /* Me.graphql in Resources */,
 				02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */,
+				02F8B80E2787129C00595AA6 /* OnboardingCell.xib in Resources */,
 				02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */,
 				FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */,
 				02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */,
@@ -500,12 +621,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */,
 				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
+				02F8B7FD2787049800595AA6 /* UIColor+Extension.swift in Sources */,
+				027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */,
 				FA1E69282785B75200030600 /* MeModel.swift in Sources */,
 				FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
+				02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */,
 				02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */,
 				FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */,
 				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
@@ -516,10 +641,17 @@
 				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
+				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
+				02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */,
+				02F8B7FB2787044F00595AA6 /* MainTabBarController.swift in Sources */,
 				02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */,
+				02F8B80427870A1200595AA6 /* AuthFillPesenter.swift in Sources */,
+				02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */,
 				FA1E69262785B71F00030600 /* AuthModel.swift in Sources */,
+				02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */,
 				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,
 				02EEBD562785B346001DA462 /* LoginPhoneController.swift in Sources */,
+				02F8B80927870E5800595AA6 /* ProfileUpdateModel.swift in Sources */,
 				02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

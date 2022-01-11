@@ -29,4 +29,18 @@ class AuthRouter: BaseRouter {
         push(controller: controller)
     }
     
+    func pushAuthFillNickName() {
+        let controller = AuthFillNickNameController()
+        push(controller: controller)
+    }
+    
+    func pushAuthFillAge(nickName: String) {
+        let controller = AuthFillAgeController(nickName: nickName)
+        push(controller: controller)
+    }
+    
+    func pushAuthGender(nickName: String, age: Int) {
+        let controller = AuthFillGenderController(nickName: nickName, age: age)
+        push(controller: controller)
+    }
 }

@@ -16,6 +16,7 @@ protocol AuthPhoneOutputProtocol: BaseController {
     func successRegister(smsToken: String)
     
     func successGuest(authToken: String)
+    func successGoToRoot()
     
     func successValidata()
     func failureValidate()
@@ -24,6 +25,7 @@ protocol AuthPhoneOutputProtocol: BaseController {
 extension AuthPhoneOutputProtocol {
     func successRegister(smsToken: String) {}
     func successGuest(authToken: String) {}
+    func successGoToRoot() {}
     func successValidata() {}
     func failureValidate() {}
 }
@@ -70,12 +72,29 @@ class AuthPresenter: AuthPresenterProtocol {
         
         request?.cancel()
         
-        
         let mutation = VerifyPhoneMutation(smsToken: smsToken, code: code)
 
         request = Network.shared.mutation(model: VerifyPhoneModel.self, mutation, controller: view) { [weak self] model in
-            self?.view?.stopLoading()
-            self?.view?.successValidata()
+            
+            let token = model.verifyPhone.authToken
+            let query = MeQuery()
+            KeychainService.standard.newAuthToken = AuthModel(token: token)
+            
+            let _ = Network.shared.query(model: MeModel.self, query, controller: self?.view) { [weak self] model in
+                self?.view?.stopLoading()
+                
+                KeychainService.standard.me = model.me
+                
+                if let _ = model.me.nickName {
+                    self?.view?.successGoToRoot()
+                } else {
+                    self?.view?.successValidata()
+                }
+            } failureHandler: { [weak self] error in
+                debugPrint(error)
+                self?.view?.stopLoading()
+            }
+    
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
             self?.view?.failureValidate()
@@ -90,10 +109,25 @@ class AuthPresenter: AuthPresenterProtocol {
         let mutation = LoginMutation(record: LoginRecordInput(authType: .accountTypeUdid, udid: udid))
 
         request = Network.shared.mutation(model: LoginModel.self, mutation, controller: view) { [weak self] model in
-            self?.view?.stopLoading()
-            
             if let token = model.login.authToken {
-                self?.view?.successGuest(authToken: token)
+                let query = MeQuery()
+                KeychainService.standard.newAuthToken = AuthModel(token: token)
+                
+                let _ = Network.shared.query(model: MeModel.self, query, controller: self?.view) { [weak self] model in
+                    self?.view?.stopLoading()
+                    KeychainService.standard.me = model.me
+                    
+                    if let _ = model.me.nickName {
+                        self?.view?.successGoToRoot()
+                    } else {
+                        self?.view?.successGuest(authToken: token)
+                    }
+                } failureHandler: { [weak self] error in
+                    debugPrint(error)
+                    self?.view?.stopLoading()
+                }
+            } else {
+                self?.view?.stopLoading()
             }
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
