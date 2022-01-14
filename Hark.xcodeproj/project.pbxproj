@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563A278DDD8D00FBA4E9 /* MainController.swift */; };
+		0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563E278E065E00FBA4E9 /* MainPresenter.swift */; };
+		02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */; };
+		02675645278E078E00FBA4E9 /* OnlineStatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675644278E078E00FBA4E9 /* OnlineStatisticsModel.swift */; };
+		02675647278E0B8A00FBA4E9 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675646278E0B8A00FBA4E9 /* Int+Extension.swift */; };
+		0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675649278EC95F00FBA4E9 /* ProfileController.swift */; };
+		0267564D278ECCDD00FBA4E9 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267564C278ECCDD00FBA4E9 /* ProfilePresenter.swift */; };
+		0267564F278ED2C100FBA4E9 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267564E278ED2C000FBA4E9 /* ProfileRouter.swift */; };
+		02675653278ED30D00FBA4E9 /* MenuProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675651278ED30D00FBA4E9 /* MenuProfileController.swift */; };
+		02675654278ED30D00FBA4E9 /* MenuProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02675652278ED30D00FBA4E9 /* MenuProfileController.xib */; };
+		02675656278ED85F00FBA4E9 /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675655278ED85F00FBA4E9 /* SharedManager.swift */; };
 		027629A52785D0B30096DC2E /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 027629A42785D0B30096DC2E /* NVActivityIndicatorView */; };
 		027629A72785D0B30096DC2E /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */; };
 		027629AA2785DC630096DC2E /* VerifyPhone.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 027629A92785DC630096DC2E /* VerifyPhone.graphql */; };
@@ -75,6 +86,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0267563A278DDD8D00FBA4E9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		0267563E278E065E00FBA4E9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnlineStatistics.graphql; sourceTree = "<group>"; };
+		02675644278E078E00FBA4E9 /* OnlineStatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineStatisticsModel.swift; sourceTree = "<group>"; };
+		02675646278E0B8A00FBA4E9 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		02675649278EC95F00FBA4E9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		0267564C278ECCDD00FBA4E9 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		0267564E278ED2C000FBA4E9 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		02675651278ED30D00FBA4E9 /* MenuProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileController.swift; sourceTree = "<group>"; };
+		02675652278ED30D00FBA4E9 /* MenuProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuProfileController.xib; sourceTree = "<group>"; };
+		02675655278ED85F00FBA4E9 /* SharedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
 		027629A92785DC630096DC2E /* VerifyPhone.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VerifyPhone.graphql; sourceTree = "<group>"; };
 		027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneModel.swift; sourceTree = "<group>"; };
 		027629B02785F3030096DC2E /* AuthFillNickNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillNickNameController.swift; sourceTree = "<group>"; };
@@ -155,6 +177,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02675639278DDD5000FBA4E9 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0267563E278E065E00FBA4E9 /* MainPresenter.swift */,
+				02675640278E06B600FBA4E9 /* Main */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		02675640278E06B600FBA4E9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0267563A278DDD8D00FBA4E9 /* MainController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		02675641278E076100FBA4E9 /* OnlineStatistics */ = {
+			isa = PBXGroup;
+			children = (
+				02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */,
+				02675644278E078E00FBA4E9 /* OnlineStatisticsModel.swift */,
+			);
+			path = OnlineStatistics;
+			sourceTree = "<group>";
+		};
+		02675648278EC93300FBA4E9 /* ProfileTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0267564C278ECCDD00FBA4E9 /* ProfilePresenter.swift */,
+				0267564E278ED2C000FBA4E9 /* ProfileRouter.swift */,
+				0267564B278ECCC900FBA4E9 /* Profile */,
+				02675650278ED2EA00FBA4E9 /* Menu */,
+			);
+			path = ProfileTabBar;
+			sourceTree = "<group>";
+		};
+		0267564B278ECCC900FBA4E9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				02675649278EC95F00FBA4E9 /* ProfileController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		02675650278ED2EA00FBA4E9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				02675651278ED30D00FBA4E9 /* MenuProfileController.swift */,
+				02675652278ED30D00FBA4E9 /* MenuProfileController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		027629A82785DC350096DC2E /* VerifyPhone */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +420,7 @@
 		FA1E690827848CAE00030600 /* Query */ = {
 			isa = PBXGroup;
 			children = (
+				02675641278E076100FBA4E9 /* OnlineStatistics */,
 				FA1E690927848CD400030600 /* Me */,
 			);
 			path = Query;
@@ -372,7 +449,6 @@
 			isa = PBXGroup;
 			children = (
 				FA1E691F2785B5CD00030600 /* KeychainService.swift */,
-				02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -432,6 +508,8 @@
 				02EEBD2827857E9B001DA462 /* Auth */,
 				027629AE2785F2C80096DC2E /* AuthFillProfile */,
 				02F8B7F92787042700595AA6 /* TabBar */,
+				02675639278DDD5000FBA4E9 /* MainTabBar */,
+				02675648278EC93300FBA4E9 /* ProfileTabBar */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -462,6 +540,8 @@
 			isa = PBXGroup;
 			children = (
 				FA1E69192785B3A600030600 /* NetwokrManager.swift */,
+				02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */,
+				02675655278ED85F00FBA4E9 /* SharedManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -473,6 +553,7 @@
 				02F8B7FC2787049800595AA6 /* UIColor+Extension.swift */,
 				FA9BCF89277C7614009F652E /* UIViewController+Extension.swift */,
 				02F8B80F278714DB00595AA6 /* Collection+Extension.swift */,
+				02675646278E0B8A00FBA4E9 /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -562,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
+				02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */,
 				027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */,
 				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
 				02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */,
@@ -584,6 +666,7 @@
 				02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */,
 				02F8B80E2787129C00595AA6 /* OnboardingCell.xib in Resources */,
 				02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */,
+				02675654278ED30D00FBA4E9 /* MenuProfileController.xib in Resources */,
 				FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */,
 				02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */,
 				02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */,
@@ -621,6 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02675653278ED30D00FBA4E9 /* MenuProfileController.swift in Sources */,
 				02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */,
 				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
@@ -628,10 +712,13 @@
 				027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */,
 				FA1E69282785B75200030600 /* MeModel.swift in Sources */,
 				FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */,
+				0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
 				02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */,
+				0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */,
 				02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */,
+				0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */,
 				FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */,
 				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
 				027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */,
@@ -639,19 +726,24 @@
 				FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */,
 				FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */,
 				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
+				02675645278E078E00FBA4E9 /* OnlineStatisticsModel.swift in Sources */,
+				02675647278E0B8A00FBA4E9 /* Int+Extension.swift in Sources */,
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
 				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
 				02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */,
+				02675656278ED85F00FBA4E9 /* SharedManager.swift in Sources */,
 				02F8B7FB2787044F00595AA6 /* MainTabBarController.swift in Sources */,
 				02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */,
 				02F8B80427870A1200595AA6 /* AuthFillPesenter.swift in Sources */,
+				0267564D278ECCDD00FBA4E9 /* ProfilePresenter.swift in Sources */,
 				02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */,
 				FA1E69262785B71F00030600 /* AuthModel.swift in Sources */,
 				02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */,
 				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,
 				02EEBD562785B346001DA462 /* LoginPhoneController.swift in Sources */,
 				02F8B80927870E5800595AA6 /* ProfileUpdateModel.swift in Sources */,
+				0267564F278ED2C100FBA4E9 /* ProfileRouter.swift in Sources */,
 				02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -802,7 +894,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -812,6 +904,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -837,7 +930,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -847,6 +940,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

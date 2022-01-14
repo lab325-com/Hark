@@ -728,3 +728,133 @@ public final class MeQuery: GraphQLQuery {
     }
   }
 }
+
+public final class OnlineStatisticsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query OnlineStatistics {
+      onlineStatistics {
+        __typename
+        totalCommons
+        totalInTalk
+        totalMen
+        totalOnline
+        totalWomen
+      }
+    }
+    """
+
+  public let operationName: String = "OnlineStatistics"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("onlineStatistics", type: .object(OnlineStatistic.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(onlineStatistics: OnlineStatistic? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "onlineStatistics": onlineStatistics.flatMap { (value: OnlineStatistic) -> ResultMap in value.resultMap }])
+    }
+
+    public var onlineStatistics: OnlineStatistic? {
+      get {
+        return (resultMap["onlineStatistics"] as? ResultMap).flatMap { OnlineStatistic(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "onlineStatistics")
+      }
+    }
+
+    public struct OnlineStatistic: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["OnlineStatistic"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("totalCommons", type: .scalar(Int.self)),
+          GraphQLField("totalInTalk", type: .scalar(Int.self)),
+          GraphQLField("totalMen", type: .scalar(Int.self)),
+          GraphQLField("totalOnline", type: .scalar(Int.self)),
+          GraphQLField("totalWomen", type: .scalar(Int.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(totalCommons: Int? = nil, totalInTalk: Int? = nil, totalMen: Int? = nil, totalOnline: Int? = nil, totalWomen: Int? = nil) {
+        self.init(unsafeResultMap: ["__typename": "OnlineStatistic", "totalCommons": totalCommons, "totalInTalk": totalInTalk, "totalMen": totalMen, "totalOnline": totalOnline, "totalWomen": totalWomen])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var totalCommons: Int? {
+        get {
+          return resultMap["totalCommons"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalCommons")
+        }
+      }
+
+      public var totalInTalk: Int? {
+        get {
+          return resultMap["totalInTalk"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalInTalk")
+        }
+      }
+
+      public var totalMen: Int? {
+        get {
+          return resultMap["totalMen"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalMen")
+        }
+      }
+
+      public var totalOnline: Int? {
+        get {
+          return resultMap["totalOnline"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalOnline")
+        }
+      }
+
+      public var totalWomen: Int? {
+        get {
+          return resultMap["totalWomen"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "totalWomen")
+        }
+      }
+    }
+  }
+}

@@ -27,9 +27,7 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     var keyboardHeight: CGFloat = 0.0
     var isNeedBottomPagging = true
     var addTapOnScreen = true
-    
-    
-//    var timeline: Timeline?
+    var setupBackButton = true
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -37,16 +35,11 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let swipeRightView = animationBackGroundSwipeRightView {
-//            view.clipsToBounds = true
-//            swipeRightView.alpha = 0.7
-//            timeline = TimelineSwipeRight(view: swipeRightView, duration: 2)
-//        } else if let swipeLeftView = animationBackGroundSwipeLeftView {
-//            view.clipsToBounds = true
-//            swipeLeftView.alpha = 0.7
-//            timeline = TimelineSwipeLeft(view: swipeLeftView, duration: 2)
-//        }
-        setBackButton()
+        navigationController?.navigationItem.hidesBackButton = true
+        
+        if setupBackButton {
+            setBackButton()
+        }
         
         if addTapOnScreen {
             setupTapOnScreen()
@@ -54,14 +47,10 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowMain(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideMain(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector:#selector(changeLanguageNotifications),
-//                                               name: Constants.Notifications.languageChangeNotifications,
-//                                               object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        timeline?.play()
         navigationController?.setNavigationBarHidden(hiddenNavigationBar, animated: true)
         
         if #available(iOS 15.0, *) {
@@ -105,7 +94,6 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     }
     
     private func setBackButton() {
-        navigationController?.navigationItem.hidesBackButton = true
         let backButton = UIBarButtonItem(image: UIImage(named: "back_button_ic"), style: .plain, target: self, action: #selector(actionBack))
         navigationItem.leftBarButtonItem = backButton
     }

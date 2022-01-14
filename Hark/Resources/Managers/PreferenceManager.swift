@@ -14,6 +14,7 @@ class PreferencesManager : NSObject {
     
     //MARK: - Keys
     static let isFirstRun = "isFirstRun"
+    static let onlineStatistics = "onlineStatistics"
     
     var userDefaults: UserDefaults
     
@@ -102,6 +103,15 @@ class PreferencesManager : NSObject {
         set {
             userDefaults.set(newValue, forKey: PreferencesManager.isFirstRun)
             userDefaults.synchronize()
+        }
+    }
+    
+    var onlineStatistics: OnlineStatisticsMainModel? {
+        get {
+            return self.model(forKey: PreferencesManager.onlineStatistics)
+        }
+        set {
+            self.set(newValue, forKey: PreferencesManager.onlineStatistics)
         }
     }
 }
