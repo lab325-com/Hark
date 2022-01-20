@@ -57,11 +57,13 @@ class AuthPresenter: AuthPresenterProtocol {
         
         request?.cancel()
         
-        let mutation = LoginMutation(record: LoginRecordInput(authType: .accountTypeSms, udid: udid, phone: phone))
+        let mutation = LoginMutation(record: LoginRecordInput(phone: phone, authType: .accountTypeSms))
 
         request = Network.shared.mutation(model: LoginModel.self, mutation, controller: view) { [weak self] model in
             self?.view?.stopLoading()
-            self?.view?.successRegister(smsToken: model.login.smsToken)
+            if let smsToken = model.login.smsToken {
+                self?.view?.successRegister(smsToken: smsToken)
+            }
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
         }
@@ -72,7 +74,7 @@ class AuthPresenter: AuthPresenterProtocol {
         
         request?.cancel()
         
-        let mutation = VerifyPhoneMutation(smsToken: smsToken, code: code)
+        let mutation = VerifyPhoneMutation(smsToken: smsToken, verificationCode: code)
 
         request = Network.shared.mutation(model: VerifyPhoneModel.self, mutation, controller: view) { [weak self] model in
             
@@ -85,7 +87,7 @@ class AuthPresenter: AuthPresenterProtocol {
                 
                 KeychainService.standard.me = model.me
                 
-                if let _ = model.me.nickName {
+                if model.me.profileFilled == true {
                     self?.view?.successGoToRoot()
                 } else {
                     self?.view?.successValidata()
@@ -106,7 +108,7 @@ class AuthPresenter: AuthPresenterProtocol {
         
         request?.cancel()
         
-        let mutation = LoginMutation(record: LoginRecordInput(authType: .accountTypeUdid, udid: udid))
+        let mutation = LoginMutation(record: LoginRecordInput(udid: udid, authType: .accountTypeUdid))
 
         request = Network.shared.mutation(model: LoginModel.self, mutation, controller: view) { [weak self] model in
             if let token = model.login.authToken {
@@ -117,7 +119,7 @@ class AuthPresenter: AuthPresenterProtocol {
                     self?.view?.stopLoading()
                     KeychainService.standard.me = model.me
                     
-                    if let _ = model.me.nickName {
+                    if model.me.profileFilled == true {
                         self?.view?.successGoToRoot()
                     } else {
                         self?.view?.successGuest(authToken: token)

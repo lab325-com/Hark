@@ -1,0 +1,4 @@
+mutation UpdateMatchSettings($record: MatchSettingsUpdateInput!) {
+    updateMatchSettings(record: $record)
+}
+

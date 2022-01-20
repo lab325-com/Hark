@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0200AE8C2799274800A91A72 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200AE8B2799274800A91A72 /* AppConfiguration.swift */; };
+		0200AE912799276C00A91A72 /* AppConfigurationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0200AE902799276C00A91A72 /* AppConfigurationBridge.m */; };
+		0200AE972799279300A91A72 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE932799279100A91A72 /* Debug.xcconfig */; };
+		0200AE982799279300A91A72 /* Generator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE942799279200A91A72 /* Generator.xcconfig */; };
+		0200AE992799279300A91A72 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE952799279200A91A72 /* Staging.xcconfig */; };
+		0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE962799279300A91A72 /* Release.xcconfig */; };
+		0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1CF2797F97A0092F804 /* HarkListController.swift */; };
+		0227C1D4279805E90092F804 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1D2279805E90092F804 /* ListCell.swift */; };
+		0227C1D5279805E90092F804 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0227C1D3279805E90092F804 /* ListCell.xib */; };
+		0227C1DA279827EE0092F804 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1D8279827EE0092F804 /* RequestCell.swift */; };
+		0227C1DB279827EE0092F804 /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0227C1D9279827EE0092F804 /* RequestCell.xib */; };
+		022FB5782796C49C00870064 /* SearchTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB5772796C49C00870064 /* SearchTabController.swift */; };
+		022FB57F27970AFC00870064 /* UpdateMatchSettings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */; };
+		022FB58127970B4B00870064 /* UpdateMatchSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */; };
+		022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB58227970B9500870064 /* SearchTabPresenter.swift */; };
 		0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563A278DDD8D00FBA4E9 /* MainController.swift */; };
 		0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563E278E065E00FBA4E9 /* MainPresenter.swift */; };
 		02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */; };
@@ -86,6 +101,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0200AE8B2799274800A91A72 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		0200AE8E2799276A00A91A72 /* Hark-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hark-Bridging-Header.h"; sourceTree = "<group>"; };
+		0200AE8F2799276C00A91A72 /* AppConfigurationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfigurationBridge.h; sourceTree = "<group>"; };
+		0200AE902799276C00A91A72 /* AppConfigurationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfigurationBridge.m; sourceTree = "<group>"; };
+		0200AE932799279100A91A72 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		0200AE942799279200A91A72 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
+		0200AE952799279200A91A72 /* Staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
+		0200AE962799279300A91A72 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		0227C1CF2797F97A0092F804 /* HarkListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListController.swift; sourceTree = "<group>"; };
+		0227C1D2279805E90092F804 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		0227C1D3279805E90092F804 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		0227C1D8279827EE0092F804 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
+		0227C1D9279827EE0092F804 /* RequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCell.xib; sourceTree = "<group>"; };
+		022FB5772796C49C00870064 /* SearchTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabController.swift; sourceTree = "<group>"; };
+		022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UpdateMatchSettings.graphql; sourceTree = "<group>"; };
+		022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMatchSettingsModel.swift; sourceTree = "<group>"; };
+		022FB58227970B9500870064 /* SearchTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabPresenter.swift; sourceTree = "<group>"; };
 		0267563A278DDD8D00FBA4E9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		0267563E278E065E00FBA4E9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnlineStatistics.graphql; sourceTree = "<group>"; };
@@ -177,6 +209,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0200AE8A2799272300A91A72 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0200AE8B2799274800A91A72 /* AppConfiguration.swift */,
+				0200AE8D2799275100A91A72 /* ConfigurationBridge */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0200AE8D2799275100A91A72 /* ConfigurationBridge */ = {
+			isa = PBXGroup;
+			children = (
+				0200AE8F2799276C00A91A72 /* AppConfigurationBridge.h */,
+				0200AE902799276C00A91A72 /* AppConfigurationBridge.m */,
+				0200AE8E2799276A00A91A72 /* Hark-Bridging-Header.h */,
+			);
+			path = ConfigurationBridge;
+			sourceTree = "<group>";
+		};
+		0200AE922799278000A91A72 /* ConfigFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0200AE932799279100A91A72 /* Debug.xcconfig */,
+				0200AE942799279200A91A72 /* Generator.xcconfig */,
+				0200AE962799279300A91A72 /* Release.xcconfig */,
+				0200AE952799279200A91A72 /* Staging.xcconfig */,
+			);
+			path = ConfigFiles;
+			sourceTree = "<group>";
+		};
+		0227C1CE2797F95D0092F804 /* HarkListTab */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1CF2797F97A0092F804 /* HarkListController.swift */,
+				0227C1D1279805DA0092F804 /* Cell */,
+			);
+			path = HarkListTab;
+			sourceTree = "<group>";
+		};
+		0227C1D1279805DA0092F804 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1D6279827A70092F804 /* ListCell */,
+				0227C1D7279827D90092F804 /* RequestCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0227C1D6279827A70092F804 /* ListCell */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1D2279805E90092F804 /* ListCell.swift */,
+				0227C1D3279805E90092F804 /* ListCell.xib */,
+			);
+			path = ListCell;
+			sourceTree = "<group>";
+		};
+		0227C1D7279827D90092F804 /* RequestCell */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1D8279827EE0092F804 /* RequestCell.swift */,
+				0227C1D9279827EE0092F804 /* RequestCell.xib */,
+			);
+			path = RequestCell;
+			sourceTree = "<group>";
+		};
+		022FB5762796C45E00870064 /* SearchTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				022FB58227970B9500870064 /* SearchTabPresenter.swift */,
+				022FB58427970BAC00870064 /* Search */,
+			);
+			path = SearchTabBar;
+			sourceTree = "<group>";
+		};
+		022FB57D27970AD800870064 /* UpdateMatchSettings */ = {
+			isa = PBXGroup;
+			children = (
+				022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */,
+				022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */,
+			);
+			path = UpdateMatchSettings;
+			sourceTree = "<group>";
+		};
+		022FB58427970BAC00870064 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				022FB5772796C49C00870064 /* SearchTabController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		02675639278DDD5000FBA4E9 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +562,7 @@
 		FA1E690C27848DD700030600 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				022FB57D27970AD800870064 /* UpdateMatchSettings */,
 				02F8B80527870DE200595AA6 /* ProfileUpdate */,
 				027629A82785DC350096DC2E /* VerifyPhone */,
 				02EEBD4D2785AE7E001DA462 /* Login */,
@@ -509,6 +634,8 @@
 				027629AE2785F2C80096DC2E /* AuthFillProfile */,
 				02F8B7F92787042700595AA6 /* TabBar */,
 				02675639278DDD5000FBA4E9 /* MainTabBar */,
+				022FB5762796C45E00870064 /* SearchTabBar */,
+				0227C1CE2797F95D0092F804 /* HarkListTab */,
 				02675648278EC93300FBA4E9 /* ProfileTabBar */,
 			);
 			path = Controllers;
@@ -527,6 +654,8 @@
 		FA9BCF7F277C71B3009F652E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0200AE922799278000A91A72 /* ConfigFiles */,
+				0200AE8A2799272300A91A72 /* Application */,
 				02EEBD2F27858F2C001DA462 /* Fonts */,
 				FA1E690527848C2C00030600 /* Apollo */,
 				FA9BCF80277C71C5009F652E /* Managers */,
@@ -643,6 +772,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
+				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
 				02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */,
 				027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */,
 				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
@@ -650,14 +780,18 @@
 				02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */,
 				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
 				02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */,
+				0227C1DB279827EE0092F804 /* RequestCell.xib in Resources */,
 				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
 				02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */,
 				02F8B7F82786FFB900595AA6 /* AuthFillGenderController.xib in Resources */,
 				02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */,
 				FA9BCF75277C6EDA009F652E /* LaunchScreen.storyboard in Resources */,
 				02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */,
+				0200AE982799279300A91A72 /* Generator.xcconfig in Resources */,
 				FA9BCF72277C6EDA009F652E /* Assets.xcassets in Resources */,
+				0200AE992799279300A91A72 /* Staging.xcconfig in Resources */,
 				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
+				0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */,
 				02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */,
 				02F8B7F12786DE8C00595AA6 /* AuthFillAgeController.xib in Resources */,
 				02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */,
@@ -669,8 +803,10 @@
 				02675654278ED30D00FBA4E9 /* MenuProfileController.xib in Resources */,
 				FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */,
 				02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */,
+				0200AE972799279300A91A72 /* Debug.xcconfig in Resources */,
 				02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */,
 				027629AA2785DC630096DC2E /* VerifyPhone.graphql in Resources */,
+				022FB57F27970AFC00870064 /* UpdateMatchSettings.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +841,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				02675653278ED30D00FBA4E9 /* MenuProfileController.swift in Sources */,
+				0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */,
+				0200AE912799276C00A91A72 /* AppConfigurationBridge.m in Sources */,
 				02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */,
 				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
@@ -715,6 +853,7 @@
 				0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
+				022FB5782796C49C00870064 /* SearchTabController.swift in Sources */,
 				02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */,
 				0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */,
 				02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */,
@@ -723,6 +862,7 @@
 				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
 				027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */,
 				FA9BCF8A277C7614009F652E /* UIViewController+Extension.swift in Sources */,
+				0227C1DA279827EE0092F804 /* RequestCell.swift in Sources */,
 				FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */,
 				FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */,
 				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
@@ -731,6 +871,7 @@
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
 				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
+				022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */,
 				02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */,
 				02675656278ED85F00FBA4E9 /* SharedManager.swift in Sources */,
 				02F8B7FB2787044F00595AA6 /* MainTabBarController.swift in Sources */,
@@ -738,12 +879,15 @@
 				02F8B80427870A1200595AA6 /* AuthFillPesenter.swift in Sources */,
 				0267564D278ECCDD00FBA4E9 /* ProfilePresenter.swift in Sources */,
 				02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */,
+				0227C1D4279805E90092F804 /* ListCell.swift in Sources */,
 				FA1E69262785B71F00030600 /* AuthModel.swift in Sources */,
 				02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */,
 				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,
+				0200AE8C2799274800A91A72 /* AppConfiguration.swift in Sources */,
 				02EEBD562785B346001DA462 /* LoginPhoneController.swift in Sources */,
 				02F8B80927870E5800595AA6 /* ProfileUpdateModel.swift in Sources */,
 				0267564F278ED2C100FBA4E9 /* ProfileRouter.swift in Sources */,
+				022FB58127970B4B00870064 /* UpdateMatchSettingsModel.swift in Sources */,
 				02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -770,8 +914,108 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0200AE9B279927B800A91A72 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE952799279200A91A72 /* Staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		0200AE9C279927B800A91A72 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE952799279200A91A72 /* Staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = J544E3RJX6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hark/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.hark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hark/Resources/Application/ConfigurationBridge/Hark-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Staging;
+		};
 		FA9BCF77277C6EDA009F652E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE932799279100A91A72 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -833,6 +1077,7 @@
 		};
 		FA9BCF78277C6EDA009F652E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE962799279300A91A72 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -888,6 +1133,7 @@
 		};
 		FA9BCF7A277C6EDA009F652E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE932799279100A91A72 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -915,7 +1161,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hark/Resources/Application/ConfigurationBridge/Hark-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -924,6 +1170,7 @@
 		};
 		FA9BCF7B277C6EDA009F652E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE962799279300A91A72 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -951,7 +1198,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hark/Resources/Application/ConfigurationBridge/Hark-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -964,6 +1211,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9BCF77277C6EDA009F652E /* Debug */,
+				0200AE9B279927B800A91A72 /* Staging */,
 				FA9BCF78277C6EDA009F652E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -973,6 +1221,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9BCF7A277C6EDA009F652E /* Debug */,
+				0200AE9C279927B800A91A72 /* Staging */,
 				FA9BCF7B277C6EDA009F652E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

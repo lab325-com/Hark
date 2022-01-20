@@ -1,12 +1,15 @@
 query Me {
 	me {
+        id
+        nickName
 		age
 		gender
-		id
-		isAnonymous
-		nickName
-		totalFavoriteTalks
-		totalTalks
-		verified
+		hideStatus
+        totalHarks
+        isGuest
+        profileFilled
+        hasNewRequests
 	}
 }
+
+

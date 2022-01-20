@@ -8,22 +8,13 @@ public struct LoginRecordInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
   /// - Parameters:
-  ///   - authType
   ///   - lang
   ///   - timezone
   ///   - udid
   ///   - phone
-  public init(authType: Swift.Optional<AuthType?> = nil, lang: Swift.Optional<String?> = nil, timezone: Swift.Optional<String?> = nil, udid: Swift.Optional<String?> = nil, phone: Swift.Optional<String?> = nil) {
-    graphQLMap = ["authType": authType, "lang": lang, "timezone": timezone, "udid": udid, "phone": phone]
-  }
-
-  public var authType: Swift.Optional<AuthType?> {
-    get {
-      return graphQLMap["authType"] as? Swift.Optional<AuthType?> ?? Swift.Optional<AuthType?>.none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "authType")
-    }
+  ///   - authType
+  public init(lang: Swift.Optional<String?> = nil, timezone: Swift.Optional<String?> = nil, udid: Swift.Optional<String?> = nil, phone: Swift.Optional<String?> = nil, authType: AccountType) {
+    graphQLMap = ["lang": lang, "timezone": timezone, "udid": udid, "phone": phone, "authType": authType]
   }
 
   public var lang: Swift.Optional<String?> {
@@ -61,9 +52,18 @@ public struct LoginRecordInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "phone")
     }
   }
+
+  public var authType: AccountType {
+    get {
+      return graphQLMap["authType"] as! AccountType
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "authType")
+    }
+  }
 }
 
-public enum AuthType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+public enum AccountType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   case accountTypeSms
   case accountTypeUdid
@@ -86,7 +86,7 @@ public enum AuthType: RawRepresentable, Equatable, Hashable, CaseIterable, Apoll
     }
   }
 
-  public static func == (lhs: AuthType, rhs: AuthType) -> Bool {
+  public static func == (lhs: AccountType, rhs: AccountType) -> Bool {
     switch (lhs, rhs) {
       case (.accountTypeSms, .accountTypeSms): return true
       case (.accountTypeUdid, .accountTypeUdid): return true
@@ -95,7 +95,7 @@ public enum AuthType: RawRepresentable, Equatable, Hashable, CaseIterable, Apoll
     }
   }
 
-  public static var allCases: [AuthType] {
+  public static var allCases: [AccountType] {
     return [
       .accountTypeSms,
       .accountTypeUdid,
@@ -107,12 +107,21 @@ public struct ProfileUpdateInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
   /// - Parameters:
+  ///   - nickName
   ///   - age
   ///   - gender
   ///   - hideStatus
-  ///   - nickName
-  public init(age: Swift.Optional<Int?> = nil, gender: Swift.Optional<GenderType?> = nil, hideStatus: Swift.Optional<Bool?> = nil, nickName: Swift.Optional<String?> = nil) {
-    graphQLMap = ["age": age, "gender": gender, "hideStatus": hideStatus, "nickName": nickName]
+  public init(nickName: Swift.Optional<String?> = nil, age: Swift.Optional<Int?> = nil, gender: Swift.Optional<GenderType?> = nil, hideStatus: Swift.Optional<Bool?> = nil) {
+    graphQLMap = ["nickName": nickName, "age": age, "gender": gender, "hideStatus": hideStatus]
+  }
+
+  public var nickName: Swift.Optional<String?> {
+    get {
+      return graphQLMap["nickName"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "nickName")
+    }
   }
 
   public var age: Swift.Optional<Int?> {
@@ -139,15 +148,6 @@ public struct ProfileUpdateInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "hideStatus")
-    }
-  }
-
-  public var nickName: Swift.Optional<String?> {
-    get {
-      return graphQLMap["nickName"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "nickName")
     }
   }
 }
@@ -194,6 +194,65 @@ public enum GenderType: RawRepresentable, Equatable, Hashable, CaseIterable, Apo
       .genderTypeMan,
       .genderTypeWoman,
     ]
+  }
+}
+
+public struct MatchSettingsUpdateInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - style
+  ///   - mood
+  ///   - fromAge
+  ///   - toAge
+  ///   - genders
+  public init(style: Swift.Optional<Int?> = nil, mood: Swift.Optional<Int?> = nil, fromAge: Swift.Optional<Int?> = nil, toAge: Swift.Optional<Int?> = nil, genders: Swift.Optional<[GenderType?]?> = nil) {
+    graphQLMap = ["style": style, "mood": mood, "fromAge": fromAge, "toAge": toAge, "genders": genders]
+  }
+
+  public var style: Swift.Optional<Int?> {
+    get {
+      return graphQLMap["style"] as? Swift.Optional<Int?> ?? Swift.Optional<Int?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "style")
+    }
+  }
+
+  public var mood: Swift.Optional<Int?> {
+    get {
+      return graphQLMap["mood"] as? Swift.Optional<Int?> ?? Swift.Optional<Int?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "mood")
+    }
+  }
+
+  public var fromAge: Swift.Optional<Int?> {
+    get {
+      return graphQLMap["fromAge"] as? Swift.Optional<Int?> ?? Swift.Optional<Int?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "fromAge")
+    }
+  }
+
+  public var toAge: Swift.Optional<Int?> {
+    get {
+      return graphQLMap["toAge"] as? Swift.Optional<Int?> ?? Swift.Optional<Int?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "toAge")
+    }
+  }
+
+  public var genders: Swift.Optional<[GenderType?]?> {
+    get {
+      return graphQLMap["genders"] as? Swift.Optional<[GenderType?]?> ?? Swift.Optional<[GenderType?]?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "genders")
+    }
   }
 }
 
@@ -308,14 +367,15 @@ public final class ProfileUpdateMutation: GraphQLMutation {
     mutation ProfileUpdate($record: ProfileUpdateInput!) {
       profileUpdate(record: $record) {
         __typename
+        id
+        nickName
         age
         gender
-        id
-        isAnonymous
-        nickName
-        totalFavoriteTalks
-        totalTalks
-        verified
+        hideStatus
+        totalHarks
+        isGuest
+        profileFilled
+        hasNewRequests
       }
     }
     """
@@ -366,14 +426,15 @@ public final class ProfileUpdateMutation: GraphQLMutation {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("nickName", type: .scalar(String.self)),
           GraphQLField("age", type: .scalar(Int.self)),
           GraphQLField("gender", type: .scalar(GenderType.self)),
-          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-          GraphQLField("isAnonymous", type: .scalar(Bool.self)),
-          GraphQLField("nickName", type: .scalar(String.self)),
-          GraphQLField("totalFavoriteTalks", type: .scalar(Int.self)),
-          GraphQLField("totalTalks", type: .scalar(Int.self)),
-          GraphQLField("verified", type: .scalar(Bool.self)),
+          GraphQLField("hideStatus", type: .scalar(Bool.self)),
+          GraphQLField("totalHarks", type: .scalar(Int.self)),
+          GraphQLField("isGuest", type: .scalar(Bool.self)),
+          GraphQLField("profileFilled", type: .scalar(Bool.self)),
+          GraphQLField("hasNewRequests", type: .scalar(Bool.self)),
         ]
       }
 
@@ -383,8 +444,8 @@ public final class ProfileUpdateMutation: GraphQLMutation {
         self.resultMap = unsafeResultMap
       }
 
-      public init(age: Int? = nil, gender: GenderType? = nil, id: GraphQLID, isAnonymous: Bool? = nil, nickName: String? = nil, totalFavoriteTalks: Int? = nil, totalTalks: Int? = nil, verified: Bool? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "age": age, "gender": gender, "id": id, "isAnonymous": isAnonymous, "nickName": nickName, "totalFavoriteTalks": totalFavoriteTalks, "totalTalks": totalTalks, "verified": verified])
+      public init(id: GraphQLID? = nil, nickName: String? = nil, age: Int? = nil, gender: GenderType? = nil, hideStatus: Bool? = nil, totalHarks: Int? = nil, isGuest: Bool? = nil, profileFilled: Bool? = nil, hasNewRequests: Bool? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "nickName": nickName, "age": age, "gender": gender, "hideStatus": hideStatus, "totalHarks": totalHarks, "isGuest": isGuest, "profileFilled": profileFilled, "hasNewRequests": hasNewRequests])
       }
 
       public var __typename: String {
@@ -393,6 +454,24 @@ public final class ProfileUpdateMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var nickName: String? {
+        get {
+          return resultMap["nickName"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "nickName")
         }
       }
 
@@ -414,58 +493,100 @@ public final class ProfileUpdateMutation: GraphQLMutation {
         }
       }
 
-      public var id: GraphQLID {
+      public var hideStatus: Bool? {
         get {
-          return resultMap["id"]! as! GraphQLID
+          return resultMap["hideStatus"] as? Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "id")
+          resultMap.updateValue(newValue, forKey: "hideStatus")
         }
       }
 
-      public var isAnonymous: Bool? {
+      public var totalHarks: Int? {
         get {
-          return resultMap["isAnonymous"] as? Bool
+          return resultMap["totalHarks"] as? Int
         }
         set {
-          resultMap.updateValue(newValue, forKey: "isAnonymous")
+          resultMap.updateValue(newValue, forKey: "totalHarks")
         }
       }
 
-      public var nickName: String? {
+      public var isGuest: Bool? {
         get {
-          return resultMap["nickName"] as? String
+          return resultMap["isGuest"] as? Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "nickName")
+          resultMap.updateValue(newValue, forKey: "isGuest")
         }
       }
 
-      public var totalFavoriteTalks: Int? {
+      public var profileFilled: Bool? {
         get {
-          return resultMap["totalFavoriteTalks"] as? Int
+          return resultMap["profileFilled"] as? Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "totalFavoriteTalks")
+          resultMap.updateValue(newValue, forKey: "profileFilled")
         }
       }
 
-      public var totalTalks: Int? {
+      public var hasNewRequests: Bool? {
         get {
-          return resultMap["totalTalks"] as? Int
+          return resultMap["hasNewRequests"] as? Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "totalTalks")
+          resultMap.updateValue(newValue, forKey: "hasNewRequests")
         }
       }
+    }
+  }
+}
 
-      public var verified: Bool? {
-        get {
-          return resultMap["verified"] as? Bool
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "verified")
-        }
+public final class UpdateMatchSettingsMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation UpdateMatchSettings($record: MatchSettingsUpdateInput!) {
+      updateMatchSettings(record: $record)
+    }
+    """
+
+  public let operationName: String = "UpdateMatchSettings"
+
+  public var record: MatchSettingsUpdateInput
+
+  public init(record: MatchSettingsUpdateInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("updateMatchSettings", arguments: ["record": GraphQLVariable("record")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(updateMatchSettings: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "updateMatchSettings": updateMatchSettings])
+    }
+
+    public var updateMatchSettings: Bool? {
+      get {
+        return resultMap["updateMatchSettings"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "updateMatchSettings")
       }
     }
   }
@@ -475,8 +596,8 @@ public final class VerifyPhoneMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    mutation VerifyPhone($smsToken: String!, $code: Int!) {
-      verifyPhone(smsToken: $smsToken, code: $code) {
+    mutation VerifyPhone($smsToken: String!, $verificationCode: Int!) {
+      verifyPhone(smsToken: $smsToken, verificationCode: $verificationCode) {
         __typename
         authToken
       }
@@ -486,15 +607,15 @@ public final class VerifyPhoneMutation: GraphQLMutation {
   public let operationName: String = "VerifyPhone"
 
   public var smsToken: String
-  public var code: Int
+  public var verificationCode: Int
 
-  public init(smsToken: String, code: Int) {
+  public init(smsToken: String, verificationCode: Int) {
     self.smsToken = smsToken
-    self.code = code
+    self.verificationCode = verificationCode
   }
 
   public var variables: GraphQLMap? {
-    return ["smsToken": smsToken, "code": code]
+    return ["smsToken": smsToken, "verificationCode": verificationCode]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -502,7 +623,7 @@ public final class VerifyPhoneMutation: GraphQLMutation {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("verifyPhone", arguments: ["smsToken": GraphQLVariable("smsToken"), "code": GraphQLVariable("code")], type: .object(VerifyPhone.selections)),
+        GraphQLField("verifyPhone", arguments: ["smsToken": GraphQLVariable("smsToken"), "verificationCode": GraphQLVariable("verificationCode")], type: .object(VerifyPhone.selections)),
       ]
     }
 
@@ -573,14 +694,15 @@ public final class MeQuery: GraphQLQuery {
     query Me {
       me {
         __typename
+        id
+        nickName
         age
         gender
-        id
-        isAnonymous
-        nickName
-        totalFavoriteTalks
-        totalTalks
-        verified
+        hideStatus
+        totalHarks
+        isGuest
+        profileFilled
+        hasNewRequests
       }
     }
     """
@@ -624,14 +746,15 @@ public final class MeQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("nickName", type: .scalar(String.self)),
           GraphQLField("age", type: .scalar(Int.self)),
           GraphQLField("gender", type: .scalar(GenderType.self)),
-          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-          GraphQLField("isAnonymous", type: .scalar(Bool.self)),
-          GraphQLField("nickName", type: .scalar(String.self)),
-          GraphQLField("totalFavoriteTalks", type: .scalar(Int.self)),
-          GraphQLField("totalTalks", type: .scalar(Int.self)),
-          GraphQLField("verified", type: .scalar(Bool.self)),
+          GraphQLField("hideStatus", type: .scalar(Bool.self)),
+          GraphQLField("totalHarks", type: .scalar(Int.self)),
+          GraphQLField("isGuest", type: .scalar(Bool.self)),
+          GraphQLField("profileFilled", type: .scalar(Bool.self)),
+          GraphQLField("hasNewRequests", type: .scalar(Bool.self)),
         ]
       }
 
@@ -641,8 +764,8 @@ public final class MeQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(age: Int? = nil, gender: GenderType? = nil, id: GraphQLID, isAnonymous: Bool? = nil, nickName: String? = nil, totalFavoriteTalks: Int? = nil, totalTalks: Int? = nil, verified: Bool? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MeModel", "age": age, "gender": gender, "id": id, "isAnonymous": isAnonymous, "nickName": nickName, "totalFavoriteTalks": totalFavoriteTalks, "totalTalks": totalTalks, "verified": verified])
+      public init(id: GraphQLID? = nil, nickName: String? = nil, age: Int? = nil, gender: GenderType? = nil, hideStatus: Bool? = nil, totalHarks: Int? = nil, isGuest: Bool? = nil, profileFilled: Bool? = nil, hasNewRequests: Bool? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MeModel", "id": id, "nickName": nickName, "age": age, "gender": gender, "hideStatus": hideStatus, "totalHarks": totalHarks, "isGuest": isGuest, "profileFilled": profileFilled, "hasNewRequests": hasNewRequests])
       }
 
       public var __typename: String {
@@ -651,6 +774,24 @@ public final class MeQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var nickName: String? {
+        get {
+          return resultMap["nickName"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "nickName")
         }
       }
 
@@ -672,57 +813,48 @@ public final class MeQuery: GraphQLQuery {
         }
       }
 
-      public var id: GraphQLID {
+      public var hideStatus: Bool? {
         get {
-          return resultMap["id"]! as! GraphQLID
+          return resultMap["hideStatus"] as? Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "id")
+          resultMap.updateValue(newValue, forKey: "hideStatus")
         }
       }
 
-      public var isAnonymous: Bool? {
+      public var totalHarks: Int? {
         get {
-          return resultMap["isAnonymous"] as? Bool
+          return resultMap["totalHarks"] as? Int
         }
         set {
-          resultMap.updateValue(newValue, forKey: "isAnonymous")
+          resultMap.updateValue(newValue, forKey: "totalHarks")
         }
       }
 
-      public var nickName: String? {
+      public var isGuest: Bool? {
         get {
-          return resultMap["nickName"] as? String
+          return resultMap["isGuest"] as? Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "nickName")
+          resultMap.updateValue(newValue, forKey: "isGuest")
         }
       }
 
-      public var totalFavoriteTalks: Int? {
+      public var profileFilled: Bool? {
         get {
-          return resultMap["totalFavoriteTalks"] as? Int
+          return resultMap["profileFilled"] as? Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "totalFavoriteTalks")
+          resultMap.updateValue(newValue, forKey: "profileFilled")
         }
       }
 
-      public var totalTalks: Int? {
+      public var hasNewRequests: Bool? {
         get {
-          return resultMap["totalTalks"] as? Int
+          return resultMap["hasNewRequests"] as? Bool
         }
         set {
-          resultMap.updateValue(newValue, forKey: "totalTalks")
-        }
-      }
-
-      public var verified: Bool? {
-        get {
-          return resultMap["verified"] as? Bool
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "verified")
+          resultMap.updateValue(newValue, forKey: "hasNewRequests")
         }
       }
     }

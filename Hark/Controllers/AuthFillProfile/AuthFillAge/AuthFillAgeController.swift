@@ -64,9 +64,9 @@ class AuthFillAgeController: BaseController {
         }
         datePicker.datePickerMode = .date
         datePicker.minuteInterval = 1
-        datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -14, to: Date())
+        datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -18, to: Date())
         datePicker.date = Calendar.current.date(byAdding: .year, value: -22, to: Date()) ?? Date()
-        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -140, to: Date())
+        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -110, to: Date())
         
         let screenWidth = UIScreen.main.bounds.width
         birthdayTextField.inputView = datePicker

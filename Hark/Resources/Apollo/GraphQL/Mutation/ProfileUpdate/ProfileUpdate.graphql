@@ -1,13 +1,14 @@
 mutation ProfileUpdate($record: ProfileUpdateInput!) {
     profileUpdate(record: $record) {
+        id
+        nickName
         age
         gender
-        id
-        isAnonymous
-        nickName
-        totalFavoriteTalks
-        totalTalks
-        verified
+        hideStatus
+        totalHarks
+        isGuest
+        profileFilled
+        hasNewRequests
     }
 }
 

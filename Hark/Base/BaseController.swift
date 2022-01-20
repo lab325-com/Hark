@@ -136,7 +136,6 @@ class BaseController: UIViewController, NVActivityIndicatorViewable {
     }
     
     @objc func hideKeyboard() {
-        isShowKeyboard = true
         self.view.endEditing(true)
     }
     

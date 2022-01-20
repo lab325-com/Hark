@@ -40,7 +40,7 @@ class AuthFillPresenter: AuthFillPresenterProtocol {
         
         request?.cancel()
         
-        let mutation = ProfileUpdateMutation(record: ProfileUpdateInput(age: age, gender: gender, nickName: nickName))
+        let mutation = ProfileUpdateMutation(record: ProfileUpdateInput(nickName: nickName, age: age, gender: gender))
 
         request = Network.shared.mutation(model: ProfileUpdateModel.self, mutation, controller: view) { [weak self] model in
             KeychainService.standard.me = model.profileUpdate

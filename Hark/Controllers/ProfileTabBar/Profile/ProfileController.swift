@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 class ProfileController: BaseController {
     
@@ -43,6 +44,7 @@ class ProfileController: BaseController {
     
     private func setup() {
         update()
+        ageTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         setCustomNavigationTitle("Your Profile")
         let backButton = UIBarButtonItem(image: UIImage(named: "profile_settings_ic"), style: .plain, target: self, action: #selector(actionSettings))
@@ -82,20 +84,32 @@ class ProfileController: BaseController {
             }
         }
         
-        onlineStatus.isOn = KeychainService.standard.me?.isAnonymous ?? false
+        onlineStatus.isOn = KeychainService.standard.me?.hideStatus ?? false
     }
     
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        let age = Int(textField.text ?? "0") ?? 0
+        if textField.text!.count > 1 && (age < 18 || age > 110) {
+            let text = textField.text
+            textField.text = String(text!.dropLast())
+            view?.makeToast("Age must be between 18 and 110")
+        }
+    }
+    
     @objc func actionSettings() {
         ProfileRouter(presenter: navigationController).presentMenu()
     }
     
     override func hideKeyboard() {
+       
+        if ageTextField.isFirstResponder || nickTextField.isFirstResponder {
+            presenter.updateProfile(age: Int(ageTextField.text!), gender: gendeType(), nickName: nickTextField.text, hideStatus: onlineStatus.isOn)
+        }
         super.hideKeyboard()
-        presenter.updateProfile(age: Int(ageTextField.text!), gender: gendeType(), nickName: nickTextField.text, hideStatus: onlineStatus.isOn)
     }
     
     @IBAction func changeOnlineStatus(_ sender: UISwitch) {

@@ -1,5 +1,5 @@
-mutation VerifyPhone($smsToken: String!, $code: Int!) {
-    verifyPhone(smsToken: $smsToken, code: $code) {
+mutation VerifyPhone($smsToken: String!, $verificationCode: Int!) {
+    verifyPhone(smsToken: $smsToken, verificationCode: $verificationCode) {
         authToken
     }
 }

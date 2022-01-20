@@ -13,5 +13,5 @@ struct LoginModel: Codable {
 
 struct LoginMainModel: Codable {
     let authToken: String?
-    let smsToken: String
+    let smsToken: String?
 }

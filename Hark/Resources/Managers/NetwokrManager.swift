@@ -13,8 +13,7 @@ class Network {
         
         let client = URLSessionClient()
         let provider = NetworkInterceptorProvider(store: store, client: client)
-//        let url = URL(string: AppConfiguration.shared.hostName)!
-        let url = URL(string: "https://faker.graphqleditor.com/3knbh/hark/graphql")!
+        let url = URL(string: AppConfiguration.shared.hostName)!
         
         let requestChainTransport = RequestChainNetworkTransport(interceptorProvider: provider,
                                                                  endpointURL: url)

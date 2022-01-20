@@ -38,7 +38,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
     func updateProfile(age: Int?, gender: GenderType, nickName: String?, hideStatus: Bool?) {
         request?.cancel()
         
-        let mutation = ProfileUpdateMutation(record: ProfileUpdateInput(age: age, gender: gender, hideStatus: hideStatus, nickName: nickName))
+        let mutation = ProfileUpdateMutation(record: ProfileUpdateInput(nickName: nickName, age: age, gender: gender, hideStatus: hideStatus))
 
         request = Network.shared.mutation(model: ProfileUpdateModel.self, mutation, controller: view) { [weak self] model in
             KeychainService.standard.me = model.profileUpdate
