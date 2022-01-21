@@ -12,5 +12,9 @@
 		<string>SF-Compact-Rounded-Bold</string>
 		<string>SF-Compact-Rounded-Thin</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 </dict>
 </plist>

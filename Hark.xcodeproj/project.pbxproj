@@ -91,6 +91,7 @@
 		FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E69222785B61600030600 /* SwiftKeychainWrapper */; };
 		FA1E69262785B71F00030600 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69252785B71F00030600 /* AuthModel.swift */; };
 		FA1E69282785B75200030600 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69272785B75200030600 /* MeModel.swift */; };
+		FA69DC83279989A100257E54 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA69DC82279989A100257E54 /* AgoraRtcKit */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
 		FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF6C277C6ED8009F652E /* SplashController.swift */; };
 		FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF6E277C6ED8009F652E /* Main.storyboard */; };
@@ -207,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA69DC83279989A100257E54 /* AgoraRtcKit in Frameworks */,
 				FA1E691D2785B48E00030600 /* Toast in Frameworks */,
 				027629A52785D0B30096DC2E /* NVActivityIndicatorView in Frameworks */,
 				FADA714E2784886D00A784FA /* Apollo in Frameworks */,
@@ -759,6 +761,7 @@
 				FA1E69222785B61600030600 /* SwiftKeychainWrapper */,
 				027629A42785D0B30096DC2E /* NVActivityIndicatorView */,
 				027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */,
+				FA69DC82279989A100257E54 /* AgoraRtcKit */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -795,6 +798,7 @@
 				FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				FA69DC81279989A100257E54 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -1033,6 +1037,7 @@
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Voice Call";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1188,6 +1193,7 @@
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Voice Call";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1225,6 +1231,7 @@
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Voice Call";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1306,6 +1313,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		FA69DC81279989A100257E54 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:AgoraIO/AgoraRtcEngine_iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -1341,6 +1356,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		FA69DC82279989A100257E54 /* AgoraRtcKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA69DC81279989A100257E54 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = AgoraRtcKit;
 		};
 		FADA714D2784886D00A784FA /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
