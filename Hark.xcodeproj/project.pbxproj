@@ -13,6 +13,7 @@
 		0200AE982799279300A91A72 /* Generator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE942799279200A91A72 /* Generator.xcconfig */; };
 		0200AE992799279300A91A72 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE952799279200A91A72 /* Staging.xcconfig */; };
 		0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE962799279300A91A72 /* Release.xcconfig */; };
+		0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE9E27999D4F00A91A72 /* Harks.graphql */; };
 		0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1CF2797F97A0092F804 /* HarkListController.swift */; };
 		0227C1D4279805E90092F804 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1D2279805E90092F804 /* ListCell.swift */; };
 		0227C1D5279805E90092F804 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0227C1D3279805E90092F804 /* ListCell.xib */; };
@@ -39,6 +40,10 @@
 		027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */; };
 		027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027629B02785F3030096DC2E /* AuthFillNickNameController.swift */; };
 		027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027629B12785F3030096DC2E /* AuthFillNickNameController.xib */; };
+		02ED71DC2799AEBE00CAE787 /* HarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71DB2799AEBE00CAE787 /* HarksModel.swift */; };
+		02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */; };
+		02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02ED71E12799D67700CAE787 /* MatchSettings.graphql */; };
+		02ED71E42799D6B200CAE787 /* MatchSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71E32799D6B200CAE787 /* MatchSettingsModel.swift */; };
 		02EEBD2327857E57001DA462 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD2127857E57001DA462 /* LoginController.swift */; };
 		02EEBD2427857E57001DA462 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD2227857E57001DA462 /* LoginController.xib */; };
 		02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD2627857E91001DA462 /* AuthRouter.swift */; };
@@ -109,6 +114,7 @@
 		0200AE942799279200A91A72 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
 		0200AE952799279200A91A72 /* Staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		0200AE962799279300A91A72 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		0200AE9E27999D4F00A91A72 /* Harks.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Harks.graphql; sourceTree = "<group>"; };
 		0227C1CF2797F97A0092F804 /* HarkListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListController.swift; sourceTree = "<group>"; };
 		0227C1D2279805E90092F804 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		0227C1D3279805E90092F804 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
@@ -133,6 +139,10 @@
 		027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneModel.swift; sourceTree = "<group>"; };
 		027629B02785F3030096DC2E /* AuthFillNickNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillNickNameController.swift; sourceTree = "<group>"; };
 		027629B12785F3030096DC2E /* AuthFillNickNameController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillNickNameController.xib; sourceTree = "<group>"; };
+		02ED71DB2799AEBE00CAE787 /* HarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarksModel.swift; sourceTree = "<group>"; };
+		02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListPresenter.swift; sourceTree = "<group>"; };
+		02ED71E12799D67700CAE787 /* MatchSettings.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatchSettings.graphql; sourceTree = "<group>"; };
+		02ED71E32799D6B200CAE787 /* MatchSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSettingsModel.swift; sourceTree = "<group>"; };
 		02EEBD2127857E57001DA462 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		02EEBD2227857E57001DA462 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		02EEBD2627857E91001DA462 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
@@ -239,11 +249,20 @@
 			path = ConfigFiles;
 			sourceTree = "<group>";
 		};
+		0200AE9D27999D2F00A91A72 /* Harks */ = {
+			isa = PBXGroup;
+			children = (
+				0200AE9E27999D4F00A91A72 /* Harks.graphql */,
+				02ED71DB2799AEBE00CAE787 /* HarksModel.swift */,
+			);
+			path = Harks;
+			sourceTree = "<group>";
+		};
 		0227C1CE2797F95D0092F804 /* HarkListTab */ = {
 			isa = PBXGroup;
 			children = (
-				0227C1CF2797F97A0092F804 /* HarkListController.swift */,
-				0227C1D1279805DA0092F804 /* Cell */,
+				02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */,
+				02ED71DD2799B20500CAE787 /* HarkList */,
 			);
 			path = HarkListTab;
 			sourceTree = "<group>";
@@ -382,6 +401,24 @@
 				027629B12785F3030096DC2E /* AuthFillNickNameController.xib */,
 			);
 			path = AuthFillNickName;
+			sourceTree = "<group>";
+		};
+		02ED71DD2799B20500CAE787 /* HarkList */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1CF2797F97A0092F804 /* HarkListController.swift */,
+				0227C1D1279805DA0092F804 /* Cell */,
+			);
+			path = HarkList;
+			sourceTree = "<group>";
+		};
+		02ED71E02799D65700CAE787 /* MatchSettings */ = {
+			isa = PBXGroup;
+			children = (
+				02ED71E12799D67700CAE787 /* MatchSettings.graphql */,
+				02ED71E32799D6B200CAE787 /* MatchSettingsModel.swift */,
+			);
+			path = MatchSettings;
 			sourceTree = "<group>";
 		};
 		02EEBD2027857E36001DA462 /* Login */ = {
@@ -544,6 +581,8 @@
 		FA1E690827848CAE00030600 /* Query */ = {
 			isa = PBXGroup;
 			children = (
+				02ED71E02799D65700CAE787 /* MatchSettings */,
+				0200AE9D27999D2F00A91A72 /* Harks */,
 				02675641278E076100FBA4E9 /* OnlineStatistics */,
 				FA1E690927848CD400030600 /* Me */,
 			);
@@ -773,12 +812,14 @@
 			files = (
 				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
 				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
+				02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */,
 				02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */,
 				027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */,
 				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
 				02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */,
 				02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */,
 				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
+				0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */,
 				02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */,
 				0227C1DB279827EE0092F804 /* RequestCell.xib in Resources */,
 				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
@@ -846,6 +887,7 @@
 				02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */,
 				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
+				02ED71E42799D6B200CAE787 /* MatchSettingsModel.swift in Sources */,
 				02F8B7FD2787049800595AA6 /* UIColor+Extension.swift in Sources */,
 				027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */,
 				FA1E69282785B75200030600 /* MeModel.swift in Sources */,
@@ -853,6 +895,7 @@
 				0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
+				02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */,
 				022FB5782796C49C00870064 /* SearchTabController.swift in Sources */,
 				02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */,
 				0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */,
@@ -881,6 +924,7 @@
 				02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */,
 				0227C1D4279805E90092F804 /* ListCell.swift in Sources */,
 				FA1E69262785B71F00030600 /* AuthModel.swift in Sources */,
+				02ED71DC2799AEBE00CAE787 /* HarksModel.swift in Sources */,
 				02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */,
 				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,
 				0200AE8C2799274800A91A72 /* AppConfiguration.swift in Sources */,
@@ -985,7 +1029,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -1140,7 +1184,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -1177,7 +1221,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;

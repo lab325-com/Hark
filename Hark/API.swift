@@ -256,6 +256,51 @@ public struct MatchSettingsUpdateInput: GraphQLMapConvertible {
   }
 }
 
+public enum HarkRequestStatus: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case harkRequestStatusAccepted
+  case harkRequestStatusPending
+  case harkRequestStatusRejected
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "HARK_REQUEST_STATUS_ACCEPTED": self = .harkRequestStatusAccepted
+      case "HARK_REQUEST_STATUS_PENDING": self = .harkRequestStatusPending
+      case "HARK_REQUEST_STATUS_REJECTED": self = .harkRequestStatusRejected
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .harkRequestStatusAccepted: return "HARK_REQUEST_STATUS_ACCEPTED"
+      case .harkRequestStatusPending: return "HARK_REQUEST_STATUS_PENDING"
+      case .harkRequestStatusRejected: return "HARK_REQUEST_STATUS_REJECTED"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: HarkRequestStatus, rhs: HarkRequestStatus) -> Bool {
+    switch (lhs, rhs) {
+      case (.harkRequestStatusAccepted, .harkRequestStatusAccepted): return true
+      case (.harkRequestStatusPending, .harkRequestStatusPending): return true
+      case (.harkRequestStatusRejected, .harkRequestStatusRejected): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [HarkRequestStatus] {
+    return [
+      .harkRequestStatusAccepted,
+      .harkRequestStatusPending,
+      .harkRequestStatusRejected,
+    ]
+  }
+}
+
 public final class LoginMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -681,6 +726,606 @@ public final class VerifyPhoneMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "authToken")
+        }
+      }
+    }
+  }
+}
+
+public final class HarksQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query Harks($limit: Int!, $offset: Int!) {
+      harks(limit: $limit, offset: $offset) {
+        __typename
+        Harks {
+          __typename
+          id
+          nickName
+          status
+        }
+        Pagination {
+          __typename
+          total
+          totalPages
+          nextPageExists
+          previousPageExists
+        }
+        HarkRequests {
+          __typename
+          id
+          Talk {
+            __typename
+            id
+            duration {
+              __typename
+              hours
+              minutes
+              seconds
+            }
+            createdAt
+          }
+          sentByYou
+          sentToYou
+          status
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "Harks"
+
+  public var limit: Int
+  public var offset: Int
+
+  public init(limit: Int, offset: Int) {
+    self.limit = limit
+    self.offset = offset
+  }
+
+  public var variables: GraphQLMap? {
+    return ["limit": limit, "offset": offset]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("harks", arguments: ["limit": GraphQLVariable("limit"), "offset": GraphQLVariable("offset")], type: .object(Hark.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(harks: Hark? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "harks": harks.flatMap { (value: Hark) -> ResultMap in value.resultMap }])
+    }
+
+    public var harks: Hark? {
+      get {
+        return (resultMap["harks"] as? ResultMap).flatMap { Hark(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "harks")
+      }
+    }
+
+    public struct Hark: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["HarkRequestsResponse"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("Harks", type: .list(.object(Hark.selections))),
+          GraphQLField("Pagination", type: .object(Pagination.selections)),
+          GraphQLField("HarkRequests", type: .list(.object(HarkRequest.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(harks: [Hark?]? = nil, pagination: Pagination? = nil, harkRequests: [HarkRequest?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "HarkRequestsResponse", "Harks": harks.flatMap { (value: [Hark?]) -> [ResultMap?] in value.map { (value: Hark?) -> ResultMap? in value.flatMap { (value: Hark) -> ResultMap in value.resultMap } } }, "Pagination": pagination.flatMap { (value: Pagination) -> ResultMap in value.resultMap }, "HarkRequests": harkRequests.flatMap { (value: [HarkRequest?]) -> [ResultMap?] in value.map { (value: HarkRequest?) -> ResultMap? in value.flatMap { (value: HarkRequest) -> ResultMap in value.resultMap } } }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var harks: [Hark?]? {
+        get {
+          return (resultMap["Harks"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Hark?] in value.map { (value: ResultMap?) -> Hark? in value.flatMap { (value: ResultMap) -> Hark in Hark(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Hark?]) -> [ResultMap?] in value.map { (value: Hark?) -> ResultMap? in value.flatMap { (value: Hark) -> ResultMap in value.resultMap } } }, forKey: "Harks")
+        }
+      }
+
+      public var pagination: Pagination? {
+        get {
+          return (resultMap["Pagination"] as? ResultMap).flatMap { Pagination(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "Pagination")
+        }
+      }
+
+      public var harkRequests: [HarkRequest?]? {
+        get {
+          return (resultMap["HarkRequests"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [HarkRequest?] in value.map { (value: ResultMap?) -> HarkRequest? in value.flatMap { (value: ResultMap) -> HarkRequest in HarkRequest(unsafeResultMap: value) } } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [HarkRequest?]) -> [ResultMap?] in value.map { (value: HarkRequest?) -> ResultMap? in value.flatMap { (value: HarkRequest) -> ResultMap in value.resultMap } } }, forKey: "HarkRequests")
+        }
+      }
+
+      public struct Hark: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Hark"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .scalar(GraphQLID.self)),
+            GraphQLField("nickName", type: .scalar(String.self)),
+            GraphQLField("status", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID? = nil, nickName: String? = nil, status: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Hark", "id": id, "nickName": nickName, "status": status])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var nickName: String? {
+          get {
+            return resultMap["nickName"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "nickName")
+          }
+        }
+
+        public var status: String? {
+          get {
+            return resultMap["status"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "status")
+          }
+        }
+      }
+
+      public struct Pagination: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Pagination"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("total", type: .scalar(Int.self)),
+            GraphQLField("totalPages", type: .scalar(Int.self)),
+            GraphQLField("nextPageExists", type: .scalar(Bool.self)),
+            GraphQLField("previousPageExists", type: .scalar(Bool.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(total: Int? = nil, totalPages: Int? = nil, nextPageExists: Bool? = nil, previousPageExists: Bool? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Pagination", "total": total, "totalPages": totalPages, "nextPageExists": nextPageExists, "previousPageExists": previousPageExists])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var total: Int? {
+          get {
+            return resultMap["total"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "total")
+          }
+        }
+
+        public var totalPages: Int? {
+          get {
+            return resultMap["totalPages"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "totalPages")
+          }
+        }
+
+        public var nextPageExists: Bool? {
+          get {
+            return resultMap["nextPageExists"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "nextPageExists")
+          }
+        }
+
+        public var previousPageExists: Bool? {
+          get {
+            return resultMap["previousPageExists"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "previousPageExists")
+          }
+        }
+      }
+
+      public struct HarkRequest: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["HarkRequest"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .scalar(GraphQLID.self)),
+            GraphQLField("Talk", type: .object(Talk.selections)),
+            GraphQLField("sentByYou", type: .scalar(Bool.self)),
+            GraphQLField("sentToYou", type: .scalar(Bool.self)),
+            GraphQLField("status", type: .scalar(HarkRequestStatus.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID? = nil, talk: Talk? = nil, sentByYou: Bool? = nil, sentToYou: Bool? = nil, status: HarkRequestStatus? = nil) {
+          self.init(unsafeResultMap: ["__typename": "HarkRequest", "id": id, "Talk": talk.flatMap { (value: Talk) -> ResultMap in value.resultMap }, "sentByYou": sentByYou, "sentToYou": sentToYou, "status": status])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var talk: Talk? {
+          get {
+            return (resultMap["Talk"] as? ResultMap).flatMap { Talk(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "Talk")
+          }
+        }
+
+        public var sentByYou: Bool? {
+          get {
+            return resultMap["sentByYou"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "sentByYou")
+          }
+        }
+
+        public var sentToYou: Bool? {
+          get {
+            return resultMap["sentToYou"] as? Bool
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "sentToYou")
+          }
+        }
+
+        public var status: HarkRequestStatus? {
+          get {
+            return resultMap["status"] as? HarkRequestStatus
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "status")
+          }
+        }
+
+        public struct Talk: GraphQLSelectionSet {
+          public static let possibleTypes: [String] = ["Talk"]
+
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("id", type: .scalar(GraphQLID.self)),
+              GraphQLField("duration", type: .object(Duration.selections)),
+              GraphQLField("createdAt", type: .scalar(String.self)),
+            ]
+          }
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(id: GraphQLID? = nil, duration: Duration? = nil, createdAt: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Talk", "id": id, "duration": duration.flatMap { (value: Duration) -> ResultMap in value.resultMap }, "createdAt": createdAt])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var id: GraphQLID? {
+            get {
+              return resultMap["id"] as? GraphQLID
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "id")
+            }
+          }
+
+          public var duration: Duration? {
+            get {
+              return (resultMap["duration"] as? ResultMap).flatMap { Duration(unsafeResultMap: $0) }
+            }
+            set {
+              resultMap.updateValue(newValue?.resultMap, forKey: "duration")
+            }
+          }
+
+          public var createdAt: String? {
+            get {
+              return resultMap["createdAt"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "createdAt")
+            }
+          }
+
+          public struct Duration: GraphQLSelectionSet {
+            public static let possibleTypes: [String] = ["IntervalRepresentation"]
+
+            public static var selections: [GraphQLSelection] {
+              return [
+                GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("hours", type: .scalar(Int.self)),
+                GraphQLField("minutes", type: .scalar(Int.self)),
+                GraphQLField("seconds", type: .scalar(Int.self)),
+              ]
+            }
+
+            public private(set) var resultMap: ResultMap
+
+            public init(unsafeResultMap: ResultMap) {
+              self.resultMap = unsafeResultMap
+            }
+
+            public init(hours: Int? = nil, minutes: Int? = nil, seconds: Int? = nil) {
+              self.init(unsafeResultMap: ["__typename": "IntervalRepresentation", "hours": hours, "minutes": minutes, "seconds": seconds])
+            }
+
+            public var __typename: String {
+              get {
+                return resultMap["__typename"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            public var hours: Int? {
+              get {
+                return resultMap["hours"] as? Int
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "hours")
+              }
+            }
+
+            public var minutes: Int? {
+              get {
+                return resultMap["minutes"] as? Int
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "minutes")
+              }
+            }
+
+            public var seconds: Int? {
+              get {
+                return resultMap["seconds"] as? Int
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "seconds")
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class MatchSettingsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query MatchSettings {
+      matchSettings {
+        __typename
+        style
+        mood
+        fromAge
+        toAge
+        genders
+      }
+    }
+    """
+
+  public let operationName: String = "MatchSettings"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("matchSettings", type: .object(MatchSetting.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(matchSettings: MatchSetting? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "matchSettings": matchSettings.flatMap { (value: MatchSetting) -> ResultMap in value.resultMap }])
+    }
+
+    public var matchSettings: MatchSetting? {
+      get {
+        return (resultMap["matchSettings"] as? ResultMap).flatMap { MatchSetting(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "matchSettings")
+      }
+    }
+
+    public struct MatchSetting: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["MatchSettings"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("style", type: .scalar(Int.self)),
+          GraphQLField("mood", type: .scalar(Int.self)),
+          GraphQLField("fromAge", type: .scalar(Int.self)),
+          GraphQLField("toAge", type: .scalar(Int.self)),
+          GraphQLField("genders", type: .list(.scalar(GenderType.self))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(style: Int? = nil, mood: Int? = nil, fromAge: Int? = nil, toAge: Int? = nil, genders: [GenderType?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MatchSettings", "style": style, "mood": mood, "fromAge": fromAge, "toAge": toAge, "genders": genders])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var style: Int? {
+        get {
+          return resultMap["style"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "style")
+        }
+      }
+
+      public var mood: Int? {
+        get {
+          return resultMap["mood"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "mood")
+        }
+      }
+
+      public var fromAge: Int? {
+        get {
+          return resultMap["fromAge"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "fromAge")
+        }
+      }
+
+      public var toAge: Int? {
+        get {
+          return resultMap["toAge"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "toAge")
+        }
+      }
+
+      public var genders: [GenderType?]? {
+        get {
+          return resultMap["genders"] as? [GenderType?]
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "genders")
         }
       }
     }

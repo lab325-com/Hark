@@ -14,6 +14,7 @@ import UIKit
 //----------------------------------------------
 protocol SearchTabPhoneOutputProtocol: BaseController {
     func success()
+    func successMathSettings(model: MatchSettingsMainModel)
 }
 
 //----------------------------------------------
@@ -22,6 +23,7 @@ protocol SearchTabPhoneOutputProtocol: BaseController {
 protocol SearchTabPresenterProtocol: AnyObject {
     init(view: SearchTabPhoneOutputProtocol)
     
+    func getMatch()
     func search(genders: [GenderType]?, style: Int?, mood: Int?, fromAge: Int?, toAge: Int?)
 }
 
@@ -46,6 +48,19 @@ class SearchTabPresenter: SearchTabPresenterProtocol {
             if model.updateMatchSettings {
                 self?.view?.success()
             }
+        } failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+        }
+    }
+    
+    func getMatch() {
+        view?.startLoader()
+        
+        let query = MatchSettingsQuery()
+        
+        request = Network.shared.query(model: MatchSettingsModel.self, query, controller: view) { [weak self] model in
+            self?.view?.stopLoading()
+            self?.view?.successMathSettings(model: model.matchSettings)
         } failureHandler: { [weak self] error in
             self?.view?.stopLoading()
         }

@@ -44,11 +44,13 @@ class SearchTabController: BaseController {
     private var startingMoodConstant: CGFloat = (UIScreen.main.bounds.size.width - 44) / 2
     
     private let diffPointStyle = 99 / (UIScreen.main.bounds.width - 66)
+    private let diffReversePointStyle = (UIScreen.main.bounds.width - 66) / 99
     
     private let startAge = 18
     private let endAge = 110
     
     private let diffPoint = 92 / (UIScreen.main.bounds.width - 66)
+    private let diffAgePoint = (UIScreen.main.bounds.width - 66) / 92
     
     private let offset: CGFloat = 22
     
@@ -59,7 +61,6 @@ class SearchTabController: BaseController {
     
     private var selectedGenders = Set<GenderType>() {
         didSet {
-            presenter.search(genders: Array(selectedGenders), style: nil, mood: nil, fromAge: nil, toAge: nil)
             updateGendersButton()
         }
     }
@@ -135,6 +136,8 @@ class SearchTabController: BaseController {
         yourMoodView.layer.addSublayer(layerMoodStyle)
         
         yourMoodLayoutLeding.constant = startingMoodConstant
+        
+        presenter.getMatch()
     }
     
     private func updateGendersButton() {
@@ -175,7 +178,7 @@ class SearchTabController: BaseController {
                 selectedGenders.insert(.genderTypeWoman)
             }
         case 2:
-            if selectedGenders.contains(.genderTypeMan) {
+            if selectedGenders.contains(.genderTypeCommon) {
                 selectedGenders.remove(.genderTypeCommon)
             } else {
                 selectedGenders.insert(.genderTypeCommon)
@@ -183,8 +186,18 @@ class SearchTabController: BaseController {
         default:
             break
         }
+        
+        sendReuquest()
     }
     
+    private func sendReuquest() {
+        let style = Int(CGFloat(1) + (yourStyleLayoutLeding.constant - offset) * diffPointStyle)
+        let mood = Int(CGFloat(1) + (yourMoodLayoutLeding.constant - offset) * diffPointStyle)
+        let fromAge = Int(CGFloat(startAge) + (loweLayoutLeding.constant - offset) * diffPoint)
+        let toAge = Int(CGFloat(endAge) - (upperTrailingLayout.constant - offset) * diffPoint)
+        
+        presenter.search(genders: Array(selectedGenders), style: style, mood: mood, fromAge: fromAge, toAge: toAge)
+    }
     
     //----------------------------------------------
     // MARK: - Gesture
@@ -212,12 +225,7 @@ class SearchTabController: BaseController {
         if sender.state == .ended {
             startingConstant = loweLayoutLeding.constant
             
-            let style = Int(CGFloat(1) + (yourStyleLayoutLeding.constant - offset) * diffPointStyle)
-            let mood = Int(CGFloat(1) + (yourMoodLayoutLeding.constant - offset) * diffPointStyle)
-            let fromAge = Int(CGFloat(startAge) + (loweLayoutLeding.constant - offset) * diffPoint)
-            let toAge = Int(CGFloat(endAge) - (upperTrailingLayout.constant - offset) * diffPoint)
-            
-            presenter.search(genders: Array(selectedGenders), style: style, mood: mood, fromAge: fromAge, toAge: toAge)
+            sendReuquest()
         }
         
         lowAgeLabel.text = "\(Int(CGFloat(startAge) + (loweLayoutLeding.constant - offset) * diffPoint))"
@@ -245,11 +253,7 @@ class SearchTabController: BaseController {
         if sender.state == .ended {
             endedConstant = upperTrailingLayout.constant
             
-            let style = Int(CGFloat(1) + (yourStyleLayoutLeding.constant - offset) * diffPointStyle)
-            let mood = Int(CGFloat(1) + (yourMoodLayoutLeding.constant - offset) * diffPointStyle)
-            let toAge = (Int(CGFloat(endAge) - (upperTrailingLayout.constant - offset) * diffPoint))
-            
-            presenter.search(genders: Array(selectedGenders), style: style, mood: mood, fromAge: (Int(CGFloat(startAge) + (loweLayoutLeding.constant - offset) * diffPoint)), toAge: toAge)
+            sendReuquest()
         }
         
         upperAgeLabel.text = "\(Int(CGFloat(endAge) - (upperTrailingLayout.constant - offset) * diffPoint))"
@@ -275,10 +279,7 @@ class SearchTabController: BaseController {
         if sender.state == .ended {
             startingStyleConstant = yourStyleLayoutLeding.constant
             
-            let style = Int(CGFloat(1) + (yourStyleLayoutLeding.constant - offset) * diffPointStyle)
-            let mood = Int(CGFloat(1) + (yourMoodLayoutLeding.constant - offset) * diffPointStyle)
-            
-            presenter.search(genders: Array(selectedGenders), style: style, mood: mood, fromAge: (Int(CGFloat(startAge) + (loweLayoutLeding.constant - offset) * diffPoint)), toAge: (Int(CGFloat(endAge) - (upperTrailingLayout.constant - offset) * diffPoint)))
+            sendReuquest()
         }
     }
     
@@ -302,10 +303,7 @@ class SearchTabController: BaseController {
         if sender.state == .ended {
             startingMoodConstant = yourMoodLayoutLeding.constant
             
-            let style = Int(CGFloat(1) + (yourStyleLayoutLeding.constant - offset) * diffPointStyle)
-            let mood = Int(CGFloat(1) + (yourMoodLayoutLeding.constant - offset) * diffPointStyle)
-            
-            presenter.search(genders: Array(selectedGenders), style: style, mood: mood, fromAge: (Int(CGFloat(startAge) + (loweLayoutLeding.constant - offset) * diffPoint)), toAge: (Int(CGFloat(endAge) - (upperTrailingLayout.constant - offset) * diffPoint)))
+            sendReuquest()
         }
     }
 }
@@ -317,5 +315,37 @@ class SearchTabController: BaseController {
 extension SearchTabController: SearchTabPhoneOutputProtocol {
     func success() {
         
+    }
+    
+    func successMathSettings(model: MatchSettingsMainModel) {
+        if let fromAge = model.fromAge {
+            lowAgeLabel.text = String(fromAge)
+            
+            let delta = CGFloat(fromAge - 18) * diffAgePoint + offset
+            startingConstant = delta
+            loweLayoutLeding.constant = delta
+        }
+        
+        if let toAge = model.toAge {
+            upperAgeLabel.text = String(toAge)
+            
+            let delta = CGFloat(110 - toAge) * diffAgePoint + offset
+            endedConstant = delta
+            upperTrailingLayout.constant = delta
+        }
+        
+        if let mood = model.mood {
+            let delta = CGFloat(mood - 1) * diffReversePointStyle + offset
+            startingMoodConstant = delta
+            yourMoodLayoutLeding.constant = delta
+        }
+        
+        if let style = model.style {
+            let delta = CGFloat(style - 1) * diffReversePointStyle + offset
+            startingStyleConstant = delta
+            yourStyleLayoutLeding.constant = delta
+        }
+        
+        selectedGenders = Set(model.genders ?? [])
     }
 }

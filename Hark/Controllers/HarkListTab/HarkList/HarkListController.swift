@@ -44,8 +44,10 @@ class HarkListController: BaseController {
         }
     }
     
-    let listCellIdentifier = String(describing: ListCell.self)
-    let requestCellIdentifier = String(describing: RequestCell.self)
+    private let listCellIdentifier = String(describing: ListCell.self)
+    private let requestCellIdentifier = String(describing: RequestCell.self)
+    
+    private lazy var presenter = HarkListPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -96,6 +98,8 @@ class HarkListController: BaseController {
         tableView.separatorColor = UIColor.clear
         
         tableView.reloadData()
+        
+        presenter.getList(limit: 100, offset: 0)
     }
     
     //----------------------------------------------
@@ -112,13 +116,13 @@ class HarkListController: BaseController {
 }
 
 //----------------------------------------------
-// MARK: - Life cycle
+// MARK: - UITableViewDelegate, UITableViewDataSource
 //----------------------------------------------
 
 extension HarkListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedSegment == 0 ? 20 : 15
+        return selectedSegment == 0 ? presenter.harksList.count : presenter.harksRequests.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -153,3 +157,12 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//----------------------------------------------
+// MARK: - Life cycle
+//----------------------------------------------
+
+extension HarkListController: HarkListOutputProtocol {
+    func success() {
+        tableView.reloadData()
+    }
+}

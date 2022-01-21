@@ -1,0 +1,9 @@
+query MatchSettings {
+	matchSettings {
+        style
+        mood
+        fromAge
+        toAge
+        genders
+	}
+}
