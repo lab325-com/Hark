@@ -40,6 +40,11 @@
 		027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */; };
 		027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027629B02785F3030096DC2E /* AuthFillNickNameController.swift */; };
 		027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027629B12785F3030096DC2E /* AuthFillNickNameController.xib */; };
+		02887448279AC19000E802CA /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02887447279AC19000E802CA /* AgoraRtcKit */; };
+		0288744B279ADA0A00E802CA /* HarkRequests.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0288744A279ADA0A00E802CA /* HarkRequests.graphql */; };
+		0288744E279ADA5100E802CA /* PaginationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288744D279ADA5100E802CA /* PaginationModel.swift */; };
+		02887450279ADA5F00E802CA /* HarkRequestsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288744F279ADA5F00E802CA /* HarkRequestsModel.swift */; };
+		02887452279AE01F00E802CA /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02887451279AE01F00E802CA /* UIScrollView+Extension.swift */; };
 		02ED71DC2799AEBE00CAE787 /* HarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71DB2799AEBE00CAE787 /* HarksModel.swift */; };
 		02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */; };
 		02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02ED71E12799D67700CAE787 /* MatchSettings.graphql */; };
@@ -91,7 +96,6 @@
 		FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E69222785B61600030600 /* SwiftKeychainWrapper */; };
 		FA1E69262785B71F00030600 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69252785B71F00030600 /* AuthModel.swift */; };
 		FA1E69282785B75200030600 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69272785B75200030600 /* MeModel.swift */; };
-		FA69DC83279989A100257E54 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA69DC82279989A100257E54 /* AgoraRtcKit */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
 		FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF6C277C6ED8009F652E /* SplashController.swift */; };
 		FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF6E277C6ED8009F652E /* Main.storyboard */; };
@@ -140,6 +144,10 @@
 		027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneModel.swift; sourceTree = "<group>"; };
 		027629B02785F3030096DC2E /* AuthFillNickNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillNickNameController.swift; sourceTree = "<group>"; };
 		027629B12785F3030096DC2E /* AuthFillNickNameController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillNickNameController.xib; sourceTree = "<group>"; };
+		0288744A279ADA0A00E802CA /* HarkRequests.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarkRequests.graphql; sourceTree = "<group>"; };
+		0288744D279ADA5100E802CA /* PaginationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationModel.swift; sourceTree = "<group>"; };
+		0288744F279ADA5F00E802CA /* HarkRequestsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkRequestsModel.swift; sourceTree = "<group>"; };
+		02887451279AE01F00E802CA /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		02ED71DB2799AEBE00CAE787 /* HarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarksModel.swift; sourceTree = "<group>"; };
 		02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListPresenter.swift; sourceTree = "<group>"; };
 		02ED71E12799D67700CAE787 /* MatchSettings.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatchSettings.graphql; sourceTree = "<group>"; };
@@ -208,7 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA69DC83279989A100257E54 /* AgoraRtcKit in Frameworks */,
+				02887448279AC19000E802CA /* AgoraRtcKit in Frameworks */,
 				FA1E691D2785B48E00030600 /* Toast in Frameworks */,
 				027629A52785D0B30096DC2E /* NVActivityIndicatorView in Frameworks */,
 				FADA714E2784886D00A784FA /* Apollo in Frameworks */,
@@ -405,6 +413,15 @@
 			path = AuthFillNickName;
 			sourceTree = "<group>";
 		};
+		02887449279AD9E500E802CA /* HarkRequests */ = {
+			isa = PBXGroup;
+			children = (
+				0288744A279ADA0A00E802CA /* HarkRequests.graphql */,
+				0288744F279ADA5F00E802CA /* HarkRequestsModel.swift */,
+			);
+			path = HarkRequests;
+			sourceTree = "<group>";
+		};
 		02ED71DD2799B20500CAE787 /* HarkList */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,8 +600,9 @@
 		FA1E690827848CAE00030600 /* Query */ = {
 			isa = PBXGroup;
 			children = (
-				02ED71E02799D65700CAE787 /* MatchSettings */,
+				02887449279AD9E500E802CA /* HarkRequests */,
 				0200AE9D27999D2F00A91A72 /* Harks */,
+				02ED71E02799D65700CAE787 /* MatchSettings */,
 				02675641278E076100FBA4E9 /* OnlineStatistics */,
 				FA1E690927848CD400030600 /* Me */,
 			);
@@ -623,6 +641,7 @@
 			isa = PBXGroup;
 			children = (
 				FA1E69252785B71F00030600 /* AuthModel.swift */,
+				0288744D279ADA5100E802CA /* PaginationModel.swift */,
 			);
 			path = GlobalModels;
 			sourceTree = "<group>";
@@ -724,6 +743,7 @@
 				FA9BCF89277C7614009F652E /* UIViewController+Extension.swift */,
 				02F8B80F278714DB00595AA6 /* Collection+Extension.swift */,
 				02675646278E0B8A00FBA4E9 /* Int+Extension.swift */,
+				02887451279AE01F00E802CA /* UIScrollView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -761,7 +781,7 @@
 				FA1E69222785B61600030600 /* SwiftKeychainWrapper */,
 				027629A42785D0B30096DC2E /* NVActivityIndicatorView */,
 				027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */,
-				FA69DC82279989A100257E54 /* AgoraRtcKit */,
+				02887447279AC19000E802CA /* AgoraRtcKit */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -798,7 +818,7 @@
 				FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
-				FA69DC81279989A100257E54 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+				02887446279AC19000E802CA /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -823,6 +843,7 @@
 				02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */,
 				02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */,
 				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
+				0288744B279ADA0A00E802CA /* HarkRequests.graphql in Resources */,
 				0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */,
 				02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */,
 				0227C1DB279827EE0092F804 /* RequestCell.xib in Resources */,
@@ -915,8 +936,11 @@
 				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
 				02675645278E078E00FBA4E9 /* OnlineStatisticsModel.swift in Sources */,
 				02675647278E0B8A00FBA4E9 /* Int+Extension.swift in Sources */,
+				0288744E279ADA5100E802CA /* PaginationModel.swift in Sources */,
+				02887450279ADA5F00E802CA /* HarkRequestsModel.swift in Sources */,
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
+				02887452279AE01F00E802CA /* UIScrollView+Extension.swift in Sources */,
 				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
 				022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */,
 				02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */,
@@ -1033,7 +1057,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -1189,7 +1213,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -1227,7 +1251,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -1289,6 +1313,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		02887446279AC19000E802CA /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
@@ -1313,14 +1345,6 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		FA69DC81279989A100257E54 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:AgoraIO/AgoraRtcEngine_iOS.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -1342,6 +1366,11 @@
 			package = 027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
 		};
+		02887447279AC19000E802CA /* AgoraRtcKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02887446279AC19000E802CA /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = AgoraRtcKit;
+		};
 		02EEBD482785A6B4001DA462 /* PhoneNumberKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
@@ -1356,11 +1385,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
-		};
-		FA69DC82279989A100257E54 /* AgoraRtcKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA69DC81279989A100257E54 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
-			productName = AgoraRtcKit;
 		};
 		FADA714D2784886D00A784FA /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;

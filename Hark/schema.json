@@ -1321,8 +1321,8 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
+              "kind": "ENUM",
+              "name": "UserStatusType",
               "ofType": null
             },
             "isDeprecated": false,

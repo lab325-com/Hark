@@ -9,6 +9,8 @@ import UIKit
 
 class ListCell: UITableViewCell {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var cornerView: UIView!
     @IBOutlet weak var statusView: UIView!
     
@@ -34,8 +36,10 @@ class ListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func config(isOnline: Bool) {
-        if isOnline {
+    func config(model: HarksListModel) {
+        nameLabel.text = model.nickName
+        
+        if model.status == .userStatusTypeOnline {
             phoneImageView.isHidden = false
             statusLabel.text = "Online"
             statusView.layer.borderColor = UIColor(red: 0.236, green: 0.858, blue: 0.746, alpha: 1).cgColor

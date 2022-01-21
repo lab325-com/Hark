@@ -18,24 +18,24 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestCell" rowHeight="93" id="KGk-i7-Jjw" customClass="RequestCell" customModule="Hark" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="406" height="93"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="406" height="93"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="snw-g6-181">
-                        <rect key="frame" x="24" y="2" width="358" height="84"/>
+                        <rect key="frame" x="24" y="2" width="358" height="89"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hw1-Ja-rzF">
-                                <rect key="frame" x="20" y="13" width="141.5" height="58"/>
+                                <rect key="frame" x="20" y="13" width="141.5" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anonimous" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9St-Dy-iUG">
-                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="18"/>
                                         <color key="textColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-rM-ATF">
-                                        <rect key="frame" x="0.0" y="29" width="141.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="34" width="141.5" height="29"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J2l-Li-Eag">
                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="29"/>
@@ -102,7 +102,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dip-co-hIE">
-                                <rect key="frame" x="276" y="57.5" width="72" height="14.5"/>
+                                <rect key="frame" x="276" y="62.5" width="72" height="14.5"/>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                 <color key="textColor" red="0.23529411759999999" green="0.85882352939999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -114,7 +114,7 @@
                             <constraint firstAttribute="bottom" secondItem="dip-co-hIE" secondAttribute="bottom" constant="12" id="T2c-WG-wpp"/>
                             <constraint firstAttribute="trailing" secondItem="D7J-oA-KVw" secondAttribute="trailing" constant="10" id="U4V-sb-yjS"/>
                             <constraint firstItem="D7J-oA-KVw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hw1-Ja-rzF" secondAttribute="trailing" constant="20" id="ebL-Iy-wZG"/>
-                            <constraint firstAttribute="height" constant="84" id="hoZ-a4-nu7"/>
+                            <constraint firstAttribute="height" priority="999" constant="84" id="hoZ-a4-nu7"/>
                             <constraint firstItem="D7J-oA-KVw" firstAttribute="top" secondItem="snw-g6-181" secondAttribute="top" constant="10" id="oG2-RT-12z"/>
                             <constraint firstItem="Hw1-Ja-rzF" firstAttribute="top" secondItem="snw-g6-181" secondAttribute="top" constant="13" id="xp7-aK-nSv"/>
                             <constraint firstItem="Hw1-Ja-rzF" firstAttribute="leading" secondItem="snw-g6-181" secondAttribute="leading" constant="20" id="xtW-no-wgC"/>
@@ -136,6 +136,8 @@
             <connections>
                 <outlet property="confirmedButton" destination="FBz-N8-5Zm" id="I3w-Ax-URL"/>
                 <outlet property="cornerView" destination="snw-g6-181" id="Tsm-AH-OGD"/>
+                <outlet property="dateLabel" destination="0Tg-To-tzJ" id="WJ1-cA-Kpq"/>
+                <outlet property="durationLabel" destination="qgi-uB-NUd" id="ICz-MK-ehU"/>
                 <outlet property="receivedLabel" destination="dip-co-hIE" id="04t-bL-m62"/>
             </connections>
             <point key="canvasLocation" x="200.00000000000003" y="112.16517857142857"/>

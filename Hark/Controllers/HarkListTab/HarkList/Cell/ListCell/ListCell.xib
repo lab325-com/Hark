@@ -18,30 +18,30 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="63" id="KGk-i7-Jjw" customClass="ListCell" customModule="Hark" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="354" height="63"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="354" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9a-uN-wnm">
-                        <rect key="frame" x="26" y="2" width="302" height="48"/>
+                        <rect key="frame" x="26" y="2" width="302" height="59"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mikhail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uL-kN-lqe">
-                                <rect key="frame" x="19" y="0.0" width="55.5" height="48"/>
+                                <rect key="frame" x="19" y="0.0" width="55.5" height="59"/>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="18"/>
                                 <color key="textColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1C-eo-XeA">
-                                <rect key="frame" x="188" y="5" width="108" height="38"/>
+                                <rect key="frame" x="188" y="5" width="108" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjc-Vo-aLy">
-                                        <rect key="frame" x="15" y="0.0" width="78" height="38"/>
+                                        <rect key="frame" x="15" y="0.0" width="78" height="49"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list_phone_ic" translatesAutoresizingMaskIntoConstraints="NO" id="sFX-6p-90Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="9" height="38"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="9" height="49"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7N-MM-FNf">
-                                                <rect key="frame" x="9" y="0.0" width="69" height="38"/>
+                                                <rect key="frame" x="9" y="0.0" width="69" height="49"/>
                                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                                 <color key="textColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioq-u0-TLM">
-                                <rect key="frame" x="141" y="0.0" width="30" height="48"/>
+                                <rect key="frame" x="141" y="0.0" width="30" height="59"/>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Edit">
@@ -78,7 +78,7 @@
                             <constraint firstAttribute="bottom" secondItem="G1C-eo-XeA" secondAttribute="bottom" constant="5" id="ZOF-eT-UN5"/>
                             <constraint firstAttribute="bottom" secondItem="9uL-kN-lqe" secondAttribute="bottom" id="aib-L4-fVc"/>
                             <constraint firstItem="9uL-kN-lqe" firstAttribute="leading" secondItem="J9a-uN-wnm" secondAttribute="leading" constant="19" id="fIX-jh-4Ya"/>
-                            <constraint firstAttribute="height" constant="48" id="fxr-2j-agk"/>
+                            <constraint firstAttribute="height" priority="999" constant="48" id="fxr-2j-agk"/>
                             <constraint firstAttribute="trailing" secondItem="G1C-eo-XeA" secondAttribute="trailing" constant="6" id="uyp-hZ-wIT"/>
                             <constraint firstAttribute="bottom" secondItem="ioq-u0-TLM" secondAttribute="bottom" id="wbS-fE-jEk"/>
                         </constraints>
@@ -96,6 +96,7 @@
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="cornerView" destination="J9a-uN-wnm" id="VhY-NL-pW6"/>
+                <outlet property="nameLabel" destination="9uL-kN-lqe" id="Uu5-rJ-d2u"/>
                 <outlet property="phoneImageView" destination="sFX-6p-90Q" id="jE4-jA-JG0"/>
                 <outlet property="statusLabel" destination="g7N-MM-FNf" id="oVj-3w-6Sc"/>
                 <outlet property="statusView" destination="G1C-eo-XeA" id="58f-Jh-J3K"/>

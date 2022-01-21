@@ -12,6 +12,9 @@ class RequestCell: UITableViewCell {
     @IBOutlet weak var cornerView: UIView!
     @IBOutlet weak var confirmedButton: UIButton!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    
     @IBOutlet weak var receivedLabel: UILabel!
     
     override func awakeFromNib() {
@@ -31,8 +34,8 @@ class RequestCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(isReceived: Bool) {
-        if isReceived {
+    func configure(model: RequestsModel) {
+        if model.status == .harkRequestStatusPending {
             confirmedButton.layer.borderColor = UIColor(red: 0.236, green: 0.858, blue: 0.746, alpha: 1).cgColor
             receivedLabel.isHidden = false
             confirmedButton.setImage(UIImage(named: "request_confirm_ic"), for: .normal)
@@ -42,6 +45,16 @@ class RequestCell: UITableViewCell {
             receivedLabel.isHidden = true
             confirmedButton.setImage(nil, for: .normal)
             confirmedButton.setTitle("Sent", for: .normal)
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd:MM:yy | HH:mm"
+        dateLabel.text = dateFormatter.string(from: model.talk.date)
+        
+        if let duration = model.talk.duration {
+            durationLabel.text = "\(duration.hours) hour \(duration.minutes) min"
+        } else {
+            durationLabel.text = "0 min"
         }
     }
 }

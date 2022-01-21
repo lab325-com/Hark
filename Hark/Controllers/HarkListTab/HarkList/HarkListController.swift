@@ -70,7 +70,7 @@ class HarkListController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        tableView.tableFooterView = UIView()
+        //tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
         
         tableView.register(UINib(nibName: listCellIdentifier, bundle: nil), forCellReuseIdentifier: listCellIdentifier)
@@ -99,12 +99,24 @@ class HarkListController: BaseController {
         
         tableView.reloadData()
         
-        presenter.getList(limit: 100, offset: 0)
+        presenter.firstGetList(offset: 0)
+        
+        let _ = tableView.addHeader(withTarget: self, action: #selector(self.headerRefresh(sender:)))
+        
+        tableView.footerBeginRefreshing()
     }
     
     //----------------------------------------------
     // MARK: - IBAction
     //----------------------------------------------
+    
+    @objc func headerRefresh(sender: AnyObject) {
+        if selectedSegment == 0 {
+            presenter.getHarkList(offset: 0)
+        } else if selectedSegment == 1 {
+            presenter.getRequest(offset: 0)
+        }
+    }
     
     @IBAction func actionList(_ sender: UIButton) {
         selectedSegment = 0
@@ -125,21 +137,11 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
         return selectedSegment == 0 ? presenter.harksList.count : presenter.harksRequests.count
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            return nil
-        } else {
-            if selectedSegment == 0 {
-                let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 5))
-                return view
-            } else {
-                let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 15))
-                return view
-            }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if selectedSegment == 0 && presenter.paginationList?.nextPageExists == true && indexPath.row == presenter.harksList.count - 3 {
+            presenter.getHarkList(offset: presenter.harksList.count)
+        } else if selectedSegment == 1 && presenter.paginationRequest?.nextPageExists == true && indexPath.row == presenter.harksRequests.count - 3 {
+            presenter.getRequest(offset: presenter.harksRequests.count)
         }
     }
     
@@ -147,11 +149,17 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
         if selectedSegment == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: self.listCellIdentifier) as? ListCell else { return UITableViewCell() }
             
-            cell.config(isOnline: indexPath.section == 0)
+            if let model = presenter.harksList[safe: indexPath.row] {
+                cell.config(model: model)
+            }
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: self.requestCellIdentifier) as? RequestCell else { return UITableViewCell() }
-            cell.configure(isReceived: indexPath.section == 0)
+            
+            if let model = presenter.harksRequests[safe: indexPath.row] {
+                cell.configure(model: model)
+            }
+            
             return cell
         }
     }
@@ -163,6 +171,7 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
 
 extension HarkListController: HarkListOutputProtocol {
     func success() {
+        tableView.headerEndRefreshing()
         tableView.reloadData()
     }
 }
