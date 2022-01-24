@@ -163,6 +163,12 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let model = presenter.harksList[safe: indexPath.row] {
+            HarkListRouter(presenter: navigationController).presentOutgoingCall(model: model)
+        }
+    }
 }
 
 //----------------------------------------------

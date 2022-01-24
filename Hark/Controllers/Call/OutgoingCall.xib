@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Heavy.ttf">
+            <string>SFCompactRounded-Heavy</string>
+        </array>
+        <array key="SF-Compact-Rounded-Regular.ttf">
+            <string>SFCompactRounded-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OutgoingCall" customModule="Hark" customModuleProvider="target">
+            <connections>
+                <outlet property="infoLabel" destination="Zlw-fD-SMV" id="PKb-ak-Jf9"/>
+                <outlet property="nameLabel" destination="Ap2-h8-wP7" id="cNT-JC-5tF"/>
+                <outlet property="view" destination="MNe-8b-aDC" id="pn0-lq-aja"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MNe-8b-aDC">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NC-aT-eun">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="58L-fA-ORq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call_logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="6cl-OC-M9e">
+                    <rect key="frame" x="165.5" y="97" width="83" height="83"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HARK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqj-ke-UMB">
+                    <rect key="frame" x="175" y="191" width="64.5" height="29"/>
+                    <fontDescription key="fontDescription" name="SFCompactRounded-Heavy" family="SF Compact Rounded" pointSize="24"/>
+                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C4a-qx-qYl">
+                    <rect key="frame" x="114" y="416" width="186.5" height="74.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anonymous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap2-h8-wP7">
+                            <rect key="frame" x="0.0" y="0.0" width="186.5" height="43"/>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="36"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incoming call..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlw-fD-SMV">
+                            <rect key="frame" x="0.0" y="53" width="186.5" height="21.5"/>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="18"/>
+                            <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMD-yY-jYb">
+                    <rect key="frame" x="153" y="722" width="108" height="54"/>
+                    <color key="backgroundColor" red="1" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="108" id="ifu-vX-gmc"/>
+                        <constraint firstAttribute="height" constant="54" id="oNE-dd-Yi1"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="call_decline_ic"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="27"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionDeclineCall:" destination="-1" eventType="touchUpInside" id="xVa-fN-b5J"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="xTN-D5-d0K"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="C4a-qx-qYl" firstAttribute="centerX" secondItem="xTN-D5-d0K" secondAttribute="centerX" id="1Ij-tK-Zf1"/>
+                <constraint firstItem="Iqj-ke-UMB" firstAttribute="top" secondItem="6cl-OC-M9e" secondAttribute="bottom" constant="11" id="Fu6-o5-Tej"/>
+                <constraint firstItem="Iqj-ke-UMB" firstAttribute="centerX" secondItem="xTN-D5-d0K" secondAttribute="centerX" id="KLw-fE-QBi"/>
+                <constraint firstItem="6NC-aT-eun" firstAttribute="trailing" secondItem="xTN-D5-d0K" secondAttribute="trailing" id="SWe-o5-0Lo"/>
+                <constraint firstAttribute="bottom" secondItem="6NC-aT-eun" secondAttribute="bottom" id="V8o-es-NXw"/>
+                <constraint firstItem="6NC-aT-eun" firstAttribute="top" secondItem="MNe-8b-aDC" secondAttribute="top" id="Zhn-7n-smQ"/>
+                <constraint firstItem="C4a-qx-qYl" firstAttribute="centerY" secondItem="xTN-D5-d0K" secondAttribute="centerY" id="bYd-oQ-5x6"/>
+                <constraint firstItem="6cl-OC-M9e" firstAttribute="centerX" secondItem="xTN-D5-d0K" secondAttribute="centerX" id="d7n-0E-csC"/>
+                <constraint firstItem="6NC-aT-eun" firstAttribute="leading" secondItem="xTN-D5-d0K" secondAttribute="leading" id="iU5-k5-nne"/>
+                <constraint firstItem="6cl-OC-M9e" firstAttribute="top" secondItem="xTN-D5-d0K" secondAttribute="top" constant="53" id="ktm-BD-Z89"/>
+                <constraint firstItem="oMD-yY-jYb" firstAttribute="centerX" secondItem="xTN-D5-d0K" secondAttribute="centerX" id="sUf-tP-Ftz"/>
+                <constraint firstItem="xTN-D5-d0K" firstAttribute="bottom" secondItem="oMD-yY-jYb" secondAttribute="bottom" constant="86" id="wR4-9m-98L"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="call_decline_ic" width="17" height="17"/>
+        <image name="call_logo_ic" width="83" height="83"/>
+    </resources>
+</document>
