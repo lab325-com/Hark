@@ -1244,7 +1244,7 @@ public final class HarksQuery: GraphQLQuery {
     }
 
     public struct Hark: GraphQLSelectionSet {
-      public static let possibleTypes: [String] = ["HarkRequestsResponse"]
+      public static let possibleTypes: [String] = ["HarksResponse"]
 
       public static var selections: [GraphQLSelection] {
         return [
@@ -1261,7 +1261,7 @@ public final class HarksQuery: GraphQLQuery {
       }
 
       public init(harks: [Hark?]? = nil, pagination: Pagination? = nil) {
-        self.init(unsafeResultMap: ["__typename": "HarkRequestsResponse", "Harks": harks.flatMap { (value: [Hark?]) -> [ResultMap?] in value.map { (value: Hark?) -> ResultMap? in value.flatMap { (value: Hark) -> ResultMap in value.resultMap } } }, "Pagination": pagination.flatMap { (value: Pagination) -> ResultMap in value.resultMap }])
+        self.init(unsafeResultMap: ["__typename": "HarksResponse", "Harks": harks.flatMap { (value: [Hark?]) -> [ResultMap?] in value.map { (value: Hark?) -> ResultMap? in value.flatMap { (value: Hark) -> ResultMap in value.resultMap } } }, "Pagination": pagination.flatMap { (value: Pagination) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -1850,6 +1850,103 @@ public final class OnlineStatisticsQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "totalWomen")
+        }
+      }
+    }
+  }
+}
+
+public final class HarksStatusSubscription: GraphQLSubscription {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    subscription HarksStatus {
+      harksStatus {
+        __typename
+        userId
+        status
+      }
+    }
+    """
+
+  public let operationName: String = "HarksStatus"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Subscription"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("harksStatus", type: .object(HarksStatus.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(harksStatus: HarksStatus? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Subscription", "harksStatus": harksStatus.flatMap { (value: HarksStatus) -> ResultMap in value.resultMap }])
+    }
+
+    public var harksStatus: HarksStatus? {
+      get {
+        return (resultMap["harksStatus"] as? ResultMap).flatMap { HarksStatus(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "harksStatus")
+      }
+    }
+
+    public struct HarksStatus: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["HarkStatusResponse"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("userId", type: .scalar(String.self)),
+          GraphQLField("status", type: .scalar(UserStatusType.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(userId: String? = nil, status: UserStatusType? = nil) {
+        self.init(unsafeResultMap: ["__typename": "HarkStatusResponse", "userId": userId, "status": status])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var userId: String? {
+        get {
+          return resultMap["userId"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "userId")
+        }
+      }
+
+      public var status: UserStatusType? {
+        get {
+          return resultMap["status"] as? UserStatusType
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "status")
         }
       }
     }

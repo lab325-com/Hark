@@ -2,8 +2,10 @@
 import Apollo
 import Foundation
 import Toast
+import ApolloWebSocket
 
 class Network {
+    
     static let shared = Network()
     
     private(set) lazy var apollo: ApolloClient = {
@@ -39,7 +41,7 @@ class Network {
                     debugPrint("Failure! Error: \(error)")
                     if queryResult.errors?.first?.message == "Not authenticated" {
                         KeychainService.standard.removeAll()
-//                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
                     if let message = queryResult.errors?.first?.message {
                         controller?.view?.makeToast(message)
@@ -75,7 +77,7 @@ class Network {
                     debugPrint("Failure! Error: \(error)")
                     if queryResult.errors?.first?.message == "Not authenticated" {
                         KeychainService.standard.removeAll()
-//                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
                     if let message = queryResult.errors?.first?.message {
                         controller?.view?.makeToast(message)
@@ -111,7 +113,7 @@ class Network {
                     debugPrint("Failure! Error: \(error)")
                     if queryResult.errors?.first?.message == "Not authenticated" {
                         KeychainService.standard.removeAll()
-//                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
+                        RootRouter.sharedInstance.loadLogin(toWindow: RootRouter.sharedInstance.window!)
                     }
                     if let message = queryResult.errors?.first?.message {
                         controller?.view?.makeToast(message)
@@ -158,7 +160,7 @@ extension Network {
                     return
                 }
                 
-                #if DEBUG
+#if DEBUG
                 debugPrint("==========================================================")
                 printRequest(request: try? request.toURLRequest(),
                              data: receivedResponse.rawData,
@@ -166,7 +168,7 @@ extension Network {
                 
                 debugPrint("STATUS CODE:", receivedResponse.httpResponse.statusCode)
                 debugPrint("==========================================================")
-                #endif
+#endif
             }
         
         func printRequest(request: URLRequest?, data: Data?, params: [String: Any]?) {
@@ -193,12 +195,12 @@ extension Network {
             response: HTTPResponse<Operation>?,
             completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
                 
-                #if DEBUG
+#if DEBUG
                 debugPrint("==========================================================")
                 printRequest(request: try? request.toURLRequest(),
                              params: request.operation.variables?.jsonObject)
                 debugPrint("==========================================================")
-                #endif
+#endif
                 
                 chain.proceedAsync(request: request,
                                    response: response,
@@ -239,47 +241,47 @@ extension Network {
             response: HTTPResponse<Operation>?,
             completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
                 
-//                guard let token = KeychainService.standard.newAuthToken else {
-//                    chain.handleErrorAsync(UserError.noUserLoggedIn,
-//                                           request: request,
-//                                           response: response,
-//                                           completion: completion)
-//                    return
-//                }
+                //                guard let token = KeychainService.standard.newAuthToken else {
+                //                    chain.handleErrorAsync(UserError.noUserLoggedIn,
+                //                                           request: request,
+                //                                           response: response,
+                //                                           completion: completion)
+                //                    return
+                //                }
                 
                 // If we've gotten here, there is a token!
-               // if token.isExpired == true {
-                    // Call an async method to renew the token
-                    //                UserManager.shared.renewToken { [weak self] tokenRenewResult in
-                    //                    guard let self = self else {
-                    //                        return
-                    //                    }
-                    //
-                    //                    switch tokenRenewResult {
-                    //                    case .failure(let error):
-                    //                        // Pass the token renewal error up the chain, and do
-                    //                        // not proceed further. Note that you could also wrap this in a
-                    //                        // `UserError` if you want.
-                    //                        chain.handleErrorAsync(error,
-                    //                                               request: request,
-                    //                                               response: response,
-                    //                                               completion: completion)
-                    //                    case .success(let token):
-                    //                        // Renewing worked! Add the token and move on
-                    //                        self.addTokenAndProceed(token,
-                    //                                                to: request,
-                    //                                                chain: chain,
-                    //                                                response: response,
-                    //                                                completion: completion)
-                    //                    }
-                    //                }
-             //   } else {
-                    self.addTokenAndProceed(KeychainService.standard.newAuthToken,
-                                            to: request,
-                                            chain: chain,
-                                            response: response,
-                                            completion: completion)
-               // }
+                // if token.isExpired == true {
+                // Call an async method to renew the token
+                //                UserManager.shared.renewToken { [weak self] tokenRenewResult in
+                //                    guard let self = self else {
+                //                        return
+                //                    }
+                //
+                //                    switch tokenRenewResult {
+                //                    case .failure(let error):
+                //                        // Pass the token renewal error up the chain, and do
+                //                        // not proceed further. Note that you could also wrap this in a
+                //                        // `UserError` if you want.
+                //                        chain.handleErrorAsync(error,
+                //                                               request: request,
+                //                                               response: response,
+                //                                               completion: completion)
+                //                    case .success(let token):
+                //                        // Renewing worked! Add the token and move on
+                //                        self.addTokenAndProceed(token,
+                //                                                to: request,
+                //                                                chain: chain,
+                //                                                response: response,
+                //                                                completion: completion)
+                //                    }
+                //                }
+                //   } else {
+                self.addTokenAndProceed(KeychainService.standard.newAuthToken,
+                                        to: request,
+                                        chain: chain,
+                                        response: response,
+                                        completion: completion)
+                // }
             }
     }
     
@@ -308,5 +310,41 @@ extension Network {
                 CacheWriteInterceptor(store: self.store)
             ]
         }
+    }
+}
+
+extension Network {
+    class Apollo {
+        static let shared = Apollo()
+        
+        /// A web socket transport to use for subscriptions
+        // This web socket will have to provide the connecting payload which
+        // initializes the connection as an authorized channel.
+        private lazy var webSocketTransport: WebSocketTransport = {
+            let url = URL(string: "wss://api.front.dev.hark.mob325.com/graphql")!
+            let request = URLRequest(url: url)
+            let webSocketClient = WebSocket(request: request)
+            let authPayload = ["Authorization": "Bearer \(KeychainService.standard.newAuthToken?.token ?? "")"]
+            return WebSocketTransport(websocket: webSocketClient, connectingPayload: authPayload)
+        }()
+        
+        /// An HTTP transport to use for queries and mutations.
+        private lazy var normalTransport: RequestChainNetworkTransport = {
+            let url = URL(string: "https://api.front.dev.hark.mob325.com/graphql")!
+            return RequestChainNetworkTransport(interceptorProvider: DefaultInterceptorProvider(store: self.store), endpointURL: url)
+        }()
+        
+        /// A split network transport to allow the use of both of the above
+        /// transports through a single `NetworkTransport` instance.
+        private lazy var splitNetworkTransport = SplitNetworkTransport(
+            uploadingNetworkTransport: self.normalTransport,
+            webSocketNetworkTransport: self.webSocketTransport
+        )
+        
+        /// Create a client using the `SplitNetworkTransport`.
+        private(set) lazy var client = ApolloClient(networkTransport: self.splitNetworkTransport, store: self.store)
+        
+        /// A common store to use for `normalTransport` and `client`.
+        private lazy var store = ApolloStore()
     }
 }

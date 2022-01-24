@@ -70,6 +70,7 @@ class HarkListController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        presenter.subscribe()
         //tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
         
@@ -112,7 +113,7 @@ class HarkListController: BaseController {
     
     @objc func headerRefresh(sender: AnyObject) {
         if selectedSegment == 0 {
-            presenter.getHarkList(offset: 0)
+            presenter.getHarkList(offset: 0, limit: presenter.limit)
         } else if selectedSegment == 1 {
             presenter.getRequest(offset: 0)
         }
@@ -139,7 +140,7 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if selectedSegment == 0 && presenter.paginationList?.nextPageExists == true && indexPath.row == presenter.harksList.count - 3 {
-            presenter.getHarkList(offset: presenter.harksList.count)
+            presenter.getHarkList(offset: presenter.harksList.count, limit: presenter.limit)
         } else if selectedSegment == 1 && presenter.paginationRequest?.nextPageExists == true && indexPath.row == presenter.harksRequests.count - 3 {
             presenter.getRequest(offset: presenter.harksRequests.count)
         }
@@ -150,7 +151,7 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: self.listCellIdentifier) as? ListCell else { return UITableViewCell() }
             
             if let model = presenter.harksList[safe: indexPath.row] {
-                cell.config(model: model)
+                cell.config(model: model, nextIsTheSame: model.status == (presenter.harksList[safe: indexPath.row + 1]?.status ?? model.status))
             }
             return cell
         } else {

@@ -24,7 +24,11 @@ struct HarksMainModel: Codable {
 struct HarksListModel: Codable {
     let id: String
     let nickName: String?
-    let status: UserStatusType
+    var status: UserStatusType
+    
+    mutating func changeStatus(_ status: UserStatusType) {
+        self.status = status
+    }
 }
 
 extension UserStatusType: Codable {

@@ -95,6 +95,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="bottomLayout" destination="oKo-xl-JCj" id="cZt-Tl-3gg"/>
                 <outlet property="cornerView" destination="J9a-uN-wnm" id="VhY-NL-pW6"/>
                 <outlet property="nameLabel" destination="9uL-kN-lqe" id="Uu5-rJ-d2u"/>
                 <outlet property="phoneImageView" destination="sFX-6p-90Q" id="jE4-jA-JG0"/>

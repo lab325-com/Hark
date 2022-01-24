@@ -45,6 +45,10 @@
 		0288744E279ADA5100E802CA /* PaginationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288744D279ADA5100E802CA /* PaginationModel.swift */; };
 		02887450279ADA5F00E802CA /* HarkRequestsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288744F279ADA5F00E802CA /* HarkRequestsModel.swift */; };
 		02887452279AE01F00E802CA /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02887451279AE01F00E802CA /* UIScrollView+Extension.swift */; };
+		02AFDFDD279E92590078B52D /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 02AFDFDC279E92590078B52D /* Apollo */; };
+		02AFDFDF279E92590078B52D /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 02AFDFDE279E92590078B52D /* ApolloWebSocket */; };
+		02AFDFE2279EBA800078B52D /* HarksStatus.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02AFDFE1279EBA800078B52D /* HarksStatus.graphql */; };
+		02AFDFE5279EBD9C0078B52D /* HarksStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFDFE4279EBD9C0078B52D /* HarksStatusModel.swift */; };
 		02ED71DC2799AEBE00CAE787 /* HarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71DB2799AEBE00CAE787 /* HarksModel.swift */; };
 		02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */; };
 		02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02ED71E12799D67700CAE787 /* MatchSettings.graphql */; };
@@ -107,7 +111,6 @@
 		FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF8E277C81D5009F652E /* RootRouter.swift */; };
 		FA9BCF91277C822E009F652E /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF90277C822E009F652E /* BaseController.swift */; };
 		FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF93277C82EB009F652E /* SplashController.xib */; };
-		FADA714E2784886D00A784FA /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = FADA714D2784886D00A784FA /* Apollo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +151,8 @@
 		0288744D279ADA5100E802CA /* PaginationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationModel.swift; sourceTree = "<group>"; };
 		0288744F279ADA5F00E802CA /* HarkRequestsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkRequestsModel.swift; sourceTree = "<group>"; };
 		02887451279AE01F00E802CA /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		02AFDFE1279EBA800078B52D /* HarksStatus.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarksStatus.graphql; sourceTree = "<group>"; };
+		02AFDFE4279EBD9C0078B52D /* HarksStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarksStatusModel.swift; sourceTree = "<group>"; };
 		02ED71DB2799AEBE00CAE787 /* HarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarksModel.swift; sourceTree = "<group>"; };
 		02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListPresenter.swift; sourceTree = "<group>"; };
 		02ED71E12799D67700CAE787 /* MatchSettings.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatchSettings.graphql; sourceTree = "<group>"; };
@@ -219,9 +224,10 @@
 				02887448279AC19000E802CA /* AgoraRtcKit in Frameworks */,
 				FA1E691D2785B48E00030600 /* Toast in Frameworks */,
 				027629A52785D0B30096DC2E /* NVActivityIndicatorView in Frameworks */,
-				FADA714E2784886D00A784FA /* Apollo in Frameworks */,
 				027629A72785D0B30096DC2E /* NVActivityIndicatorViewExtended in Frameworks */,
 				FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */,
+				02AFDFDF279E92590078B52D /* ApolloWebSocket in Frameworks */,
+				02AFDFDD279E92590078B52D /* Apollo in Frameworks */,
 				02EEBD492785A6B4001DA462 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +428,15 @@
 			path = HarkRequests;
 			sourceTree = "<group>";
 		};
+		02AFDFE0279EBA2E0078B52D /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				02AFDFE1279EBA800078B52D /* HarksStatus.graphql */,
+				02AFDFE4279EBD9C0078B52D /* HarksStatusModel.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
 		02ED71DD2799B20500CAE787 /* HarkList */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +605,7 @@
 		FA1E690727848C9E00030600 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				02AFDFE0279EBA2E0078B52D /* Subscription */,
 				FA1E69242785B6FA00030600 /* GlobalModels */,
 				FA1E690C27848DD700030600 /* Mutation */,
 				FA1E690827848CAE00030600 /* Query */,
@@ -775,13 +791,14 @@
 			);
 			name = Hark;
 			packageProductDependencies = (
-				FADA714D2784886D00A784FA /* Apollo */,
 				02EEBD482785A6B4001DA462 /* PhoneNumberKit */,
 				FA1E691C2785B48E00030600 /* Toast */,
 				FA1E69222785B61600030600 /* SwiftKeychainWrapper */,
 				027629A42785D0B30096DC2E /* NVActivityIndicatorView */,
 				027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */,
 				02887447279AC19000E802CA /* AgoraRtcKit */,
+				02AFDFDC279E92590078B52D /* Apollo */,
+				02AFDFDE279E92590078B52D /* ApolloWebSocket */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -813,12 +830,12 @@
 			);
 			mainGroup = FA9BCF5C277C6ED8009F652E;
 			packageReferences = (
-				FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 				FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				02887446279AC19000E802CA /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+				02AFDFDB279E92590078B52D /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -850,6 +867,7 @@
 				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
 				02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */,
 				02F8B7F82786FFB900595AA6 /* AuthFillGenderController.xib in Resources */,
+				02AFDFE2279EBA800078B52D /* HarksStatus.graphql in Resources */,
 				02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */,
 				FA9BCF75277C6EDA009F652E /* LaunchScreen.storyboard in Resources */,
 				02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */,
@@ -937,6 +955,7 @@
 				02675645278E078E00FBA4E9 /* OnlineStatisticsModel.swift in Sources */,
 				02675647278E0B8A00FBA4E9 /* Int+Extension.swift in Sources */,
 				0288744E279ADA5100E802CA /* PaginationModel.swift in Sources */,
+				02AFDFE5279EBD9C0078B52D /* HarksStatusModel.swift in Sources */,
 				02887450279ADA5F00E802CA /* HarkRequestsModel.swift in Sources */,
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
@@ -1321,6 +1340,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		02AFDFDB279E92590078B52D /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.5;
+			};
+		};
 		02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
@@ -1345,14 +1372,6 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.5;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1371,6 +1390,16 @@
 			package = 02887446279AC19000E802CA /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
 			productName = AgoraRtcKit;
 		};
+		02AFDFDC279E92590078B52D /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02AFDFDB279E92590078B52D /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		02AFDFDE279E92590078B52D /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02AFDFDB279E92590078B52D /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
 		02EEBD482785A6B4001DA462 /* PhoneNumberKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
@@ -1385,11 +1414,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
-		};
-		FADA714D2784886D00A784FA /* Apollo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FADA714C2784886D00A784FA /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = Apollo;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

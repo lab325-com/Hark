@@ -27,7 +27,7 @@ protocol HarkListPresenterProtocol: AnyObject {
     
     func firstGetList(offset: Int)
     
-    func getHarkList(offset: Int)
+    func getHarkList(offset: Int, limit: Int)
     func getRequest(offset: Int)
 }
 
@@ -36,6 +36,7 @@ class HarkListPresenter: HarkListPresenterProtocol {
     private weak var view: HarkListOutputProtocol?
     private var isLoaded = false
     private var request: Cancellable?
+    private var subscription: Cancellable?
     
     var harksList = [HarksListModel]()
     var harksRequests = [RequestsModel]()
@@ -48,6 +49,11 @@ class HarkListPresenter: HarkListPresenterProtocol {
     required init(view: HarkListOutputProtocol) {
         self.view = view
     }
+    
+    deinit {
+        // Make sure the subscription is cancelled, if it exists, when this object is deallocated.
+        self.subscription?.cancel()
+      }
     
     func firstGetList(offset: Int) {
         view?.startLoader()
@@ -82,7 +88,7 @@ class HarkListPresenter: HarkListPresenterProtocol {
         }
     }
     
-    func getHarkList(offset: Int) {
+    func getHarkList(offset: Int, limit: Int) {
         let query = HarksQuery(limit: limit, offset: offset)
         self.view?.startLoader()
         request = Network.shared.query(model: HarksModel.self, query, controller: view) { [weak self] model in
@@ -118,4 +124,29 @@ class HarkListPresenter: HarkListPresenterProtocol {
             
         }
     }
+    
+    func subscribe() {
+        self.subscription = Network.Apollo.shared.client
+            .subscribe(subscription: HarksStatusSubscription()) { [weak self] result in
+                guard let self = self else {
+                    return
+                }
+
+                switch result {
+                case .success(let graphQLResult):
+                    do {
+                        let data = try JSONSerialization.data(withJSONObject: graphQLResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
+                        let _ = try JSONDecoder().decode(HarksStatusModel.self, from: data)
+                        self.getHarkList(offset: 0, limit: self.harksList.count == 0 ? self.limit : self.harksList.count)
+                    } catch {
+                        debugPrint("Failure! Error: \(error)")
+                    }
+                case .failure(let error):
+                    debugPrint(error)
+                    break
+                    // Not included here: Show some kind of alert
+                }
+            }
+    }
 }
+ 

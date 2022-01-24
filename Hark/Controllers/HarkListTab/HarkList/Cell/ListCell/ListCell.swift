@@ -16,6 +16,7 @@ class ListCell: UITableViewCell {
     
     @IBOutlet weak var phoneImageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var bottomLayout: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,8 +37,15 @@ class ListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func config(model: HarksListModel) {
+    func config(model: HarksListModel, nextIsTheSame: Bool) {
         nameLabel.text = model.nickName
+        
+        if nextIsTheSame {
+            bottomLayout.constant = 2
+        } else {
+            bottomLayout.constant = 20
+        }
+        layoutIfNeeded()
         
         if model.status == .userStatusTypeOnline {
             phoneImageView.isHidden = false
