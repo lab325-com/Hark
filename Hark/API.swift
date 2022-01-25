@@ -351,6 +351,96 @@ public enum UserStatusType: RawRepresentable, Equatable, Hashable, CaseIterable,
   }
 }
 
+public enum TalkRoleName: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case talkRoleNamePublisher
+  case talkRoleNameSubscriber
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "TALK_ROLE_NAME_PUBLISHER": self = .talkRoleNamePublisher
+      case "TALK_ROLE_NAME_SUBSCRIBER": self = .talkRoleNameSubscriber
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .talkRoleNamePublisher: return "TALK_ROLE_NAME_PUBLISHER"
+      case .talkRoleNameSubscriber: return "TALK_ROLE_NAME_SUBSCRIBER"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: TalkRoleName, rhs: TalkRoleName) -> Bool {
+    switch (lhs, rhs) {
+      case (.talkRoleNamePublisher, .talkRoleNamePublisher): return true
+      case (.talkRoleNameSubscriber, .talkRoleNameSubscriber): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [TalkRoleName] {
+    return [
+      .talkRoleNamePublisher,
+      .talkRoleNameSubscriber,
+    ]
+  }
+}
+
+public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case subscriptionEventTypeMatchFound
+  case subscriptionEventTypeMatchInitiatesTalk
+  case subscriptionEventTypeTalkDeclined
+  case subscriptionEventTypeTalkFinished
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "SUBSCRIPTION_EVENT_TYPE_MATCH_FOUND": self = .subscriptionEventTypeMatchFound
+      case "SUBSCRIPTION_EVENT_TYPE_MATCH_INITIATES_TALK": self = .subscriptionEventTypeMatchInitiatesTalk
+      case "SUBSCRIPTION_EVENT_TYPE_TALK_DECLINED": self = .subscriptionEventTypeTalkDeclined
+      case "SUBSCRIPTION_EVENT_TYPE_TALK_FINISHED": self = .subscriptionEventTypeTalkFinished
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .subscriptionEventTypeMatchFound: return "SUBSCRIPTION_EVENT_TYPE_MATCH_FOUND"
+      case .subscriptionEventTypeMatchInitiatesTalk: return "SUBSCRIPTION_EVENT_TYPE_MATCH_INITIATES_TALK"
+      case .subscriptionEventTypeTalkDeclined: return "SUBSCRIPTION_EVENT_TYPE_TALK_DECLINED"
+      case .subscriptionEventTypeTalkFinished: return "SUBSCRIPTION_EVENT_TYPE_TALK_FINISHED"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: SubscriptionEventType, rhs: SubscriptionEventType) -> Bool {
+    switch (lhs, rhs) {
+      case (.subscriptionEventTypeMatchFound, .subscriptionEventTypeMatchFound): return true
+      case (.subscriptionEventTypeMatchInitiatesTalk, .subscriptionEventTypeMatchInitiatesTalk): return true
+      case (.subscriptionEventTypeTalkDeclined, .subscriptionEventTypeTalkDeclined): return true
+      case (.subscriptionEventTypeTalkFinished, .subscriptionEventTypeTalkFinished): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [SubscriptionEventType] {
+    return [
+      .subscriptionEventTypeMatchFound,
+      .subscriptionEventTypeMatchInitiatesTalk,
+      .subscriptionEventTypeTalkDeclined,
+      .subscriptionEventTypeTalkFinished,
+    ]
+  }
+}
+
 public final class LoginMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -777,6 +867,57 @@ public final class VerifyPhoneMutation: GraphQLMutation {
         set {
           resultMap.updateValue(newValue, forKey: "authToken")
         }
+      }
+    }
+  }
+}
+
+public final class DeclineTalkQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query DeclineTalk($talkId: String!) {
+      declineTalk(talkId: $talkId)
+    }
+    """
+
+  public let operationName: String = "DeclineTalk"
+
+  public var talkId: String
+
+  public init(talkId: String) {
+    self.talkId = talkId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["talkId": talkId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("declineTalk", arguments: ["talkId": GraphQLVariable("talkId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(declineTalk: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "declineTalk": declineTalk])
+    }
+
+    public var declineTalk: Bool? {
+      get {
+        return resultMap["declineTalk"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "declineTalk")
       }
     }
   }
@@ -1947,6 +2088,240 @@ public final class HarksStatusSubscription: GraphQLSubscription {
         }
         set {
           resultMap.updateValue(newValue, forKey: "status")
+        }
+      }
+    }
+  }
+}
+
+public final class StartMatchingSubscription: GraphQLSubscription {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    subscription startMatching {
+      startMatching {
+        __typename
+        token
+        talkId
+        channelName
+        role
+      }
+    }
+    """
+
+  public let operationName: String = "startMatching"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Subscription"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("startMatching", type: .object(StartMatching.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(startMatching: StartMatching? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Subscription", "startMatching": startMatching.flatMap { (value: StartMatching) -> ResultMap in value.resultMap }])
+    }
+
+    public var startMatching: StartMatching? {
+      get {
+        return (resultMap["startMatching"] as? ResultMap).flatMap { StartMatching(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "startMatching")
+      }
+    }
+
+    public struct StartMatching: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["MatchResponse"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("token", type: .scalar(String.self)),
+          GraphQLField("talkId", type: .scalar(String.self)),
+          GraphQLField("channelName", type: .scalar(String.self)),
+          GraphQLField("role", type: .scalar(TalkRoleName.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(token: String? = nil, talkId: String? = nil, channelName: String? = nil, role: TalkRoleName? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MatchResponse", "token": token, "talkId": talkId, "channelName": channelName, "role": role])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var token: String? {
+        get {
+          return resultMap["token"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "token")
+        }
+      }
+
+      public var talkId: String? {
+        get {
+          return resultMap["talkId"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "talkId")
+        }
+      }
+
+      public var channelName: String? {
+        get {
+          return resultMap["channelName"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "channelName")
+        }
+      }
+
+      public var role: TalkRoleName? {
+        get {
+          return resultMap["role"] as? TalkRoleName
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "role")
+        }
+      }
+    }
+  }
+}
+
+public final class TalkSubscription: GraphQLSubscription {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    subscription talk($talkId: String!) {
+      talk(talkId: $talkId) {
+        __typename
+        event
+        declinedBy
+        finishedBy
+      }
+    }
+    """
+
+  public let operationName: String = "talk"
+
+  public var talkId: String
+
+  public init(talkId: String) {
+    self.talkId = talkId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["talkId": talkId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Subscription"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("talk", arguments: ["talkId": GraphQLVariable("talkId")], type: .object(Talk.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(talk: Talk? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Subscription", "talk": talk.flatMap { (value: Talk) -> ResultMap in value.resultMap }])
+    }
+
+    public var talk: Talk? {
+      get {
+        return (resultMap["talk"] as? ResultMap).flatMap { Talk(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "talk")
+      }
+    }
+
+    public struct Talk: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["TalkResponse"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("event", type: .scalar(SubscriptionEventType.self)),
+          GraphQLField("declinedBy", type: .scalar(String.self)),
+          GraphQLField("finishedBy", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(event: SubscriptionEventType? = nil, declinedBy: String? = nil, finishedBy: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "TalkResponse", "event": event, "declinedBy": declinedBy, "finishedBy": finishedBy])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var event: SubscriptionEventType? {
+        get {
+          return resultMap["event"] as? SubscriptionEventType
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "event")
+        }
+      }
+
+      public var declinedBy: String? {
+        get {
+          return resultMap["declinedBy"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "declinedBy")
+        }
+      }
+
+      public var finishedBy: String? {
+        get {
+          return resultMap["finishedBy"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "finishedBy")
         }
       }
     }

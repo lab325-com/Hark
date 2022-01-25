@@ -14,6 +14,15 @@
 		0200AE992799279300A91A72 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE952799279200A91A72 /* Staging.xcconfig */; };
 		0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE962799279300A91A72 /* Release.xcconfig */; };
 		0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE9E27999D4F00A91A72 /* Harks.graphql */; };
+		0203C87C279FF04B00720640 /* StartMatching.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0203C87B279FF04B00720640 /* StartMatching.graphql */; };
+		0203C87E279FF07800720640 /* StartMatchingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C87D279FF07800720640 /* StartMatchingModel.swift */; };
+		0203C882279FF71200720640 /* MainGoSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C880279FF71200720640 /* MainGoSearchController.swift */; };
+		0203C883279FF71200720640 /* MainGoSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0203C881279FF71200720640 /* MainGoSearchController.xib */; };
+		0203C885279FF74800720640 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C884279FF74800720640 /* MainRouter.swift */; };
+		0203C88827A000AB00720640 /* DeclineTalk.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0203C88727A000AB00720640 /* DeclineTalk.graphql */; };
+		0203C88A27A0017400720640 /* DeclineTalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C88927A0017400720640 /* DeclineTalkModel.swift */; };
+		0203C88D27A0360800720640 /* Talk.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0203C88C27A0360800720640 /* Talk.graphql */; };
+		0203C88F27A0391B00720640 /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C88E27A0391B00720640 /* TalkModel.swift */; };
 		0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1CF2797F97A0092F804 /* HarkListController.swift */; };
 		0227C1D4279805E90092F804 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1D2279805E90092F804 /* ListCell.swift */; };
 		0227C1D5279805E90092F804 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0227C1D3279805E90092F804 /* ListCell.xib */; };
@@ -123,6 +132,15 @@
 		0200AE952799279200A91A72 /* Staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		0200AE962799279300A91A72 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		0200AE9E27999D4F00A91A72 /* Harks.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Harks.graphql; sourceTree = "<group>"; };
+		0203C87B279FF04B00720640 /* StartMatching.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartMatching.graphql; sourceTree = "<group>"; };
+		0203C87D279FF07800720640 /* StartMatchingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMatchingModel.swift; sourceTree = "<group>"; };
+		0203C880279FF71200720640 /* MainGoSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGoSearchController.swift; sourceTree = "<group>"; };
+		0203C881279FF71200720640 /* MainGoSearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainGoSearchController.xib; sourceTree = "<group>"; };
+		0203C884279FF74800720640 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		0203C88727A000AB00720640 /* DeclineTalk.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DeclineTalk.graphql; sourceTree = "<group>"; };
+		0203C88927A0017400720640 /* DeclineTalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineTalkModel.swift; sourceTree = "<group>"; };
+		0203C88C27A0360800720640 /* Talk.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Talk.graphql; sourceTree = "<group>"; };
+		0203C88E27A0391B00720640 /* TalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModel.swift; sourceTree = "<group>"; };
 		0227C1CF2797F97A0092F804 /* HarkListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListController.swift; sourceTree = "<group>"; };
 		0227C1D2279805E90092F804 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		0227C1D3279805E90092F804 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
@@ -274,6 +292,51 @@
 			path = Harks;
 			sourceTree = "<group>";
 		};
+		0203C879279FF01A00720640 /* HarksStatus */ = {
+			isa = PBXGroup;
+			children = (
+				02AFDFE1279EBA800078B52D /* HarksStatus.graphql */,
+				02AFDFE4279EBD9C0078B52D /* HarksStatusModel.swift */,
+			);
+			path = HarksStatus;
+			sourceTree = "<group>";
+		};
+		0203C87A279FF02600720640 /* StartMatching */ = {
+			isa = PBXGroup;
+			children = (
+				0203C87B279FF04B00720640 /* StartMatching.graphql */,
+				0203C87D279FF07800720640 /* StartMatchingModel.swift */,
+			);
+			path = StartMatching;
+			sourceTree = "<group>";
+		};
+		0203C87F279FF6F500720640 /* MainGoSearch */ = {
+			isa = PBXGroup;
+			children = (
+				0203C880279FF71200720640 /* MainGoSearchController.swift */,
+				0203C881279FF71200720640 /* MainGoSearchController.xib */,
+			);
+			path = MainGoSearch;
+			sourceTree = "<group>";
+		};
+		0203C88627A0008B00720640 /* DeclineTalk */ = {
+			isa = PBXGroup;
+			children = (
+				0203C88727A000AB00720640 /* DeclineTalk.graphql */,
+				0203C88927A0017400720640 /* DeclineTalkModel.swift */,
+			);
+			path = DeclineTalk;
+			sourceTree = "<group>";
+		};
+		0203C88B27A035DE00720640 /* Talk */ = {
+			isa = PBXGroup;
+			children = (
+				0203C88C27A0360800720640 /* Talk.graphql */,
+				0203C88E27A0391B00720640 /* TalkModel.swift */,
+			);
+			path = Talk;
+			sourceTree = "<group>";
+		};
 		0227C1CE2797F95D0092F804 /* HarkListTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +403,9 @@
 			isa = PBXGroup;
 			children = (
 				0267563E278E065E00FBA4E9 /* MainPresenter.swift */,
+				0203C884279FF74800720640 /* MainRouter.swift */,
 				02675640278E06B600FBA4E9 /* Main */,
+				0203C87F279FF6F500720640 /* MainGoSearch */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -431,8 +496,9 @@
 		02AFDFE0279EBA2E0078B52D /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
-				02AFDFE1279EBA800078B52D /* HarksStatus.graphql */,
-				02AFDFE4279EBD9C0078B52D /* HarksStatusModel.swift */,
+				0203C88B27A035DE00720640 /* Talk */,
+				0203C87A279FF02600720640 /* StartMatching */,
+				0203C879279FF01A00720640 /* HarksStatus */,
 			);
 			path = Subscription;
 			sourceTree = "<group>";
@@ -616,6 +682,7 @@
 		FA1E690827848CAE00030600 /* Query */ = {
 			isa = PBXGroup;
 			children = (
+				0203C88627A0008B00720640 /* DeclineTalk */,
 				02887449279AD9E500E802CA /* HarkRequests */,
 				0200AE9D27999D2F00A91A72 /* Harks */,
 				02ED71E02799D65700CAE787 /* MatchSettings */,
@@ -851,6 +918,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0203C883279FF71200720640 /* MainGoSearchController.xib in Resources */,
 				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
 				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
 				02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */,
@@ -867,6 +935,7 @@
 				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
 				02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */,
 				02F8B7F82786FFB900595AA6 /* AuthFillGenderController.xib in Resources */,
+				0203C88827A000AB00720640 /* DeclineTalk.graphql in Resources */,
 				02AFDFE2279EBA800078B52D /* HarksStatus.graphql in Resources */,
 				02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */,
 				FA9BCF75277C6EDA009F652E /* LaunchScreen.storyboard in Resources */,
@@ -882,6 +951,7 @@
 				02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */,
 				FA1E690B27848D0600030600 /* Me.graphql in Resources */,
 				02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */,
+				0203C87C279FF04B00720640 /* StartMatching.graphql in Resources */,
 				02F8B80E2787129C00595AA6 /* OnboardingCell.xib in Resources */,
 				02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */,
 				02675654278ED30D00FBA4E9 /* MenuProfileController.xib in Resources */,
@@ -889,6 +959,7 @@
 				02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */,
 				0200AE972799279300A91A72 /* Debug.xcconfig in Resources */,
 				02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */,
+				0203C88D27A0360800720640 /* Talk.graphql in Resources */,
 				027629AA2785DC630096DC2E /* VerifyPhone.graphql in Resources */,
 				022FB57F27970AFC00870064 /* UpdateMatchSettings.graphql in Resources */,
 			);
@@ -924,10 +995,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0203C885279FF74800720640 /* MainRouter.swift in Sources */,
 				02675653278ED30D00FBA4E9 /* MenuProfileController.swift in Sources */,
 				0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */,
 				0200AE912799276C00A91A72 /* AppConfigurationBridge.m in Sources */,
 				02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */,
+				0203C882279FF71200720640 /* MainGoSearchController.swift in Sources */,
 				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
 				02ED71E42799D6B200CAE787 /* MatchSettingsModel.swift in Sources */,
@@ -945,11 +1018,14 @@
 				02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */,
 				0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */,
 				FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */,
+				0203C87E279FF07800720640 /* StartMatchingModel.swift in Sources */,
 				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
 				027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */,
+				0203C88A27A0017400720640 /* DeclineTalkModel.swift in Sources */,
 				FA9BCF8A277C7614009F652E /* UIViewController+Extension.swift in Sources */,
 				0227C1DA279827EE0092F804 /* RequestCell.swift in Sources */,
 				FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */,
+				0203C88F27A0391B00720640 /* TalkModel.swift in Sources */,
 				FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */,
 				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
 				02675645278E078E00FBA4E9 /* OnlineStatisticsModel.swift in Sources */,

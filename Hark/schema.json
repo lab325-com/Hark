@@ -127,6 +127,12 @@
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "QUEUE_NAME_TALK_WATCHER",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "possibleTypes": null
@@ -202,6 +208,48 @@
           },
           {
             "name": "TALK_STATUS_STARTED",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "TalkRoleName",
+        "description": null,
+        "specifiedByUrl": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "TALK_ROLE_NAME_PUBLISHER",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "TALK_ROLE_NAME_SUBSCRIBER",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "TalkWatcher",
+        "description": null,
+        "specifiedByUrl": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "CHECK_TALK_HAS_STARTED",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -1054,8 +1102,8 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "GraphQLJSON",
+              "kind": "OBJECT",
+              "name": "MatchResponse",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1079,8 +1127,8 @@
               }
             ],
             "type": {
-              "kind": "SCALAR",
-              "name": "GraphQLJSON",
+              "kind": "OBJECT",
+              "name": "TalkResponse",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1812,6 +1860,66 @@
         "possibleTypes": null
       },
       {
+        "kind": "OBJECT",
+        "name": "MatchResponse",
+        "description": null,
+        "specifiedByUrl": null,
+        "fields": [
+          {
+            "name": "token",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "talkId",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "channelName",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "role",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "ENUM",
+              "name": "TalkRoleName",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
         "kind": "INPUT_OBJECT",
         "name": "MatchSettingsUpdateInput",
         "description": null,
@@ -1948,6 +2056,54 @@
             "type": {
               "kind": "SCALAR",
               "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "TalkResponse",
+        "description": null,
+        "specifiedByUrl": null,
+        "fields": [
+          {
+            "name": "event",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "ENUM",
+              "name": "SubscriptionEventType",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "declinedBy",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "finishedBy",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,

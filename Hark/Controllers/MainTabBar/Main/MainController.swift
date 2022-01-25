@@ -21,11 +21,19 @@ class MainController: BaseController {
     
     @IBOutlet weak var totalTalksLabel: UILabel!
     
+    @IBOutlet weak var mainCountImageView: UIImageView!
+    @IBOutlet weak var countsStackView: UIStackView!
+    @IBOutlet weak var searchingImageView: UIImageView!
+    @IBOutlet weak var inTalksLAbel: UILabel!
+    
+    @IBOutlet weak var startSearchButton: UIButton!
+    
     //----------------------------------------------
     // MARK: - Property
     //----------------------------------------------
     
     private lazy var presenter = MainPresenter(view: self)
+    private var isStartSearch = false
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -43,6 +51,7 @@ class MainController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        updateStartSearch(false)
         presenter.getOnlineStatistics()
         checkingStatistics()
     }
@@ -96,6 +105,36 @@ class MainController: BaseController {
             totalTalksLabel.text = ""
         }
     }
+    
+    private func updateStartSearch(_ search: Bool) {
+        UIView.animate(withDuration: 0.3) {
+            self.totalTalksLabel.alpha = search ? 0.0 : 1.0
+            self.mainCountImageView.alpha = search ? 0.0 : 1.0
+            self.countsStackView.alpha = search ? 0.0 : 1.0
+            self.inTalksLAbel.alpha = search ? 0.0 : 1.0
+        
+            self.searchingImageView.alpha = search ? 1.0 : 0.0
+        
+            self.startSearchButton.setTitle(search ? "Stop search" : "Start Search", for: .normal)
+            self.startSearchButton.backgroundColor = search ? UIColor(rgb: 0x191919) : UIColor(rgb: 0x3CDBBE)
+            self.startSearchButton.setTitleColor(search ? UIColor.white : UIColor.black, for: .normal)
+        }
+    }
+    
+    //----------------------------------------------
+    // MARK: - IBActionк
+    //----------------------------------------------
+    
+    @IBAction func actionStartSearch(_ sender: UIButton) {
+        isStartSearch = !isStartSearch
+        updateStartSearch(isStartSearch)
+
+        if isStartSearch {
+            presenter.subscribeStartMath()
+        } else {
+            presenter.unsubscribeStartMath()
+        }
+    }
 }
 
 //----------------------------------------------
@@ -105,5 +144,34 @@ class MainController: BaseController {
 extension MainController: MainOutputProtocol {
     func success() {
         checkingStatistics()
+    }
+    
+    func successStartMath(model: StartMatchingModel) {
+        presenter.subscribeTalkId(talkId: model.startMatching.talkId)
+        MainRouter(presenter: navigationController).presentMainGo(tabBarController: tabBarController, delegate: self, talkId: model.startMatching.talkId)
+    }
+    
+    func successTalkID() {
+        dismiss(animated: true)
+        isStartSearch = !isStartSearch
+        updateStartSearch(isStartSearch)
+    }
+}
+
+//----------------------------------------------
+// MARK: - MainGoSearchDelegate
+//----------------------------------------------
+
+extension MainController: MainGoSearchDelegate {
+    func mainGoCancel(controller: MainGoSearchController) {
+//        isStartSearch = !isStartSearch
+//        updateStartSearch(isStartSearch)
+    }
+    
+    func mainGoSuccess(controller: MainGoSearchController) {
+        dismiss(animated: false) {
+            ProfileRouter(presenter: self.navigationController).presentMenu()
+        }
+        
     }
 }

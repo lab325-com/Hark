@@ -1,0 +1,5 @@
+query DeclineTalk($talkId: String!) {
+	declineTalk(talkId: $talkId)
+}
+
+

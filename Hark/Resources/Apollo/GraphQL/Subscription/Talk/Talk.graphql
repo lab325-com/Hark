@@ -1,0 +1,7 @@
+subscription talk($talkId: String!) {
+	talk(talkId: $talkId) {
+        event
+        declinedBy
+        finishedBy
+	}
+}
