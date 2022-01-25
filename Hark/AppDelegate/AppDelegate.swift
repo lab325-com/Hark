@@ -1,6 +1,7 @@
 
 import UIKit
 import AgoraRtcKit
+import AgoraRtmKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,3 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate: AgoraRtmInvitertDelegate {
+    func inviter(_ inviter: AgoraRtmCallKit, didReceivedIncoming invitation: AgoraRtmInvitation) {
+        
+    }
+
+    func inviter(_ inviter: AgoraRtmCallKit, remoteDidCancelIncoming invitation: AgoraRtmInvitation) {
+        
+    }
+}

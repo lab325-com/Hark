@@ -34,6 +34,7 @@ class MainController: BaseController {
     
     private lazy var presenter = MainPresenter(view: self)
     private var isStartSearch = false
+    private var startMathModel: StartMatchingModel?
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -147,6 +148,7 @@ extension MainController: MainOutputProtocol {
     }
     
     func successStartMath(model: StartMatchingModel) {
+        startMathModel = model
         presenter.subscribeTalkId(talkId: model.startMatching.talkId)
         MainRouter(presenter: navigationController).presentMainGo(tabBarController: tabBarController, delegate: self, talkId: model.startMatching.talkId)
     }
@@ -170,8 +172,19 @@ extension MainController: MainGoSearchDelegate {
     
     func mainGoSuccess(controller: MainGoSearchController) {
         dismiss(animated: false) {
-            ProfileRouter(presenter: self.navigationController).presentMenu()
+            HarkListRouter(presenter: self.navigationController).presentOutgoingCall(model: nil, delegate: self)
         }
         
+    }
+}
+
+//----------------------------------------------
+// MARK: - OutgoingCallDelegate
+//----------------------------------------------
+
+extension MainController: OutgoingCallDelegate {
+    func outgoingCallClose(controller: OutgoingCall) {
+        guard let talkId = startMathModel?.startMatching.talkId else { return }
+        presenter.declineTalks(talkId: talkId)
     }
 }

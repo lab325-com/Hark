@@ -23,6 +23,8 @@
 		0203C88A27A0017400720640 /* DeclineTalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C88927A0017400720640 /* DeclineTalkModel.swift */; };
 		0203C88D27A0360800720640 /* Talk.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0203C88C27A0360800720640 /* Talk.graphql */; };
 		0203C88F27A0391B00720640 /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C88E27A0391B00720640 /* TalkModel.swift */; };
+		0203C89227A04F2F00720640 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 0203C89127A04F2F00720640 /* Apollo */; };
+		0203C89427A04F2F00720640 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 0203C89327A04F2F00720640 /* ApolloWebSocket */; };
 		0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1CF2797F97A0092F804 /* HarkListController.swift */; };
 		0227C1D4279805E90092F804 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1D2279805E90092F804 /* ListCell.swift */; };
 		0227C1D5279805E90092F804 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0227C1D3279805E90092F804 /* ListCell.xib */; };
@@ -109,6 +111,9 @@
 		FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E69222785B61600030600 /* SwiftKeychainWrapper */; };
 		FA1E69262785B71F00030600 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69252785B71F00030600 /* AuthModel.swift */; };
 		FA1E69282785B75200030600 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69272785B75200030600 /* MeModel.swift */; };
+		FA4681A0279F18300009B296 /* AgoraRtm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46819F279F18300009B296 /* AgoraRtm.swift */; };
+		FA4681A3279F18BF0009B296 /* AgoraRtmKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA4681A2279F18BF0009B296 /* AgoraRtmKit */; };
+		FA4681A5279F190E0009B296 /* AGEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4681A4279F190E0009B296 /* AGEError.swift */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
 		FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF6C277C6ED8009F652E /* SplashController.swift */; };
 		FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF6E277C6ED8009F652E /* Main.storyboard */; };
@@ -120,6 +125,11 @@
 		FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF8E277C81D5009F652E /* RootRouter.swift */; };
 		FA9BCF91277C822E009F652E /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF90277C822E009F652E /* BaseController.swift */; };
 		FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF93277C82EB009F652E /* SplashController.xib */; };
+		FA9EBCE9279E972C007B3867 /* IncomingCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EBCE7279E972C007B3867 /* IncomingCall.swift */; };
+		FA9EBCEA279E972C007B3867 /* IncomingCall.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9EBCE8279E972C007B3867 /* IncomingCall.xib */; };
+		FA9EBCED279E9742007B3867 /* OutgoingCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EBCEB279E9742007B3867 /* OutgoingCall.swift */; };
+		FA9EBCEE279E9742007B3867 /* OutgoingCall.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9EBCEC279E9742007B3867 /* OutgoingCall.xib */; };
+		FA9EBCF0279EC0F7007B3867 /* HarkListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -219,6 +229,8 @@
 		FA1E691F2785B5CD00030600 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		FA1E69252785B71F00030600 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		FA1E69272785B75200030600 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
+		FA46819F279F18300009B296 /* AgoraRtm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgoraRtm.swift; sourceTree = "<group>"; };
+		FA4681A4279F190E0009B296 /* AGEError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEError.swift; sourceTree = "<group>"; };
 		FA9BCF65277C6ED8009F652E /* Hark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9BCF68277C6ED8009F652E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9BCF6C277C6ED8009F652E /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -232,6 +244,11 @@
 		FA9BCF8E277C81D5009F652E /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		FA9BCF90277C822E009F652E /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		FA9BCF93277C82EB009F652E /* SplashController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashController.xib; sourceTree = "<group>"; };
+		FA9EBCE7279E972C007B3867 /* IncomingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCall.swift; sourceTree = "<group>"; };
+		FA9EBCE8279E972C007B3867 /* IncomingCall.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingCall.xib; sourceTree = "<group>"; };
+		FA9EBCEB279E9742007B3867 /* OutgoingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingCall.swift; sourceTree = "<group>"; };
+		FA9EBCEC279E9742007B3867 /* OutgoingCall.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutgoingCall.xib; sourceTree = "<group>"; };
+		FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,10 +256,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4681A3279F18BF0009B296 /* AgoraRtmKit in Frameworks */,
+				0203C89427A04F2F00720640 /* ApolloWebSocket in Frameworks */,
 				02887448279AC19000E802CA /* AgoraRtcKit in Frameworks */,
 				FA1E691D2785B48E00030600 /* Toast in Frameworks */,
 				027629A52785D0B30096DC2E /* NVActivityIndicatorView in Frameworks */,
 				027629A72785D0B30096DC2E /* NVActivityIndicatorViewExtended in Frameworks */,
+				0203C89227A04F2F00720640 /* Apollo in Frameworks */,
 				FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */,
 				02AFDFDF279E92590078B52D /* ApolloWebSocket in Frameworks */,
 				02AFDFDD279E92590078B52D /* Apollo in Frameworks */,
@@ -341,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */,
+				FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */,
 				02ED71DD2799B20500CAE787 /* HarkList */,
 			);
 			path = HarkListTab;
@@ -729,6 +750,15 @@
 			path = GlobalModels;
 			sourceTree = "<group>";
 		};
+		FA46819E279F18150009B296 /* Agora */ = {
+			isa = PBXGroup;
+			children = (
+				FA4681A4279F190E0009B296 /* AGEError.swift */,
+				FA46819F279F18300009B296 /* AgoraRtm.swift */,
+			);
+			path = Agora;
+			sourceTree = "<group>";
+		};
 		FA9BCF5C277C6ED8009F652E = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +801,7 @@
 		FA9BCF7D277C7184009F652E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA9EBCE6279E96F0007B3867 /* Call */,
 				FA9BCF92277C82AD009F652E /* SplashController */,
 				02F8B7FE278709A800595AA6 /* Onboarding */,
 				02EEBD2827857E9B001DA462 /* Auth */,
@@ -797,6 +828,7 @@
 		FA9BCF7F277C71B3009F652E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA46819E279F18150009B296 /* Agora */,
 				0200AE922799278000A91A72 /* ConfigFiles */,
 				0200AE8A2799272300A91A72 /* Application */,
 				02EEBD2F27858F2C001DA462 /* Fonts */,
@@ -840,6 +872,17 @@
 			path = SplashController;
 			sourceTree = "<group>";
 		};
+		FA9EBCE6279E96F0007B3867 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				FA9EBCE7279E972C007B3867 /* IncomingCall.swift */,
+				FA9EBCE8279E972C007B3867 /* IncomingCall.xib */,
+				FA9EBCEB279E9742007B3867 /* OutgoingCall.swift */,
+				FA9EBCEC279E9742007B3867 /* OutgoingCall.xib */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -864,8 +907,10 @@
 				027629A42785D0B30096DC2E /* NVActivityIndicatorView */,
 				027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */,
 				02887447279AC19000E802CA /* AgoraRtcKit */,
-				02AFDFDC279E92590078B52D /* Apollo */,
+				FA4681A2279F18BF0009B296 /* AgoraRtmKit */,
 				02AFDFDE279E92590078B52D /* ApolloWebSocket */,
+				0203C89127A04F2F00720640 /* Apollo */,
+				0203C89327A04F2F00720640 /* ApolloWebSocket */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -902,7 +947,8 @@
 				FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				02887446279AC19000E802CA /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
-				02AFDFDB279E92590078B52D /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				FA4681A1279F18BE0009B296 /* XCRemoteSwiftPackageReference "AgoraRTM_iOS" */,
+				0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -919,6 +965,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0203C883279FF71200720640 /* MainGoSearchController.xib in Resources */,
+				FA9EBCEE279E9742007B3867 /* OutgoingCall.xib in Resources */,
 				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
 				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
 				02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */,
@@ -946,6 +993,7 @@
 				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
 				0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */,
 				02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */,
+				FA9EBCEA279E972C007B3867 /* IncomingCall.xib in Resources */,
 				02F8B7F12786DE8C00595AA6 /* AuthFillAgeController.xib in Resources */,
 				02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */,
 				02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */,
@@ -1005,11 +1053,13 @@
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
 				02ED71E42799D6B200CAE787 /* MatchSettingsModel.swift in Sources */,
 				02F8B7FD2787049800595AA6 /* UIColor+Extension.swift in Sources */,
+				FA4681A0279F18300009B296 /* AgoraRtm.swift in Sources */,
 				027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */,
 				FA1E69282785B75200030600 /* MeModel.swift in Sources */,
 				FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */,
 				0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
+				FA9EBCE9279E972C007B3867 /* IncomingCall.swift in Sources */,
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
 				02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */,
 				022FB5782796C49C00870064 /* SearchTabController.swift in Sources */,
@@ -1024,6 +1074,8 @@
 				0203C88A27A0017400720640 /* DeclineTalkModel.swift in Sources */,
 				FA9BCF8A277C7614009F652E /* UIViewController+Extension.swift in Sources */,
 				0227C1DA279827EE0092F804 /* RequestCell.swift in Sources */,
+				FA9EBCED279E9742007B3867 /* OutgoingCall.swift in Sources */,
+				FA4681A5279F190E0009B296 /* AGEError.swift in Sources */,
 				FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */,
 				0203C88F27A0391B00720640 /* TalkModel.swift in Sources */,
 				FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */,
@@ -1039,6 +1091,7 @@
 				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
 				022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */,
 				02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */,
+				FA9EBCF0279EC0F7007B3867 /* HarkListRouter.swift in Sources */,
 				02675656278ED85F00FBA4E9 /* SharedManager.swift in Sources */,
 				02F8B7FB2787044F00595AA6 /* MainTabBarController.swift in Sources */,
 				02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */,
@@ -1152,7 +1205,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -1309,7 +1362,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -1348,7 +1401,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = J544E3RJX6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hark/Info.plist;
@@ -1403,6 +1456,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.5;
+			};
+		};
 		027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
@@ -1451,9 +1512,27 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		FA4681A1279F18BE0009B296 /* XCRemoteSwiftPackageReference "AgoraRTM_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraRTM_iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0203C89127A04F2F00720640 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		0203C89327A04F2F00720640 /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
 		027629A42785D0B30096DC2E /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
@@ -1493,6 +1572,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		FA4681A2279F18BF0009B296 /* AgoraRtmKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA4681A1279F18BE0009B296 /* XCRemoteSwiftPackageReference "AgoraRTM_iOS" */;
+			productName = AgoraRtmKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
