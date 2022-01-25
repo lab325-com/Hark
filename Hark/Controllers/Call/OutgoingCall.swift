@@ -63,17 +63,18 @@ class OutgoingCall: BaseController {
     }
     
     private func initializeAndJoinChannel() {
-         agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "f6b0210161b64abdb5d97ddd9456d8cc", delegate: self)
-         agoraKit?.setChannelProfile(.liveBroadcasting)
-         agoraKit?.setClientRole(.broadcaster)
-         agoraKit?.joinChannel(byToken: "006f6b0210161b64abdb5d97ddd9456d8ccIAANa7CrUqdhKyY8H/ctxFEle47LEwRTkWZnBuSygFnQ7jLRTXgAAAAAEABfDyp7TR3wYQEAAQBNHfBh",
-                               channelId: "Test",
-                               info: nil,
-                               uid: 0,
-                               joinSuccess: { (channel, uid, elapsed) in
-             
-         })
-     }
+        
+        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "f6b0210161b64abdb5d97ddd9456d8cc", delegate: self)
+        agoraKit?.setChannelProfile(.liveBroadcasting)
+        agoraKit?.setClientRole(.broadcaster)
+        agoraKit?.joinChannel(byToken: "006f6b0210161b64abdb5d97ddd9456d8ccIABDWRogWEMyZPR2z0kapIxidg57ZsWR4G5FlJkV49GisDLRTXgAAAAAEAD45Mp24YvxYQEAAQDhi/Fh",
+                              channelId: "Test",
+                              info: nil,
+                              uid: 0,
+                              joinSuccess: { (channel, uid, elapsed) in
+            
+        })
+    }
     
     //----------------------------------------------
     // MARK: - Actions
