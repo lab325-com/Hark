@@ -4,5 +4,6 @@ subscription startMatching {
         talkId
         channelName
         role
+		uid
 	}
 }

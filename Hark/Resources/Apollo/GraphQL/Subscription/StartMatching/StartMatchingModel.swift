@@ -14,6 +14,7 @@ struct StartMatchingModel: Codable {
 struct StartMatchingMainModel: Codable {
     let token: String
     let talkId: String
+    let uid: Int
     let channelName: String?
     let role: TalkRoleName
 }

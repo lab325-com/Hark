@@ -1,6 +1,7 @@
 
 import UIKit
 import AgoraRtcKit
+import AgoraRtmKit
 
 protocol OutgoingCallDelegate: AnyObject {
     func outgoingCallClose(controller: OutgoingCall)
@@ -32,14 +33,16 @@ class OutgoingCall: BaseController {
     
     private let token: String?
     private let chanelID: String?
+    private let uid: Int?
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(model: HarksListModel?, delegate: OutgoingCallDelegate, token: String?, chanelID: String?) {
+    init(model: HarksListModel?, delegate: OutgoingCallDelegate, token: String?, chanelID: String?, uid: Int?) {
         self.token = token
         self.chanelID = chanelID
+        self.uid = uid
         self.model = model
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
@@ -78,7 +81,7 @@ class OutgoingCall: BaseController {
         agoraKit?.joinChannel(byToken: token ?? tempToken,
                               channelId: chanelID ?? tempChannelID,
                               info: nil,
-                              uid: 0,
+                              uid: UInt(uid ?? 0),
                               joinSuccess: { [weak self] (channel, uid, elapsed) in
             self?.agoraKit?.setEnableSpeakerphone(true)
             UIApplication.shared.isIdleTimerDisabled = true
@@ -101,8 +104,9 @@ class OutgoingCall: BaseController {
 
 extension OutgoingCall: AgoraRtcEngineDelegate {
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
-        debugPrint("error")
+        debugPrint(errorCode)
     }
+    
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         
     }

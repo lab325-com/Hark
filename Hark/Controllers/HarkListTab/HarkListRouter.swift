@@ -2,8 +2,8 @@
 import Foundation
 
 class HarkListRouter: BaseRouter {
-    func presentOutgoingCall(model: HarksListModel?, delegate: OutgoingCallDelegate, token: String?, chanelID: String?) {
-        let controller = OutgoingCall(model: model, delegate: delegate, token: token, chanelID: chanelID)
+    func presentOutgoingCall(model: HarksListModel?, delegate: OutgoingCallDelegate, token: String?, chanelID: String?, uid: Int?) {
+        let controller = OutgoingCall(model: model, delegate: delegate, token: token, chanelID: chanelID, uid: uid)
         present(controller: controller, animated: false, presentStyle: .overFullScreen)
     }
 }
