@@ -172,7 +172,7 @@ extension MainController: MainGoSearchDelegate {
     
     func mainGoSuccess(controller: MainGoSearchController) {
         dismiss(animated: false) {
-            HarkListRouter(presenter: self.navigationController).presentOutgoingCall(model: nil, delegate: self)
+            HarkListRouter(presenter: self.navigationController).presentOutgoingCall(model: nil, delegate: self, token: self.startMathModel?.startMatching.token, chanelID: self.startMathModel?.startMatching.channelName)
         }
         
     }

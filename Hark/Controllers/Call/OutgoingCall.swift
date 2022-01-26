@@ -27,11 +27,19 @@ class OutgoingCall: BaseController {
     var agoraKit: AgoraRtcEngineKit?
     weak var delegate: OutgoingCallDelegate?
     
+    private let tempToken = "006f6b0210161b64abdb5d97ddd9456d8ccIABDWRogWEMyZPR2z0kapIxidg57ZsWR4G5FlJkV49GisDLRTXgAAAAAEAD45Mp24YvxYQEAAQDhi/Fh"
+    private let tempChannelID = "Test"
+    
+    private let token: String?
+    private let chanelID: String?
+    
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(model: HarksListModel?, delegate: OutgoingCallDelegate) {
+    init(model: HarksListModel?, delegate: OutgoingCallDelegate, token: String?, chanelID: String?) {
+        self.token = token
+        self.chanelID = chanelID
         self.model = model
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
@@ -65,14 +73,15 @@ class OutgoingCall: BaseController {
     private func initializeAndJoinChannel() {
         
         agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "f6b0210161b64abdb5d97ddd9456d8cc", delegate: self)
-        agoraKit?.setChannelProfile(.liveBroadcasting)
-        agoraKit?.setClientRole(.broadcaster)
-        agoraKit?.joinChannel(byToken: "006f6b0210161b64abdb5d97ddd9456d8ccIABDWRogWEMyZPR2z0kapIxidg57ZsWR4G5FlJkV49GisDLRTXgAAAAAEAD45Mp24YvxYQEAAQDhi/Fh",
-                              channelId: "Test",
+        //agoraKit?.setChannelProfile(.liveBroadcasting)
+        //agoraKit?.setClientRole(.broadcaster)
+        agoraKit?.joinChannel(byToken: token ?? tempToken,
+                              channelId: chanelID ?? tempChannelID,
                               info: nil,
                               uid: 0,
-                              joinSuccess: { (channel, uid, elapsed) in
-            
+                              joinSuccess: { [weak self] (channel, uid, elapsed) in
+            self?.agoraKit?.setEnableSpeakerphone(true)
+            UIApplication.shared.isIdleTimerDisabled = true
         })
     }
     
@@ -81,6 +90,7 @@ class OutgoingCall: BaseController {
     //----------------------------------------------
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
+        UIApplication.shared.isIdleTimerDisabled = false
         self.delegate?.outgoingCallClose(controller: self)
         self.dismiss(animated: false)
         agoraKit?.leaveChannel({ stats in
@@ -90,7 +100,10 @@ class OutgoingCall: BaseController {
 }
 
 extension OutgoingCall: AgoraRtcEngineDelegate {
-     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
-         
-     }
- }
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
+        debugPrint("error")
+    }
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
+        
+    }
+}
