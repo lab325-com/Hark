@@ -65,8 +65,9 @@ class LoginPhoneController: BaseController {
     
     @IBAction func actionConfirm(_ sender: UIButton) {
         if phoneLabel.text!.count > 7 {
-            let result = phoneLabel.text!.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
-            presenter.registePhone(phone: result.replacingOccurrences( of:" ", with: "", options: .regularExpression))
+            let result = phoneLabel.text!.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "").replacingOccurrences(of:" ", with: "", options: .regularExpression)
+            let phone = "+" + result
+            presenter.registePhone(phone: phone)
         }
     }
 }

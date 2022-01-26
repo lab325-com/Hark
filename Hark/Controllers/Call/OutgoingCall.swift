@@ -33,13 +33,13 @@ class OutgoingCall: BaseController {
     
     private let token: String?
     private let chanelID: String?
-    private let uid: Int?
+    private let uid: UInt?
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(model: HarksListModel?, delegate: OutgoingCallDelegate, token: String?, chanelID: String?, uid: Int?) {
+    init(model: HarksListModel?, delegate: OutgoingCallDelegate, token: String?, chanelID: String?, uid: UInt?) {
         self.token = token
         self.chanelID = chanelID
         self.uid = uid
@@ -81,7 +81,7 @@ class OutgoingCall: BaseController {
         agoraKit?.joinChannel(byToken: token ?? tempToken,
                               channelId: chanelID ?? tempChannelID,
                               info: nil,
-                              uid: UInt(uid ?? 0),
+                              uid: uid ?? 0,
                               joinSuccess: { [weak self] (channel, uid, elapsed) in
             self?.agoraKit?.setEnableSpeakerphone(true)
             UIApplication.shared.isIdleTimerDisabled = true
