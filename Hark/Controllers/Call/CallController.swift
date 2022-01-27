@@ -95,10 +95,9 @@ class CallController: BaseController {
     }
     
     private func initializeAndJoinChannel() {
+        presenter.subscribeTalkId(talkId: model.talkId)
         
         agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "f6b0210161b64abdb5d97ddd9456d8cc", delegate: self)
-        //agoraKit?.setChannelProfile(.liveBroadcasting)
-        //agoraKit?.setClientRole(.broadcaster)
         agoraKit?.joinChannel(byToken: model.token,
                               channelId: model.channelName,
                               info: nil,
@@ -106,6 +105,17 @@ class CallController: BaseController {
                               joinSuccess: { [weak self] (channel, uid, elapsed) in
             self?.agoraKit?.setEnableSpeakerphone(true)
             UIApplication.shared.isIdleTimerDisabled = true
+        })
+    }
+    
+    private func endCalls() {
+        presenter.unsubscirbeTallk()
+        AgoraRtcEngineKit.destroy()
+        UIApplication.shared.isIdleTimerDisabled = false
+        self.delegate?.callControllerClose(controller: self)
+        self.dismiss(animated: false)
+        agoraKit?.leaveChannel({ stats in
+            
         })
     }
     
@@ -161,6 +171,12 @@ extension CallController: AgoraRtcEngineDelegate {
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
         debugPrint("⛔️ AgoraErrorCode --> \(errorCode.rawValue)")
+        
+        let alert = UIAlertController(title: "Calls", message: "Problem with connection: ⛔️ errorCode --> \(errorCode.rawValue)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.presenter.declineTalks(talkId: self.model.talkId)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
@@ -173,22 +189,10 @@ extension CallController: AgoraRtcEngineDelegate {
 
 extension CallController: CallOutputProtocol {
     func endCall() {
-        AgoraRtcEngineKit.destroy()
-        UIApplication.shared.isIdleTimerDisabled = false
-        self.delegate?.callControllerClose(controller: self)
-        self.dismiss(animated: false)
-        agoraKit?.leaveChannel({ stats in
-            
-        })
+        endCalls()
     }
     
     func successDecline() {
-        AgoraRtcEngineKit.destroy()
-        UIApplication.shared.isIdleTimerDisabled = false
-        self.delegate?.callControllerClose(controller: self)
-        self.dismiss(animated: false)
-        agoraKit?.leaveChannel({ stats in
-            
-        })
+        endCalls()
     }
 }
