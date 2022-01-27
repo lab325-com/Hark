@@ -166,9 +166,12 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectedSegment == 0, let model = presenter.harksList[safe: indexPath.row], model.status == .userStatusTypeOnline {
+//        if selectedSegment == 0, let model = presenter.harksList[safe: indexPath.row], model.status == .userStatusTypeOnline {
+//            presenter.callHark(harkId: model.id)
+//
+//        }
+        if let model = presenter.harksList[safe: indexPath.row] {
             presenter.callHark(harkId: model.id)
-            
         }
     }
 }

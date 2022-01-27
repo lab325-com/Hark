@@ -14,7 +14,6 @@ class MainController: BaseController {
     // MARK: - Life cycle
     //----------------------------------------------
     
-    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var lottieView: AnimationView!
     
     @IBOutlet weak var totalOnlineLabel: UILabel!
@@ -27,7 +26,6 @@ class MainController: BaseController {
     
     @IBOutlet weak var mainCountImageView: UIImageView!
     @IBOutlet weak var countsStackView: UIStackView!
-    @IBOutlet weak var searchingImageView: UIImageView!
     @IBOutlet weak var inTalksLAbel: UILabel!
     
     @IBOutlet weak var startSearchButton: UIButton!
