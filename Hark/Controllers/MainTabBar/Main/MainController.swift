@@ -172,18 +172,17 @@ extension MainController: MainGoSearchDelegate {
     
     func mainGoSuccess(controller: MainGoSearchController) {
         dismiss(animated: false) {
-            HarkListRouter(presenter: self.navigationController).presentOutgoingCall(model: nil, delegate: self, token: self.startMathModel?.startMatching.token, chanelID: self.startMathModel?.startMatching.channelName, uid: self.startMathModel?.startMatching.uid)
+            HarkListRouter(presenter: self.navigationController).presentCall(model: nil, delegate: self, token: self.startMathModel?.startMatching.token, chanelID: self.startMathModel?.startMatching.channelName, uid: self.startMathModel?.startMatching.uid)
         }
-        
     }
 }
 
 //----------------------------------------------
-// MARK: - OutgoingCallDelegate
+// MARK: - CallControllerDelegate
 //----------------------------------------------
 
-extension MainController: OutgoingCallDelegate {
-    func outgoingCallClose(controller: OutgoingCall) {
+extension MainController: CallControllerDelegate {
+    func CallControllerClose(controller: CallController) {
         guard let talkId = startMathModel?.startMatching.talkId else { return }
         presenter.declineTalks(talkId: talkId)
     }

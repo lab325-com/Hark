@@ -167,7 +167,7 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = presenter.harksList[safe: indexPath.row] {
-            HarkListRouter(presenter: navigationController).presentOutgoingCall(model: model, delegate: self, token: nil, chanelID: nil, uid: nil)
+            HarkListRouter(presenter: navigationController).presentCall(model: model, delegate: self, token: nil, chanelID: nil, uid: nil)
         }
     }
 }
@@ -176,7 +176,7 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Life cycle
 //----------------------------------------------
 
-extension HarkListController: HarkListOutputProtocol, OutgoingCallDelegate {
+extension HarkListController: HarkListOutputProtocol, CallControllerDelegate {
     func success() {
         tableView.headerEndRefreshing()
         tableView.reloadData()

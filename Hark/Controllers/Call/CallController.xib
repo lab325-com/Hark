@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OutgoingCall" customModule="Hark" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CallController" customModule="Hark" customModuleProvider="target">
             <connections>
                 <outlet property="infoLabel" destination="Zlw-fD-SMV" id="PKb-ak-Jf9"/>
                 <outlet property="nameLabel" destination="Ap2-h8-wP7" id="cNT-JC-5tF"/>

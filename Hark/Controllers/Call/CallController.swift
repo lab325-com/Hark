@@ -1,17 +1,16 @@
 
 import UIKit
 import AgoraRtcKit
-import AgoraRtmKit
 
-protocol OutgoingCallDelegate: AnyObject {
-    func outgoingCallClose(controller: OutgoingCall)
+protocol CallControllerDelegate: AnyObject {
+    func CallControllerClose(controller: CallController)
 }
 
-extension OutgoingCallDelegate {
-    func outgoingCallClose(controller: OutgoingCall) {}
+extension CallControllerDelegate {
+    func CallControllerClose(controller: CallController) {}
 }
 
-class OutgoingCall: BaseController {
+class CallController: BaseController {
     
     //----------------------------------------------
     // MARK: - IBOutlet
@@ -25,8 +24,9 @@ class OutgoingCall: BaseController {
     //----------------------------------------------
     
     private let model: HarksListModel?
-    var agoraKit: AgoraRtcEngineKit?
-    weak var delegate: OutgoingCallDelegate?
+    private var agoraKit: AgoraRtcEngineKit?
+    
+    weak var delegate: CallControllerDelegate?
     
     private let tempToken = "006f6b0210161b64abdb5d97ddd9456d8ccIABDWRogWEMyZPR2z0kapIxidg57ZsWR4G5FlJkV49GisDLRTXgAAAAAEAD45Mp24YvxYQEAAQDhi/Fh"
     private let tempChannelID = "Test"
@@ -39,7 +39,7 @@ class OutgoingCall: BaseController {
     // MARK: - Init
     //----------------------------------------------
     
-    init(model: HarksListModel?, delegate: OutgoingCallDelegate, token: String?, chanelID: String?, uid: UInt?) {
+    init(model: HarksListModel?, delegate: CallControllerDelegate, token: String?, chanelID: String?, uid: UInt?) {
         self.token = token
         self.chanelID = chanelID
         self.uid = uid
@@ -94,7 +94,7 @@ class OutgoingCall: BaseController {
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
         UIApplication.shared.isIdleTimerDisabled = false
-        self.delegate?.outgoingCallClose(controller: self)
+        self.delegate?.CallControllerClose(controller: self)
         self.dismiss(animated: false)
         agoraKit?.leaveChannel({ stats in
             
@@ -102,7 +102,7 @@ class OutgoingCall: BaseController {
     }
 }
 
-extension OutgoingCall: AgoraRtcEngineDelegate {
+extension CallController: AgoraRtcEngineDelegate {
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
         debugPrint(errorCode)
     }
