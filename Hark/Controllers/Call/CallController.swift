@@ -2,6 +2,7 @@
 import UIKit
 import AgoraRtcKit
 import Lottie
+import Cosmos
 
 protocol CallControllerDelegate: AnyObject {
     func callControllerClose(controller: CallController)
@@ -25,7 +26,20 @@ class CallController: BaseController {
     @IBOutlet weak var callerLabel: UILabel!
     @IBOutlet weak var calleeLabel: UILabel!
     @IBOutlet weak var rateImageView: UIImageView!
+    @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var lottieView: AnimationView!
+    @IBOutlet weak var starsView: CosmosView!
+    @IBOutlet weak var talkDurationTitleLabel: UILabel!
+    @IBOutlet weak var talkDurationLabel: UILabel!
+    @IBOutlet weak var micButton: UIButton!
+    @IBOutlet weak var speakerButton: UIButton!
+    @IBOutlet weak var micLabel: UILabel!
+    @IBOutlet weak var speakerLabel: UILabel!
+    @IBOutlet weak var addToHarksButton: UIButton!
+    @IBOutlet weak var blockUserButton: UIButton!
+    @IBOutlet weak var findAnotherButton: UIButton!
+    @IBOutlet weak var leaveTalkButton: UIButton!
+    @IBOutlet weak var backToMainButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -35,9 +49,6 @@ class CallController: BaseController {
     private var agoraKit: AgoraRtcEngineKit?
     
     weak var delegate: CallControllerDelegate?
-    
-    //private let tempToken = "006f6b0210161b64abdb5d97ddd9456d8ccIABDWRogWEMyZPR2z0kapIxidg57ZsWR4G5FlJkV49GisDLRTXgAAAAAEAD45Mp24YvxYQEAAQDhi/Fh"
-   // private let tempChannelID = "Test"
     
     private let model: CallProtocol
     private lazy var presenter = CallPresenter(view: self)
@@ -66,7 +77,7 @@ class CallController: BaseController {
         super.viewDidLoad()
         
         setup()
-        initializeAndJoinChannel()
+//        initializeAndJoinChannel()
     }
     
     //----------------------------------------------
@@ -76,6 +87,11 @@ class CallController: BaseController {
     private func setup() {
         nameLabel.text = name ?? ""
         infoLabel.text = "Calling..."
+        
+        lottieView.play(completion: nil)
+        
+        starsView.settings.updateOnTouch = true
+        starsView.settings.fillMode = .full
     }
     
     private func initializeAndJoinChannel() {
@@ -103,6 +119,34 @@ class CallController: BaseController {
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
         presenter.declineTalks(talkId: model.talkId)
+    }
+    
+    @IBAction func actionMic(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func actionSpeaker(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func actionAddToHarks(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func actionBlockUser(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func actionFindAnother(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func actionBackToMain(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func actionLeaveTalk(_ sender: UIButton) {
+        
     }
 }
 

@@ -119,6 +119,7 @@
 		FA35692F27A2B22E003468B7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FA35692E27A2B22E003468B7 /* Lottie */; };
 		FA35693327A2B3D1003468B7 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693127A2B3C9003468B7 /* call.json */; };
 		FA35693427A2B3D1003468B7 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693227A2B3D1003468B7 /* search.json */; };
+		FA5E870927A2E19400163A1D /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E870827A2E19400163A1D /* Cosmos */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
 		FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF6C277C6ED8009F652E /* SplashController.swift */; };
 		FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF6E277C6ED8009F652E /* Main.storyboard */; };
@@ -270,6 +271,7 @@
 				027629A72785D0B30096DC2E /* NVActivityIndicatorViewExtended in Frameworks */,
 				0203C89227A04F2F00720640 /* Apollo in Frameworks */,
 				FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */,
+				FA5E870927A2E19400163A1D /* Cosmos in Frameworks */,
 				FA35692F27A2B22E003468B7 /* Lottie in Frameworks */,
 				FABC8CF127A29915002C27C3 /* AgoraRtcKit in Frameworks */,
 				02AFDFDF279E92590078B52D /* ApolloWebSocket in Frameworks */,
@@ -947,6 +949,7 @@
 				0203C89327A04F2F00720640 /* ApolloWebSocket */,
 				FABC8CF027A29915002C27C3 /* AgoraRtcKit */,
 				FA35692E27A2B22E003468B7 /* Lottie */,
+				FA5E870827A2E19400163A1D /* Cosmos */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -985,6 +988,7 @@
 				0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 				FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -1552,6 +1556,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
@@ -1612,6 +1624,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		FA5E870827A2E19400163A1D /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 		FABC8CF027A29915002C27C3 /* AgoraRtcKit */ = {
 			isa = XCSwiftPackageProductDependency;
