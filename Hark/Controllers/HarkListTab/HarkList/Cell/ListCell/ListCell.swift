@@ -47,14 +47,22 @@ class ListCell: UITableViewCell {
         }
         layoutIfNeeded()
         
-        if model.status == .userStatusTypeOnline {
-            phoneImageView.isHidden = false
-            statusLabel.text = "Online"
-            statusView.layer.borderColor = UIColor(red: 0.236, green: 0.858, blue: 0.746, alpha: 1).cgColor
-        } else {
+        if model.status == .userStatusTypeOffline {
             phoneImageView.isHidden = true
             statusLabel.text = "Offline"
             statusView.layer.borderColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1).cgColor
+        } else if model.status == .userStatusTypeInCall {
+            phoneImageView.isHidden = false
+            statusLabel.text = "In Call"
+            statusView.layer.borderColor = UIColor(red: 0.236, green: 0.858, blue: 0.746, alpha: 1).cgColor
+        } else if model.status == .userStatusTypeHidden {
+            phoneImageView.isHidden = false
+            statusLabel.text = "Hidden"
+            statusView.layer.borderColor = UIColor(red: 0.236, green: 0.858, blue: 0.746, alpha: 1).cgColor
+        } else {
+            phoneImageView.isHidden = false
+            statusLabel.text = "Online"
+            statusView.layer.borderColor = UIColor(red: 0.236, green: 0.858, blue: 0.746, alpha: 1).cgColor
         }
     }
 }
