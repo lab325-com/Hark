@@ -14,6 +14,7 @@ import UIKit
 //----------------------------------------------
 protocol HarkListOutputProtocol: BaseController {
     func success()
+    func successCall(model: CallHarkModel)
 }
 
 //----------------------------------------------
@@ -147,6 +148,19 @@ class HarkListPresenter: HarkListPresenterProtocol {
                     // Not included here: Show some kind of alert
                 }
             }
+    }
+    
+    func callHark(harkId: String) {
+        let mutation = CallHarkMutation(harkId: harkId)
+        
+        self.view?.startLoader()
+        request = Network.shared.mutation(model: CallHarkModel.self, mutation, controller: view) { [weak self] model in
+
+            self?.view?.stopLoading()
+            self?.view?.successCall(model: model)
+        } failureHandler: { [weak self] _ in
+            self?.view?.stopLoading()
+        }
     }
 }
  

@@ -1,0 +1,8 @@
+mutation CallHark($harkId: String!) {
+    callHark(harkId: $harkId) {
+        talkId
+        channelName
+        token
+        uid
+    }
+}
