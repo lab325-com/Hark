@@ -18,6 +18,8 @@ protocol MainOutputProtocol: BaseController {
     func successStartMath(model: StartMatchingModel)
     func successDecline()
     func successTalkID()
+    
+    func getCall(model: UserModel)
 }
 
 extension MainOutputProtocol {
@@ -25,6 +27,8 @@ extension MainOutputProtocol {
     func successDecline() {}
     func successStartMath(model: StartMatchingModel) {}
     func successTalkID() {}
+    
+    func getCall(model: UserModel) {}
 }
 
 //----------------------------------------------
@@ -39,6 +43,11 @@ protocol MainPresenterProtocol: AnyObject {
     func subscribeStartMath()
     func unsubscribeStartMath()
     
+    func subscribeTalkId(talkId: String)
+    func unsubscirbeTallk()
+    
+    func subscribeCallUser()
+    func unsubscribeSubscribeCallUser()
 }
 
 class MainPresenter: MainPresenterProtocol {
@@ -49,6 +58,7 @@ class MainPresenter: MainPresenterProtocol {
     
     private var startMath: Cancellable?
     private var talkSubscription: Cancellable?
+    private var userSubscribe: Cancellable?
     
     required init(view: MainOutputProtocol) {
         self.view = view
@@ -60,6 +70,9 @@ class MainPresenter: MainPresenterProtocol {
         
         talkSubscription?.cancel()
         talkSubscription = nil
+        
+        userSubscribe?.cancel()
+        userSubscribe = nil
     }
     
     func getOnlineStatistics() {
@@ -145,8 +158,7 @@ class MainPresenter: MainPresenterProtocol {
                         let data = try JSONSerialization.data(withJSONObject: graphQLResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
                         let _ = try JSONDecoder().decode(TalkSubscriptionModel.self, from: data)
                         
-                        self.talkSubscription?.cancel()
-                        self.talkSubscription = nil
+                        self.unsubscirbeTallk()
                         self.view?.successTalkID()
                     } catch {
                         debugPrint("Failure! Error: \(error)")
@@ -157,5 +169,41 @@ class MainPresenter: MainPresenterProtocol {
                     // Not included here: Show some kind of alert
                 }
             }
+    }
+    
+    func unsubscirbeTallk() {
+        talkSubscription?.cancel()
+        talkSubscription = nil
+    }
+    
+    func subscribeCallUser() {
+        let sub = UserSubscription()
+        self.userSubscribe = Network.Apollo.shared.client
+            .subscribe(subscription: sub) { [weak self] result in
+                guard let self = self else {
+                    return
+                }
+                
+                switch result {
+                case .success(let graphQLResult):
+                    do {
+                        let data = try JSONSerialization.data(withJSONObject: graphQLResult.data?.jsonObject ?? JSONObject(), options: .fragmentsAllowed)
+                        let model = try JSONDecoder().decode(UserModel.self, from: data)
+                        
+                        self.view?.getCall(model: model)
+                    } catch {
+                        debugPrint("Failure! Error: \(error)")
+                    }
+                case .failure(let error):
+                    debugPrint(error)
+                    break
+                    // Not included here: Show some kind of alert
+                }
+            }
+    }
+    
+    func unsubscribeSubscribeCallUser() {
+        userSubscribe?.cancel()
+        userSubscribe = nil
     }
 }

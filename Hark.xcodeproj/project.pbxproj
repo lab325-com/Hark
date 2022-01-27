@@ -34,6 +34,12 @@
 		022FB57F27970AFC00870064 /* UpdateMatchSettings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */; };
 		022FB58127970B4B00870064 /* UpdateMatchSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */; };
 		022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB58227970B9500870064 /* SearchTabPresenter.swift */; };
+		024E83BC27A2A494006B970D /* СallHark.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E83BB27A2A494006B970D /* СallHark.graphql */; };
+		024E83BE27A2A5DB006B970D /* CallHarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83BD27A2A5DB006B970D /* CallHarkModel.swift */; };
+		024E83C127A2A68B006B970D /* User.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E83C027A2A68B006B970D /* User.graphql */; };
+		024E83C327A2ABE4006B970D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C227A2ABE4006B970D /* UserModel.swift */; };
+		024E83C527A2B62E006B970D /* CallPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C427A2B62E006B970D /* CallPresenter.swift */; };
+		024E83C827A2B931006B970D /* CallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C727A2B931006B970D /* CallProtocol.swift */; };
 		0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563A278DDD8D00FBA4E9 /* MainController.swift */; };
 		0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563E278E065E00FBA4E9 /* MainPresenter.swift */; };
 		02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */; };
@@ -155,6 +161,12 @@
 		022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UpdateMatchSettings.graphql; sourceTree = "<group>"; };
 		022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMatchSettingsModel.swift; sourceTree = "<group>"; };
 		022FB58227970B9500870064 /* SearchTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabPresenter.swift; sourceTree = "<group>"; };
+		024E83BB27A2A494006B970D /* СallHark.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "СallHark.graphql"; sourceTree = "<group>"; };
+		024E83BD27A2A5DB006B970D /* CallHarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHarkModel.swift; sourceTree = "<group>"; };
+		024E83C027A2A68B006B970D /* User.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.graphql; sourceTree = "<group>"; };
+		024E83C227A2ABE4006B970D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		024E83C427A2B62E006B970D /* CallPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallPresenter.swift; sourceTree = "<group>"; };
+		024E83C727A2B931006B970D /* CallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallProtocol.swift; sourceTree = "<group>"; };
 		0267563A278DDD8D00FBA4E9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		0267563E278E065E00FBA4E9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnlineStatistics.graphql; sourceTree = "<group>"; };
@@ -410,6 +422,32 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		024E83BA27A2A47A006B970D /* СallHark */ = {
+			isa = PBXGroup;
+			children = (
+				024E83BB27A2A494006B970D /* СallHark.graphql */,
+				024E83BD27A2A5DB006B970D /* CallHarkModel.swift */,
+			);
+			path = "СallHark";
+			sourceTree = "<group>";
+		};
+		024E83BF27A2A670006B970D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				024E83C027A2A68B006B970D /* User.graphql */,
+				024E83C227A2ABE4006B970D /* UserModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		024E83C627A2B919006B970D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				024E83C727A2B931006B970D /* CallProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		02675639278DDD5000FBA4E9 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +545,7 @@
 		02AFDFE0279EBA2E0078B52D /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
+				024E83BF27A2A670006B970D /* User */,
 				0203C88B27A035DE00720640 /* Talk */,
 				0203C87A279FF02600720640 /* StartMatching */,
 				0203C879279FF01A00720640 /* HarksStatus */,
@@ -682,6 +721,7 @@
 		FA1E690727848C9E00030600 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				024E83C627A2B919006B970D /* Protocol */,
 				02AFDFE0279EBA2E0078B52D /* Subscription */,
 				FA1E69242785B6FA00030600 /* GlobalModels */,
 				FA1E690C27848DD700030600 /* Mutation */,
@@ -715,6 +755,7 @@
 		FA1E690C27848DD700030600 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				024E83BA27A2A47A006B970D /* СallHark */,
 				022FB57D27970AD800870064 /* UpdateMatchSettings */,
 				02F8B80527870DE200595AA6 /* ProfileUpdate */,
 				027629A82785DC350096DC2E /* VerifyPhone */,
@@ -855,6 +896,7 @@
 		FA9EBCE6279E96F0007B3867 /* Call */ = {
 			isa = PBXGroup;
 			children = (
+				024E83C427A2B62E006B970D /* CallPresenter.swift */,
 				FA9EBCEB279E9742007B3867 /* CallController.swift */,
 				FA9EBCEC279E9742007B3867 /* CallController.xib */,
 			);
@@ -941,6 +983,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0203C883279FF71200720640 /* MainGoSearchController.xib in Resources */,
+				024E83BC27A2A494006B970D /* СallHark.graphql in Resources */,
 				FA9EBCEE279E9742007B3867 /* CallController.xib in Resources */,
 				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
 				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
@@ -948,6 +991,7 @@
 				02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */,
 				027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */,
 				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
+				024E83C127A2A68B006B970D /* User.graphql in Resources */,
 				02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */,
 				02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */,
 				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
@@ -1026,6 +1070,7 @@
 				0203C882279FF71200720640 /* MainGoSearchController.swift in Sources */,
 				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
 				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
+				024E83C527A2B62E006B970D /* CallPresenter.swift in Sources */,
 				02ED71E42799D6B200CAE787 /* MatchSettingsModel.swift in Sources */,
 				02F8B7FD2787049800595AA6 /* UIColor+Extension.swift in Sources */,
 				027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */,
@@ -1036,6 +1081,8 @@
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
 				02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */,
 				022FB5782796C49C00870064 /* SearchTabController.swift in Sources */,
+				024E83C827A2B931006B970D /* CallProtocol.swift in Sources */,
+				024E83C327A2ABE4006B970D /* UserModel.swift in Sources */,
 				02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */,
 				0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */,
 				02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */,
@@ -1051,6 +1098,7 @@
 				FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */,
 				0203C88F27A0391B00720640 /* TalkModel.swift in Sources */,
 				FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */,
+				024E83BE27A2A5DB006B970D /* CallHarkModel.swift in Sources */,
 				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
 				02675645278E078E00FBA4E9 /* OnlineStatisticsModel.swift in Sources */,
 				02675647278E0B8A00FBA4E9 /* Int+Extension.swift in Sources */,

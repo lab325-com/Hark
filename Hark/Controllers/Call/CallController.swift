@@ -3,11 +3,7 @@ import UIKit
 import AgoraRtcKit
 
 protocol CallControllerDelegate: AnyObject {
-    func CallControllerClose(controller: CallController)
-}
-
-extension CallControllerDelegate {
-    func CallControllerClose(controller: CallController) {}
+    func callControllerClose(controller: CallController)
 }
 
 class CallController: BaseController {
@@ -23,27 +19,24 @@ class CallController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private let model: HarksListModel?
+    private let name: String?
     private var agoraKit: AgoraRtcEngineKit?
     
     weak var delegate: CallControllerDelegate?
     
-    private let tempToken = "006f6b0210161b64abdb5d97ddd9456d8ccIABDWRogWEMyZPR2z0kapIxidg57ZsWR4G5FlJkV49GisDLRTXgAAAAAEAD45Mp24YvxYQEAAQDhi/Fh"
-    private let tempChannelID = "Test"
+    //private let tempToken = "006f6b0210161b64abdb5d97ddd9456d8ccIABDWRogWEMyZPR2z0kapIxidg57ZsWR4G5FlJkV49GisDLRTXgAAAAAEAD45Mp24YvxYQEAAQDhi/Fh"
+   // private let tempChannelID = "Test"
     
-    private let token: String?
-    private let chanelID: String?
-    private let uid: UInt?
+    private let model: CallProtocol
+    private lazy var presenter = CallPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(model: HarksListModel?, delegate: CallControllerDelegate, token: String?, chanelID: String?, uid: UInt?) {
-        self.token = token
-        self.chanelID = chanelID
-        self.uid = uid
+    init(name: String?, delegate: CallControllerDelegate, model: CallProtocol) {
         self.model = model
+        self.name = name
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -69,7 +62,7 @@ class CallController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        nameLabel.text = model?.nickName ?? ""
+        nameLabel.text = name ?? ""
         infoLabel.text = "Calling..."
     }
     
@@ -78,10 +71,10 @@ class CallController: BaseController {
         agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "f6b0210161b64abdb5d97ddd9456d8cc", delegate: self)
         //agoraKit?.setChannelProfile(.liveBroadcasting)
         //agoraKit?.setClientRole(.broadcaster)
-        agoraKit?.joinChannel(byToken: token ?? tempToken,
-                              channelId: chanelID ?? tempChannelID,
+        agoraKit?.joinChannel(byToken: model.token,
+                              channelId: model.channelName,
                               info: nil,
-                              uid: uid ?? 0,
+                              uid: model.uid,
                               joinSuccess: { [weak self] (channel, uid, elapsed) in
             self?.agoraKit?.setEnableSpeakerphone(true)
             UIApplication.shared.isIdleTimerDisabled = true
@@ -93,21 +86,49 @@ class CallController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
+        presenter.declineTalks(talkId: model.talkId)
+    }
+}
+
+//----------------------------------------------
+// MARK: - AgoraRtcEngineDelegate
+//----------------------------------------------
+
+extension CallController: AgoraRtcEngineDelegate {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurWarning warningCode: AgoraWarningCode) {
+        debugPrint("⚠️ AgoraWarningCode --> \(warningCode.rawValue)")
+    }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
+        debugPrint("⛔️ AgoraErrorCode --> \(errorCode.rawValue)")
+    }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
+    }
+}
+
+//----------------------------------------------
+// MARK: - CallOutputProtocol
+//----------------------------------------------
+
+extension CallController: CallOutputProtocol {
+    func endCall() {
+        AgoraRtcEngineKit.destroy()
         UIApplication.shared.isIdleTimerDisabled = false
-        self.delegate?.CallControllerClose(controller: self)
+        self.delegate?.callControllerClose(controller: self)
         self.dismiss(animated: false)
         agoraKit?.leaveChannel({ stats in
             
         })
     }
-}
-
-extension CallController: AgoraRtcEngineDelegate {
-    func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
-        debugPrint(errorCode)
-    }
     
-    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
-        
+    func successDecline() {
+        AgoraRtcEngineKit.destroy()
+        UIApplication.shared.isIdleTimerDisabled = false
+        self.delegate?.callControllerClose(controller: self)
+        self.dismiss(animated: false)
+        agoraKit?.leaveChannel({ stats in
+            
+        })
     }
 }

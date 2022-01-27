@@ -393,6 +393,7 @@ public enum TalkRoleName: RawRepresentable, Equatable, Hashable, CaseIterable, A
 
 public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
+  case subscriptionEventTypeIncomingCall
   case subscriptionEventTypeMatchFound
   case subscriptionEventTypeMatchInitiatesTalk
   case subscriptionEventTypeTalkDeclined
@@ -402,6 +403,7 @@ public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIt
 
   public init?(rawValue: RawValue) {
     switch rawValue {
+      case "SUBSCRIPTION_EVENT_TYPE_INCOMING_CALL": self = .subscriptionEventTypeIncomingCall
       case "SUBSCRIPTION_EVENT_TYPE_MATCH_FOUND": self = .subscriptionEventTypeMatchFound
       case "SUBSCRIPTION_EVENT_TYPE_MATCH_INITIATES_TALK": self = .subscriptionEventTypeMatchInitiatesTalk
       case "SUBSCRIPTION_EVENT_TYPE_TALK_DECLINED": self = .subscriptionEventTypeTalkDeclined
@@ -412,6 +414,7 @@ public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIt
 
   public var rawValue: RawValue {
     switch self {
+      case .subscriptionEventTypeIncomingCall: return "SUBSCRIPTION_EVENT_TYPE_INCOMING_CALL"
       case .subscriptionEventTypeMatchFound: return "SUBSCRIPTION_EVENT_TYPE_MATCH_FOUND"
       case .subscriptionEventTypeMatchInitiatesTalk: return "SUBSCRIPTION_EVENT_TYPE_MATCH_INITIATES_TALK"
       case .subscriptionEventTypeTalkDeclined: return "SUBSCRIPTION_EVENT_TYPE_TALK_DECLINED"
@@ -422,6 +425,7 @@ public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIt
 
   public static func == (lhs: SubscriptionEventType, rhs: SubscriptionEventType) -> Bool {
     switch (lhs, rhs) {
+      case (.subscriptionEventTypeIncomingCall, .subscriptionEventTypeIncomingCall): return true
       case (.subscriptionEventTypeMatchFound, .subscriptionEventTypeMatchFound): return true
       case (.subscriptionEventTypeMatchInitiatesTalk, .subscriptionEventTypeMatchInitiatesTalk): return true
       case (.subscriptionEventTypeTalkDeclined, .subscriptionEventTypeTalkDeclined): return true
@@ -433,6 +437,7 @@ public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIt
 
   public static var allCases: [SubscriptionEventType] {
     return [
+      .subscriptionEventTypeIncomingCall,
       .subscriptionEventTypeMatchFound,
       .subscriptionEventTypeMatchInitiatesTalk,
       .subscriptionEventTypeTalkDeclined,
@@ -866,6 +871,132 @@ public final class VerifyPhoneMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "authToken")
+        }
+      }
+    }
+  }
+}
+
+public final class CallHarkMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation CallHark($harkId: String!) {
+      callHark(harkId: $harkId) {
+        __typename
+        talkId
+        channelName
+        token
+        uid
+      }
+    }
+    """
+
+  public let operationName: String = "CallHark"
+
+  public var harkId: String
+
+  public init(harkId: String) {
+    self.harkId = harkId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["harkId": harkId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("callHark", arguments: ["harkId": GraphQLVariable("harkId")], type: .object(CallHark.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(callHark: CallHark? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "callHark": callHark.flatMap { (value: CallHark) -> ResultMap in value.resultMap }])
+    }
+
+    public var callHark: CallHark? {
+      get {
+        return (resultMap["callHark"] as? ResultMap).flatMap { CallHark(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "callHark")
+      }
+    }
+
+    public struct CallHark: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["CallHarkResponse"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("talkId", type: .scalar(String.self)),
+          GraphQLField("channelName", type: .scalar(String.self)),
+          GraphQLField("token", type: .scalar(String.self)),
+          GraphQLField("uid", type: .scalar(Int.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(talkId: String? = nil, channelName: String? = nil, token: String? = nil, uid: Int? = nil) {
+        self.init(unsafeResultMap: ["__typename": "CallHarkResponse", "talkId": talkId, "channelName": channelName, "token": token, "uid": uid])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var talkId: String? {
+        get {
+          return resultMap["talkId"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "talkId")
+        }
+      }
+
+      public var channelName: String? {
+        get {
+          return resultMap["channelName"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "channelName")
+        }
+      }
+
+      public var token: String? {
+        get {
+          return resultMap["token"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "token")
+        }
+      }
+
+      public var uid: Int? {
+        get {
+          return resultMap["uid"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "uid")
         }
       }
     }
@@ -2333,6 +2464,136 @@ public final class TalkSubscription: GraphQLSubscription {
         }
         set {
           resultMap.updateValue(newValue, forKey: "finishedBy")
+        }
+      }
+    }
+  }
+}
+
+public final class UserSubscription: GraphQLSubscription {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    subscription User {
+      user {
+        __typename
+        event
+        talkId
+        uid
+        channelName
+        token
+      }
+    }
+    """
+
+  public let operationName: String = "User"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Subscription"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("user", type: .object(User.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(user: User? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Subscription", "user": user.flatMap { (value: User) -> ResultMap in value.resultMap }])
+    }
+
+    public var user: User? {
+      get {
+        return (resultMap["user"] as? ResultMap).flatMap { User(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "user")
+      }
+    }
+
+    public struct User: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["UserSubscriptionResponse"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("event", type: .scalar(SubscriptionEventType.self)),
+          GraphQLField("talkId", type: .scalar(String.self)),
+          GraphQLField("uid", type: .scalar(Int.self)),
+          GraphQLField("channelName", type: .scalar(String.self)),
+          GraphQLField("token", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(event: SubscriptionEventType? = nil, talkId: String? = nil, uid: Int? = nil, channelName: String? = nil, token: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "UserSubscriptionResponse", "event": event, "talkId": talkId, "uid": uid, "channelName": channelName, "token": token])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var event: SubscriptionEventType? {
+        get {
+          return resultMap["event"] as? SubscriptionEventType
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "event")
+        }
+      }
+
+      public var talkId: String? {
+        get {
+          return resultMap["talkId"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "talkId")
+        }
+      }
+
+      public var uid: Int? {
+        get {
+          return resultMap["uid"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "uid")
+        }
+      }
+
+      public var channelName: String? {
+        get {
+          return resultMap["channelName"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "channelName")
+        }
+      }
+
+      public var token: String? {
+        get {
+          return resultMap["token"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "token")
         }
       }
     }

@@ -52,6 +52,7 @@ class MainController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        presenter.subscribeCallUser()
         updateStartSearch(false)
         presenter.getOnlineStatistics()
         checkingStatistics()
@@ -143,6 +144,21 @@ class MainController: BaseController {
 //----------------------------------------------
 
 extension MainController: MainOutputProtocol {
+    func getCall(model: UserModel) {
+        navigationController?.popToRootViewController(animated: false)
+        tabBarController?.selectedIndex = 0
+        presenter.unsubscribeStartMath()
+        presenter.unsubscirbeTallk()
+        presenter.unsubscribeSubscribeCallUser()
+        isStartSearch = false
+        updateStartSearch(isStartSearch)
+        
+        DispatchQueue.main.async {
+            self.presenter.subscribeTalkId(talkId: model.user.talkId)
+            HarkListRouter(presenter: self.navigationController).presentCall(model: nil, delegate: self, callModel: model.user)
+        }
+    }
+    
     func success() {
         checkingStatistics()
     }
@@ -155,7 +171,7 @@ extension MainController: MainOutputProtocol {
     
     func successTalkID() {
         dismiss(animated: true)
-        isStartSearch = !isStartSearch
+        isStartSearch = false
         updateStartSearch(isStartSearch)
     }
 }
@@ -171,8 +187,9 @@ extension MainController: MainGoSearchDelegate {
     }
     
     func mainGoSuccess(controller: MainGoSearchController) {
+        guard let searchModel = startMathModel else { return }
         dismiss(animated: false) {
-            HarkListRouter(presenter: self.navigationController).presentCall(model: nil, delegate: self, token: self.startMathModel?.startMatching.token, chanelID: self.startMathModel?.startMatching.channelName, uid: self.startMathModel?.startMatching.uid)
+            HarkListRouter(presenter: self.navigationController).presentCall(model: nil, delegate: self, callModel: searchModel.startMatching)
         }
     }
 }
@@ -182,7 +199,8 @@ extension MainController: MainGoSearchDelegate {
 //----------------------------------------------
 
 extension MainController: CallControllerDelegate {
-    func CallControllerClose(controller: CallController) {
+    func callControllerClose(controller: CallController) {
+        presenter.subscribeCallUser()
         guard let talkId = startMathModel?.startMatching.talkId else { return }
         presenter.declineTalks(talkId: talkId)
     }

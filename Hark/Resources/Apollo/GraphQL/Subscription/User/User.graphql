@@ -1,0 +1,9 @@
+subscription User {
+	user {
+        event
+        talkId
+        uid
+        channelName
+        token
+	}
+}

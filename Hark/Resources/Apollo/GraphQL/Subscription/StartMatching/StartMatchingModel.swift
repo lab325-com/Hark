@@ -11,11 +11,11 @@ struct StartMatchingModel: Codable {
     let startMatching: StartMatchingMainModel
 }
 
-struct StartMatchingMainModel: Codable {
+struct StartMatchingMainModel: Codable, CallProtocol {
     let token: String
     let talkId: String
     let uid: UInt
-    let channelName: String?
+    let channelName: String
     let role: TalkRoleName
 }
 
