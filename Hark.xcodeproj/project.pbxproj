@@ -116,6 +116,9 @@
 		FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E69222785B61600030600 /* SwiftKeychainWrapper */; };
 		FA1E69262785B71F00030600 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69252785B71F00030600 /* AuthModel.swift */; };
 		FA1E69282785B75200030600 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69272785B75200030600 /* MeModel.swift */; };
+		FA35692F27A2B22E003468B7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FA35692E27A2B22E003468B7 /* Lottie */; };
+		FA35693327A2B3D1003468B7 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693127A2B3C9003468B7 /* call.json */; };
+		FA35693427A2B3D1003468B7 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693227A2B3D1003468B7 /* search.json */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
 		FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF6C277C6ED8009F652E /* SplashController.swift */; };
 		FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF6E277C6ED8009F652E /* Main.storyboard */; };
@@ -236,6 +239,8 @@
 		FA1E691F2785B5CD00030600 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		FA1E69252785B71F00030600 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		FA1E69272785B75200030600 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
+		FA35693127A2B3C9003468B7 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
+		FA35693227A2B3D1003468B7 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
 		FA9BCF65277C6ED8009F652E /* Hark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9BCF68277C6ED8009F652E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9BCF6C277C6ED8009F652E /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -265,6 +270,7 @@
 				027629A72785D0B30096DC2E /* NVActivityIndicatorViewExtended in Frameworks */,
 				0203C89227A04F2F00720640 /* Apollo in Frameworks */,
 				FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */,
+				FA35692F27A2B22E003468B7 /* Lottie in Frameworks */,
 				FABC8CF127A29915002C27C3 /* AgoraRtcKit in Frameworks */,
 				02AFDFDF279E92590078B52D /* ApolloWebSocket in Frameworks */,
 				02AFDFDD279E92590078B52D /* Apollo in Frameworks */,
@@ -781,6 +787,15 @@
 			path = GlobalModels;
 			sourceTree = "<group>";
 		};
+		FA35693027A2B3A2003468B7 /* Littie */ = {
+			isa = PBXGroup;
+			children = (
+				FA35693227A2B3D1003468B7 /* search.json */,
+				FA35693127A2B3C9003468B7 /* call.json */,
+			);
+			path = Littie;
+			sourceTree = "<group>";
+		};
 		FA9BCF5C277C6ED8009F652E = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +865,7 @@
 		FA9BCF7F277C71B3009F652E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA35693027A2B3A2003468B7 /* Littie */,
 				0200AE922799278000A91A72 /* ConfigFiles */,
 				0200AE8A2799272300A91A72 /* Application */,
 				02EEBD2F27858F2C001DA462 /* Fonts */,
@@ -930,6 +946,7 @@
 				0203C89127A04F2F00720640 /* Apollo */,
 				0203C89327A04F2F00720640 /* ApolloWebSocket */,
 				FABC8CF027A29915002C27C3 /* AgoraRtcKit */,
+				FA35692E27A2B22E003468B7 /* Lottie */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -967,6 +984,7 @@
 				027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+				FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -997,6 +1015,7 @@
 				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
 				0288744B279ADA0A00E802CA /* HarkRequests.graphql in Resources */,
 				0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */,
+				FA35693327A2B3D1003468B7 /* call.json in Resources */,
 				02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */,
 				0227C1DB279827EE0092F804 /* RequestCell.xib in Resources */,
 				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
@@ -1012,6 +1031,7 @@
 				0200AE992799279300A91A72 /* Staging.xcconfig in Resources */,
 				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
 				0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */,
+				FA35693427A2B3D1003468B7 /* search.json in Resources */,
 				02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */,
 				02F8B7F12786DE8C00595AA6 /* AuthFillAgeController.xib in Resources */,
 				02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */,
@@ -1524,6 +1544,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
@@ -1579,6 +1607,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		FA35692E27A2B22E003468B7 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		FABC8CF027A29915002C27C3 /* AgoraRtcKit */ = {
 			isa = XCSwiftPackageProductDependency;

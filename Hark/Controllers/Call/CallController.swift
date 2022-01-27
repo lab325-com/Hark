@@ -1,6 +1,7 @@
 
 import UIKit
 import AgoraRtcKit
+import Lottie
 
 protocol CallControllerDelegate: AnyObject {
     func callControllerClose(controller: CallController)
@@ -12,8 +13,19 @@ class CallController: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
     
+    @IBOutlet weak var preCallView: UIView!
+    @IBOutlet weak var acceptCallButton: UIButton!
+    @IBOutlet weak var declineCallButtonLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var acceptCallButtonLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    
+    @IBOutlet weak var callView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var callerLabel: UILabel!
+    @IBOutlet weak var calleeLabel: UILabel!
+    @IBOutlet weak var rateImageView: UIImageView!
+    @IBOutlet weak var lottieView: AnimationView!
     
     //----------------------------------------------
     // MARK: - Private property
@@ -84,6 +96,10 @@ class CallController: BaseController {
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
+    
+    @IBAction func actionAcceptCall(_ sender: UIButton) {
+        
+    }
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
         presenter.declineTalks(talkId: model.talkId)
