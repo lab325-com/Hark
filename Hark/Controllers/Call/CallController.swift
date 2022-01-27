@@ -8,6 +8,12 @@ protocol CallControllerDelegate: AnyObject {
     func callControllerClose(controller: CallController)
 }
 
+enum CallType {
+    case matching
+    case incoming
+    case outgoing
+}
+
 class CallController: BaseController {
     
     //----------------------------------------------
@@ -41,6 +47,9 @@ class CallController: BaseController {
     @IBOutlet weak var leaveTalkButton: UIButton!
     @IBOutlet weak var backToMainButton: UIButton!
     
+    @IBOutlet weak var declineButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
+    
     //----------------------------------------------
     // MARK: - Private property
     //----------------------------------------------
@@ -52,15 +61,17 @@ class CallController: BaseController {
     
     private let model: CallProtocol
     private lazy var presenter = CallPresenter(view: self)
+    private var callType: CallType
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(name: String?, delegate: CallControllerDelegate, model: CallProtocol) {
+    init(name: String?, delegate: CallControllerDelegate, model: CallProtocol, callType: CallType) {
         self.model = model
         self.name = name
         self.delegate = delegate
+        self.callType = callType
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -77,7 +88,6 @@ class CallController: BaseController {
         super.viewDidLoad()
         
         setup()
-//        initializeAndJoinChannel()
     }
     
     //----------------------------------------------
@@ -88,10 +98,28 @@ class CallController: BaseController {
         nameLabel.text = name ?? ""
         infoLabel.text = "Calling..."
         
+        lottieView.loopMode = .loop
         lottieView.play(completion: nil)
         
         starsView.settings.updateOnTouch = true
         starsView.settings.fillMode = .full
+        
+        AudioServicesPlayAlertSound(SystemSoundID(1322))
+        
+        switch callType {
+        case .matching:
+            initializeAndJoinChannel()
+            preCallView.isHidden = true
+            callView.isHidden = false
+        case .incoming:
+            preCallView.isHidden = false
+            callView.isHidden = true
+        case .outgoing:
+            initializeAndJoinChannel()
+            acceptButton.isHidden = true
+            preCallView.isHidden = false
+            callView.isHidden = true
+        }
     }
     
     private func initializeAndJoinChannel() {
@@ -103,6 +131,14 @@ class CallController: BaseController {
                               info: nil,
                               uid: model.uid,
                               joinSuccess: { [weak self] (channel, uid, elapsed) in
+            
+            let string = "Thank you for using Hark anonymous communication"
+            let utterance = AVSpeechUtterance(string: string)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+
+            let synth = AVSpeechSynthesizer()
+            synth.speak(utterance)
+            
             self?.agoraKit?.setEnableSpeakerphone(true)
             UIApplication.shared.isIdleTimerDisabled = true
         })
@@ -113,10 +149,25 @@ class CallController: BaseController {
         AgoraRtcEngineKit.destroy()
         UIApplication.shared.isIdleTimerDisabled = false
         self.delegate?.callControllerClose(controller: self)
-        self.dismiss(animated: false)
         agoraKit?.leaveChannel({ stats in
             
         })
+        self.dismiss(animated: false)
+    }
+    
+    private func updateTypeScreen() {
+        switch callType {
+        case .matching:
+            preCallView.isHidden = true
+            callView.isHidden = false
+        case .incoming:
+            preCallView.isHidden = false
+            callView.isHidden = true
+        case .outgoing:
+            acceptButton.isHidden = true
+            preCallView.isHidden = false
+            callView.isHidden = true
+        }
     }
     
     //----------------------------------------------
@@ -124,7 +175,8 @@ class CallController: BaseController {
     //----------------------------------------------
     
     @IBAction func actionAcceptCall(_ sender: UIButton) {
-        
+        acceptButton.isHidden = true
+        initializeAndJoinChannel()
     }
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
@@ -132,11 +184,11 @@ class CallController: BaseController {
     }
     
     @IBAction func actionMic(_ sender: UIButton) {
-        
+        agoraKit?.muteLocalAudioStream(sender.isSelected)
     }
     
     @IBAction func actionSpeaker(_ sender: UIButton) {
-        
+        agoraKit?.setEnableSpeakerphone(sender.isSelected)
     }
     
     @IBAction func actionAddToHarks(_ sender: UIButton) {
@@ -156,7 +208,7 @@ class CallController: BaseController {
     }
     
     @IBAction func actionLeaveTalk(_ sender: UIButton) {
-        
+        presenter.declineTalks(talkId: model.talkId)
     }
 }
 
@@ -180,6 +232,8 @@ extension CallController: AgoraRtcEngineDelegate {
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
+        callType = .matching
+        updateTypeScreen()
     }
 }
 

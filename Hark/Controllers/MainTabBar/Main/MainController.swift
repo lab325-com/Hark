@@ -159,7 +159,7 @@ extension MainController: MainOutputProtocol {
         
         DispatchQueue.main.async {
             self.presenter.subscribeTalkId(talkId: model.user.talkId)
-            HarkListRouter(presenter: self.navigationController).presentCall(model: nil, delegate: self, callModel: model.user)
+            HarkListRouter(presenter: self.navigationController).presentCall(model: nil, delegate: self, callModel: model.user, callType: .incoming)
         }
     }
     
@@ -193,7 +193,7 @@ extension MainController: MainGoSearchDelegate {
     func mainGoSuccess(controller: MainGoSearchController) {
         guard let searchModel = startMathModel else { return }
         dismiss(animated: false) {
-            HarkListRouter(presenter: self.navigationController).presentCall(model: nil, delegate: self, callModel: searchModel.startMatching)
+            HarkListRouter(presenter: self.navigationController).presentCall(model: nil, delegate: self, callModel: searchModel.startMatching, callType: .matching)
         }
     }
 }
