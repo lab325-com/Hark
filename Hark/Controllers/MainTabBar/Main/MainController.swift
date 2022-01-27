@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import Lottie
 
 class MainController: BaseController {
     
     //----------------------------------------------
     // MARK: - Life cycle
     //----------------------------------------------
+    
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var lottieView: AnimationView!
     
     @IBOutlet weak var totalOnlineLabel: UILabel!
     
@@ -108,13 +112,15 @@ class MainController: BaseController {
     }
     
     private func updateStartSearch(_ search: Bool) {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 1.0) {
             self.totalTalksLabel.alpha = search ? 0.0 : 1.0
             self.mainCountImageView.alpha = search ? 0.0 : 1.0
             self.countsStackView.alpha = search ? 0.0 : 1.0
             self.inTalksLAbel.alpha = search ? 0.0 : 1.0
-        
-            self.searchingImageView.alpha = search ? 1.0 : 0.0
+            //self.searchingImageView.alpha = search ? 0.0 : 1.0
+            
+            self.lottieView.alpha = search ? 1.0 : 0.0
+            search ? self.lottieView.play(completion: nil) : self.lottieView.stop()
         
             self.startSearchButton.setTitle(search ? "Stop search" : "Start Search", for: .normal)
             self.startSearchButton.backgroundColor = search ? UIColor(rgb: 0x191919) : UIColor(rgb: 0x3CDBBE)
