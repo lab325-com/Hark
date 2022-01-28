@@ -22,19 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itr-dc-r5c">
-                                <rect key="frame" x="0.0" y="222.5" width="414" height="451"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="6JY-cq-Okn">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="451"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="6JY-cq-Okn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-Yh-Gkp">
-                                        <rect key="frame" x="145.5" y="164" width="123" height="123"/>
+                                        <rect key="frame" x="145.5" y="386.5" width="123" height="123"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_hark_label_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-aA-lBp">
-                                        <rect key="frame" x="175.5" y="312" width="63.5" height="16.5"/>
+                                        <rect key="frame" x="175.5" y="534.5" width="63.5" height="16.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9T-3y-vxS">
-                                        <rect key="frame" x="144" y="392.5" width="126" height="38.5"/>
+                                        <rect key="frame" x="144" y="594" width="126" height="38.5"/>
                                         <string key="text">Totally anonymous
 place to talk</string>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="16"/>
@@ -48,10 +48,10 @@ place to talk</string>
                                     <constraint firstItem="Zag-aA-lBp" firstAttribute="centerX" secondItem="PUv-Yh-Gkp" secondAttribute="centerX" id="S9b-k0-yhg"/>
                                     <constraint firstItem="PUv-Yh-Gkp" firstAttribute="centerY" secondItem="itr-dc-r5c" secondAttribute="centerY" id="UwO-KU-p1E"/>
                                     <constraint firstAttribute="bottom" secondItem="6JY-cq-Okn" secondAttribute="bottom" id="XOC-Bc-jPr"/>
-                                    <constraint firstAttribute="bottom" secondItem="f9T-3y-vxS" secondAttribute="bottom" constant="20" id="Y5f-QB-i3e"/>
                                     <constraint firstAttribute="trailing" secondItem="6JY-cq-Okn" secondAttribute="trailing" id="f02-Qs-Aeo"/>
                                     <constraint firstItem="PUv-Yh-Gkp" firstAttribute="centerX" secondItem="itr-dc-r5c" secondAttribute="centerX" id="h9m-OS-8Uh"/>
                                     <constraint firstItem="6JY-cq-Okn" firstAttribute="leading" secondItem="itr-dc-r5c" secondAttribute="leading" id="jKh-A1-Vi5"/>
+                                    <constraint firstItem="f9T-3y-vxS" firstAttribute="top" secondItem="Zag-aA-lBp" secondAttribute="bottom" constant="43" id="lt9-lj-frX"/>
                                     <constraint firstItem="f9T-3y-vxS" firstAttribute="centerX" secondItem="Zag-aA-lBp" secondAttribute="centerX" id="wbg-sb-aln"/>
                                     <constraint firstItem="Zag-aA-lBp" firstAttribute="top" secondItem="PUv-Yh-Gkp" secondAttribute="bottom" constant="25" id="y7A-ep-Skc"/>
                                 </constraints>
@@ -60,7 +60,9 @@ place to talk</string>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="itr-dc-r5c" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="1Uv-z3-6SU"/>
                             <constraint firstItem="itr-dc-r5c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BJY-Go-Fzq"/>
+                            <constraint firstAttribute="bottom" secondItem="itr-dc-r5c" secondAttribute="bottom" id="CJ8-Rz-1BW"/>
                             <constraint firstItem="itr-dc-r5c" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JnM-sB-Txr"/>
                             <constraint firstItem="itr-dc-r5c" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Zez-Kc-iVX"/>
                             <constraint firstAttribute="trailing" secondItem="itr-dc-r5c" secondAttribute="trailing" id="qax-hd-bAk"/>
@@ -69,11 +71,11 @@ place to talk</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="login_back_ic" width="390" height="451"/>
+        <image name="launch_back_ic" width="390" height="844"/>
         <image name="login_hark_label_ic" width="63.5" height="16.5"/>
         <image name="login_logo_ic" width="123" height="123"/>
     </resources>

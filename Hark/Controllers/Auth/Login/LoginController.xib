@@ -31,12 +31,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_main_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="cpr-z1-ujT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9EN-TO-dK3">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="cpr-z1-ujT">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
-                        </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="dQW-2E-f3i">
                             <rect key="frame" x="126" y="92" width="123" height="123"/>
                         </imageView>
@@ -54,13 +54,9 @@ place to talk</string>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="cpr-z1-ujT" secondAttribute="trailing" id="1Ks-ZO-VfQ"/>
-                        <constraint firstItem="cpr-z1-ujT" firstAttribute="top" secondItem="9EN-TO-dK3" secondAttribute="top" id="DrL-J9-1tJ"/>
                         <constraint firstItem="v2b-Jm-iCn" firstAttribute="centerX" secondItem="dQW-2E-f3i" secondAttribute="centerX" id="Jjn-fH-aDb"/>
                         <constraint firstItem="HR8-Su-X92" firstAttribute="centerX" secondItem="v2b-Jm-iCn" secondAttribute="centerX" id="LA7-2p-Koa"/>
                         <constraint firstItem="dQW-2E-f3i" firstAttribute="centerX" secondItem="9EN-TO-dK3" secondAttribute="centerX" id="M2Q-dF-vb4"/>
-                        <constraint firstItem="cpr-z1-ujT" firstAttribute="leading" secondItem="9EN-TO-dK3" secondAttribute="leading" id="XHA-fs-sy7"/>
-                        <constraint firstAttribute="bottom" secondItem="cpr-z1-ujT" secondAttribute="bottom" id="hpM-q7-28d"/>
                         <constraint firstItem="dQW-2E-f3i" firstAttribute="centerY" secondItem="9EN-TO-dK3" secondAttribute="centerY" priority="250" id="jRO-at-Xbg"/>
                         <constraint firstItem="HR8-Su-X92" firstAttribute="top" relation="greaterThanOrEqual" secondItem="v2b-Jm-iCn" secondAttribute="bottom" constant="20" id="kCA-em-K52"/>
                         <constraint firstAttribute="bottom" secondItem="HR8-Su-X92" secondAttribute="bottom" constant="20" id="ma1-HM-dps"/>
@@ -196,23 +192,27 @@ ability to add the interlocutor to favorites</string>
             <constraints>
                 <constraint firstItem="9EN-TO-dK3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4N6-kq-gwb"/>
                 <constraint firstAttribute="bottom" secondItem="dlt-C0-R3n" secondAttribute="bottom" constant="31" id="4U4-7M-NMF"/>
+                <constraint firstAttribute="bottom" secondItem="cpr-z1-ujT" secondAttribute="bottom" id="6Tb-LM-1zK"/>
+                <constraint firstItem="cpr-z1-ujT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N5o-52-PfL"/>
                 <constraint firstItem="twJ-Wt-dev" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="33" id="NBd-Cs-4E0"/>
                 <constraint firstItem="twJ-Wt-dev" firstAttribute="top" secondItem="CH1-1D-0en" secondAttribute="bottom" constant="21" id="Oo0-W0-AfZ"/>
                 <constraint firstItem="dlt-C0-R3n" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="PxM-dw-q4D"/>
                 <constraint firstItem="dlt-C0-R3n" firstAttribute="top" secondItem="twJ-Wt-dev" secondAttribute="bottom" constant="27" id="Tuj-nV-m7A"/>
                 <constraint firstItem="9EN-TO-dK3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Urg-OA-fSF"/>
+                <constraint firstItem="cpr-z1-ujT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Zer-G5-aKR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="twJ-Wt-dev" secondAttribute="trailing" constant="33" id="fTz-an-aaP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9EN-TO-dK3" secondAttribute="trailing" id="iMO-k9-BgP"/>
                 <constraint firstItem="CH1-1D-0en" firstAttribute="top" secondItem="9EN-TO-dK3" secondAttribute="bottom" constant="16" id="jUb-j9-U5G"/>
+                <constraint firstItem="cpr-z1-ujT" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="lHv-L0-5sd"/>
                 <constraint firstItem="CH1-1D-0en" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="33" id="rxa-GH-WBs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CH1-1D-0en" secondAttribute="trailing" constant="33" id="wB8-Y8-jXJ"/>
             </constraints>
-            <point key="canvasLocation" x="136.80000000000001" y="120.44334975369459"/>
+            <point key="canvasLocation" x="136.80000000000001" y="120.08995502248877"/>
         </view>
     </objects>
     <resources>
-        <image name="login_back_ic" width="390" height="451"/>
         <image name="login_hark_label_ic" width="63.5" height="16.5"/>
         <image name="login_logo_ic" width="123" height="123"/>
+        <image name="login_main_back_ic" width="390" height="796"/>
     </resources>
 </document>

@@ -119,6 +119,7 @@ class MainController: BaseController {
             //self.searchingImageView.alpha = search ? 0.0 : 1.0
             
             self.lottieView.alpha = search ? 1.0 : 0.0
+            self.lottieView.loopMode = .loop
             search ? self.lottieView.play(completion: nil) : self.lottieView.stop()
         
             self.startSearchButton.setTitle(search ? "Stop search" : "Start Search", for: .normal)

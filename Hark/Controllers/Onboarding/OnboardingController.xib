@@ -36,7 +36,7 @@
                     <rect key="frame" x="175.5" y="146" width="63.5" height="16.5"/>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="x27-nf-Ai6">
-                    <rect key="frame" x="0.0" y="252.5" width="414" height="380"/>
+                    <rect key="frame" x="0.0" y="252.5" width="414" height="350"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1JM-yd-8vC">
                         <size key="itemSize" width="128" height="128"/>
@@ -80,7 +80,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4dR-kV-ahv" secondAttribute="trailing" constant="20" id="5Qp-Gx-eO5"/>
                 <constraint firstItem="mMd-Au-59u" firstAttribute="top" secondItem="AyA-ht-hgk" secondAttribute="bottom" constant="40" id="8V7-DW-uKp"/>
                 <constraint firstItem="3Av-Ms-6Tv" firstAttribute="top" secondItem="wQg-oq-MSF" secondAttribute="bottom" constant="19" id="Kas-EM-u3k"/>
-                <constraint firstItem="AyA-ht-hgk" firstAttribute="top" secondItem="x27-nf-Ai6" secondAttribute="bottom" constant="60" id="Sb0-n5-Epk"/>
+                <constraint firstItem="AyA-ht-hgk" firstAttribute="top" secondItem="x27-nf-Ai6" secondAttribute="bottom" constant="90" id="Sb0-n5-Epk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4dR-kV-ahv" secondAttribute="bottom" constant="15" id="Sgm-H2-vjI"/>
                 <constraint firstItem="3Av-Ms-6Tv" firstAttribute="centerX" secondItem="wQg-oq-MSF" secondAttribute="centerX" id="Stb-uA-SZo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x27-nf-Ai6" secondAttribute="trailing" id="T6d-Qz-VNN"/>

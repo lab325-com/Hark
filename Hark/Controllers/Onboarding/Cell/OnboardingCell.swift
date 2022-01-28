@@ -8,10 +8,15 @@
 import UIKit
 
 class OnboardingCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var onboardImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func configureCell(image: UIImage) {
+        onboardImageView.image = image
+    }
 }

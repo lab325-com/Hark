@@ -24,19 +24,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-Rk-kx5">
-                    <rect key="frame" x="0.0" y="222.5" width="414" height="451"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-ch-4CP">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="451"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-ch-4CP">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="4jT-Pv-9Ir">
-                            <rect key="frame" x="145.5" y="164" width="123" height="123"/>
+                            <rect key="frame" x="145.5" y="386.5" width="123" height="123"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_hark_label_ic" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-dc-iY4">
-                            <rect key="frame" x="175.5" y="312" width="63.5" height="16.5"/>
+                            <rect key="frame" x="175.5" y="534.5" width="63.5" height="16.5"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1M-aC-lHT">
-                            <rect key="frame" x="144" y="392.5" width="126" height="38.5"/>
+                            <rect key="frame" x="144" y="594" width="126" height="38.5"/>
                             <string key="text">Totally anonymous
 place to talk</string>
                             <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="16"/>
@@ -55,7 +55,7 @@ place to talk</string>
                         <constraint firstItem="YGh-ch-4CP" firstAttribute="top" secondItem="ddg-Rk-kx5" secondAttribute="top" id="igy-5G-eZs"/>
                         <constraint firstItem="YGh-ch-4CP" firstAttribute="leading" secondItem="ddg-Rk-kx5" secondAttribute="leading" id="kuc-uO-esX"/>
                         <constraint firstItem="cVX-dc-iY4" firstAttribute="centerX" secondItem="4jT-Pv-9Ir" secondAttribute="centerX" id="oMs-WL-dLL"/>
-                        <constraint firstAttribute="bottom" secondItem="L1M-aC-lHT" secondAttribute="bottom" constant="20" id="yjh-2n-WFt"/>
+                        <constraint firstItem="L1M-aC-lHT" firstAttribute="top" secondItem="cVX-dc-iY4" secondAttribute="bottom" constant="43" id="usw-px-CrX"/>
                     </constraints>
                 </view>
             </subviews>
@@ -65,13 +65,15 @@ place to talk</string>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ddg-Rk-kx5" secondAttribute="trailing" id="33W-ct-9aG"/>
                 <constraint firstItem="ddg-Rk-kx5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KOF-s4-alS"/>
                 <constraint firstItem="ddg-Rk-kx5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ve2-XW-9hd"/>
+                <constraint firstAttribute="bottom" secondItem="ddg-Rk-kx5" secondAttribute="bottom" id="exd-zc-eoY"/>
+                <constraint firstItem="ddg-Rk-kx5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hTA-7S-ubs"/>
                 <constraint firstItem="ddg-Rk-kx5" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="rPd-zk-222"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="100"/>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
         </view>
     </objects>
     <resources>
-        <image name="login_back_ic" width="390" height="451"/>
+        <image name="launch_back_ic" width="390" height="844"/>
         <image name="login_hark_label_ic" width="63.5" height="16.5"/>
         <image name="login_logo_ic" width="123" height="123"/>
     </resources>
