@@ -24,6 +24,9 @@ class HarkListController: BaseController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    
     //----------------------------------------------
     // MARK: - Property
     //----------------------------------------------
@@ -70,8 +73,9 @@ class HarkListController: BaseController {
     //----------------------------------------------
     
     private func setup() {
+        emptyView.isHidden = true
         presenter.subscribe()
-        //tableView.tableFooterView = UIView()
+        
         tableView.rowHeight = UITableView.automaticDimension
         
         tableView.register(UINib(nibName: listCellIdentifier, bundle: nil), forCellReuseIdentifier: listCellIdentifier)
@@ -107,6 +111,18 @@ class HarkListController: BaseController {
         tableView.footerBeginRefreshing()
     }
     
+    private func checkEmptyView() {
+        if selectedSegment == 0 {
+            emptyLabel.text = "You can add new Harks after\ntalk and in talk"
+            emptyView.isHidden = presenter.harksList.count == 0 ? false : true
+            tableView.isHidden = presenter.harksList.count == 0 ? true : false
+        } else {
+            emptyLabel.text = "Here you can find received and\nsent Requests"
+            emptyView.isHidden = presenter.harksRequests.count == 0 ? false : true
+            tableView.isHidden = presenter.harksRequests.count == 0 ? true : false
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - IBAction
     //----------------------------------------------
@@ -121,10 +137,12 @@ class HarkListController: BaseController {
     
     @IBAction func actionList(_ sender: UIButton) {
         selectedSegment = 0
+        checkEmptyView()
     }
     
     @IBAction func actionRequest(_ sender: UIButton) {
         selectedSegment = 1
+        checkEmptyView()
     }
 }
 
@@ -186,6 +204,7 @@ extension HarkListController: HarkListOutputProtocol, CallControllerDelegate {
     }
     
     func success() {
+        checkEmptyView()
         tableView.headerEndRefreshing()
         tableView.reloadData()
     }

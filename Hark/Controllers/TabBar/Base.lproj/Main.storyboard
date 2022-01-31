@@ -749,12 +749,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_slider_bottom_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="fQl-2E-dou">
-                                <rect key="frame" x="0.0" y="558" width="375" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="DZn-W4-XIT"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvO-P6-TEo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -864,18 +858,47 @@
                                     <constraint firstAttribute="height" constant="38" id="i5v-32-UsX"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_slider_bottom_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="fQl-2E-dou">
+                                <rect key="frame" x="0.0" y="558" width="375" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="DZn-W4-XIT"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w2O-Qi-0k1">
                                 <rect key="frame" x="0.0" y="171" width="375" height="447"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="6Qa-Sb-SDo" id="C9S-fh-ziu"/>
                                     <outlet property="delegate" destination="6Qa-Sb-SDo" id="j46-KL-5vP"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzt-kX-l8z">
+                                <rect key="frame" x="0.0" y="171" width="375" height="387"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hark_empty_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Yd0-XJ-vn9">
+                                        <rect key="frame" x="139" y="99" width="97" height="97"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can add new Harks after talk and in talk" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6T-RC-7PF">
+                                        <rect key="frame" x="20.5" y="222" width="334.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="18"/>
+                                        <color key="textColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="e6T-RC-7PF" firstAttribute="centerX" secondItem="Yd0-XJ-vn9" secondAttribute="centerX" id="5fs-K8-nry"/>
+                                    <constraint firstItem="Yd0-XJ-vn9" firstAttribute="centerX" secondItem="uzt-kX-l8z" secondAttribute="centerX" id="DHw-e3-FVo"/>
+                                    <constraint firstItem="Yd0-XJ-vn9" firstAttribute="top" secondItem="uzt-kX-l8z" secondAttribute="top" constant="99" id="Jt7-SP-uvX"/>
+                                    <constraint firstItem="e6T-RC-7PF" firstAttribute="top" secondItem="Yd0-XJ-vn9" secondAttribute="bottom" constant="26" id="K6b-ij-M2n"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KXD-s0-GDV"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KXD-s0-GDV" firstAttribute="trailing" secondItem="w2O-Qi-0k1" secondAttribute="trailing" id="7Uv-wP-NaU"/>
+                            <constraint firstItem="KXD-s0-GDV" firstAttribute="trailing" secondItem="uzt-kX-l8z" secondAttribute="trailing" id="7mJ-5z-fFH"/>
                             <constraint firstItem="DvO-P6-TEo" firstAttribute="leading" secondItem="KXD-s0-GDV" secondAttribute="leading" id="C50-yl-VNA"/>
                             <constraint firstItem="KXD-s0-GDV" firstAttribute="bottom" secondItem="fQl-2E-dou" secondAttribute="bottom" constant="-20" id="Czf-df-BKh"/>
                             <constraint firstItem="Eeq-es-XAS" firstAttribute="top" secondItem="Ji3-fL-e7r" secondAttribute="top" constant="51" id="Fr0-0V-tgb"/>
@@ -890,8 +913,11 @@
                             <constraint firstItem="KXD-s0-GDV" firstAttribute="bottom" secondItem="w2O-Qi-0k1" secondAttribute="bottom" id="bze-vF-wEH"/>
                             <constraint firstItem="hYi-tH-739" firstAttribute="centerY" secondItem="VLk-um-lkv" secondAttribute="centerY" id="gyP-32-f3S"/>
                             <constraint firstItem="VLk-um-lkv" firstAttribute="bottom" secondItem="DvO-P6-TEo" secondAttribute="bottom" constant="-24" id="jKU-t3-TxX"/>
+                            <constraint firstItem="uzt-kX-l8z" firstAttribute="top" secondItem="DvO-P6-TEo" secondAttribute="bottom" id="kHE-kG-TVu"/>
                             <constraint firstItem="w2O-Qi-0k1" firstAttribute="leading" secondItem="KXD-s0-GDV" secondAttribute="leading" id="lVX-ll-cVX"/>
                             <constraint firstItem="KXD-s0-GDV" firstAttribute="trailing" secondItem="fQl-2E-dou" secondAttribute="trailing" id="p7o-Ju-uCi"/>
+                            <constraint firstItem="fQl-2E-dou" firstAttribute="top" secondItem="uzt-kX-l8z" secondAttribute="bottom" id="sjp-3P-qQd"/>
+                            <constraint firstItem="uzt-kX-l8z" firstAttribute="leading" secondItem="KXD-s0-GDV" secondAttribute="leading" id="vey-dD-Za2"/>
                             <constraint firstItem="hYi-tH-739" firstAttribute="width" secondItem="3Qh-mR-TDY" secondAttribute="width" id="zSb-b7-mK6"/>
                         </constraints>
                     </view>
@@ -900,6 +926,8 @@
                     <connections>
                         <outlet property="aboveLayoutLeading" destination="JeU-PA-q9f" id="YjY-AR-S9a"/>
                         <outlet property="cornerAboveView" destination="hYi-tH-739" id="UFD-Cc-UwU"/>
+                        <outlet property="emptyLabel" destination="e6T-RC-7PF" id="pIb-Fi-GZ9"/>
+                        <outlet property="emptyView" destination="uzt-kX-l8z" id="5Pv-IF-sMt"/>
                         <outlet property="listButton" destination="Tz8-Sq-UMd" id="ndp-34-ogg"/>
                         <outlet property="requestButton" destination="EFt-2b-0Dz" id="ELV-mg-P6i"/>
                         <outlet property="segmentView" destination="VLk-um-lkv" id="5ES-sS-vzX"/>
@@ -952,6 +980,7 @@
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="hark_empty_ic" width="97" height="97"/>
         <image name="main_background_ic" width="390" height="256"/>
         <image name="main_common_ic" width="44" height="56"/>
         <image name="main_count_ic" width="234" height="141"/>
