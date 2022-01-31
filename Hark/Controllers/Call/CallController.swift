@@ -22,11 +22,8 @@ class CallController: BaseController {
     
     @IBOutlet weak var preCallView: UIView!
     @IBOutlet weak var acceptCallButton: UIButton!
-    @IBOutlet weak var declineCallButtonLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var acceptCallButtonLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
-    
     @IBOutlet weak var callView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var callerLabel: UILabel!
@@ -35,6 +32,8 @@ class CallController: BaseController {
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var lottieView: AnimationView!
     @IBOutlet weak var starsView: CosmosView!
+    @IBOutlet weak var talkEndedLabel: UILabel!
+    @IBOutlet weak var buttonsStackView: UIStackView!
     @IBOutlet weak var talkDurationTitleLabel: UILabel!
     @IBOutlet weak var talkDurationLabel: UILabel!
     @IBOutlet weak var micButton: UIButton!
@@ -54,14 +53,28 @@ class CallController: BaseController {
     // MARK: - Private property
     //----------------------------------------------
     
-    private let name: String?
-    private var agoraKit: AgoraRtcEngineKit?
-    
     weak var delegate: CallControllerDelegate?
     
+    private let name: String?
     private let model: CallProtocol
-    private lazy var presenter = CallPresenter(view: self)
+    
+    private var agoraKit: AgoraRtcEngineKit?
     private var callType: CallType
+    
+    private var isActiveMic = true
+    private var isActiveSpeaker = false
+    
+    var talkTimer: Timer?
+    var startTime: Date!
+    
+    private lazy var formatter: DateComponentsFormatter = {
+        let _formatter = DateComponentsFormatter()
+        _formatter.allowedUnits = [.hour, .minute, .second]
+        _formatter.zeroFormattingBehavior = .pad
+        return _formatter
+    }()
+    
+    private lazy var presenter = CallPresenter(view: self)
     
     //----------------------------------------------
     // MARK: - Init
@@ -95,14 +108,20 @@ class CallController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        nameLabel.text = name ?? ""
+        nameLabel.text = name ?? "Anonymous"
         infoLabel.text = "Calling..."
+        
+        callerLabel.text = KeychainService.standard.me?.nickName
+        calleeLabel.text = name ?? "Anonymous"
         
         lottieView.loopMode = .loop
         lottieView.play(completion: nil)
         
         starsView.settings.updateOnTouch = true
         starsView.settings.fillMode = .full
+        starsView.didFinishTouchingCosmos = { rating in
+            
+        }
         
         AudioServicesPlayAlertSound(SystemSoundID(1322))
         
@@ -140,22 +159,42 @@ class CallController: BaseController {
             synth.speak(utterance)
             
             self?.agoraKit?.setEnableSpeakerphone(true)
+            
             UIApplication.shared.isIdleTimerDisabled = true
+            
+            self?.startTalkTimer()
         })
+    }
+    
+    func startTalkTimer() {
+        startTime = Date()
+        talkTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(handleTalkTimer), userInfo: nil, repeats: true)
+    }
+
+    func stopTalkTimer() {
+        talkTimer?.invalidate()
+        talkTimer = nil
+    }
+
+    @objc func handleTalkTimer() {
+        talkDurationLabel.text = formatter.string(from: startTime, to: Date())
     }
     
     private func endCalls() {
         presenter.unsubscirbeTallk()
         AgoraRtcEngineKit.destroy()
         UIApplication.shared.isIdleTimerDisabled = false
-        self.delegate?.callControllerClose(controller: self)
         agoraKit?.leaveChannel({ stats in
             
         })
-        self.dismiss(animated: false)
+        
+        showEndCallView()
+        
+//        self.delegate?.callControllerClose(controller: self)
+//        self.dismiss(animated: false)
     }
     
-    private func updateTypeScreen() {
+    private func updateView() {
         switch callType {
         case .matching:
             preCallView.isHidden = true
@@ -168,6 +207,28 @@ class CallController: BaseController {
             preCallView.isHidden = false
             callView.isHidden = true
         }
+        
+        micButton.setImage(UIImage(named: isActiveMic ? "call_mic_active_ic" : "call_mic_inatcive_ic"), for: .normal)
+        speakerButton.setImage(UIImage(named: isActiveSpeaker ? "call_speaker_active_ic" : "call_speaker_inactive_ic"), for: .normal)
+    }
+    
+    private func showEndCallView() {
+        lottieView.stop()
+        stopTalkTimer()
+        
+        lottieView.isHidden = true
+        micButton.isHidden = true
+        micLabel.isEnabled = true
+        speakerButton.isHidden = true
+        speakerLabel.isHidden = true
+        leaveTalkButton.isHidden = true
+        
+        titleLabel.text = "After Talk"
+        rateImageView.image = UIImage(named: "call_rate_active_ic")
+        
+        starsView.isHidden = false
+        talkEndedLabel.isHidden = false
+        buttonsStackView.isHidden = false
     }
     
     //----------------------------------------------
@@ -181,14 +242,19 @@ class CallController: BaseController {
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
         presenter.declineTalks(talkId: model.talkId)
+        self.dismiss(animated: false)
     }
     
     @IBAction func actionMic(_ sender: UIButton) {
-        agoraKit?.muteLocalAudioStream(sender.isSelected)
+        isActiveMic = isActiveMic ? false : true
+        agoraKit?.muteLocalAudioStream(!isActiveMic)
+        updateView()
     }
     
     @IBAction func actionSpeaker(_ sender: UIButton) {
-        agoraKit?.setEnableSpeakerphone(sender.isSelected)
+        isActiveSpeaker = isActiveSpeaker ? false : true
+        agoraKit?.setEnableSpeakerphone(isActiveSpeaker)
+        updateView()
     }
     
     @IBAction func actionAddToHarks(_ sender: UIButton) {
@@ -204,11 +270,12 @@ class CallController: BaseController {
     }
     
     @IBAction func actionBackToMain(_ sender: UIButton) {
-        
+        self.dismiss(animated: false)
     }
     
     @IBAction func actionLeaveTalk(_ sender: UIButton) {
         presenter.declineTalks(talkId: model.talkId)
+        showEndCallView()
     }
 }
 
@@ -233,7 +300,7 @@ extension CallController: AgoraRtcEngineDelegate {
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         callType = .matching
-        updateTypeScreen()
+        updateView()
     }
 }
 

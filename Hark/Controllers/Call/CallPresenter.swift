@@ -24,7 +24,6 @@ protocol CallPresenterProtocol: AnyObject {
     init(view: CallOutputProtocol)
     
     func declineTalks(talkId: String)
-    
     func subscribeTalkId(talkId: String)
     func unsubscirbeTallk()
 }
@@ -32,9 +31,9 @@ protocol CallPresenterProtocol: AnyObject {
 class CallPresenter: CallPresenterProtocol {
     
     private weak var view: CallOutputProtocol?
+    
     private var isLoaded = false
     private var request: Cancellable?
-    
     private var talkSubscription: Cancellable?
     
     required init(view: CallOutputProtocol) {

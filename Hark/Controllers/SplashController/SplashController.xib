@@ -26,7 +26,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-Rk-kx5">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-ch-4CP">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-ch-4CP">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="4jT-Pv-9Ir">
