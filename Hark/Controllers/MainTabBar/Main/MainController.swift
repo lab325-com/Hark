@@ -175,7 +175,7 @@ extension MainController: MainOutputProtocol {
     }
     
     func successTalkID() {
-        dismiss(animated: true)
+//        dismiss(animated: true)
         isStartSearch = false
         updateStartSearch(isStartSearch)
     }
