@@ -1028,6 +1028,59 @@ public final class RejectHarkRequestMutation: GraphQLMutation {
   }
 }
 
+public final class SendTalkFeedBackMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SendTalkFeedBack($talkId: String!, $rate: Int!) {
+      sendTalkFeedBack(talkId: $talkId, rate: $rate)
+    }
+    """
+
+  public let operationName: String = "SendTalkFeedBack"
+
+  public var talkId: String
+  public var rate: Int
+
+  public init(talkId: String, rate: Int) {
+    self.talkId = talkId
+    self.rate = rate
+  }
+
+  public var variables: GraphQLMap? {
+    return ["talkId": talkId, "rate": rate]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("sendTalkFeedBack", arguments: ["talkId": GraphQLVariable("talkId"), "rate": GraphQLVariable("rate")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(sendTalkFeedBack: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "sendTalkFeedBack": sendTalkFeedBack])
+    }
+
+    public var sendTalkFeedBack: Bool? {
+      get {
+        return resultMap["sendTalkFeedBack"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "sendTalkFeedBack")
+      }
+    }
+  }
+}
+
 public final class UpdateMatchSettingsMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

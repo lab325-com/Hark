@@ -120,7 +120,7 @@ class CallController: BaseController {
         starsView.settings.updateOnTouch = true
         starsView.settings.fillMode = .full
         starsView.didFinishTouchingCosmos = { rating in
-            
+            self.presenter.sendTalkFeedback(talkId: self.model.talkId, rate: Int(rating))
         }
         
         AudioServicesPlayAlertSound(SystemSoundID(1322))
@@ -151,7 +151,7 @@ class CallController: BaseController {
                               uid: model.uid,
                               joinSuccess: { [weak self] (channel, uid, elapsed) in
             
-            let string = "Thank you for using Hark anonymous communication"
+            let string = "" //Thank you for using Hark anonymous communication
             let utterance = AVSpeechUtterance(string: string)
             utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
 
@@ -309,6 +309,10 @@ extension CallController: AgoraRtcEngineDelegate {
 //----------------------------------------------
 
 extension CallController: CallOutputProtocol {
+    func successSendTalkFeedback() {
+        starsView.settings.updateOnTouch = false
+    }
+    
     func endCall() {
         endCalls()
     }

@@ -15,6 +15,7 @@ import UIKit
 protocol CallOutputProtocol: BaseController {
     func endCall()
     func successDecline()
+    func successSendTalkFeedback()
 }
 
 //----------------------------------------------
@@ -26,6 +27,7 @@ protocol CallPresenterProtocol: AnyObject {
     func declineTalks(talkId: String)
     func subscribeTalkId(talkId: String)
     func unsubscirbeTallk()
+    func sendTalkFeedback(talkId: String, rate: Int)
 }
 
 class CallPresenter: CallPresenterProtocol {
@@ -61,6 +63,22 @@ class CallPresenter: CallPresenterProtocol {
         }
     }
     
+    func sendTalkFeedback(talkId: String, rate: Int) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+        let mutation = SendTalkFeedBackMutation(talkId: talkId, rate: rate)
+        
+        request = Network.shared.mutation(model: SendTalkFeedbackModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            if model.sendTalkFeedback {
+                self?.view?.successSendTalkFeedback()
+            }
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+        })
+    }
     
     //----------------------------------------------
     // MARK: - Subscription
