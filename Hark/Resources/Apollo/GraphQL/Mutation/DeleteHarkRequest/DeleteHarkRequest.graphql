@@ -1,0 +1,3 @@
+mutation DeleteHarkRequest($requestId: String!) {
+    deleteHarkRequest(requestId: $requestId)
+}

@@ -115,11 +115,9 @@ class HarkListController: BaseController {
         if selectedSegment == 0 {
             emptyLabel.text = "You can add new Harks after\ntalk and in talk"
             emptyView.isHidden = presenter.harksList.count == 0 ? false : true
-            tableView.isHidden = presenter.harksList.count == 0 ? true : false
         } else {
             emptyLabel.text = "Here you can find received and\nsent Requests"
             emptyView.isHidden = presenter.harksRequests.count == 0 ? false : true
-            tableView.isHidden = presenter.harksRequests.count == 0 ? true : false
         }
     }
     
@@ -131,7 +129,7 @@ class HarkListController: BaseController {
         if selectedSegment == 0 {
             presenter.getHarkList(offset: 0, limit: presenter.limit)
         } else if selectedSegment == 1 {
-            presenter.getRequest(offset: 0)
+            presenter.getRequest(offset: 0, limit: presenter.limit)
         }
     }
     
@@ -160,7 +158,7 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
         if selectedSegment == 0 && presenter.paginationList?.nextPageExists == true && indexPath.row == presenter.harksList.count - 3 {
             presenter.getHarkList(offset: presenter.harksList.count, limit: presenter.limit)
         } else if selectedSegment == 1 && presenter.paginationRequest?.nextPageExists == true && indexPath.row == presenter.harksRequests.count - 3 {
-            presenter.getRequest(offset: presenter.harksRequests.count)
+            presenter.getRequest(offset: presenter.harksRequests.count, limit: presenter.limit)
         }
     }
     
@@ -170,6 +168,7 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
             
             if let model = presenter.harksList[safe: indexPath.row] {
                 cell.config(model: model, nextIsTheSame: model.status == (presenter.harksList[safe: indexPath.row + 1]?.status ?? model.status))
+                cell.delegate = self
             }
             return cell
         } else {
@@ -177,6 +176,7 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
             
             if let model = presenter.harksRequests[safe: indexPath.row] {
                 cell.configure(model: model)
+                cell.delegate = self
             }
             
             return cell
@@ -184,17 +184,21 @@ extension HarkListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectedSegment == 0, let model = presenter.harksList[safe: indexPath.row], model.status != .userStatusTypeOffline {
+        if selectedSegment == 0, let model = presenter.harksList[safe: indexPath.row], model.status != .userStatusTypeOffline, model.status != .userStatusTypeInCall {
             presenter.callHark(harkId: model.id)
         }
     }
 }
 
 //----------------------------------------------
-// MARK: - Life cycle
+// MARK: - HarkListOutputProtocol, CallControllerDelegate
 //----------------------------------------------
 
 extension HarkListController: HarkListOutputProtocol, CallControllerDelegate {
+    func successDelete() {
+        presenter.getRequest(offset: 0, limit: presenter.harksRequests.count)
+    }
+    
     func callControllerClose(controller: CallController) {
         
     }
@@ -207,5 +211,59 @@ extension HarkListController: HarkListOutputProtocol, CallControllerDelegate {
         checkEmptyView()
         tableView.headerEndRefreshing()
         tableView.reloadData()
+    }
+}
+
+//----------------------------------------------
+// MARK: - RequestDelegate
+//----------------------------------------------
+
+extension HarkListController: RequestDelegate {
+    func requestRegect(cell: RequestCell, model: RequestsModel) {
+        presenter.regectRequest(requestId: model.id)
+    }
+    
+    func requestDelete(cell: RequestCell, model: RequestsModel) {
+        presenter.deleteRequest(requestId: model.id)
+    }
+    
+    func requestConfirm(cell: RequestCell) {
+        
+    }
+}
+
+//----------------------------------------------
+// MARK: - RequestDelegate
+//----------------------------------------------
+
+
+extension HarkListController: ListDelegate {
+    func listEdit(cell: ListCell, model: HarksListModel) {
+        HarkListRouter(presenter: navigationController).presentEdit(tabBarController: tabBarController, name: model.nickName ?? "", harkId: model.id, delegate: self)
+    }
+}
+
+//----------------------------------------------
+// MARK: - RequestDelegate
+//----------------------------------------------
+
+extension HarkListController: HarkEditDelegate {
+    func harkEdit(controller: HarkEditController, deleteHarkId: String) {
+        if let index = presenter.harksList.firstIndex(where: {$0.id == deleteHarkId}) {
+            presenter.harksList.remove(at: index)
+            tableView.reloadData()
+        }
+        
+        dismiss(animated: true)
+    }
+    
+    func harkEdit(controller: HarkEditController, changeNameModel: HarkUpdateMainModel) {
+        if let index = presenter.harksList.firstIndex(where: {$0.id == changeNameModel.id}) {
+            presenter.harksList[index].changeNickName(changeNameModel.nickName)
+            presenter.harksList[index].changeStatus(changeNameModel.status)
+            tableView.reloadData()
+        }
+        
+        dismiss(animated: true)
     }
 }

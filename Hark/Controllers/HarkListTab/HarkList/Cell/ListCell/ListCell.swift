@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ListDelegate: AnyObject {
+    func listEdit(cell: ListCell, model: HarksListModel)
+}
+
 class ListCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -17,6 +21,9 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var phoneImageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var bottomLayout: NSLayoutConstraint!
+    
+    private var model: HarksListModel?
+    weak var delegate: ListDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +45,8 @@ class ListCell: UITableViewCell {
     }
     
     func config(model: HarksListModel, nextIsTheSame: Bool) {
+        self.model = model
+        
         nameLabel.text = model.nickName
         
         if nextIsTheSame {
@@ -64,5 +73,13 @@ class ListCell: UITableViewCell {
             statusLabel.text = "Online"
             statusView.layer.borderColor = UIColor(red: 0.236, green: 0.858, blue: 0.746, alpha: 1).cgColor
         }
+    }
+    
+    @IBAction func actionEdit(_ sender: UIButton) {
+        guard let model = model else {
+            return
+        }
+
+        delegate?.listEdit(cell: self, model: model)
     }
 }

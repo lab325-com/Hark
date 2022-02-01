@@ -4,6 +4,85 @@
 import Apollo
 import Foundation
 
+public struct HarkUpdateRecordInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - harkId
+  ///   - nickName
+  public init(harkId: String, nickName: String) {
+    graphQLMap = ["harkId": harkId, "nickName": nickName]
+  }
+
+  public var harkId: String {
+    get {
+      return graphQLMap["harkId"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "harkId")
+    }
+  }
+
+  public var nickName: String {
+    get {
+      return graphQLMap["nickName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "nickName")
+    }
+  }
+}
+
+public enum UserStatusType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
+  public typealias RawValue = String
+  case userStatusTypeHidden
+  case userStatusTypeInCall
+  case userStatusTypeOffline
+  case userStatusTypeOnline
+  /// Auto generated constant for unknown enum values
+  case __unknown(RawValue)
+
+  public init?(rawValue: RawValue) {
+    switch rawValue {
+      case "USER_STATUS_TYPE_HIDDEN": self = .userStatusTypeHidden
+      case "USER_STATUS_TYPE_IN_CALL": self = .userStatusTypeInCall
+      case "USER_STATUS_TYPE_OFFLINE": self = .userStatusTypeOffline
+      case "USER_STATUS_TYPE_ONLINE": self = .userStatusTypeOnline
+      default: self = .__unknown(rawValue)
+    }
+  }
+
+  public var rawValue: RawValue {
+    switch self {
+      case .userStatusTypeHidden: return "USER_STATUS_TYPE_HIDDEN"
+      case .userStatusTypeInCall: return "USER_STATUS_TYPE_IN_CALL"
+      case .userStatusTypeOffline: return "USER_STATUS_TYPE_OFFLINE"
+      case .userStatusTypeOnline: return "USER_STATUS_TYPE_ONLINE"
+      case .__unknown(let value): return value
+    }
+  }
+
+  public static func == (lhs: UserStatusType, rhs: UserStatusType) -> Bool {
+    switch (lhs, rhs) {
+      case (.userStatusTypeHidden, .userStatusTypeHidden): return true
+      case (.userStatusTypeInCall, .userStatusTypeInCall): return true
+      case (.userStatusTypeOffline, .userStatusTypeOffline): return true
+      case (.userStatusTypeOnline, .userStatusTypeOnline): return true
+      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
+      default: return false
+    }
+  }
+
+  public static var allCases: [UserStatusType] {
+    return [
+      .userStatusTypeHidden,
+      .userStatusTypeInCall,
+      .userStatusTypeOffline,
+      .userStatusTypeOnline,
+    ]
+  }
+}
+
 public struct LoginRecordInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -301,56 +380,6 @@ public enum HarkRequestStatus: RawRepresentable, Equatable, Hashable, CaseIterab
   }
 }
 
-public enum UserStatusType: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
-  public typealias RawValue = String
-  case userStatusTypeHidden
-  case userStatusTypeInCall
-  case userStatusTypeOffline
-  case userStatusTypeOnline
-  /// Auto generated constant for unknown enum values
-  case __unknown(RawValue)
-
-  public init?(rawValue: RawValue) {
-    switch rawValue {
-      case "USER_STATUS_TYPE_HIDDEN": self = .userStatusTypeHidden
-      case "USER_STATUS_TYPE_IN_CALL": self = .userStatusTypeInCall
-      case "USER_STATUS_TYPE_OFFLINE": self = .userStatusTypeOffline
-      case "USER_STATUS_TYPE_ONLINE": self = .userStatusTypeOnline
-      default: self = .__unknown(rawValue)
-    }
-  }
-
-  public var rawValue: RawValue {
-    switch self {
-      case .userStatusTypeHidden: return "USER_STATUS_TYPE_HIDDEN"
-      case .userStatusTypeInCall: return "USER_STATUS_TYPE_IN_CALL"
-      case .userStatusTypeOffline: return "USER_STATUS_TYPE_OFFLINE"
-      case .userStatusTypeOnline: return "USER_STATUS_TYPE_ONLINE"
-      case .__unknown(let value): return value
-    }
-  }
-
-  public static func == (lhs: UserStatusType, rhs: UserStatusType) -> Bool {
-    switch (lhs, rhs) {
-      case (.userStatusTypeHidden, .userStatusTypeHidden): return true
-      case (.userStatusTypeInCall, .userStatusTypeInCall): return true
-      case (.userStatusTypeOffline, .userStatusTypeOffline): return true
-      case (.userStatusTypeOnline, .userStatusTypeOnline): return true
-      case (.__unknown(let lhsValue), .__unknown(let rhsValue)): return lhsValue == rhsValue
-      default: return false
-    }
-  }
-
-  public static var allCases: [UserStatusType] {
-    return [
-      .userStatusTypeHidden,
-      .userStatusTypeInCall,
-      .userStatusTypeOffline,
-      .userStatusTypeOnline,
-    ]
-  }
-}
-
 public enum TalkRoleName: RawRepresentable, Equatable, Hashable, CaseIterable, Apollo.JSONDecodable, Apollo.JSONEncodable {
   public typealias RawValue = String
   case talkRoleNamePublisher
@@ -443,6 +472,223 @@ public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIt
       .subscriptionEventTypeTalkDeclined,
       .subscriptionEventTypeTalkFinished,
     ]
+  }
+}
+
+public final class DeleteHarkRequestMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation DeleteHarkRequest($requestId: String!) {
+      deleteHarkRequest(requestId: $requestId)
+    }
+    """
+
+  public let operationName: String = "DeleteHarkRequest"
+
+  public var requestId: String
+
+  public init(requestId: String) {
+    self.requestId = requestId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["requestId": requestId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("deleteHarkRequest", arguments: ["requestId": GraphQLVariable("requestId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(deleteHarkRequest: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "deleteHarkRequest": deleteHarkRequest])
+    }
+
+    public var deleteHarkRequest: Bool? {
+      get {
+        return resultMap["deleteHarkRequest"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "deleteHarkRequest")
+      }
+    }
+  }
+}
+
+public final class HarkDeleteMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation HarkDelete($harkId: String!) {
+      harkDelete(harkId: $harkId)
+    }
+    """
+
+  public let operationName: String = "HarkDelete"
+
+  public var harkId: String
+
+  public init(harkId: String) {
+    self.harkId = harkId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["harkId": harkId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("harkDelete", arguments: ["harkId": GraphQLVariable("harkId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(harkDelete: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "harkDelete": harkDelete])
+    }
+
+    public var harkDelete: Bool? {
+      get {
+        return resultMap["harkDelete"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "harkDelete")
+      }
+    }
+  }
+}
+
+public final class HarkUpdateMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation HarkUpdate($record: HarkUpdateRecordInput!) {
+      harkUpdate(record: $record) {
+        __typename
+        id
+        nickName
+        status
+      }
+    }
+    """
+
+  public let operationName: String = "HarkUpdate"
+
+  public var record: HarkUpdateRecordInput
+
+  public init(record: HarkUpdateRecordInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("harkUpdate", arguments: ["record": GraphQLVariable("record")], type: .object(HarkUpdate.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(harkUpdate: HarkUpdate? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "harkUpdate": harkUpdate.flatMap { (value: HarkUpdate) -> ResultMap in value.resultMap }])
+    }
+
+    public var harkUpdate: HarkUpdate? {
+      get {
+        return (resultMap["harkUpdate"] as? ResultMap).flatMap { HarkUpdate(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "harkUpdate")
+      }
+    }
+
+    public struct HarkUpdate: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Hark"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("nickName", type: .scalar(String.self)),
+          GraphQLField("status", type: .scalar(UserStatusType.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID? = nil, nickName: String? = nil, status: UserStatusType? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Hark", "id": id, "nickName": nickName, "status": status])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var nickName: String? {
+        get {
+          return resultMap["nickName"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "nickName")
+        }
+      }
+
+      public var status: UserStatusType? {
+        get {
+          return resultMap["status"] as? UserStatusType
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "status")
+        }
+      }
+    }
   }
 }
 
@@ -726,6 +972,57 @@ public final class ProfileUpdateMutation: GraphQLMutation {
         set {
           resultMap.updateValue(newValue, forKey: "hasNewRequests")
         }
+      }
+    }
+  }
+}
+
+public final class RejectHarkRequestMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation RejectHarkRequest($requestId: String!) {
+      rejectHarkRequest(requestId: $requestId)
+    }
+    """
+
+  public let operationName: String = "RejectHarkRequest"
+
+  public var requestId: String
+
+  public init(requestId: String) {
+    self.requestId = requestId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["requestId": requestId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("rejectHarkRequest", arguments: ["requestId": GraphQLVariable("requestId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(rejectHarkRequest: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "rejectHarkRequest": rejectHarkRequest])
+    }
+
+    public var rejectHarkRequest: Bool? {
+      get {
+        return resultMap["rejectHarkRequest"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "rejectHarkRequest")
       }
     }
   }

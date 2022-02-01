@@ -25,8 +25,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9a-uN-wnm">
                         <rect key="frame" x="26" y="2" width="302" height="59"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mikhail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uL-kN-lqe">
-                                <rect key="frame" x="19" y="0.0" width="55.5" height="59"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mikhail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9uL-kN-lqe">
+                                <rect key="frame" x="19" y="0.0" width="87" height="59"/>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="18"/>
                                 <color key="textColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -61,12 +61,18 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioq-u0-TLM">
-                                <rect key="frame" x="141" y="0.0" width="30" height="59"/>
+                                <rect key="frame" x="121" y="0.0" width="50" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="EU4-Hx-3bc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionEdit:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="skb-ce-vva"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,6 +80,7 @@
                             <constraint firstItem="G1C-eo-XeA" firstAttribute="top" secondItem="J9a-uN-wnm" secondAttribute="top" constant="5" id="4si-IC-zzX"/>
                             <constraint firstItem="ioq-u0-TLM" firstAttribute="top" secondItem="J9a-uN-wnm" secondAttribute="top" id="5FL-ah-FRG"/>
                             <constraint firstItem="G1C-eo-XeA" firstAttribute="leading" secondItem="ioq-u0-TLM" secondAttribute="trailing" constant="17" id="6MK-Nj-4q9"/>
+                            <constraint firstItem="ioq-u0-TLM" firstAttribute="leading" secondItem="9uL-kN-lqe" secondAttribute="trailing" constant="15" id="8tz-y1-Dv7"/>
                             <constraint firstItem="9uL-kN-lqe" firstAttribute="top" secondItem="J9a-uN-wnm" secondAttribute="top" id="O1G-LM-8pF"/>
                             <constraint firstAttribute="bottom" secondItem="G1C-eo-XeA" secondAttribute="bottom" constant="5" id="ZOF-eT-UN5"/>
                             <constraint firstAttribute="bottom" secondItem="9uL-kN-lqe" secondAttribute="bottom" id="aib-L4-fVc"/>

@@ -15,6 +15,7 @@ import UIKit
 protocol HarkListOutputProtocol: BaseController {
     func success()
     func successCall(model: CallHarkModel)
+    func successDelete()
 }
 
 //----------------------------------------------
@@ -29,7 +30,8 @@ protocol HarkListPresenterProtocol: AnyObject {
     func firstGetList(offset: Int)
     
     func getHarkList(offset: Int, limit: Int)
-    func getRequest(offset: Int)
+    func getRequest(offset: Int, limit: Int)
+    func deleteRequest(requestId: String)
 }
 
 class HarkListPresenter: HarkListPresenterProtocol {
@@ -107,7 +109,7 @@ class HarkListPresenter: HarkListPresenterProtocol {
         }
     }
     
-    func getRequest(offset: Int) {
+    func getRequest(offset: Int, limit: Int) {
         let query = HarkRequestsQuery(limit: limit, offset: offset)
         
         self.view?.startLoader()
@@ -158,6 +160,28 @@ class HarkListPresenter: HarkListPresenterProtocol {
 
             self?.view?.stopLoading()
             self?.view?.successCall(model: model)
+        } failureHandler: { [weak self] _ in
+            self?.view?.stopLoading()
+        }
+    }
+    
+    func deleteRequest(requestId: String) {
+        let mutation = DeleteHarkRequestMutation(requestId: requestId)
+        
+        self.view?.startLoader()
+        request = Network.shared.mutation(model: DeleteHarkRequestModel.self, mutation, controller: view) { [weak self] model in
+            self?.view?.successDelete()
+        } failureHandler: { [weak self] _ in
+            self?.view?.stopLoading()
+        }
+    }
+    
+    func regectRequest(requestId: String) {
+        let mutation = RejectHarkRequestMutation(requestId: requestId)
+        
+        self.view?.startLoader()
+        request = Network.shared.mutation(model: RejectHarkRequestModel.self, mutation, controller: view) { [weak self] model in
+            self?.view?.successDelete()
         } failureHandler: { [weak self] _ in
             self?.view?.stopLoading()
         }

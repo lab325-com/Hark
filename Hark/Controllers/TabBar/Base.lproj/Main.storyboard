@@ -864,14 +864,6 @@
                                     <constraint firstAttribute="height" constant="80" id="DZn-W4-XIT"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w2O-Qi-0k1">
-                                <rect key="frame" x="0.0" y="171" width="375" height="447"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="6Qa-Sb-SDo" id="C9S-fh-ziu"/>
-                                    <outlet property="delegate" destination="6Qa-Sb-SDo" id="j46-KL-5vP"/>
-                                </connections>
-                            </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzt-kX-l8z">
                                 <rect key="frame" x="0.0" y="171" width="375" height="387"/>
                                 <subviews>
@@ -893,6 +885,14 @@
                                     <constraint firstItem="e6T-RC-7PF" firstAttribute="top" secondItem="Yd0-XJ-vn9" secondAttribute="bottom" constant="26" id="K6b-ij-M2n"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w2O-Qi-0k1">
+                                <rect key="frame" x="0.0" y="171" width="375" height="447"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Qa-Sb-SDo" id="C9S-fh-ziu"/>
+                                    <outlet property="delegate" destination="6Qa-Sb-SDo" id="j46-KL-5vP"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KXD-s0-GDV"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

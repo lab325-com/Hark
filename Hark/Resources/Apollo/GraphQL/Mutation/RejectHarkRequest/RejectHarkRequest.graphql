@@ -1,0 +1,3 @@
+mutation RejectHarkRequest($requestId: String!) {
+    rejectHarkRequest(requestId: $requestId)
+}

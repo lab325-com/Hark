@@ -1,0 +1,7 @@
+mutation HarkUpdate($record: HarkUpdateRecordInput!) {
+    harkUpdate(record: $record) {
+        id
+        nickName
+        status
+    }
+}

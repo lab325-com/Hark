@@ -40,6 +40,12 @@
 		024E83C327A2ABE4006B970D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C227A2ABE4006B970D /* UserModel.swift */; };
 		024E83C527A2B62E006B970D /* CallPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C427A2B62E006B970D /* CallPresenter.swift */; };
 		024E83C827A2B931006B970D /* CallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C727A2B931006B970D /* CallProtocol.swift */; };
+		024E8BFC27A7CED500C26C26 /* DeleteHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E8BFB27A7CED500C26C26 /* DeleteHarkRequest.graphql */; };
+		024E8BFE27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E8BFD27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift */; };
+		024E8C0227A7F57D00C26C26 /* RejectHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E8C0027A7F57D00C26C26 /* RejectHarkRequest.graphql */; };
+		024E8C0327A7F57D00C26C26 /* RejectHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E8C0127A7F57D00C26C26 /* RejectHarkRequestModel.swift */; };
+		024E8C0727A80A0E00C26C26 /* HarkEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E8C0527A80A0E00C26C26 /* HarkEditController.swift */; };
+		024E8C0827A80A0E00C26C26 /* HarkEditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024E8C0627A80A0E00C26C26 /* HarkEditController.xib */; };
 		0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563A278DDD8D00FBA4E9 /* MainController.swift */; };
 		0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563E278E065E00FBA4E9 /* MainPresenter.swift */; };
 		02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */; };
@@ -93,6 +99,11 @@
 		02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */; };
 		02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */; };
 		02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */; };
+		02F558C327A820DC005AEED7 /* HarkEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F558C227A820DC005AEED7 /* HarkEditPresenter.swift */; };
+		02F558C727A82243005AEED7 /* HarkDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02F558C527A82243005AEED7 /* HarkDelete.graphql */; };
+		02F558C827A82243005AEED7 /* HarkDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F558C627A82243005AEED7 /* HarkDeleteModel.swift */; };
+		02F558CC27A822AF005AEED7 /* HarkUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F558CA27A822AF005AEED7 /* HarkUpdateModel.swift */; };
+		02F558CD27A822AF005AEED7 /* HarkUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02F558CB27A822AF005AEED7 /* HarkUpdate.graphql */; };
 		02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */; };
 		02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7EE2786DE8C00595AA6 /* AuthFillAgeController.swift */; };
 		02F8B7F12786DE8C00595AA6 /* AuthFillAgeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B7EF2786DE8C00595AA6 /* AuthFillAgeController.xib */; };
@@ -171,6 +182,12 @@
 		024E83C227A2ABE4006B970D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		024E83C427A2B62E006B970D /* CallPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallPresenter.swift; sourceTree = "<group>"; };
 		024E83C727A2B931006B970D /* CallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallProtocol.swift; sourceTree = "<group>"; };
+		024E8BFB27A7CED500C26C26 /* DeleteHarkRequest.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DeleteHarkRequest.graphql; sourceTree = "<group>"; };
+		024E8BFD27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteHarkRequestModel.swift; sourceTree = "<group>"; };
+		024E8C0027A7F57D00C26C26 /* RejectHarkRequest.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RejectHarkRequest.graphql; sourceTree = "<group>"; };
+		024E8C0127A7F57D00C26C26 /* RejectHarkRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectHarkRequestModel.swift; sourceTree = "<group>"; };
+		024E8C0527A80A0E00C26C26 /* HarkEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkEditController.swift; sourceTree = "<group>"; };
+		024E8C0627A80A0E00C26C26 /* HarkEditController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HarkEditController.xib; sourceTree = "<group>"; };
 		0267563A278DDD8D00FBA4E9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		0267563E278E065E00FBA4E9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnlineStatistics.graphql; sourceTree = "<group>"; };
@@ -219,6 +236,11 @@
 		02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationVerificationController.xib; sourceTree = "<group>"; };
 		02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVerificationController.swift; sourceTree = "<group>"; };
 		02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVerificationController.xib; sourceTree = "<group>"; };
+		02F558C227A820DC005AEED7 /* HarkEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkEditPresenter.swift; sourceTree = "<group>"; };
+		02F558C527A82243005AEED7 /* HarkDelete.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarkDelete.graphql; sourceTree = "<group>"; };
+		02F558C627A82243005AEED7 /* HarkDeleteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarkDeleteModel.swift; sourceTree = "<group>"; };
+		02F558CA27A822AF005AEED7 /* HarkUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarkUpdateModel.swift; sourceTree = "<group>"; };
+		02F558CB27A822AF005AEED7 /* HarkUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarkUpdate.graphql; sourceTree = "<group>"; };
 		02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		02F8B7EE2786DE8C00595AA6 /* AuthFillAgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillAgeController.swift; sourceTree = "<group>"; };
 		02F8B7EF2786DE8C00595AA6 /* AuthFillAgeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillAgeController.xib; sourceTree = "<group>"; };
@@ -373,6 +395,7 @@
 				02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */,
 				FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */,
 				02ED71DD2799B20500CAE787 /* HarkList */,
+				024E8C0427A809E000C26C26 /* HarkEditController */,
 			);
 			path = HarkListTab;
 			sourceTree = "<group>";
@@ -454,6 +477,33 @@
 				024E83C727A2B931006B970D /* CallProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		024E8BFA27A7CEAD00C26C26 /* DeleteHarkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				024E8BFB27A7CED500C26C26 /* DeleteHarkRequest.graphql */,
+				024E8BFD27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift */,
+			);
+			path = DeleteHarkRequest;
+			sourceTree = "<group>";
+		};
+		024E8BFF27A7F55300C26C26 /* RejectHarkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				024E8C0027A7F57D00C26C26 /* RejectHarkRequest.graphql */,
+				024E8C0127A7F57D00C26C26 /* RejectHarkRequestModel.swift */,
+			);
+			path = RejectHarkRequest;
+			sourceTree = "<group>";
+		};
+		024E8C0427A809E000C26C26 /* HarkEditController */ = {
+			isa = PBXGroup;
+			children = (
+				02F558C227A820DC005AEED7 /* HarkEditPresenter.swift */,
+				02F558C127A820BE005AEED7 /* HarkEdit */,
+			);
+			path = HarkEditController;
 			sourceTree = "<group>";
 		};
 		02675639278DDD5000FBA4E9 /* MainTabBar */ = {
@@ -663,6 +713,33 @@
 			path = LoginVerification;
 			sourceTree = "<group>";
 		};
+		02F558C127A820BE005AEED7 /* HarkEdit */ = {
+			isa = PBXGroup;
+			children = (
+				024E8C0527A80A0E00C26C26 /* HarkEditController.swift */,
+				024E8C0627A80A0E00C26C26 /* HarkEditController.xib */,
+			);
+			path = HarkEdit;
+			sourceTree = "<group>";
+		};
+		02F558C427A8220C005AEED7 /* HarkDelete */ = {
+			isa = PBXGroup;
+			children = (
+				02F558C527A82243005AEED7 /* HarkDelete.graphql */,
+				02F558C627A82243005AEED7 /* HarkDeleteModel.swift */,
+			);
+			path = HarkDelete;
+			sourceTree = "<group>";
+		};
+		02F558C927A8228F005AEED7 /* HarkUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				02F558CB27A822AF005AEED7 /* HarkUpdate.graphql */,
+				02F558CA27A822AF005AEED7 /* HarkUpdateModel.swift */,
+			);
+			path = HarkUpdate;
+			sourceTree = "<group>";
+		};
 		02F8B7ED2786DE6700595AA6 /* AuthFillAge */ = {
 			isa = PBXGroup;
 			children = (
@@ -763,6 +840,10 @@
 		FA1E690C27848DD700030600 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				02F558C927A8228F005AEED7 /* HarkUpdate */,
+				02F558C427A8220C005AEED7 /* HarkDelete */,
+				024E8BFF27A7F55300C26C26 /* RejectHarkRequest */,
+				024E8BFA27A7CEAD00C26C26 /* DeleteHarkRequest */,
 				024E83BA27A2A47A006B970D /* СallHark */,
 				022FB57D27970AD800870064 /* UpdateMatchSettings */,
 				02F8B80527870DE200595AA6 /* ProfileUpdate */,
@@ -1010,6 +1091,7 @@
 				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
 				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
 				02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */,
+				024E8BFC27A7CED500C26C26 /* DeleteHarkRequest.graphql in Resources */,
 				02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */,
 				027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */,
 				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
@@ -1019,6 +1101,7 @@
 				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
 				0288744B279ADA0A00E802CA /* HarkRequests.graphql in Resources */,
 				0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */,
+				02F558CD27A822AF005AEED7 /* HarkUpdate.graphql in Resources */,
 				FA35693327A2B3D1003468B7 /* call.json in Resources */,
 				02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */,
 				0227C1DB279827EE0092F804 /* RequestCell.xib in Resources */,
@@ -1034,6 +1117,7 @@
 				FA9BCF72277C6EDA009F652E /* Assets.xcassets in Resources */,
 				0200AE992799279300A91A72 /* Staging.xcconfig in Resources */,
 				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
+				02F558C727A82243005AEED7 /* HarkDelete.graphql in Resources */,
 				0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */,
 				FA35693427A2B3D1003468B7 /* search.json in Resources */,
 				02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */,
@@ -1041,6 +1125,7 @@
 				02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */,
 				02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */,
 				FA1E690B27848D0600030600 /* Me.graphql in Resources */,
+				024E8C0227A7F57D00C26C26 /* RejectHarkRequest.graphql in Resources */,
 				02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */,
 				0203C87C279FF04B00720640 /* StartMatching.graphql in Resources */,
 				02F8B80E2787129C00595AA6 /* OnboardingCell.xib in Resources */,
@@ -1049,6 +1134,7 @@
 				FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */,
 				02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */,
 				0200AE972799279300A91A72 /* Debug.xcconfig in Resources */,
+				024E8C0827A80A0E00C26C26 /* HarkEditController.xib in Resources */,
 				02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */,
 				0203C88D27A0360800720640 /* Talk.graphql in Resources */,
 				027629AA2785DC630096DC2E /* VerifyPhone.graphql in Resources */,
@@ -1102,12 +1188,14 @@
 				FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */,
 				0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */,
 				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
+				02F558CC27A822AF005AEED7 /* HarkUpdateModel.swift in Sources */,
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
 				02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */,
 				022FB5782796C49C00870064 /* SearchTabController.swift in Sources */,
 				024E83C827A2B931006B970D /* CallProtocol.swift in Sources */,
 				024E83C327A2ABE4006B970D /* UserModel.swift in Sources */,
 				02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */,
+				024E8BFE27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift in Sources */,
 				0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */,
 				02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */,
 				0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */,
@@ -1135,8 +1223,11 @@
 				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
 				022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */,
 				02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */,
+				02F558C827A82243005AEED7 /* HarkDeleteModel.swift in Sources */,
 				FA9EBCF0279EC0F7007B3867 /* HarkListRouter.swift in Sources */,
+				024E8C0327A7F57D00C26C26 /* RejectHarkRequestModel.swift in Sources */,
 				02675656278ED85F00FBA4E9 /* SharedManager.swift in Sources */,
+				024E8C0727A80A0E00C26C26 /* HarkEditController.swift in Sources */,
 				02F8B7FB2787044F00595AA6 /* MainTabBarController.swift in Sources */,
 				02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */,
 				02F8B80427870A1200595AA6 /* AuthFillPesenter.swift in Sources */,
@@ -1144,6 +1235,7 @@
 				02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */,
 				0227C1D4279805E90092F804 /* ListCell.swift in Sources */,
 				FA1E69262785B71F00030600 /* AuthModel.swift in Sources */,
+				02F558C327A820DC005AEED7 /* HarkEditPresenter.swift in Sources */,
 				02ED71DC2799AEBE00CAE787 /* HarksModel.swift in Sources */,
 				02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */,
 				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,

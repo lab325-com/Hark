@@ -26,27 +26,27 @@
                         <rect key="frame" x="24" y="2" width="358" height="89"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hw1-Ja-rzF">
-                                <rect key="frame" x="20" y="13" width="141.5" height="63"/>
+                                <rect key="frame" x="20" y="13" width="120" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anonimous" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9St-Dy-iUG">
-                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="29"/>
                                         <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="18"/>
                                         <color key="textColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-rM-ATF">
-                                        <rect key="frame" x="0.0" y="34" width="141.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="34" width="120" height="29"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J2l-Li-Eag">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J2l-Li-Eag">
                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="29"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nY1-zz-eSH">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Talk date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nY1-zz-eSH">
                                                         <rect key="frame" x="0.0" y="0.0" width="54.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                                         <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duaration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-pW-bpZ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Duaration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-pW-bpZ">
                                                         <rect key="frame" x="0.0" y="14.5" width="54.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                                         <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,17 +54,17 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5oa-U4-QVC">
-                                                <rect key="frame" x="64.5" y="0.0" width="77" height="29"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5oa-U4-QVC">
+                                                <rect key="frame" x="64.5" y="0.0" width="55.5" height="29"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.12.21 | 16:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tg-To-tzJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="14.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23.12.21 | 16:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tg-To-tzJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                                         <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgi-uB-NUd">
-                                                        <rect key="frame" x="0.0" y="14.5" width="77" height="14.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="12 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgi-uB-NUd">
+                                                        <rect key="frame" x="0.0" y="14.5" width="55.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
                                                         <color key="textColor" red="0.23529411764705882" green="0.85882352941176465" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -76,7 +76,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="D7J-oA-KVw">
-                                <rect key="frame" x="236" y="10" width="112" height="36"/>
+                                <rect key="frame" x="160" y="10" width="188" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lp-7a-8zZ">
                                         <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
@@ -86,6 +86,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="request_cancel_ic"/>
+                                        <connections>
+                                            <action selector="actionDeleteRequest:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zDx-cJ-zMj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-N8-5Zm">
                                         <rect key="frame" x="40" y="0.0" width="72" height="36"/>
@@ -98,8 +101,20 @@
                                         <state key="normal" image="request_confirm_ic">
                                             <color key="titleColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="actionConfirmRequest:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ft1-a3-oWa"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e3-yx-9DL">
+                                        <rect key="frame" x="116" y="0.0" width="72" height="36"/>
+                                        <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="12"/>
+                                        <color key="textColor" red="0.51372549019607838" green="0.51372549019607838" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="9e3-yx-9DL" firstAttribute="width" secondItem="FBz-N8-5Zm" secondAttribute="width" id="f06-NH-irK"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dip-co-hIE">
                                 <rect key="frame" x="276" y="62.5" width="72" height="14.5"/>
@@ -137,8 +152,10 @@
                 <outlet property="confirmedButton" destination="FBz-N8-5Zm" id="I3w-Ax-URL"/>
                 <outlet property="cornerView" destination="snw-g6-181" id="Tsm-AH-OGD"/>
                 <outlet property="dateLabel" destination="0Tg-To-tzJ" id="WJ1-cA-Kpq"/>
+                <outlet property="deleteButton" destination="0Lp-7a-8zZ" id="aIN-iW-PuJ"/>
                 <outlet property="durationLabel" destination="qgi-uB-NUd" id="ICz-MK-ehU"/>
                 <outlet property="receivedLabel" destination="dip-co-hIE" id="04t-bL-m62"/>
+                <outlet property="sentLabel" destination="9e3-yx-9DL" id="mpN-Hb-eK3"/>
             </connections>
             <point key="canvasLocation" x="200.00000000000003" y="112.16517857142857"/>
         </tableViewCell>
