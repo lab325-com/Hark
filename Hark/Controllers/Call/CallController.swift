@@ -4,6 +4,13 @@ import AgoraRtcKit
 import Lottie
 import Cosmos
 
+fileprivate let kAppId = "f6b0210161b64abdb5d97ddd9456d8cc"
+fileprivate let kMicActive = "call_mic_active_ic"
+fileprivate let kMicInactive = "call_mic_inatcive_ic"
+fileprivate let kSpeakerActive = "call_speaker_active_ic"
+fileprivate let kSpeakerInactive = "call_speaker_inactive_ic"
+fileprivate let kRateActive = "call_rate_active_ic"
+
 protocol CallControllerDelegate: AnyObject {
     func callControllerClose(controller: CallController)
 }
@@ -66,6 +73,7 @@ class CallController: BaseController {
     
     var talkTimer: Timer?
     var startTime: Date!
+    var rate = 0
     
     private lazy var formatter: DateComponentsFormatter = {
         let _formatter = DateComponentsFormatter()
@@ -120,7 +128,7 @@ class CallController: BaseController {
         starsView.settings.updateOnTouch = true
         starsView.settings.fillMode = .full
         starsView.didFinishTouchingCosmos = { rating in
-            self.presenter.sendTalkFeedback(talkId: self.model.talkId, rate: Int(rating))
+            self.rate = Int(rating)
         }
         
         AudioServicesPlayAlertSound(SystemSoundID(1322))
@@ -144,7 +152,7 @@ class CallController: BaseController {
     private func initializeAndJoinChannel() {
         presenter.subscribeTalkId(talkId: model.talkId)
         
-        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "f6b0210161b64abdb5d97ddd9456d8cc", delegate: self)
+        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: kAppId, delegate: self)
         agoraKit?.joinChannel(byToken: model.token,
                               channelId: model.channelName,
                               info: nil,
@@ -157,9 +165,7 @@ class CallController: BaseController {
 
             let synth = AVSpeechSynthesizer()
             synth.speak(utterance)
-            
-            self?.agoraKit?.setEnableSpeakerphone(true)
-            
+                        
             UIApplication.shared.isIdleTimerDisabled = true
             
             self?.startTalkTimer()
@@ -208,8 +214,8 @@ class CallController: BaseController {
             callView.isHidden = true
         }
         
-        micButton.setImage(UIImage(named: isActiveMic ? "call_mic_active_ic" : "call_mic_inatcive_ic"), for: .normal)
-        speakerButton.setImage(UIImage(named: isActiveSpeaker ? "call_speaker_active_ic" : "call_speaker_inactive_ic"), for: .normal)
+        micButton.setImage(UIImage(named: isActiveMic ? kMicActive : kMicInactive), for: .normal)
+        speakerButton.setImage(UIImage(named: isActiveSpeaker ? kSpeakerActive : kSpeakerInactive), for: .normal)
     }
     
     private func showEndCallView() {
@@ -224,7 +230,7 @@ class CallController: BaseController {
         leaveTalkButton.isHidden = true
         
         titleLabel.text = "After Talk"
-        rateImageView.image = UIImage(named: "call_rate_active_ic")
+        rateImageView.image = UIImage(named: kRateActive)
         
         starsView.isHidden = false
         talkEndedLabel.isHidden = false
@@ -270,7 +276,7 @@ class CallController: BaseController {
     }
     
     @IBAction func actionBackToMain(_ sender: UIButton) {
-        self.dismiss(animated: false)
+        presenter.sendTalkFeedback(talkId: self.model.talkId, rate: rate)
     }
     
     @IBAction func actionLeaveTalk(_ sender: UIButton) {
@@ -310,7 +316,7 @@ extension CallController: AgoraRtcEngineDelegate {
 
 extension CallController: CallOutputProtocol {
     func successSendTalkFeedback() {
-        starsView.settings.updateOnTouch = false
+        dismiss(animated: false)
     }
     
     func endCall() {

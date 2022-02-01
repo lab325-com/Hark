@@ -72,9 +72,7 @@ class CallPresenter: CallPresenterProtocol {
         
         request = Network.shared.mutation(model: SendTalkFeedbackModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
-            if model.sendTalkFeedback {
-                self?.view?.successSendTalkFeedback()
-            }
+            self?.view?.successSendTalkFeedback()
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
         })
