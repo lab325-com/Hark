@@ -131,6 +131,10 @@
 		FA35693327A2B3D1003468B7 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693127A2B3C9003468B7 /* call.json */; };
 		FA35693427A2B3D1003468B7 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693227A2B3D1003468B7 /* search.json */; };
 		FA5E870927A2E19400163A1D /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E870827A2E19400163A1D /* Cosmos */; };
+		FA647F1F27A99BA0003607F7 /* BlockUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA647F1D27A99BA0003607F7 /* BlockUser.graphql */; };
+		FA647F2027A99BA0003607F7 /* BlockUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA647F1E27A99BA0003607F7 /* BlockUserModel.swift */; };
+		FA647F2427A99C70003607F7 /* SendHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA647F2227A99C70003607F7 /* SendHarkRequest.graphql */; };
+		FA647F2527A99C70003607F7 /* SendHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA647F2327A99C70003607F7 /* SendHarkRequestModel.swift */; };
 		FA65ADAB27A967ED00524720 /* SendTalkFeedback.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA65ADA927A967EC00524720 /* SendTalkFeedback.graphql */; };
 		FA65ADAC27A967ED00524720 /* SendTalkFeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65ADAA27A967ED00524720 /* SendTalkFeedbackModel.swift */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
@@ -266,6 +270,10 @@
 		FA1E69272785B75200030600 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
 		FA35693127A2B3C9003468B7 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
 		FA35693227A2B3D1003468B7 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
+		FA647F1D27A99BA0003607F7 /* BlockUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlockUser.graphql; sourceTree = "<group>"; };
+		FA647F1E27A99BA0003607F7 /* BlockUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUserModel.swift; sourceTree = "<group>"; };
+		FA647F2227A99C70003607F7 /* SendHarkRequest.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SendHarkRequest.graphql; sourceTree = "<group>"; };
+		FA647F2327A99C70003607F7 /* SendHarkRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendHarkRequestModel.swift; sourceTree = "<group>"; };
 		FA65ADA927A967EC00524720 /* SendTalkFeedback.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SendTalkFeedback.graphql; sourceTree = "<group>"; };
 		FA65ADAA27A967ED00524720 /* SendTalkFeedbackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendTalkFeedbackModel.swift; sourceTree = "<group>"; };
 		FA9BCF65277C6ED8009F652E /* Hark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hark.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -844,6 +852,8 @@
 		FA1E690C27848DD700030600 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FA647F2127A99C34003607F7 /* SendHarkRequest */,
+				FA647F1C27A99AD0003607F7 /* BlockUser */,
 				FA65ADA827A9679F00524720 /* SendTalkFeedBack */,
 				02F558C927A8228F005AEED7 /* HarkUpdate */,
 				02F558C427A8220C005AEED7 /* HarkDelete */,
@@ -882,6 +892,24 @@
 				FA35693127A2B3C9003468B7 /* call.json */,
 			);
 			path = Littie;
+			sourceTree = "<group>";
+		};
+		FA647F1C27A99AD0003607F7 /* BlockUser */ = {
+			isa = PBXGroup;
+			children = (
+				FA647F1D27A99BA0003607F7 /* BlockUser.graphql */,
+				FA647F1E27A99BA0003607F7 /* BlockUserModel.swift */,
+			);
+			path = BlockUser;
+			sourceTree = "<group>";
+		};
+		FA647F2127A99C34003607F7 /* SendHarkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FA647F2227A99C70003607F7 /* SendHarkRequest.graphql */,
+				FA647F2327A99C70003607F7 /* SendHarkRequestModel.swift */,
+			);
+			path = SendHarkRequest;
 			sourceTree = "<group>";
 		};
 		FA65ADA827A9679F00524720 /* SendTalkFeedBack */ = {
@@ -1115,6 +1143,7 @@
 				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
 				0288744B279ADA0A00E802CA /* HarkRequests.graphql in Resources */,
 				0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */,
+				FA647F1F27A99BA0003607F7 /* BlockUser.graphql in Resources */,
 				02F558CD27A822AF005AEED7 /* HarkUpdate.graphql in Resources */,
 				FA35693327A2B3D1003468B7 /* call.json in Resources */,
 				02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */,
@@ -1130,6 +1159,7 @@
 				0200AE982799279300A91A72 /* Generator.xcconfig in Resources */,
 				FA9BCF72277C6EDA009F652E /* Assets.xcassets in Resources */,
 				0200AE992799279300A91A72 /* Staging.xcconfig in Resources */,
+				FA647F2427A99C70003607F7 /* SendHarkRequest.graphql in Resources */,
 				FA65ADAB27A967ED00524720 /* SendTalkFeedback.graphql in Resources */,
 				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
 				02F558C727A82243005AEED7 /* HarkDelete.graphql in Resources */,
@@ -1190,6 +1220,7 @@
 				0203C885279FF74800720640 /* MainRouter.swift in Sources */,
 				02675653278ED30D00FBA4E9 /* MenuProfileController.swift in Sources */,
 				0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */,
+				FA647F2527A99C70003607F7 /* SendHarkRequestModel.swift in Sources */,
 				0200AE912799276C00A91A72 /* AppConfigurationBridge.m in Sources */,
 				02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */,
 				0203C882279FF71200720640 /* MainGoSearchController.swift in Sources */,
@@ -1219,6 +1250,7 @@
 				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
 				027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */,
 				0203C88A27A0017400720640 /* DeclineTalkModel.swift in Sources */,
+				FA647F2027A99BA0003607F7 /* BlockUserModel.swift in Sources */,
 				FA9BCF8A277C7614009F652E /* UIViewController+Extension.swift in Sources */,
 				0227C1DA279827EE0092F804 /* RequestCell.swift in Sources */,
 				FA9EBCED279E9742007B3867 /* CallController.swift in Sources */,

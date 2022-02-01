@@ -276,6 +276,45 @@ public enum GenderType: RawRepresentable, Equatable, Hashable, CaseIterable, Apo
   }
 }
 
+public struct HarkRequestRecordInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - talkId
+  ///   - userId
+  ///   - nickName
+  public init(talkId: String, userId: String, nickName: String) {
+    graphQLMap = ["talkId": talkId, "userId": userId, "nickName": nickName]
+  }
+
+  public var talkId: String {
+    get {
+      return graphQLMap["talkId"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "talkId")
+    }
+  }
+
+  public var userId: String {
+    get {
+      return graphQLMap["userId"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "userId")
+    }
+  }
+
+  public var nickName: String {
+    get {
+      return graphQLMap["nickName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "nickName")
+    }
+  }
+}
+
 public struct MatchSettingsUpdateInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -472,6 +511,57 @@ public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIt
       .subscriptionEventTypeTalkDeclined,
       .subscriptionEventTypeTalkFinished,
     ]
+  }
+}
+
+public final class BlockUserMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation BlockUser($userId: String!) {
+      blockUser(userId: $userId)
+    }
+    """
+
+  public let operationName: String = "BlockUser"
+
+  public var userId: String
+
+  public init(userId: String) {
+    self.userId = userId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["userId": userId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("blockUser", arguments: ["userId": GraphQLVariable("userId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(blockUser: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "blockUser": blockUser])
+    }
+
+    public var blockUser: Bool? {
+      get {
+        return resultMap["blockUser"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "blockUser")
+      }
+    }
   }
 }
 
@@ -1023,6 +1113,57 @@ public final class RejectHarkRequestMutation: GraphQLMutation {
       }
       set {
         resultMap.updateValue(newValue, forKey: "rejectHarkRequest")
+      }
+    }
+  }
+}
+
+public final class SendHarkRequestMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SendHarkRequest($record: HarkRequestRecordInput!) {
+      sendHarkRequest(record: $record)
+    }
+    """
+
+  public let operationName: String = "SendHarkRequest"
+
+  public var record: HarkRequestRecordInput
+
+  public init(record: HarkRequestRecordInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("sendHarkRequest", arguments: ["record": GraphQLVariable("record")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(sendHarkRequest: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "sendHarkRequest": sendHarkRequest])
+    }
+
+    public var sendHarkRequest: Bool? {
+      get {
+        return resultMap["sendHarkRequest"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "sendHarkRequest")
       }
     }
   }

@@ -195,9 +195,6 @@ class CallController: BaseController {
         })
         
         showEndCallView()
-        
-//        self.delegate?.callControllerClose(controller: self)
-//        self.dismiss(animated: false)
     }
     
     private func updateView() {
@@ -264,19 +261,21 @@ class CallController: BaseController {
     }
     
     @IBAction func actionAddToHarks(_ sender: UIButton) {
-        
+        presenter.sendHarkRequest(talkId: model.talkId, userId: "", nickName: name ?? "")
     }
     
     @IBAction func actionBlockUser(_ sender: UIButton) {
-        
+        presenter.blockUser(userId: "")
     }
     
     @IBAction func actionFindAnother(_ sender: UIButton) {
-        
+        dismiss(animated: false) {
+            self.tabBarController?.selectedIndex = 0
+        }
     }
     
     @IBAction func actionBackToMain(_ sender: UIButton) {
-        presenter.sendTalkFeedback(talkId: self.model.talkId, rate: rate)
+        presenter.sendTalkFeedback(talkId: model.talkId, rate: rate)
     }
     
     @IBAction func actionLeaveTalk(_ sender: UIButton) {
@@ -315,6 +314,14 @@ extension CallController: AgoraRtcEngineDelegate {
 //----------------------------------------------
 
 extension CallController: CallOutputProtocol {
+    func successSendHarkRequest() {
+        dismiss(animated: false)
+    }
+    
+    func successBlockUser() {
+        dismiss(animated: false)
+    }
+    
     func successSendTalkFeedback() {
         dismiss(animated: false)
     }

@@ -16,6 +16,8 @@ protocol CallOutputProtocol: BaseController {
     func endCall()
     func successDecline()
     func successSendTalkFeedback()
+    func successSendHarkRequest()
+    func successBlockUser()
 }
 
 //----------------------------------------------
@@ -28,6 +30,8 @@ protocol CallPresenterProtocol: AnyObject {
     func subscribeTalkId(talkId: String)
     func unsubscirbeTallk()
     func sendTalkFeedback(talkId: String, rate: Int)
+    func sendHarkRequest(talkId: String, userId: String, nickName: String)
+    func blockUser(userId: String)
 }
 
 class CallPresenter: CallPresenterProtocol {
@@ -72,7 +76,44 @@ class CallPresenter: CallPresenterProtocol {
         
         request = Network.shared.mutation(model: SendTalkFeedbackModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
-            self?.view?.successSendTalkFeedback()
+            if model.sendTalkFeedback {
+                self?.view?.successSendTalkFeedback()
+            }
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+        })
+    }
+    
+    func sendHarkRequest(talkId: String, userId: String, nickName: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+        let record = HarkRequestRecordInput(talkId: talkId, userId: userId, nickName: nickName)
+        let mutation = SendHarkRequestMutation(record: record)
+        
+        request = Network.shared.mutation(model: SendHarkRequestModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            if model.sendHarkRequest {
+                self?.view?.successSendHarkRequest()
+            }
+        }, failureHandler: { [weak self] error in
+            self?.view?.stopLoading()
+        })
+    }
+    
+    func blockUser(userId: String) {
+        view?.startLoader()
+        
+        request?.cancel()
+        
+        let mutation = BlockUserMutation(userId: userId)
+        
+        request = Network.shared.mutation(model: BlockUserModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            self?.view?.stopLoading()
+            if model.blockUser {
+                self?.view?.successBlockUser()
+            }
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
         })
