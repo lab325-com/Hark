@@ -18,6 +18,8 @@ protocol CallOutputProtocol: BaseController {
     func successSendTalkFeedback()
     func successSendHarkRequest()
     func successBlockUser()
+    
+    func failure(error: String)
 }
 
 //----------------------------------------------
@@ -76,11 +78,12 @@ class CallPresenter: CallPresenterProtocol {
         
         request = Network.shared.mutation(model: SendTalkFeedbackModel.self, mutation, controller: view, successHandler: { [weak self] model in
             self?.view?.stopLoading()
-            if model.sendTalkFeedback {
+            if model.sendTalkFeedBack {
                 self?.view?.successSendTalkFeedback()
             }
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
         })
     }
     
@@ -99,6 +102,7 @@ class CallPresenter: CallPresenterProtocol {
             }
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
         })
     }
     
@@ -116,6 +120,7 @@ class CallPresenter: CallPresenterProtocol {
             }
         }, failureHandler: { [weak self] error in
             self?.view?.stopLoading()
+            self?.view?.failure(error: error.localizedDescription)
         })
     }
     

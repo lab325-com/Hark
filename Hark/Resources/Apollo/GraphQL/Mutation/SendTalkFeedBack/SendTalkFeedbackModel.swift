@@ -2,5 +2,5 @@
 import Foundation
 
 struct SendTalkFeedbackModel: Codable {
-    let sendTalkFeedback: Bool
+    let sendTalkFeedBack: Bool
 }

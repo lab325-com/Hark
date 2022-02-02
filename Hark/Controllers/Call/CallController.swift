@@ -39,10 +39,11 @@ class CallController: BaseController {
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var lottieView: AnimationView!
     @IBOutlet weak var starsView: CosmosView!
-    @IBOutlet weak var talkEndedLabel: UILabel!
+//    @IBOutlet weak var talkEndedLabel: UILabel!
     @IBOutlet weak var buttonsStackView: UIStackView!
     @IBOutlet weak var talkDurationTitleLabel: UILabel!
     @IBOutlet weak var talkDurationLabel: UILabel!
+    @IBOutlet weak var talkDurationBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var speakerButton: UIButton!
     @IBOutlet weak var micLabel: UILabel!
@@ -227,10 +228,14 @@ class CallController: BaseController {
         leaveTalkButton.isHidden = true
         
         titleLabel.text = "After Talk"
+        
         rateImageView.image = UIImage(named: kRateActive)
         
+        talkDurationBottomLayoutConstraint.constant = 50.0
+        
+        feedbackLabel.isHidden = false
         starsView.isHidden = false
-        talkEndedLabel.isHidden = false
+//        talkEndedLabel.isHidden = false
         buttonsStackView.isHidden = false
     }
     
@@ -340,5 +345,10 @@ extension CallController: CallOutputProtocol {
     
     func successDecline() {
         endCalls()
+    }
+    
+    func failure(error: String) {
+        print(error)
+        closeController()
     }
 }
