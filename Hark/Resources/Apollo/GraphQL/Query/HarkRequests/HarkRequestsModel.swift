@@ -51,9 +51,9 @@ struct TalkModel: Codable {
 }
 
 struct IntervalRepresentationModel: Codable {
-    let hours: Int
-    let minutes: Int
-    let seconds: Int
+    let hours: Int?
+    let minutes: Int?
+    let seconds: Int?
 }
 
 extension HarkRequestStatus: Codable {

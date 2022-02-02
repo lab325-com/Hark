@@ -1758,6 +1758,18 @@
             "deprecationReason": null
           },
           {
+            "name": "harkNickName",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "uid",
             "description": null,
             "args": [],
@@ -2056,6 +2068,18 @@
             "type": {
               "kind": "ENUM",
               "name": "TalkRoleName",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "matchedUserId",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -2463,6 +2487,18 @@
           },
           {
             "name": "talkId",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "harkNickName",
             "description": null,
             "args": [],
             "type": {

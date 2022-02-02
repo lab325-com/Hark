@@ -2728,6 +2728,7 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         channelName
         role
         uid
+        matchedUserId
       }
     }
     """
@@ -2776,6 +2777,7 @@ public final class StartMatchingSubscription: GraphQLSubscription {
           GraphQLField("channelName", type: .scalar(String.self)),
           GraphQLField("role", type: .scalar(TalkRoleName.self)),
           GraphQLField("uid", type: .scalar(Int.self)),
+          GraphQLField("matchedUserId", type: .scalar(String.self)),
         ]
       }
 
@@ -2785,8 +2787,8 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         self.resultMap = unsafeResultMap
       }
 
-      public init(token: String? = nil, talkId: String? = nil, channelName: String? = nil, role: TalkRoleName? = nil, uid: Int? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MatchResponse", "token": token, "talkId": talkId, "channelName": channelName, "role": role, "uid": uid])
+      public init(token: String? = nil, talkId: String? = nil, channelName: String? = nil, role: TalkRoleName? = nil, uid: Int? = nil, matchedUserId: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MatchResponse", "token": token, "talkId": talkId, "channelName": channelName, "role": role, "uid": uid, "matchedUserId": matchedUserId])
       }
 
       public var __typename: String {
@@ -2840,6 +2842,15 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         }
         set {
           resultMap.updateValue(newValue, forKey: "uid")
+        }
+      }
+
+      public var matchedUserId: String? {
+        get {
+          return resultMap["matchedUserId"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "matchedUserId")
         }
       }
     }

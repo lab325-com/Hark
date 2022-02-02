@@ -234,6 +234,10 @@ class CallController: BaseController {
         buttonsStackView.isHidden = false
     }
     
+    private func closeController() {
+        dismiss(animated: false)
+    }
+    
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
@@ -245,7 +249,7 @@ class CallController: BaseController {
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
         presenter.declineTalks(talkId: model.talkId)
-        self.dismiss(animated: false)
+        closeController()
     }
     
     @IBAction func actionMic(_ sender: UIButton) {
@@ -261,11 +265,11 @@ class CallController: BaseController {
     }
     
     @IBAction func actionAddToHarks(_ sender: UIButton) {
-        presenter.sendHarkRequest(talkId: model.talkId, userId: "", nickName: name ?? "")
+        presenter.sendHarkRequest(talkId: model.talkId, userId: model.matchedUserId, nickName: name ?? "Anonymous")
     }
     
     @IBAction func actionBlockUser(_ sender: UIButton) {
-        presenter.blockUser(userId: "")
+        presenter.blockUser(userId: model.matchedUserId)
     }
     
     @IBAction func actionFindAnother(_ sender: UIButton) {
@@ -275,7 +279,11 @@ class CallController: BaseController {
     }
     
     @IBAction func actionBackToMain(_ sender: UIButton) {
-        presenter.sendTalkFeedback(talkId: model.talkId, rate: rate)
+        if rate != 0 {
+            presenter.sendTalkFeedback(talkId: model.talkId, rate: rate)
+        } else {
+            closeController()
+        }
     }
     
     @IBAction func actionLeaveTalk(_ sender: UIButton) {
@@ -315,15 +323,15 @@ extension CallController: AgoraRtcEngineDelegate {
 
 extension CallController: CallOutputProtocol {
     func successSendHarkRequest() {
-        dismiss(animated: false)
+        closeController()
     }
     
     func successBlockUser() {
-        dismiss(animated: false)
+        closeController()
     }
     
     func successSendTalkFeedback() {
-        dismiss(animated: false)
+        closeController()
     }
     
     func endCall() {

@@ -98,7 +98,17 @@ class RequestCell: UITableViewCell {
         dateLabel.text = dateFormatter.string(from: model.talk.date)
         
         if let duration = model.talk.duration {
-            durationLabel.text = "\(duration.hours) hour \(duration.minutes) min"
+            var durationString = ""
+            if let durationHour = duration.hours {
+                durationString.append("\(durationHour) hours ")
+            }
+            if let durationMinutes = duration.minutes {
+                durationString.append("\(durationMinutes) min ")
+            }
+            if let durationSeconds = duration.seconds {
+                durationString.append("\(durationSeconds) sec ")
+            }
+            durationLabel.text = durationString
         } else {
             durationLabel.text = "0 min"
         }
