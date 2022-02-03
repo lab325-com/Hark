@@ -276,7 +276,6 @@ registered users</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionRegistration:" destination="NEK-pG-3Rl" eventType="touchUpInside" id="r4z-Rz-9Yj"/>
-                                    <action selector="actionStartSearch:" destination="DAT-po-emC" eventType="touchUpInside" id="pFE-XO-f4Z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Search Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmF-Ab-dhe">
@@ -377,6 +376,7 @@ registered users</string>
                         <outlet property="lowerAgeControll" destination="WZd-YR-KFi" id="e2c-nc-BaG"/>
                         <outlet property="maleButton" destination="HLE-ZV-0ff" id="QqQ-ha-Tq6"/>
                         <outlet property="moodImageView" destination="A9Q-rk-Eh0" id="cXW-OB-D1L"/>
+                        <outlet property="registrationButton" destination="tko-dj-yLA" id="M3Y-ke-YXn"/>
                         <outlet property="styleImageView" destination="F1j-ZG-jMh" id="b1T-f3-PIc"/>
                         <outlet property="upperAgeLabel" destination="s0R-ly-nsC" id="8IV-aD-cEA"/>
                         <outlet property="upperImageView" destination="anB-DH-u1M" id="MTB-pu-Et5"/>
@@ -979,7 +979,6 @@ registered users</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="actionRegistration:" destination="NEK-pG-3Rl" eventType="touchUpInside" id="8TH-6K-lqM"/>
-                                    <action selector="actionStartSearch:" destination="DAT-po-emC" eventType="touchUpInside" id="qca-hZ-7UE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Harks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-es-XAS">

@@ -38,6 +38,7 @@ class SearchTabController: BaseController {
     @IBOutlet weak var guestHarkImageView: UIImageView!
     @IBOutlet weak var guestTitleLabel: UILabel!
     
+    @IBOutlet weak var registrationButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Property
@@ -176,11 +177,13 @@ class SearchTabController: BaseController {
             guestView.isHidden = false
             guestHarkImageView.isHidden = false
             guestTitleLabel.isHidden = false
+            registrationButton.isHidden = false
         } else {
             lokingForLabel.isHidden = false
             guestView.isHidden = true
             guestHarkImageView.isHidden = true
             guestTitleLabel.isHidden = true
+            registrationButton.isHidden = true
         }
     }
     
