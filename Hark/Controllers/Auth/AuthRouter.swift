@@ -11,6 +11,7 @@ class AuthRouter: BaseRouter {
     
     func pushRegistrationPhone() {
         let controller = RegistrationPhoneController()
+        controller.hidesBottomBarWhenPushed = true
         push(controller: controller)
     }
     

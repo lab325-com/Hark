@@ -27,6 +27,9 @@ class HarkListController: BaseController {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var emptyLabel: UILabel!
     
+    @IBOutlet weak var guestView: UIView!
+    @IBOutlet weak var registrationButton: UIButton!
+    
     //----------------------------------------------
     // MARK: - Property
     //----------------------------------------------
@@ -66,6 +69,11 @@ class HarkListController: BaseController {
         super.viewDidLoad()
 
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkGusetView()
     }
     
     //----------------------------------------------
@@ -118,6 +126,16 @@ class HarkListController: BaseController {
         } else {
             emptyLabel.text = "Here you can find received and\nsent Requests"
             emptyView.isHidden = presenter.harksRequests.count == 0 ? false : true
+        }
+    }
+    
+    private func checkGusetView() {
+        if KeychainService.standard.me?.isGuest == true {
+            registrationButton.isHidden = false
+            guestView.isHidden = false
+        } else {
+            registrationButton.isHidden = true
+            guestView.isHidden = true
         }
     }
     

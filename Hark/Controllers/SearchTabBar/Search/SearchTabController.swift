@@ -33,6 +33,12 @@ class SearchTabController: BaseController {
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var commonButton: UIButton!
 
+    @IBOutlet weak var lokingForLabel: UILabel!
+    @IBOutlet weak var guestView: UIView!
+    @IBOutlet weak var guestHarkImageView: UIImageView!
+    @IBOutlet weak var guestTitleLabel: UILabel!
+    
+    
     //----------------------------------------------
     // MARK: - Property
     //----------------------------------------------
@@ -84,6 +90,11 @@ class SearchTabController: BaseController {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkGuestUser()
     }
     
     //----------------------------------------------
@@ -159,9 +170,27 @@ class SearchTabController: BaseController {
         }
     }
     
+    private func checkGuestUser() {
+        if KeychainService.standard.me?.isGuest == true {
+            lokingForLabel.isHidden = true
+            guestView.isHidden = false
+            guestHarkImageView.isHidden = false
+            guestTitleLabel.isHidden = false
+        } else {
+            lokingForLabel.isHidden = false
+            guestView.isHidden = true
+            guestHarkImageView.isHidden = true
+            guestTitleLabel.isHidden = true
+        }
+    }
+    
     //----------------------------------------------
     // MARK: - Actions
     //----------------------------------------------
+    
+    @IBAction func actionRegistration(_ sender: UIButton) {
+        AuthRouter(presenter: navigationController).pushRegistrationPhone()
+    }
     
     @IBAction func actionGender(_ sender: UIButton) {
         switch sender.tag {
