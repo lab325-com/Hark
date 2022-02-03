@@ -117,11 +117,11 @@ class CallController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        nameLabel.text = name ?? "Anonymous"
+        nameLabel.text = name ?? "anonymous"
         infoLabel.text = "Calling..."
         
         callerLabel.text = KeychainService.standard.me?.nickName
-        calleeLabel.text = name ?? "Anonymous"
+        calleeLabel.text = name ?? "anonymous"
         
         lottieView.loopMode = .loop
         lottieView.play(completion: nil)
@@ -270,7 +270,7 @@ class CallController: BaseController {
     }
     
     @IBAction func actionAddToHarks(_ sender: UIButton) {
-        presenter.sendHarkRequest(talkId: model.talkId, userId: model.matchedUserId, nickName: name ?? "Anonymous")
+        presenter.sendHarkRequest(talkId: model.talkId, userId: model.matchedUserId, nickName: name ?? "anonymous")
     }
     
     @IBAction func actionBlockUser(_ sender: UIButton) {

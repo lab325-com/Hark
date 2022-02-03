@@ -236,7 +236,7 @@ extension HarkListController: HarkListOutputProtocol, CallControllerDelegate {
 // MARK: - RequestDelegate
 //----------------------------------------------
 
-extension HarkListController: RequestDelegate {
+extension HarkListController:  RequestDelegate {
     func requestRegect(cell: RequestCell, model: RequestsModel) {
         presenter.regectRequest(requestId: model.id)
     }
@@ -245,8 +245,8 @@ extension HarkListController: RequestDelegate {
         presenter.deleteRequest(requestId: model.id)
     }
     
-    func requestConfirm(cell: RequestCell) {
-        
+    func requestConfirm(cell: RequestCell, model: RequestsModel) {
+        presenter.acceptRequest(requestId: model.id)
     }
 }
 

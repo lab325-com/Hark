@@ -47,7 +47,7 @@ class ListCell: UITableViewCell {
     func config(model: HarksListModel, nextIsTheSame: Bool) {
         self.model = model
         
-        nameLabel.text = model.nickName
+        nameLabel.text = model.nickName ?? "anonymous"
         
         if nextIsTheSame {
             bottomLayout.constant = 2
