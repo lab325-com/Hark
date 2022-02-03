@@ -17,6 +17,7 @@ struct StartMatchingMainModel: Codable, CallProtocol {
     let uid: UInt
     let channelName: String
     let role: TalkRoleName
+    let matchedUserId: String
 }
 
 extension TalkRoleName: Codable {

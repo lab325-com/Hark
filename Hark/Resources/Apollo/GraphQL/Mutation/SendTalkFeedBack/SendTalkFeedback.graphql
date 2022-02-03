@@ -1,0 +1,5 @@
+mutation SendTalkFeedBack($talkId: String!,
+						  $rate: Int!) {
+	sendTalkFeedBack(talkId: $talkId,
+					 rate: $rate)
+}

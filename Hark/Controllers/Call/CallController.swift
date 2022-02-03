@@ -4,6 +4,13 @@ import AgoraRtcKit
 import Lottie
 import Cosmos
 
+fileprivate let kAppId = "f6b0210161b64abdb5d97ddd9456d8cc"
+fileprivate let kMicActive = "call_mic_active_ic"
+fileprivate let kMicInactive = "call_mic_inatcive_ic"
+fileprivate let kSpeakerActive = "call_speaker_active_ic"
+fileprivate let kSpeakerInactive = "call_speaker_inactive_ic"
+fileprivate let kRateActive = "call_rate_active_ic"
+
 protocol CallControllerDelegate: AnyObject {
     func callControllerClose(controller: CallController)
 }
@@ -32,10 +39,11 @@ class CallController: BaseController {
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var lottieView: AnimationView!
     @IBOutlet weak var starsView: CosmosView!
-    @IBOutlet weak var talkEndedLabel: UILabel!
+//    @IBOutlet weak var talkEndedLabel: UILabel!
     @IBOutlet weak var buttonsStackView: UIStackView!
     @IBOutlet weak var talkDurationTitleLabel: UILabel!
     @IBOutlet weak var talkDurationLabel: UILabel!
+    @IBOutlet weak var talkDurationBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var speakerButton: UIButton!
     @IBOutlet weak var micLabel: UILabel!
@@ -66,6 +74,7 @@ class CallController: BaseController {
     
     var talkTimer: Timer?
     var startTime: Date!
+    var rate = 0
     
     private lazy var formatter: DateComponentsFormatter = {
         let _formatter = DateComponentsFormatter()
@@ -120,7 +129,7 @@ class CallController: BaseController {
         starsView.settings.updateOnTouch = true
         starsView.settings.fillMode = .full
         starsView.didFinishTouchingCosmos = { rating in
-            
+            self.rate = Int(rating)
         }
         
         AudioServicesPlayAlertSound(SystemSoundID(1322))
@@ -144,22 +153,20 @@ class CallController: BaseController {
     private func initializeAndJoinChannel() {
         presenter.subscribeTalkId(talkId: model.talkId)
         
-        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "f6b0210161b64abdb5d97ddd9456d8cc", delegate: self)
+        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: kAppId, delegate: self)
         agoraKit?.joinChannel(byToken: model.token,
                               channelId: model.channelName,
                               info: nil,
                               uid: model.uid,
                               joinSuccess: { [weak self] (channel, uid, elapsed) in
             
-            let string = "Thank you for using Hark anonymous communication"
+            let string = "" //Thank you for using Hark anonymous communication
             let utterance = AVSpeechUtterance(string: string)
             utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
 
             let synth = AVSpeechSynthesizer()
             synth.speak(utterance)
-            
-            self?.agoraKit?.setEnableSpeakerphone(true)
-            
+                        
             UIApplication.shared.isIdleTimerDisabled = true
             
             self?.startTalkTimer()
@@ -189,9 +196,6 @@ class CallController: BaseController {
         })
         
         showEndCallView()
-        
-//        self.delegate?.callControllerClose(controller: self)
-//        self.dismiss(animated: false)
     }
     
     private func updateView() {
@@ -208,8 +212,8 @@ class CallController: BaseController {
             callView.isHidden = true
         }
         
-        micButton.setImage(UIImage(named: isActiveMic ? "call_mic_active_ic" : "call_mic_inatcive_ic"), for: .normal)
-        speakerButton.setImage(UIImage(named: isActiveSpeaker ? "call_speaker_active_ic" : "call_speaker_inactive_ic"), for: .normal)
+        micButton.setImage(UIImage(named: isActiveMic ? kMicActive : kMicInactive), for: .normal)
+        speakerButton.setImage(UIImage(named: isActiveSpeaker ? kSpeakerActive : kSpeakerInactive), for: .normal)
     }
     
     private func showEndCallView() {
@@ -224,11 +228,19 @@ class CallController: BaseController {
         leaveTalkButton.isHidden = true
         
         titleLabel.text = "After Talk"
-        rateImageView.image = UIImage(named: "call_rate_active_ic")
         
+        rateImageView.image = UIImage(named: kRateActive)
+        
+        talkDurationBottomLayoutConstraint.constant = 50.0
+        
+        feedbackLabel.isHidden = false
         starsView.isHidden = false
-        talkEndedLabel.isHidden = false
+//        talkEndedLabel.isHidden = false
         buttonsStackView.isHidden = false
+    }
+    
+    private func closeController() {
+        dismiss(animated: false)
     }
     
     //----------------------------------------------
@@ -242,7 +254,7 @@ class CallController: BaseController {
     
     @IBAction func actionDeclineCall(_ sender: UIButton) {
         presenter.declineTalks(talkId: model.talkId)
-        self.dismiss(animated: false)
+        closeController()
     }
     
     @IBAction func actionMic(_ sender: UIButton) {
@@ -258,19 +270,25 @@ class CallController: BaseController {
     }
     
     @IBAction func actionAddToHarks(_ sender: UIButton) {
-        
+        presenter.sendHarkRequest(talkId: model.talkId, userId: model.matchedUserId, nickName: name ?? "Anonymous")
     }
     
     @IBAction func actionBlockUser(_ sender: UIButton) {
-        
+        presenter.blockUser(userId: model.matchedUserId)
     }
     
     @IBAction func actionFindAnother(_ sender: UIButton) {
-        
+        dismiss(animated: false) {
+            self.tabBarController?.selectedIndex = 0
+        }
     }
     
     @IBAction func actionBackToMain(_ sender: UIButton) {
-        self.dismiss(animated: false)
+        if rate != 0 {
+            presenter.sendTalkFeedback(talkId: model.talkId, rate: rate)
+        } else {
+            closeController()
+        }
     }
     
     @IBAction func actionLeaveTalk(_ sender: UIButton) {
@@ -309,11 +327,28 @@ extension CallController: AgoraRtcEngineDelegate {
 //----------------------------------------------
 
 extension CallController: CallOutputProtocol {
+    func successSendHarkRequest() {
+        closeController()
+    }
+    
+    func successBlockUser() {
+        closeController()
+    }
+    
+    func successSendTalkFeedback() {
+        closeController()
+    }
+    
     func endCall() {
         endCalls()
     }
     
     func successDecline() {
         endCalls()
+    }
+    
+    func failure(error: String) {
+        print(error)
+        closeController()
     }
 }

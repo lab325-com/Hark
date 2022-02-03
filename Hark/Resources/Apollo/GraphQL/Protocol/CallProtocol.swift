@@ -12,4 +12,5 @@ protocol CallProtocol {
     var uid: UInt { get }
     var channelName: String { get }
     var token: String { get }
+    var matchedUserId: String { get }
 }

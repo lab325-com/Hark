@@ -17,4 +17,5 @@ struct UserMainModel: Codable, CallProtocol {
     var uid: UInt
     var channelName: String
     var token: String
+    let matchedUserId: String
 }

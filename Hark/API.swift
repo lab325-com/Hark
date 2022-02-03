@@ -276,6 +276,45 @@ public enum GenderType: RawRepresentable, Equatable, Hashable, CaseIterable, Apo
   }
 }
 
+public struct HarkRequestRecordInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - talkId
+  ///   - userId
+  ///   - nickName
+  public init(talkId: String, userId: String, nickName: String) {
+    graphQLMap = ["talkId": talkId, "userId": userId, "nickName": nickName]
+  }
+
+  public var talkId: String {
+    get {
+      return graphQLMap["talkId"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "talkId")
+    }
+  }
+
+  public var userId: String {
+    get {
+      return graphQLMap["userId"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "userId")
+    }
+  }
+
+  public var nickName: String {
+    get {
+      return graphQLMap["nickName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "nickName")
+    }
+  }
+}
+
 public struct MatchSettingsUpdateInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -472,6 +511,57 @@ public enum SubscriptionEventType: RawRepresentable, Equatable, Hashable, CaseIt
       .subscriptionEventTypeTalkDeclined,
       .subscriptionEventTypeTalkFinished,
     ]
+  }
+}
+
+public final class BlockUserMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation BlockUser($userId: String!) {
+      blockUser(userId: $userId)
+    }
+    """
+
+  public let operationName: String = "BlockUser"
+
+  public var userId: String
+
+  public init(userId: String) {
+    self.userId = userId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["userId": userId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("blockUser", arguments: ["userId": GraphQLVariable("userId")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(blockUser: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "blockUser": blockUser])
+    }
+
+    public var blockUser: Bool? {
+      get {
+        return resultMap["blockUser"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "blockUser")
+      }
+    }
   }
 }
 
@@ -1023,6 +1113,110 @@ public final class RejectHarkRequestMutation: GraphQLMutation {
       }
       set {
         resultMap.updateValue(newValue, forKey: "rejectHarkRequest")
+      }
+    }
+  }
+}
+
+public final class SendHarkRequestMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SendHarkRequest($record: HarkRequestRecordInput!) {
+      sendHarkRequest(record: $record)
+    }
+    """
+
+  public let operationName: String = "SendHarkRequest"
+
+  public var record: HarkRequestRecordInput
+
+  public init(record: HarkRequestRecordInput) {
+    self.record = record
+  }
+
+  public var variables: GraphQLMap? {
+    return ["record": record]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("sendHarkRequest", arguments: ["record": GraphQLVariable("record")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(sendHarkRequest: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "sendHarkRequest": sendHarkRequest])
+    }
+
+    public var sendHarkRequest: Bool? {
+      get {
+        return resultMap["sendHarkRequest"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "sendHarkRequest")
+      }
+    }
+  }
+}
+
+public final class SendTalkFeedBackMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SendTalkFeedBack($talkId: String!, $rate: Int!) {
+      sendTalkFeedBack(talkId: $talkId, rate: $rate)
+    }
+    """
+
+  public let operationName: String = "SendTalkFeedBack"
+
+  public var talkId: String
+  public var rate: Int
+
+  public init(talkId: String, rate: Int) {
+    self.talkId = talkId
+    self.rate = rate
+  }
+
+  public var variables: GraphQLMap? {
+    return ["talkId": talkId, "rate": rate]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("sendTalkFeedBack", arguments: ["talkId": GraphQLVariable("talkId"), "rate": GraphQLVariable("rate")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(sendTalkFeedBack: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "sendTalkFeedBack": sendTalkFeedBack])
+    }
+
+    public var sendTalkFeedBack: Bool? {
+      get {
+        return resultMap["sendTalkFeedBack"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "sendTalkFeedBack")
       }
     }
   }
@@ -2534,6 +2728,7 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         channelName
         role
         uid
+        matchedUserId
       }
     }
     """
@@ -2582,6 +2777,7 @@ public final class StartMatchingSubscription: GraphQLSubscription {
           GraphQLField("channelName", type: .scalar(String.self)),
           GraphQLField("role", type: .scalar(TalkRoleName.self)),
           GraphQLField("uid", type: .scalar(Int.self)),
+          GraphQLField("matchedUserId", type: .scalar(String.self)),
         ]
       }
 
@@ -2591,8 +2787,8 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         self.resultMap = unsafeResultMap
       }
 
-      public init(token: String? = nil, talkId: String? = nil, channelName: String? = nil, role: TalkRoleName? = nil, uid: Int? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MatchResponse", "token": token, "talkId": talkId, "channelName": channelName, "role": role, "uid": uid])
+      public init(token: String? = nil, talkId: String? = nil, channelName: String? = nil, role: TalkRoleName? = nil, uid: Int? = nil, matchedUserId: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MatchResponse", "token": token, "talkId": talkId, "channelName": channelName, "role": role, "uid": uid, "matchedUserId": matchedUserId])
       }
 
       public var __typename: String {
@@ -2646,6 +2842,15 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         }
         set {
           resultMap.updateValue(newValue, forKey: "uid")
+        }
+      }
+
+      public var matchedUserId: String? {
+        get {
+          return resultMap["matchedUserId"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "matchedUserId")
         }
       }
     }

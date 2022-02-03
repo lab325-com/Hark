@@ -16,4 +16,5 @@ struct CallHarkMainModel: Codable, CallProtocol {
     let uid: UInt
     let channelName: String
     let token: String
+    let matchedUserId: String
 }
