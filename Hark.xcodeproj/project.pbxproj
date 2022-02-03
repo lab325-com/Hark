@@ -137,6 +137,8 @@
 		FA647F2527A99C70003607F7 /* SendHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA647F2327A99C70003607F7 /* SendHarkRequestModel.swift */; };
 		FA65ADAB27A967ED00524720 /* SendTalkFeedback.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA65ADA927A967EC00524720 /* SendTalkFeedback.graphql */; };
 		FA65ADAC27A967ED00524720 /* SendTalkFeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65ADAA27A967ED00524720 /* SendTalkFeedbackModel.swift */; };
+		FA77834327AC0A3800124CB4 /* AcceptHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA77834127AC0A3800124CB4 /* AcceptHarkRequest.graphql */; };
+		FA77834427AC0A3800124CB4 /* AcceptHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77834227AC0A3800124CB4 /* AcceptHarkRequestModel.swift */; };
 		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
 		FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF6C277C6ED8009F652E /* SplashController.swift */; };
 		FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF6E277C6ED8009F652E /* Main.storyboard */; };
@@ -276,6 +278,8 @@
 		FA647F2327A99C70003607F7 /* SendHarkRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendHarkRequestModel.swift; sourceTree = "<group>"; };
 		FA65ADA927A967EC00524720 /* SendTalkFeedback.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SendTalkFeedback.graphql; sourceTree = "<group>"; };
 		FA65ADAA27A967ED00524720 /* SendTalkFeedbackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendTalkFeedbackModel.swift; sourceTree = "<group>"; };
+		FA77834127AC0A3800124CB4 /* AcceptHarkRequest.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AcceptHarkRequest.graphql; sourceTree = "<group>"; };
+		FA77834227AC0A3800124CB4 /* AcceptHarkRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptHarkRequestModel.swift; sourceTree = "<group>"; };
 		FA9BCF65277C6ED8009F652E /* Hark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9BCF68277C6ED8009F652E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9BCF6C277C6ED8009F652E /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -857,6 +861,7 @@
 				FA65ADA827A9679F00524720 /* SendTalkFeedBack */,
 				02F558C927A8228F005AEED7 /* HarkUpdate */,
 				02F558C427A8220C005AEED7 /* HarkDelete */,
+				FA77834027AC09FA00124CB4 /* AcceptHarkRequest */,
 				024E8BFF27A7F55300C26C26 /* RejectHarkRequest */,
 				024E8BFA27A7CEAD00C26C26 /* DeleteHarkRequest */,
 				024E83BA27A2A47A006B970D /* СallHark */,
@@ -919,6 +924,15 @@
 				FA65ADAA27A967ED00524720 /* SendTalkFeedbackModel.swift */,
 			);
 			path = SendTalkFeedBack;
+			sourceTree = "<group>";
+		};
+		FA77834027AC09FA00124CB4 /* AcceptHarkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FA77834127AC0A3800124CB4 /* AcceptHarkRequest.graphql */,
+				FA77834227AC0A3800124CB4 /* AcceptHarkRequestModel.swift */,
+			);
+			path = AcceptHarkRequest;
 			sourceTree = "<group>";
 		};
 		FA9BCF5C277C6ED8009F652E = {
@@ -1134,6 +1148,7 @@
 				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
 				02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */,
 				024E8BFC27A7CED500C26C26 /* DeleteHarkRequest.graphql in Resources */,
+				FA77834327AC0A3800124CB4 /* AcceptHarkRequest.graphql in Resources */,
 				02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */,
 				027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */,
 				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
@@ -1269,6 +1284,7 @@
 				02887452279AE01F00E802CA /* UIScrollView+Extension.swift in Sources */,
 				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
 				022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */,
+				FA77834427AC0A3800124CB4 /* AcceptHarkRequestModel.swift in Sources */,
 				02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */,
 				02F558C827A82243005AEED7 /* HarkDeleteModel.swift in Sources */,
 				FA9EBCF0279EC0F7007B3867 /* HarkListRouter.swift in Sources */,

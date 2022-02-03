@@ -10,7 +10,7 @@ import UIKit
 protocol RequestDelegate: AnyObject {
     func requestDelete(cell: RequestCell, model: RequestsModel)
     func requestRegect(cell: RequestCell, model: RequestsModel)
-    func requestConfirm(cell: RequestCell)
+    func requestConfirm(cell: RequestCell, model: RequestsModel)
 }
 
 class RequestCell: UITableViewCell {
@@ -128,5 +128,7 @@ class RequestCell: UITableViewCell {
     }
     
     @IBAction func actionConfirmRequest(_ sender: UIButton) {
+        guard let model = model else { return }
+        delegate?.requestConfirm(cell: self, model: model)
     }
 }

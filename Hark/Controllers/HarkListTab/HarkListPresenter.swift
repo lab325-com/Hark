@@ -176,6 +176,17 @@ class HarkListPresenter: HarkListPresenterProtocol {
         }
     }
     
+    func acceptRequest(requestId: String) {
+        let mutation = AcceptHarkRequestMutation(requestId: requestId)
+        
+        self.view?.startLoader()
+        request = Network.shared.mutation(model: AcceptHarkRequestModel.self, mutation, controller: view, successHandler: { [weak self] model in
+            self?.view?.successDelete()
+        }, failureHandler: { [weak self] _ in
+            self?.view?.stopLoading()
+        })
+    }
+    
     func regectRequest(requestId: String) {
         let mutation = RejectHarkRequestMutation(requestId: requestId)
         
