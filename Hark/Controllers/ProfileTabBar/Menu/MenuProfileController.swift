@@ -56,13 +56,13 @@ class MenuProfileController: BaseController {
     }
     
     @IBAction func actionShareApp(_ sender: UIButton) {
-        if let url = URL(string: "https://itunes.apple.com/us/app/lill/id1586099684?mt=8") {
+        if let url = URL(string: "https://itunes.apple.com/us/app/hark/id1602488612?mt=8") {
             SharingManager.sharedManager.sendSharingLink(url: url, controller: self)
         }
     }
     
     @IBAction func actionRateApp(_ sender: UIButton) {
-        if let url = URL(string: "itms-apps://itunes.apple.com/app/lill" + "id1586099684") { ///ID => 1586099684
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/hark" + "id1602488612") { ///ID => 1586099684
             if #available(iOS 10, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
