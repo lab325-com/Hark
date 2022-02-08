@@ -46,6 +46,10 @@ class LoginController: BaseController {
     // MARK: - IBAction
     //----------------------------------------------
     
+    @IBAction func actionClose(_ sender: UIButton) {
+        AuthRouter(presenter: navigationController).pushRegistrationPhone()
+    }
+    
     @IBAction func actionRegistration(_ sender: UIButton) {
         AuthRouter(presenter: navigationController).pushRegistrationPhone()
     }
