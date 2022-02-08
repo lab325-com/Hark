@@ -171,7 +171,7 @@ extension MainController: MainOutputProtocol {
     func successStartMath(model: StartMatchingModel) {
         startMathModel = model
         presenter.subscribeTalkId(talkId: model.startMatching.talkId)
-        MainRouter(presenter: navigationController).presentMainGo(tabBarController: tabBarController, delegate: self, talkId: model.startMatching.talkId)
+        MainRouter(presenter: navigationController).presentMainGo(tabBarController: tabBarController, delegate: self, model: model)
     }
     
     func successTalkID() {

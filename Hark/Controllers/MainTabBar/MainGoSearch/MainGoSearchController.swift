@@ -33,14 +33,14 @@ class MainGoSearchController: BaseController {
     weak var delegate: MainGoSearchDelegate?
     private lazy var presenter = MainPresenter(view: self)
     
-    let talkId: String
+    let model: StartMatchingModel
     
     //----------------------------------------------
     // MARK: - Init
     //----------------------------------------------
     
-    init(delegate: MainGoSearchDelegate, talkId: String) {
-        self.talkId = talkId
+    init(delegate: MainGoSearchDelegate, model: StartMatchingModel) {
+        self.model = model
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -70,7 +70,8 @@ class MainGoSearchController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        
+        nickNameLabel.text = model.startMatching.user.nickName
+        yearsLabel.text = "(\(model.startMatching.user.age) Years, \(model.startMatching.user.gender.matchGender))"
         declineButton.layer.cornerRadius = 6
         declineButton.layer.borderWidth = 1
         declineButton.layer.borderColor = UIColor(red: 1, green: 0.306, blue: 0.306, alpha: 1).cgColor
@@ -79,12 +80,11 @@ class MainGoSearchController: BaseController {
             guard let `self` = self else { return }
             self.timeSec -= 1
             if self.timeSec >= 0 {
-                self.timerLabel.text = " Auto Decline in \(self.timeSec) sec"
+                self.timerLabel.text = "Auto Decline in \(self.timeSec) sec"
             } else {
                 self.timer?.invalidate()
                 self.timer = nil
-                self.presenter.declineTalks(talkId: talkId)
-                
+                self.presenter.declineTalks(talkId: self.model.startMatching.talkId)
             }
         }
     }
@@ -96,7 +96,7 @@ class MainGoSearchController: BaseController {
     @IBAction func actionCancel(_ sender: UIButton) {
         timer?.invalidate()
         timer = nil
-        presenter.declineTalks(talkId: talkId)
+        presenter.declineTalks(talkId: model.startMatching.talkId)
     }
     
     @IBAction func actionAllow(_ sender: UIButton) {

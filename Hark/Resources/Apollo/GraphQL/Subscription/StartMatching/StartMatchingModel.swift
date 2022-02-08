@@ -18,7 +18,20 @@ struct StartMatchingMainModel: Codable, CallProtocol {
     let channelName: String
     let role: TalkRoleName
     let matchedUserId: String
+    let user: UserBaseModel
+    
+    enum CodingKeys: String, CodingKey {
+        case user = "User"
+        case token = "token"
+        case talkId = "talkId"
+        case uid = "uid"
+        case channelName = "channelName"
+        case role = "role"
+        case matchedUserId = "matchedUserId"
+    }
 }
+
+
 
 extension TalkRoleName: Codable {
 }

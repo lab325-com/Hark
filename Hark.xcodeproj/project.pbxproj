@@ -34,6 +34,7 @@
 		022FB57F27970AFC00870064 /* UpdateMatchSettings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */; };
 		022FB58127970B4B00870064 /* UpdateMatchSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */; };
 		022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB58227970B9500870064 /* SearchTabPresenter.swift */; };
+		024481E027B29BC3004C1ECA /* UserBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024481DF27B29BC3004C1ECA /* UserBaseModel.swift */; };
 		024E83BC27A2A494006B970D /* СallHark.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E83BB27A2A494006B970D /* СallHark.graphql */; };
 		024E83BE27A2A5DB006B970D /* CallHarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83BD27A2A5DB006B970D /* CallHarkModel.swift */; };
 		024E83C127A2A68B006B970D /* User.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E83C027A2A68B006B970D /* User.graphql */; };
@@ -184,6 +185,7 @@
 		022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UpdateMatchSettings.graphql; sourceTree = "<group>"; };
 		022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMatchSettingsModel.swift; sourceTree = "<group>"; };
 		022FB58227970B9500870064 /* SearchTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabPresenter.swift; sourceTree = "<group>"; };
+		024481DF27B29BC3004C1ECA /* UserBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBaseModel.swift; sourceTree = "<group>"; };
 		024E83BB27A2A494006B970D /* СallHark.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "СallHark.graphql"; sourceTree = "<group>"; };
 		024E83BD27A2A5DB006B970D /* CallHarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHarkModel.swift; sourceTree = "<group>"; };
 		024E83C027A2A68B006B970D /* User.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.graphql; sourceTree = "<group>"; };
@@ -886,6 +888,7 @@
 			children = (
 				FA1E69252785B71F00030600 /* AuthModel.swift */,
 				0288744D279ADA5100E802CA /* PaginationModel.swift */,
+				024481DF27B29BC3004C1ECA /* UserBaseModel.swift */,
 			);
 			path = GlobalModels;
 			sourceTree = "<group>";
@@ -1281,6 +1284,7 @@
 				02887450279ADA5F00E802CA /* HarkRequestsModel.swift in Sources */,
 				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
+				024481E027B29BC3004C1ECA /* UserBaseModel.swift in Sources */,
 				02887452279AE01F00E802CA /* UIScrollView+Extension.swift in Sources */,
 				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
 				022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */,
