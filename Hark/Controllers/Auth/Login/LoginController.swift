@@ -13,8 +13,7 @@ class LoginController: BaseController {
     // MARK: - IBOutlet
     //----------------------------------------------
     
-    @IBOutlet weak var registerView: UIView!
-    @IBOutlet weak var guestView: UIView!
+    @IBOutlet weak var registrationButton: UIButton!
     
     //----------------------------------------------
     // MARK: - Property
@@ -38,13 +37,9 @@ class LoginController: BaseController {
     //----------------------------------------------
     
     private func setup() {
-        registerView.layer.cornerRadius = 6
-        registerView.layer.borderWidth = 1
-        registerView.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        
-        guestView.layer.cornerRadius = 6
-        guestView.layer.borderWidth = 1
-        guestView.layer.borderColor = UIColor(red: 0.467, green: 0.467, blue: 0.467, alpha: 1).cgColor
+        registrationButton.layer.cornerRadius = 6
+        registrationButton.layer.borderWidth = 1
+        registrationButton.layer.borderColor = UIColor.white.cgColor
     }
     
     //----------------------------------------------
@@ -53,10 +48,6 @@ class LoginController: BaseController {
     
     @IBAction func actionRegistration(_ sender: UIButton) {
         AuthRouter(presenter: navigationController).pushRegistrationPhone()
-    }
-    
-    @IBAction func actionGuestMode(_ sender: UIButton) {
-        presenter.guest()
     }
     
     @IBAction func actionLogin(_ sender: UIButton) {
