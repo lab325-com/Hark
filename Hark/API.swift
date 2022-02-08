@@ -2780,6 +2780,13 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         role
         uid
         matchedUserId
+        User {
+          __typename
+          id
+          nickName
+          age
+          gender
+        }
       }
     }
     """
@@ -2829,6 +2836,7 @@ public final class StartMatchingSubscription: GraphQLSubscription {
           GraphQLField("role", type: .scalar(TalkRoleName.self)),
           GraphQLField("uid", type: .scalar(Int.self)),
           GraphQLField("matchedUserId", type: .scalar(String.self)),
+          GraphQLField("User", type: .object(User.selections)),
         ]
       }
 
@@ -2838,8 +2846,8 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         self.resultMap = unsafeResultMap
       }
 
-      public init(token: String? = nil, talkId: String? = nil, channelName: String? = nil, role: TalkRoleName? = nil, uid: Int? = nil, matchedUserId: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "MatchResponse", "token": token, "talkId": talkId, "channelName": channelName, "role": role, "uid": uid, "matchedUserId": matchedUserId])
+      public init(token: String? = nil, talkId: String? = nil, channelName: String? = nil, role: TalkRoleName? = nil, uid: Int? = nil, matchedUserId: String? = nil, user: User? = nil) {
+        self.init(unsafeResultMap: ["__typename": "MatchResponse", "token": token, "talkId": talkId, "channelName": channelName, "role": role, "uid": uid, "matchedUserId": matchedUserId, "User": user.flatMap { (value: User) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -2902,6 +2910,84 @@ public final class StartMatchingSubscription: GraphQLSubscription {
         }
         set {
           resultMap.updateValue(newValue, forKey: "matchedUserId")
+        }
+      }
+
+      public var user: User? {
+        get {
+          return (resultMap["User"] as? ResultMap).flatMap { User(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "User")
+        }
+      }
+
+      public struct User: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["User"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .scalar(GraphQLID.self)),
+            GraphQLField("nickName", type: .scalar(String.self)),
+            GraphQLField("age", type: .scalar(Int.self)),
+            GraphQLField("gender", type: .scalar(GenderType.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID? = nil, nickName: String? = nil, age: Int? = nil, gender: GenderType? = nil) {
+          self.init(unsafeResultMap: ["__typename": "User", "id": id, "nickName": nickName, "age": age, "gender": gender])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var nickName: String? {
+          get {
+            return resultMap["nickName"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "nickName")
+          }
+        }
+
+        public var age: Int? {
+          get {
+            return resultMap["age"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "age")
+          }
+        }
+
+        public var gender: GenderType? {
+          get {
+            return resultMap["gender"] as? GenderType
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "gender")
+          }
         }
       }
     }

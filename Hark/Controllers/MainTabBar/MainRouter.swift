@@ -8,8 +8,8 @@
 import UIKit
 
 class MainRouter: BaseRouter {
-    func presentMainGo(tabBarController: UITabBarController?, delegate: MainGoSearchDelegate, talkId: String) {
-        let controller = MainGoSearchController(delegate: delegate, talkId: talkId)
+    func presentMainGo(tabBarController: UITabBarController?, delegate: MainGoSearchDelegate, model: StartMatchingModel) {
+        let controller = MainGoSearchController(delegate: delegate, model: model)
         controller.modalTransitionStyle = .crossDissolve
         controller.modalPresentationStyle = .overCurrentContext
         tabBarController?.present(controller, animated: true, completion: nil)
