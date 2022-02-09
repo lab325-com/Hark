@@ -321,7 +321,7 @@ extension Network {
         // This web socket will have to provide the connecting payload which
         // initializes the connection as an authorized channel.
         private lazy var webSocketTransport: WebSocketTransport = {
-            let url = URL(string: "wss://api.front.dev.hark.mob325.com/graphql")!
+            let url = URL(string: AppConfiguration.shared.wssName)!
             let request = URLRequest(url: url)
             let webSocketClient = WebSocket(request: request)
             let authPayload = ["Authorization": "Bearer \(KeychainService.standard.newAuthToken?.token ?? "")"]
@@ -330,7 +330,7 @@ extension Network {
         
         /// An HTTP transport to use for queries and mutations.
         private lazy var normalTransport: RequestChainNetworkTransport = {
-            let url = URL(string: "https://api.front.dev.hark.mob325.com/graphql")!
+            let url = URL(string: AppConfiguration.shared.hostName)!
             return RequestChainNetworkTransport(interceptorProvider: DefaultInterceptorProvider(store: self.store), endpointURL: url)
         }()
         

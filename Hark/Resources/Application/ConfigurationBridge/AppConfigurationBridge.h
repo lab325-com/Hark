@@ -8,5 +8,6 @@
 @property(nonnull, copy, readonly) NSString *hostRestName;
 @property(nonnull, copy, readonly) NSString *supportEmail;
 @property(nonnull, copy, readonly) NSString *appName;
+@property(nonnull, copy, readonly) NSString *wssName;
 
 @end

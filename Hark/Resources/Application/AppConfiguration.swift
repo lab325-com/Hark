@@ -19,6 +19,7 @@ class AppConfiguration {
     let hostRestName: String
     let supportEmail: String
     let appName: String
+    let wssName: String
     
     //----------------------------------------------
     // MARK: - Private Initializer
@@ -30,6 +31,7 @@ class AppConfiguration {
         self.hostRestName = bridge.hostRestName
         self.supportEmail = bridge.supportEmail
         self.appName = bridge.appName
+        self.wssName = bridge.wssName
     }
     
 }
