@@ -73,6 +73,18 @@ place to talk</string>
                         <action selector="actionLogin:" destination="-1" eventType="touchUpInside" id="Hrg-Qx-jiv"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNy-Xn-IKf">
+                    <rect key="frame" x="314" y="44" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="63G-fI-lGV"/>
+                        <constraint firstAttribute="height" constant="100" id="8u6-fa-Ba3"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="close_button_ic"/>
+                    <connections>
+                        <action selector="actionClose:" destination="-1" eventType="touchUpInside" id="ScP-1r-g1g"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,6 +93,7 @@ place to talk</string>
                 <constraint firstAttribute="bottom" secondItem="dlt-C0-R3n" secondAttribute="bottom" constant="31" id="4U4-7M-NMF"/>
                 <constraint firstAttribute="bottom" secondItem="cpr-z1-ujT" secondAttribute="bottom" id="6Tb-LM-1zK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dlt-C0-R3n" secondAttribute="trailing" constant="33" id="BWc-Za-zgP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YNy-Xn-IKf" secondAttribute="trailing" id="BgF-zw-3bm"/>
                 <constraint firstItem="dlt-C0-R3n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="33" id="CIB-SH-ZvV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="u9i-pI-rUN" secondAttribute="trailing" constant="33" id="IXn-f0-mNt"/>
                 <constraint firstItem="34e-Xk-Zhg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="J9U-H0-UiY"/>
@@ -88,6 +101,7 @@ place to talk</string>
                 <constraint firstItem="dlt-C0-R3n" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="PxM-dw-q4D"/>
                 <constraint firstItem="34e-Xk-Zhg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SDA-hW-knr"/>
                 <constraint firstItem="cpr-z1-ujT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Zer-G5-aKR"/>
+                <constraint firstItem="YNy-Xn-IKf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bHo-cd-Ymu"/>
                 <constraint firstItem="u9i-pI-rUN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="33" id="dOB-7C-VjW"/>
                 <constraint firstItem="cpr-z1-ujT" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="lHv-L0-5sd"/>
             </constraints>
@@ -95,6 +109,7 @@ place to talk</string>
         </view>
     </objects>
     <resources>
+        <image name="close_button_ic" width="18" height="18"/>
         <image name="login_hark_label_ic" width="63.5" height="16.5"/>
         <image name="login_logo_ic" width="123" height="123"/>
         <image name="login_main_back_ic" width="390" height="796"/>
