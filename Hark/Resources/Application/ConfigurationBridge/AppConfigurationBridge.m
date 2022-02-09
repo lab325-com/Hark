@@ -8,6 +8,7 @@
 @property(nonnull, copy) NSString *hostRestName;
 @property(nonnull, copy) NSString *supportEmail;
 @property(nonnull, copy) NSString *appName;
+@property(nonnull, copy) NSString *wssName;
 
 @end
 
@@ -46,6 +47,13 @@
     #else
         #error Cant find HOST_REST_NAME. Please setup xcconfig file
     #endif
+        
+    #ifdef WSS_NAME
+        [self setWssName: WSS_NAME];
+    #else
+        #error Cant find WSS_NAME. Please setup xcconfig file
+    #endif
+        
     }
     return self;
 }
