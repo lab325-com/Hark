@@ -155,6 +155,12 @@
 		FA9EBCEE279E9742007B3867 /* CallController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9EBCEC279E9742007B3867 /* CallController.xib */; };
 		FA9EBCF0279EC0F7007B3867 /* HarkListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */; };
 		FABC8CF127A29915002C27C3 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = FABC8CF027A29915002C27C3 /* AgoraRtcKit */; };
+		FAE6656727B3E9E00002BE50 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6656527B3E9E00002BE50 /* ReportController.swift */; };
+		FAE6656827B3E9E00002BE50 /* ReportController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6656627B3E9E00002BE50 /* ReportController.xib */; };
+		FAE6656A27B3E9F00002BE50 /* ReportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6656927B3E9F00002BE50 /* ReportPresenter.swift */; };
+		FAE6656E27B3EE540002BE50 /* ReportUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6656C27B3EE540002BE50 /* ReportUserModel.swift */; };
+		FAE6656F27B3EE540002BE50 /* ReportUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAE6656D27B3EE540002BE50 /* ReportUser.graphql */; };
+		FAE6657327B414A30002BE50 /* CallRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6657227B414A30002BE50 /* CallRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -298,6 +304,12 @@
 		FA9EBCEB279E9742007B3867 /* CallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallController.swift; sourceTree = "<group>"; };
 		FA9EBCEC279E9742007B3867 /* CallController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallController.xib; sourceTree = "<group>"; };
 		FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListRouter.swift; sourceTree = "<group>"; };
+		FAE6656527B3E9E00002BE50 /* ReportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportController.swift; sourceTree = "<group>"; };
+		FAE6656627B3E9E00002BE50 /* ReportController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportController.xib; sourceTree = "<group>"; };
+		FAE6656927B3E9F00002BE50 /* ReportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPresenter.swift; sourceTree = "<group>"; };
+		FAE6656C27B3EE540002BE50 /* ReportUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUserModel.swift; sourceTree = "<group>"; };
+		FAE6656D27B3EE540002BE50 /* ReportUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReportUser.graphql; sourceTree = "<group>"; };
+		FAE6657227B414A30002BE50 /* CallRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -858,6 +870,7 @@
 		FA1E690C27848DD700030600 /* Mutation */ = {
 			isa = PBXGroup;
 			children = (
+				FAE6656B27B3ED360002BE50 /* ReportUser */,
 				FA647F2127A99C34003607F7 /* SendHarkRequest */,
 				FA647F1C27A99AD0003607F7 /* BlockUser */,
 				FA65ADA827A9679F00524720 /* SendTalkFeedBack */,
@@ -980,6 +993,7 @@
 		FA9BCF7D277C7184009F652E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAE6656427B3E9A50002BE50 /* Report */,
 				FA9EBCE6279E96F0007B3867 /* Call */,
 				FA9BCF92277C82AD009F652E /* SplashController */,
 				02F8B7FE278709A800595AA6 /* Onboarding */,
@@ -1055,10 +1069,30 @@
 			isa = PBXGroup;
 			children = (
 				024E83C427A2B62E006B970D /* CallPresenter.swift */,
+				FAE6657227B414A30002BE50 /* CallRouter.swift */,
 				FA9EBCEB279E9742007B3867 /* CallController.swift */,
 				FA9EBCEC279E9742007B3867 /* CallController.xib */,
 			);
 			path = Call;
+			sourceTree = "<group>";
+		};
+		FAE6656427B3E9A50002BE50 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				FAE6656927B3E9F00002BE50 /* ReportPresenter.swift */,
+				FAE6656527B3E9E00002BE50 /* ReportController.swift */,
+				FAE6656627B3E9E00002BE50 /* ReportController.xib */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		FAE6656B27B3ED360002BE50 /* ReportUser */ = {
+			isa = PBXGroup;
+			children = (
+				FAE6656D27B3EE540002BE50 /* ReportUser.graphql */,
+				FAE6656C27B3EE540002BE50 /* ReportUserModel.swift */,
+			);
+			path = ReportUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1150,6 +1184,7 @@
 				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
 				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
 				02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */,
+				FAE6656827B3E9E00002BE50 /* ReportController.xib in Resources */,
 				024E8BFC27A7CED500C26C26 /* DeleteHarkRequest.graphql in Resources */,
 				FA77834327AC0A3800124CB4 /* AcceptHarkRequest.graphql in Resources */,
 				02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */,
@@ -1169,6 +1204,7 @@
 				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
 				02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */,
 				02F8B7F82786FFB900595AA6 /* AuthFillGenderController.xib in Resources */,
+				FAE6656F27B3EE540002BE50 /* ReportUser.graphql in Resources */,
 				0203C88827A000AB00720640 /* DeclineTalk.graphql in Resources */,
 				02AFDFE2279EBA800078B52D /* HarksStatus.graphql in Resources */,
 				02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */,
@@ -1255,12 +1291,15 @@
 				02F558CC27A822AF005AEED7 /* HarkUpdateModel.swift in Sources */,
 				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
 				02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */,
+				FAE6656A27B3E9F00002BE50 /* ReportPresenter.swift in Sources */,
 				022FB5782796C49C00870064 /* SearchTabController.swift in Sources */,
 				024E83C827A2B931006B970D /* CallProtocol.swift in Sources */,
 				024E83C327A2ABE4006B970D /* UserModel.swift in Sources */,
+				FAE6656E27B3EE540002BE50 /* ReportUserModel.swift in Sources */,
 				02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */,
 				024E8BFE27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift in Sources */,
 				0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */,
+				FAE6657327B414A30002BE50 /* CallRouter.swift in Sources */,
 				02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */,
 				0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */,
 				FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */,
@@ -1302,6 +1341,7 @@
 				02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */,
 				0227C1D4279805E90092F804 /* ListCell.swift in Sources */,
 				FA1E69262785B71F00030600 /* AuthModel.swift in Sources */,
+				FAE6656727B3E9E00002BE50 /* ReportController.swift in Sources */,
 				02F558C327A820DC005AEED7 /* HarkEditPresenter.swift in Sources */,
 				02ED71DC2799AEBE00CAE787 /* HarksModel.swift in Sources */,
 				02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */,

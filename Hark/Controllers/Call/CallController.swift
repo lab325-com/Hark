@@ -39,7 +39,6 @@ class CallController: BaseController {
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var lottieView: AnimationView!
     @IBOutlet weak var starsView: CosmosView!
-//    @IBOutlet weak var talkEndedLabel: UILabel!
     @IBOutlet weak var buttonsStackView: UIStackView!
     @IBOutlet weak var talkDurationTitleLabel: UILabel!
     @IBOutlet weak var talkDurationLabel: UILabel!
@@ -50,10 +49,9 @@ class CallController: BaseController {
     @IBOutlet weak var speakerLabel: UILabel!
     @IBOutlet weak var addToHarksButton: UIButton!
     @IBOutlet weak var blockUserButton: UIButton!
-    @IBOutlet weak var findAnotherButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
     @IBOutlet weak var leaveTalkButton: UIButton!
     @IBOutlet weak var backToMainButton: UIButton!
-    
     @IBOutlet weak var declineButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
     
@@ -235,7 +233,6 @@ class CallController: BaseController {
         
         feedbackLabel.isHidden = false
         starsView.isHidden = false
-//        talkEndedLabel.isHidden = false
         buttonsStackView.isHidden = false
     }
     
@@ -277,9 +274,10 @@ class CallController: BaseController {
         presenter.blockUser(userId: model.matchedUserId)
     }
     
-    @IBAction func actionFindAnother(_ sender: UIButton) {
+    @IBAction func actionReport(_ sender: UIButton) {
         dismiss(animated: false) {
-            self.tabBarController?.selectedIndex = 0
+            let currentNavigationController = RootRouter.sharedInstance.topViewController?.navigationController
+            CallRouter(presenter: currentNavigationController).presentReport(userId: self.model.user.id)
         }
     }
     

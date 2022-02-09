@@ -32,7 +32,6 @@
                 <outlet property="callerLabel" destination="VKg-M0-vx1" id="BDS-q7-0Wc"/>
                 <outlet property="declineButton" destination="oMD-yY-jYb" id="KUc-Zl-rTC"/>
                 <outlet property="feedbackLabel" destination="0A6-F1-KFo" id="s6E-HK-Hit"/>
-                <outlet property="findAnotherButton" destination="2Pl-cq-u9P" id="Km9-JX-bej"/>
                 <outlet property="infoLabel" destination="Zlw-fD-SMV" id="PKb-ak-Jf9"/>
                 <outlet property="leaveTalkButton" destination="xO7-YH-pE0" id="Sf6-uP-aMd"/>
                 <outlet property="lottieView" destination="FtI-Sp-jud" id="Ys5-bn-DfU"/>
@@ -41,6 +40,7 @@
                 <outlet property="nameLabel" destination="Ap2-h8-wP7" id="cNT-JC-5tF"/>
                 <outlet property="preCallView" destination="nMS-7y-4n4" id="Ctb-u1-qjE"/>
                 <outlet property="rateImageView" destination="oKI-gx-08e" id="bmX-tu-f1N"/>
+                <outlet property="reportButton" destination="2Pl-cq-u9P" id="H5V-qJ-WP8"/>
                 <outlet property="speakerButton" destination="kqu-gT-kYx" id="rpy-jA-bye"/>
                 <outlet property="speakerLabel" destination="jGh-3c-cdX" id="jvS-Y5-Ec2"/>
                 <outlet property="starsView" destination="J4O-1G-HMr" id="1O4-p7-Vq6"/>
@@ -328,15 +328,16 @@
                                         <action selector="actionBlockUser:" destination="-1" eventType="touchUpInside" id="6AM-Ic-CDb"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pl-cq-u9P">
+                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pl-cq-u9P">
                                     <rect key="frame" x="0.0" y="120" width="354" height="54"/>
                                     <color key="backgroundColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="54" id="pXN-8f-n4G"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="16"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Find Another">
+                                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="126" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Report" image="call_report_ic">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -345,7 +346,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="actionFindAnother:" destination="-1" eventType="touchUpInside" id="1eE-iT-paj"/>
+                                        <action selector="actionReport:" destination="-1" eventType="touchUpInside" id="2FP-8O-9bt"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fn-An-MYU">
@@ -446,6 +447,7 @@
         <image name="call_rate_inactive_ic" width="63" height="45"/>
         <image name="call_rate_star_empty_ic" width="27.5" height="27"/>
         <image name="call_rate_star_filled_ic" width="27.5" height="27"/>
+        <image name="call_report_ic" width="23" height="22"/>
         <image name="call_speaker_inactive_ic" width="64" height="64"/>
         <image name="main_background_ic" width="390" height="256"/>
     </resources>

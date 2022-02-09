@@ -1169,6 +1169,59 @@ public final class RejectHarkRequestMutation: GraphQLMutation {
   }
 }
 
+public final class ReportUserMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation ReportUser($userId: String!, $description: String!) {
+      reportUser(userId: $userId, description: $description)
+    }
+    """
+
+  public let operationName: String = "ReportUser"
+
+  public var userId: String
+  public var description: String
+
+  public init(userId: String, description: String) {
+    self.userId = userId
+    self.description = description
+  }
+
+  public var variables: GraphQLMap? {
+    return ["userId": userId, "description": description]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("reportUser", arguments: ["userId": GraphQLVariable("userId"), "description": GraphQLVariable("description")], type: .scalar(Bool.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(reportUser: Bool? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "reportUser": reportUser])
+    }
+
+    public var reportUser: Bool? {
+      get {
+        return resultMap["reportUser"] as? Bool
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "reportUser")
+      }
+    }
+  }
+}
+
 public final class SendHarkRequestMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

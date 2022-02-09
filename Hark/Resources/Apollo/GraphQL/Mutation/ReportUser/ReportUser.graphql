@@ -1,0 +1,5 @@
+mutation ReportUser($userId: String!,
+					$description: String!) {
+	reportUser(userId: $userId,
+			   description: $description)
+}

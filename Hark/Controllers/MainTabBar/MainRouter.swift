@@ -14,4 +14,9 @@ class MainRouter: BaseRouter {
         controller.modalPresentationStyle = .overCurrentContext
         tabBarController?.present(controller, animated: true, completion: nil)
     }
+    
+    func presentReport(userId: String) {
+        let controller = ReportController(userId: userId)
+        present(controller: controller, animated: true, presentStyle: .overFullScreen)
+    }
 }
