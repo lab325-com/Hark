@@ -2,6 +2,7 @@
 import UIKit
 import PushKit
 import FBSDKCoreKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         AppEvents.shared.activateApp()
+        
+        //Firebase analytics
+        
+        FirebaseApp.configure()
         
         return RootRouter.sharedInstance.application(didFinishLaunchingWithOptions: launchOptions as [UIApplication.LaunchOptionsKey: Any]?, window: window ?? UIWindow(frame: UIScreen.main.bounds))
     }

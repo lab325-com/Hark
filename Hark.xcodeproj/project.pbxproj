@@ -133,6 +133,7 @@
 		FA35693327A2B3D1003468B7 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693127A2B3C9003468B7 /* call.json */; };
 		FA35693427A2B3D1003468B7 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693227A2B3D1003468B7 /* search.json */; };
 		FA5E870927A2E19400163A1D /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E870827A2E19400163A1D /* Cosmos */; };
+		FA62365727BD4698005C593B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA62365627BD4698005C593B /* FirebaseAnalytics */; };
 		FA647F1F27A99BA0003607F7 /* BlockUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA647F1D27A99BA0003607F7 /* BlockUser.graphql */; };
 		FA647F2027A99BA0003607F7 /* BlockUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA647F1E27A99BA0003607F7 /* BlockUserModel.swift */; };
 		FA647F2427A99C70003607F7 /* SendHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA647F2227A99C70003607F7 /* SendHarkRequest.graphql */; };
@@ -322,6 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA62365727BD4698005C593B /* FirebaseAnalytics in Frameworks */,
 				0203C89427A04F2F00720640 /* ApolloWebSocket in Frameworks */,
 				FA1E691D2785B48E00030600 /* Toast in Frameworks */,
 				027629A52785D0B30096DC2E /* NVActivityIndicatorView in Frameworks */,
@@ -1152,6 +1154,7 @@
 				FABC8CF027A29915002C27C3 /* AgoraRtcKit */,
 				FA35692E27A2B22E003468B7 /* Lottie */,
 				FA5E870827A2E19400163A1D /* Cosmos */,
+				FA62365627BD4698005C593B /* FirebaseAnalytics */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -1191,6 +1194,7 @@
 				FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 				FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */,
+				FA62365527BD4697005C593B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -1864,6 +1868,14 @@
 				kind = branch;
 			};
 		};
+		FA62365527BD4697005C593B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
@@ -1929,6 +1941,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
+		};
+		FA62365627BD4698005C593B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA62365527BD4697005C593B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 		FABC8CF027A29915002C27C3 /* AgoraRtcKit */ = {
 			isa = XCSwiftPackageProductDependency;
