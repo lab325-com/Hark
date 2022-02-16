@@ -7,6 +7,8 @@
 
 import UIKit
 import Lottie
+import AppTrackingTransparency
+import FBSDKCoreKit
 
 class MainController: BaseController {
     
@@ -58,6 +60,34 @@ class MainController: BaseController {
         updateStartSearch(false)
         presenter.getOnlineStatistics()
         checkingStatistics()
+        askTrackingTransparency()
+    }
+    
+    private func askTrackingTransparency() {
+        if #available(iOS 14, *) {
+            if ATTrackingManager.trackingAuthorizationStatus != .authorized && ATTrackingManager.trackingAuthorizationStatus != .denied {
+                ATTrackingManager.requestTrackingAuthorization {  status in
+                    switch status {
+                    case .authorized:
+                        Settings.shared.isAdvertiserIDCollectionEnabled = true
+                        Settings.shared.isAdvertiserTrackingEnabled = true
+                        break
+                    case .denied:
+                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserTrackingEnabled = false
+                        break
+                    case .notDetermined:
+                        print("Not Determined")
+                    case .restricted:
+                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                        Settings.shared.isAdvertiserTrackingEnabled = false
+                        print("Restricted")
+                    @unknown default:
+                        print("Unknown")
+                    }
+                }
+            }
+        }
     }
     
     private func checkingStatistics() {

@@ -22,5 +22,27 @@
 		<string>audio</string>
 		<string>voip</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1175573452847916</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>1175573452847916</string>
+	<key>FacebookDisplayName</key>
+	<string>Hark</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Your data will be used to provide you with tailored personalized experience.</string>
 </dict>
 </plist>
