@@ -129,6 +129,8 @@
 		FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E69222785B61600030600 /* SwiftKeychainWrapper */; };
 		FA1E69262785B71F00030600 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69252785B71F00030600 /* AuthModel.swift */; };
 		FA1E69282785B75200030600 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69272785B75200030600 /* MeModel.swift */; };
+		FA29D9E927C64B8700A4B6C6 /* AnalyticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29D9E827C64B8700A4B6C6 /* AnalyticManager.swift */; };
+		FA29D9EC27C64C0400A4B6C6 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA29D9EB27C64C0400A4B6C6 /* AppsFlyerLib */; };
 		FA35692F27A2B22E003468B7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FA35692E27A2B22E003468B7 /* Lottie */; };
 		FA35693327A2B3D1003468B7 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693127A2B3C9003468B7 /* call.json */; };
 		FA35693427A2B3D1003468B7 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693227A2B3D1003468B7 /* search.json */; };
@@ -284,6 +286,7 @@
 		FA1E691F2785B5CD00030600 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		FA1E69252785B71F00030600 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		FA1E69272785B75200030600 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
+		FA29D9E827C64B8700A4B6C6 /* AnalyticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticManager.swift; sourceTree = "<group>"; };
 		FA35693127A2B3C9003468B7 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
 		FA35693227A2B3D1003468B7 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
 		FA647F1D27A99BA0003607F7 /* BlockUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlockUser.graphql; sourceTree = "<group>"; };
@@ -334,6 +337,7 @@
 				FA35692F27A2B22E003468B7 /* Lottie in Frameworks */,
 				FA1E5B6B27BD0C4200E67B73 /* Pods_Hark.framework in Frameworks */,
 				FABC8CF127A29915002C27C3 /* AgoraRtcKit in Frameworks */,
+				FA29D9EC27C64C0400A4B6C6 /* AppsFlyerLib in Frameworks */,
 				02AFDFDF279E92590078B52D /* ApolloWebSocket in Frameworks */,
 				02AFDFDD279E92590078B52D /* Apollo in Frameworks */,
 				02EEBD492785A6B4001DA462 /* PhoneNumberKit in Frameworks */,
@@ -932,13 +936,13 @@
 			path = GlobalModels;
 			sourceTree = "<group>";
 		};
-		FA35693027A2B3A2003468B7 /* Littie */ = {
+		FA35693027A2B3A2003468B7 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
 				FA35693227A2B3D1003468B7 /* search.json */,
 				FA35693127A2B3C9003468B7 /* call.json */,
 			);
-			path = Littie;
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		FA647F1C27A99AD0003607F7 /* BlockUser */ = {
@@ -1049,7 +1053,7 @@
 		FA9BCF7F277C71B3009F652E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FA35693027A2B3A2003468B7 /* Littie */,
+				FA35693027A2B3A2003468B7 /* Lottie */,
 				0200AE922799278000A91A72 /* ConfigFiles */,
 				0200AE8A2799272300A91A72 /* Application */,
 				02EEBD2F27858F2C001DA462 /* Fonts */,
@@ -1064,6 +1068,7 @@
 		FA9BCF80277C71C5009F652E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FA29D9E827C64B8700A4B6C6 /* AnalyticManager.swift */,
 				FA1E69192785B3A600030600 /* NetwokrManager.swift */,
 				02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */,
 				02675655278ED85F00FBA4E9 /* SharedManager.swift */,
@@ -1155,6 +1160,7 @@
 				FA35692E27A2B22E003468B7 /* Lottie */,
 				FA5E870827A2E19400163A1D /* Cosmos */,
 				FA62365627BD4698005C593B /* FirebaseAnalytics */,
+				FA29D9EB27C64C0400A4B6C6 /* AppsFlyerLib */,
 			);
 			productName = Hark;
 			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
@@ -1195,6 +1201,7 @@
 				FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */,
 				FA62365527BD4697005C593B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FA29D9EA27C64C0400A4B6C6 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
 			);
 			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
 			projectDirPath = "";
@@ -1396,6 +1403,7 @@
 				FA1E690E278494DF00030600 /* API.swift in Sources */,
 				024481E027B29BC3004C1ECA /* UserBaseModel.swift in Sources */,
 				02887452279AE01F00E802CA /* UIScrollView+Extension.swift in Sources */,
+				FA29D9E927C64B8700A4B6C6 /* AnalyticManager.swift in Sources */,
 				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
 				022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */,
 				FA77834427AC0A3800124CB4 /* AcceptHarkRequestModel.swift in Sources */,
@@ -1852,6 +1860,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		FA29D9EA27C64C0400A4B6C6 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -1931,6 +1947,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		FA29D9EB27C64C0400A4B6C6 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA29D9EA27C64C0400A4B6C6 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
 		};
 		FA35692E27A2B22E003468B7 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
