@@ -4,6 +4,7 @@ import PushKit
 import FBSDKCoreKit
 import Firebase
 import AppsFlyerLib
+import AppTrackingTransparency
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -12,25 +13,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        //Facebook analytics
-        
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        AppEvents.shared.activateApp()
-        
         //Firebase analytics
         
         FirebaseApp.configure()
+                
+        //Facebook analytics
+        
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        Settings.shared.clientToken = "fcd711f877d11d40f74c0122995ff36e"
+        AppEvents.shared.activateApp()
+        
+        if #available(iOS 14, *) {
+            if ATTrackingManager.trackingAuthorizationStatus == .authorized {
+                Settings.shared.isAdvertiserIDCollectionEnabled = true
+                Settings.shared.isAdvertiserTrackingEnabled = true
+            } else {
+                Settings.shared.isAdvertiserIDCollectionEnabled = false
+                Settings.shared.isAdvertiserTrackingEnabled = false
+            }
+        }
         
         //AppsFlyer analytics
         
         AppsFlyerLib.shared().appsFlyerDevKey = "sapALRVCHUnGS6xNLJQPjS"
         AppsFlyerLib.shared().appleAppID = "1602488612"
         AppsFlyerLib.shared().delegate = self
-        AppsFlyerLib.shared().isDebug = true
-        AppsFlyerLib.shared().useReceiptValidationSandbox = true
         AppsFlyerLib.shared().useUninstallSandbox = true
         
+        if !isAppAlreadyLaunchedOnce() {
+            AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_first_open)
+        }
+        
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_session_start)
+        
         return RootRouter.sharedInstance.application(didFinishLaunchingWithOptions: launchOptions as [UIApplication.LaunchOptionsKey: Any]?, window: window ?? UIWindow(frame: UIScreen.main.bounds))
+    }
+    
+    func isAppAlreadyLaunchedOnce() -> Bool {
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
+            return true
+        } else {
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            return false
+        }
     }
     
     func application(_ app: UIApplication,

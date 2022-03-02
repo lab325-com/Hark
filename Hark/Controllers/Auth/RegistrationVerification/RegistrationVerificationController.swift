@@ -120,6 +120,7 @@ class RegistrationVerificationController: BaseController {
     @IBAction func actionConfirm(_ sender: UIButton) {
         if checkButton(), let code = Int(numbersLabel.compactMap({$0.text!}).joined(separator: "")) {
             presenter.validate(smsToken: smsToken, code: code)
+            AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_enter_sms)
         }
     }
     

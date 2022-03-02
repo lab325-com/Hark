@@ -68,6 +68,7 @@ class LoginPhoneController: BaseController {
             let result = phoneLabel.text!.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "").replacingOccurrences(of:" ", with: "", options: .regularExpression)
             let phone = "+" + result
             presenter.registePhone(phone: phone)
+            AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_enter_phone)
         }
     }
 }

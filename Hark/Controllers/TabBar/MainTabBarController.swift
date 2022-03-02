@@ -15,6 +15,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.delegate = self
+                
         let tabbarItemPlants = (self.tabBar.items?[0])! as UITabBarItem
         tabbarItemPlants.image = UIImage(named: "tab_bar_1_ic")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         tabbarItemPlants.selectedImage = UIImage(named: "tab_bar_1_selected_ic")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
@@ -42,5 +44,16 @@ class MainTabBarController: UITabBarController {
         //tabBar.layer.shadowRadius = 30
         //tabBar.layer.shadowColor = UIColor(rgb: 0xA4E2AD).withAlphaComponent(0.5).cgColor
         //tabBar.layer.shadowOpacity = 1.0
+    }
+}
+
+extension MainTabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        switch tabBarController.selectedIndex {
+        case 1: AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_navigation_settings)
+        case 2: AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_navigation_harks)
+        case 3: AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_navigation_profile)
+        default: AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_navigation_main)
+        }
     }
 }

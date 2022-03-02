@@ -193,6 +193,8 @@ class CallController: BaseController {
             
         })
         
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_talk_duration, values: ["talk_duration" : talkDurationLabel.text ?? ""])
+        
         showEndCallView()
     }
     
@@ -264,10 +266,14 @@ class CallController: BaseController {
         isActiveSpeaker = isActiveSpeaker ? false : true
         agoraKit?.setEnableSpeakerphone(isActiveSpeaker)
         updateView()
+        
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_talk_speaker, values: ["talk_speaker" : isActiveSpeaker ? "on" : "off"])
     }
     
     @IBAction func actionAddToHarks(_ sender: UIButton) {
         presenter.sendHarkRequest(talkId: model.talkId, userId: model.matchedUserId, nickName: name ?? "anonymous")
+        
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_talk_add_to_hark)
     }
     
     @IBAction func actionBlockUser(_ sender: UIButton) {
@@ -284,6 +290,7 @@ class CallController: BaseController {
     @IBAction func actionBackToMain(_ sender: UIButton) {
         if rate != 0 {
             presenter.sendTalkFeedback(talkId: model.talkId, rate: rate)
+            AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_talk_rate, values: ["talk_rate" : rate])
         } else {
             closeController()
         }
@@ -292,6 +299,12 @@ class CallController: BaseController {
     @IBAction func actionLeaveTalk(_ sender: UIButton) {
         presenter.declineTalks(talkId: model.talkId)
         showEndCallView()
+        
+        let me = KeychainService.standard.me
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_talk_leave, values: ["caller_1_age" : me?.age ?? "",
+                                                                                  "caller_1_gender" : me?.gender?.rawValue ?? "",
+                                                                                  "caller_2_age" : model.user.age,
+                                                                                  "caller_2_gender" : model.user.gender.rawValue])
     }
 }
 

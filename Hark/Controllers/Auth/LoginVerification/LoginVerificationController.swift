@@ -116,14 +116,15 @@ class LoginVerificationController: BaseController {
     @IBAction func actionResend(_ sender: UIButton) {
         let result = phoneLabel.text!.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
         presenter.registePhone(phone: result.replacingOccurrences( of:" ", with: "", options: .regularExpression))
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_resend_sms)
     }
     
     @IBAction func actionConfirm(_ sender: UIButton) {
         if checkButton(), let code = Int(numbersLabel.compactMap({$0.text!}).joined(separator: "")) {
             presenter.validate(smsToken: smsToken, code: code)
+            AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_enter_sms)
         }
     }
-    
 }
 
 
@@ -146,5 +147,6 @@ extension LoginVerificationController: AuthPhoneOutputProtocol {
     
     func failureValidate() {
         isWrongCode(true)
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_wrong_code)
     }
 }

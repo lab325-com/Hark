@@ -38,7 +38,11 @@ class SearchTabPresenter: SearchTabPresenterProtocol {
     }
     
     func search(genders: [GenderType]?, style: Int?, mood: Int?, fromAge: Int?, toAge: Int?) {
+        
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_search_settings, values: ["search_from_age" : fromAge ?? 18, "search_to_age" : toAge ?? 110, "search_gender" : genders ?? [], "search_mood" : mood ?? [], "search_style" : style ?? 50])
+        
         request?.cancel()
+        
         view?.startLoader()
         
         let mutation = UpdateMatchSettingsMutation(record: MatchSettingsUpdateInput(style: style, mood: mood, fromAge: fromAge, toAge: toAge, genders: genders))

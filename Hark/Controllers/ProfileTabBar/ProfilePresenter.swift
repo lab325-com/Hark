@@ -36,6 +36,9 @@ class ProfilePresenter: ProfilePresenterProtocol {
     }
     
     func updateProfile(age: Int?, gender: GenderType, nickName: String?, hideStatus: Bool?) {
+        
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_profile_settings, values: ["profile_age" : age ?? 0, "profile_gender" : gender.rawValue])
+        
         request?.cancel()
         
         let mutation = ProfileUpdateMutation(record: ProfileUpdateInput(nickName: nickName, age: age, gender: gender, hideStatus: hideStatus))

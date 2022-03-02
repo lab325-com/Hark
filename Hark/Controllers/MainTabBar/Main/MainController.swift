@@ -39,6 +39,16 @@ class MainController: BaseController {
     private lazy var presenter = MainPresenter(view: self)
     private var isStartSearch = false
     private var startMathModel: StartMatchingModel?
+    private var waitTimer: Timer?
+    private var waitTime = ""
+    private var startTime: Date!
+    
+    private lazy var formatter: DateComponentsFormatter = {
+        let _formatter = DateComponentsFormatter()
+        _formatter.allowedUnits = [.hour, .minute, .second]
+        _formatter.zeroFormattingBehavior = .pad
+        return _formatter
+    }()
     
     //----------------------------------------------
     // MARK: - Life cycle
@@ -158,6 +168,20 @@ class MainController: BaseController {
         }
     }
     
+    func startWaitTimer() {
+        startTime = Date()
+        waitTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(handleTalkTimer), userInfo: nil, repeats: true)
+    }
+
+    func stopWaitTimer() {
+        waitTimer?.invalidate()
+        waitTimer = nil
+    }
+
+    @objc func handleTalkTimer() {
+        waitTime = formatter.string(from: startTime, to: Date()) ?? ""
+    }
+    
     //----------------------------------------------
     // MARK: - IBActionк
     //----------------------------------------------
@@ -170,7 +194,10 @@ class MainController: BaseController {
             presenter.subscribeStartMath()
         } else {
             presenter.unsubscribeStartMath()
+            AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_stop_search, values: ["wait_time" : waitTime])
         }
+        
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_start_search)
     }
 }
 

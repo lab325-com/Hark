@@ -48,14 +48,17 @@ class LoginController: BaseController {
     
     @IBAction func actionClose(_ sender: UIButton) {
         AuthRouter(presenter: navigationController).pushRegistrationPhone()
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_skip_registration)
     }
     
     @IBAction func actionRegistration(_ sender: UIButton) {
         AuthRouter(presenter: navigationController).pushRegistrationPhone()
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_registration)
     }
     
     @IBAction func actionLogin(_ sender: UIButton) {
         AuthRouter(presenter: navigationController).pushLoginPhone()
+        AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_login)
     }
 }
 

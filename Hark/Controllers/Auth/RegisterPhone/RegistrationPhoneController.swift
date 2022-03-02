@@ -67,6 +67,7 @@ class RegistrationPhoneController: BaseController {
         if phoneLabel.text!.count > 7 {
             let result = "+" + phoneLabel.text!.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
             presenter.registePhone(phone: result.replacingOccurrences( of:" ", with: "", options: .regularExpression))
+            AnalyticManager.sendAppsFlyerEvent(event: .appsflyer_enter_phone)
         }
     }
 }
