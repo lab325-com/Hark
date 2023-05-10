@@ -1,0 +1,1980 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0200AE8C2799274800A91A72 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200AE8B2799274800A91A72 /* AppConfiguration.swift */; };
+		0200AE912799276C00A91A72 /* AppConfigurationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0200AE902799276C00A91A72 /* AppConfigurationBridge.m */; };
+		0200AE972799279300A91A72 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE932799279100A91A72 /* Debug.xcconfig */; };
+		0200AE982799279300A91A72 /* Generator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE942799279200A91A72 /* Generator.xcconfig */; };
+		0200AE992799279300A91A72 /* Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE952799279200A91A72 /* Staging.xcconfig */; };
+		0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE962799279300A91A72 /* Release.xcconfig */; };
+		0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0200AE9E27999D4F00A91A72 /* Harks.graphql */; };
+		0203C87C279FF04B00720640 /* StartMatching.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0203C87B279FF04B00720640 /* StartMatching.graphql */; };
+		0203C87E279FF07800720640 /* StartMatchingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C87D279FF07800720640 /* StartMatchingModel.swift */; };
+		0203C882279FF71200720640 /* MainGoSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C880279FF71200720640 /* MainGoSearchController.swift */; };
+		0203C883279FF71200720640 /* MainGoSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0203C881279FF71200720640 /* MainGoSearchController.xib */; };
+		0203C885279FF74800720640 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C884279FF74800720640 /* MainRouter.swift */; };
+		0203C88827A000AB00720640 /* DeclineTalk.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0203C88727A000AB00720640 /* DeclineTalk.graphql */; };
+		0203C88A27A0017400720640 /* DeclineTalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C88927A0017400720640 /* DeclineTalkModel.swift */; };
+		0203C88D27A0360800720640 /* Talk.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0203C88C27A0360800720640 /* Talk.graphql */; };
+		0203C88F27A0391B00720640 /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203C88E27A0391B00720640 /* TalkModel.swift */; };
+		0203C89227A04F2F00720640 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 0203C89127A04F2F00720640 /* Apollo */; };
+		0203C89427A04F2F00720640 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 0203C89327A04F2F00720640 /* ApolloWebSocket */; };
+		0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1CF2797F97A0092F804 /* HarkListController.swift */; };
+		0227C1D4279805E90092F804 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1D2279805E90092F804 /* ListCell.swift */; };
+		0227C1D5279805E90092F804 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0227C1D3279805E90092F804 /* ListCell.xib */; };
+		0227C1DA279827EE0092F804 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227C1D8279827EE0092F804 /* RequestCell.swift */; };
+		0227C1DB279827EE0092F804 /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0227C1D9279827EE0092F804 /* RequestCell.xib */; };
+		022FB5782796C49C00870064 /* SearchTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB5772796C49C00870064 /* SearchTabController.swift */; };
+		022FB57F27970AFC00870064 /* UpdateMatchSettings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */; };
+		022FB58127970B4B00870064 /* UpdateMatchSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */; };
+		022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022FB58227970B9500870064 /* SearchTabPresenter.swift */; };
+		024481E027B29BC3004C1ECA /* UserBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024481DF27B29BC3004C1ECA /* UserBaseModel.swift */; };
+		024E83BC27A2A494006B970D /* СallHark.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E83BB27A2A494006B970D /* СallHark.graphql */; };
+		024E83BE27A2A5DB006B970D /* CallHarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83BD27A2A5DB006B970D /* CallHarkModel.swift */; };
+		024E83C127A2A68B006B970D /* User.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E83C027A2A68B006B970D /* User.graphql */; };
+		024E83C327A2ABE4006B970D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C227A2ABE4006B970D /* UserModel.swift */; };
+		024E83C527A2B62E006B970D /* CallPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C427A2B62E006B970D /* CallPresenter.swift */; };
+		024E83C827A2B931006B970D /* CallProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E83C727A2B931006B970D /* CallProtocol.swift */; };
+		024E8BFC27A7CED500C26C26 /* DeleteHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E8BFB27A7CED500C26C26 /* DeleteHarkRequest.graphql */; };
+		024E8BFE27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E8BFD27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift */; };
+		024E8C0227A7F57D00C26C26 /* RejectHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 024E8C0027A7F57D00C26C26 /* RejectHarkRequest.graphql */; };
+		024E8C0327A7F57D00C26C26 /* RejectHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E8C0127A7F57D00C26C26 /* RejectHarkRequestModel.swift */; };
+		024E8C0727A80A0E00C26C26 /* HarkEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E8C0527A80A0E00C26C26 /* HarkEditController.swift */; };
+		024E8C0827A80A0E00C26C26 /* HarkEditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024E8C0627A80A0E00C26C26 /* HarkEditController.xib */; };
+		0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563A278DDD8D00FBA4E9 /* MainController.swift */; };
+		0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267563E278E065E00FBA4E9 /* MainPresenter.swift */; };
+		02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */; };
+		02675645278E078E00FBA4E9 /* OnlineStatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675644278E078E00FBA4E9 /* OnlineStatisticsModel.swift */; };
+		02675647278E0B8A00FBA4E9 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675646278E0B8A00FBA4E9 /* Int+Extension.swift */; };
+		0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675649278EC95F00FBA4E9 /* ProfileController.swift */; };
+		0267564D278ECCDD00FBA4E9 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267564C278ECCDD00FBA4E9 /* ProfilePresenter.swift */; };
+		0267564F278ED2C100FBA4E9 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267564E278ED2C000FBA4E9 /* ProfileRouter.swift */; };
+		02675653278ED30D00FBA4E9 /* MenuProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675651278ED30D00FBA4E9 /* MenuProfileController.swift */; };
+		02675654278ED30D00FBA4E9 /* MenuProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02675652278ED30D00FBA4E9 /* MenuProfileController.xib */; };
+		02675656278ED85F00FBA4E9 /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02675655278ED85F00FBA4E9 /* SharedManager.swift */; };
+		027629A52785D0B30096DC2E /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 027629A42785D0B30096DC2E /* NVActivityIndicatorView */; };
+		027629A72785D0B30096DC2E /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */; };
+		027629AA2785DC630096DC2E /* VerifyPhone.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 027629A92785DC630096DC2E /* VerifyPhone.graphql */; };
+		027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */; };
+		027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027629B02785F3030096DC2E /* AuthFillNickNameController.swift */; };
+		027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027629B12785F3030096DC2E /* AuthFillNickNameController.xib */; };
+		0288744B279ADA0A00E802CA /* HarkRequests.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0288744A279ADA0A00E802CA /* HarkRequests.graphql */; };
+		0288744E279ADA5100E802CA /* PaginationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288744D279ADA5100E802CA /* PaginationModel.swift */; };
+		02887450279ADA5F00E802CA /* HarkRequestsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288744F279ADA5F00E802CA /* HarkRequestsModel.swift */; };
+		02887452279AE01F00E802CA /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02887451279AE01F00E802CA /* UIScrollView+Extension.swift */; };
+		02AFDFDD279E92590078B52D /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 02AFDFDC279E92590078B52D /* Apollo */; };
+		02AFDFDF279E92590078B52D /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 02AFDFDE279E92590078B52D /* ApolloWebSocket */; };
+		02AFDFE2279EBA800078B52D /* HarksStatus.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02AFDFE1279EBA800078B52D /* HarksStatus.graphql */; };
+		02AFDFE5279EBD9C0078B52D /* HarksStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFDFE4279EBD9C0078B52D /* HarksStatusModel.swift */; };
+		02ED71DC2799AEBE00CAE787 /* HarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71DB2799AEBE00CAE787 /* HarksModel.swift */; };
+		02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */; };
+		02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02ED71E12799D67700CAE787 /* MatchSettings.graphql */; };
+		02ED71E42799D6B200CAE787 /* MatchSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ED71E32799D6B200CAE787 /* MatchSettingsModel.swift */; };
+		02EEBD2327857E57001DA462 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD2127857E57001DA462 /* LoginController.swift */; };
+		02EEBD2427857E57001DA462 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD2227857E57001DA462 /* LoginController.xib */; };
+		02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD2627857E91001DA462 /* AuthRouter.swift */; };
+		02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3027858F41001DA462 /* SF-Compact-Rounded-Regular.ttf */; };
+		02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3127858F42001DA462 /* SF-Compact-Rounded-Semibold.ttf */; };
+		02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3227858F43001DA462 /* SF-Compact-Rounded-Ultralight.ttf */; };
+		02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3327858F43001DA462 /* SF-Compact-Rounded-Light.ttf */; };
+		02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3427858F44001DA462 /* SF-Compact-Rounded-Black.ttf */; };
+		02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3527858F45001DA462 /* SF-Compact-Rounded-Medium.ttf */; };
+		02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3627858F47001DA462 /* SF-Compact-Rounded-Heavy.ttf */; };
+		02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3727858F47001DA462 /* SF-Compact-Rounded-Bold.ttf */; };
+		02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD3827858F48001DA462 /* SF-Compact-Rounded-Thin.ttf */; };
+		02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD43278596B6001DA462 /* RegistrationPhoneController.swift */; };
+		02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD44278596B6001DA462 /* RegistrationPhoneController.xib */; };
+		02EEBD492785A6B4001DA462 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02EEBD482785A6B4001DA462 /* PhoneNumberKit */; };
+		02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD4B2785AD26001DA462 /* AuthPresenter.swift */; };
+		02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD4E2785AE9B001DA462 /* Login.graphql */; };
+		02EEBD522785B069001DA462 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD512785B069001DA462 /* LoginModel.swift */; };
+		02EEBD562785B346001DA462 /* LoginPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD542785B346001DA462 /* LoginPhoneController.swift */; };
+		02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD552785B346001DA462 /* LoginPhoneController.xib */; };
+		02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD592785BE20001DA462 /* RegistrationVerificationController.swift */; };
+		02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */; };
+		02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */; };
+		02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */; };
+		02F558C327A820DC005AEED7 /* HarkEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F558C227A820DC005AEED7 /* HarkEditPresenter.swift */; };
+		02F558C727A82243005AEED7 /* HarkDelete.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02F558C527A82243005AEED7 /* HarkDelete.graphql */; };
+		02F558C827A82243005AEED7 /* HarkDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F558C627A82243005AEED7 /* HarkDeleteModel.swift */; };
+		02F558CC27A822AF005AEED7 /* HarkUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F558CA27A822AF005AEED7 /* HarkUpdateModel.swift */; };
+		02F558CD27A822AF005AEED7 /* HarkUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02F558CB27A822AF005AEED7 /* HarkUpdate.graphql */; };
+		02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */; };
+		02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7EE2786DE8C00595AA6 /* AuthFillAgeController.swift */; };
+		02F8B7F12786DE8C00595AA6 /* AuthFillAgeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B7EF2786DE8C00595AA6 /* AuthFillAgeController.xib */; };
+		02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7F52786FFB900595AA6 /* AuthFillGenderController.swift */; };
+		02F8B7F82786FFB900595AA6 /* AuthFillGenderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B7F62786FFB900595AA6 /* AuthFillGenderController.xib */; };
+		02F8B7FB2787044F00595AA6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7FA2787044F00595AA6 /* MainTabBarController.swift */; };
+		02F8B7FD2787049800595AA6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7FC2787049800595AA6 /* UIColor+Extension.swift */; };
+		02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B7FF278709C400595AA6 /* OnboardingController.swift */; };
+		02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B800278709C400595AA6 /* OnboardingController.xib */; };
+		02F8B80427870A1200595AA6 /* AuthFillPesenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B80327870A1200595AA6 /* AuthFillPesenter.swift */; };
+		02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B80627870DFB00595AA6 /* ProfileUpdate.graphql */; };
+		02F8B80927870E5800595AA6 /* ProfileUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B80827870E5800595AA6 /* ProfileUpdateModel.swift */; };
+		02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B80B2787129C00595AA6 /* OnboardingCell.swift */; };
+		02F8B80E2787129C00595AA6 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F8B80C2787129C00595AA6 /* OnboardingCell.xib */; };
+		02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8B80F278714DB00595AA6 /* Collection+Extension.swift */; };
+		FA1E5B6B27BD0C4200E67B73 /* Pods_Hark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDE0C0A1B8EC17562EE4C38 /* Pods_Hark.framework */; };
+		FA1E690B27848D0600030600 /* Me.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA1E690A27848D0600030600 /* Me.graphql */; };
+		FA1E690E278494DF00030600 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E690D278494DF00030600 /* API.swift */; };
+		FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69192785B3A600030600 /* NetwokrManager.swift */; };
+		FA1E691D2785B48E00030600 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E691C2785B48E00030600 /* Toast */; };
+		FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E691F2785B5CD00030600 /* KeychainService.swift */; };
+		FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = FA1E69222785B61600030600 /* SwiftKeychainWrapper */; };
+		FA1E69262785B71F00030600 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69252785B71F00030600 /* AuthModel.swift */; };
+		FA1E69282785B75200030600 /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E69272785B75200030600 /* MeModel.swift */; };
+		FA29D9E927C64B8700A4B6C6 /* AnalyticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29D9E827C64B8700A4B6C6 /* AnalyticManager.swift */; };
+		FA29D9EC27C64C0400A4B6C6 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FA29D9EB27C64C0400A4B6C6 /* AppsFlyerLib */; };
+		FA35692F27A2B22E003468B7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FA35692E27A2B22E003468B7 /* Lottie */; };
+		FA35693327A2B3D1003468B7 /* call.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693127A2B3C9003468B7 /* call.json */; };
+		FA35693427A2B3D1003468B7 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = FA35693227A2B3D1003468B7 /* search.json */; };
+		FA5785E427CE119B0095BC0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA5785E327CE119B0095BC0F /* GoogleService-Info.plist */; };
+		FA5E870927A2E19400163A1D /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = FA5E870827A2E19400163A1D /* Cosmos */; };
+		FA62365727BD4698005C593B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA62365627BD4698005C593B /* FirebaseAnalytics */; };
+		FA647F1F27A99BA0003607F7 /* BlockUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA647F1D27A99BA0003607F7 /* BlockUser.graphql */; };
+		FA647F2027A99BA0003607F7 /* BlockUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA647F1E27A99BA0003607F7 /* BlockUserModel.swift */; };
+		FA647F2427A99C70003607F7 /* SendHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA647F2227A99C70003607F7 /* SendHarkRequest.graphql */; };
+		FA647F2527A99C70003607F7 /* SendHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA647F2327A99C70003607F7 /* SendHarkRequestModel.swift */; };
+		FA65ADAB27A967ED00524720 /* SendTalkFeedback.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA65ADA927A967EC00524720 /* SendTalkFeedback.graphql */; };
+		FA65ADAC27A967ED00524720 /* SendTalkFeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65ADAA27A967ED00524720 /* SendTalkFeedbackModel.swift */; };
+		FA77834327AC0A3800124CB4 /* AcceptHarkRequest.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FA77834127AC0A3800124CB4 /* AcceptHarkRequest.graphql */; };
+		FA77834427AC0A3800124CB4 /* AcceptHarkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77834227AC0A3800124CB4 /* AcceptHarkRequestModel.swift */; };
+		FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF68277C6ED8009F652E /* AppDelegate.swift */; };
+		FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF6C277C6ED8009F652E /* SplashController.swift */; };
+		FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF6E277C6ED8009F652E /* Main.storyboard */; };
+		FA9BCF72277C6EDA009F652E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF71277C6EDA009F652E /* Assets.xcassets */; };
+		FA9BCF75277C6EDA009F652E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF73277C6EDA009F652E /* LaunchScreen.storyboard */; };
+		FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF85277C758B009F652E /* BaseRouter.swift */; };
+		FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF87277C75DB009F652E /* UIApplicathion+Extension.swift */; };
+		FA9BCF8A277C7614009F652E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF89277C7614009F652E /* UIViewController+Extension.swift */; };
+		FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF8E277C81D5009F652E /* RootRouter.swift */; };
+		FA9BCF91277C822E009F652E /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BCF90277C822E009F652E /* BaseController.swift */; };
+		FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9BCF93277C82EB009F652E /* SplashController.xib */; };
+		FA9EBCED279E9742007B3867 /* CallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EBCEB279E9742007B3867 /* CallController.swift */; };
+		FA9EBCEE279E9742007B3867 /* CallController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9EBCEC279E9742007B3867 /* CallController.xib */; };
+		FA9EBCF0279EC0F7007B3867 /* HarkListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */; };
+		FABC8CF127A29915002C27C3 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = FABC8CF027A29915002C27C3 /* AgoraRtcKit */; };
+		FAE6656727B3E9E00002BE50 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6656527B3E9E00002BE50 /* ReportController.swift */; };
+		FAE6656827B3E9E00002BE50 /* ReportController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6656627B3E9E00002BE50 /* ReportController.xib */; };
+		FAE6656A27B3E9F00002BE50 /* ReportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6656927B3E9F00002BE50 /* ReportPresenter.swift */; };
+		FAE6656E27B3EE540002BE50 /* ReportUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6656C27B3EE540002BE50 /* ReportUserModel.swift */; };
+		FAE6656F27B3EE540002BE50 /* ReportUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAE6656D27B3EE540002BE50 /* ReportUser.graphql */; };
+		FAE6657327B414A30002BE50 /* CallRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6657227B414A30002BE50 /* CallRouter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0200AE8B2799274800A91A72 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		0200AE8E2799276A00A91A72 /* Hark-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hark-Bridging-Header.h"; sourceTree = "<group>"; };
+		0200AE8F2799276C00A91A72 /* AppConfigurationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfigurationBridge.h; sourceTree = "<group>"; };
+		0200AE902799276C00A91A72 /* AppConfigurationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfigurationBridge.m; sourceTree = "<group>"; };
+		0200AE932799279100A91A72 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		0200AE942799279200A91A72 /* Generator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generator.xcconfig; sourceTree = "<group>"; };
+		0200AE952799279200A91A72 /* Staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
+		0200AE962799279300A91A72 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		0200AE9E27999D4F00A91A72 /* Harks.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Harks.graphql; sourceTree = "<group>"; };
+		0203C87B279FF04B00720640 /* StartMatching.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartMatching.graphql; sourceTree = "<group>"; };
+		0203C87D279FF07800720640 /* StartMatchingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMatchingModel.swift; sourceTree = "<group>"; };
+		0203C880279FF71200720640 /* MainGoSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGoSearchController.swift; sourceTree = "<group>"; };
+		0203C881279FF71200720640 /* MainGoSearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainGoSearchController.xib; sourceTree = "<group>"; };
+		0203C884279FF74800720640 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		0203C88727A000AB00720640 /* DeclineTalk.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DeclineTalk.graphql; sourceTree = "<group>"; };
+		0203C88927A0017400720640 /* DeclineTalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineTalkModel.swift; sourceTree = "<group>"; };
+		0203C88C27A0360800720640 /* Talk.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Talk.graphql; sourceTree = "<group>"; };
+		0203C88E27A0391B00720640 /* TalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModel.swift; sourceTree = "<group>"; };
+		0227C1CF2797F97A0092F804 /* HarkListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListController.swift; sourceTree = "<group>"; };
+		0227C1D2279805E90092F804 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		0227C1D3279805E90092F804 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		0227C1D8279827EE0092F804 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
+		0227C1D9279827EE0092F804 /* RequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCell.xib; sourceTree = "<group>"; };
+		022FB5772796C49C00870064 /* SearchTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabController.swift; sourceTree = "<group>"; };
+		022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UpdateMatchSettings.graphql; sourceTree = "<group>"; };
+		022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMatchSettingsModel.swift; sourceTree = "<group>"; };
+		022FB58227970B9500870064 /* SearchTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabPresenter.swift; sourceTree = "<group>"; };
+		024481DF27B29BC3004C1ECA /* UserBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBaseModel.swift; sourceTree = "<group>"; };
+		024E83BB27A2A494006B970D /* СallHark.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "СallHark.graphql"; sourceTree = "<group>"; };
+		024E83BD27A2A5DB006B970D /* CallHarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHarkModel.swift; sourceTree = "<group>"; };
+		024E83C027A2A68B006B970D /* User.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.graphql; sourceTree = "<group>"; };
+		024E83C227A2ABE4006B970D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		024E83C427A2B62E006B970D /* CallPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallPresenter.swift; sourceTree = "<group>"; };
+		024E83C727A2B931006B970D /* CallProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallProtocol.swift; sourceTree = "<group>"; };
+		024E8BFB27A7CED500C26C26 /* DeleteHarkRequest.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DeleteHarkRequest.graphql; sourceTree = "<group>"; };
+		024E8BFD27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteHarkRequestModel.swift; sourceTree = "<group>"; };
+		024E8C0027A7F57D00C26C26 /* RejectHarkRequest.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RejectHarkRequest.graphql; sourceTree = "<group>"; };
+		024E8C0127A7F57D00C26C26 /* RejectHarkRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectHarkRequestModel.swift; sourceTree = "<group>"; };
+		024E8C0527A80A0E00C26C26 /* HarkEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkEditController.swift; sourceTree = "<group>"; };
+		024E8C0627A80A0E00C26C26 /* HarkEditController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HarkEditController.xib; sourceTree = "<group>"; };
+		0267563A278DDD8D00FBA4E9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		0267563E278E065E00FBA4E9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OnlineStatistics.graphql; sourceTree = "<group>"; };
+		02675644278E078E00FBA4E9 /* OnlineStatisticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineStatisticsModel.swift; sourceTree = "<group>"; };
+		02675646278E0B8A00FBA4E9 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		02675649278EC95F00FBA4E9 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		0267564C278ECCDD00FBA4E9 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		0267564E278ED2C000FBA4E9 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		02675651278ED30D00FBA4E9 /* MenuProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileController.swift; sourceTree = "<group>"; };
+		02675652278ED30D00FBA4E9 /* MenuProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuProfileController.xib; sourceTree = "<group>"; };
+		02675655278ED85F00FBA4E9 /* SharedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
+		027629A92785DC630096DC2E /* VerifyPhone.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VerifyPhone.graphql; sourceTree = "<group>"; };
+		027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneModel.swift; sourceTree = "<group>"; };
+		027629B02785F3030096DC2E /* AuthFillNickNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillNickNameController.swift; sourceTree = "<group>"; };
+		027629B12785F3030096DC2E /* AuthFillNickNameController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillNickNameController.xib; sourceTree = "<group>"; };
+		0288744A279ADA0A00E802CA /* HarkRequests.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarkRequests.graphql; sourceTree = "<group>"; };
+		0288744D279ADA5100E802CA /* PaginationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationModel.swift; sourceTree = "<group>"; };
+		0288744F279ADA5F00E802CA /* HarkRequestsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkRequestsModel.swift; sourceTree = "<group>"; };
+		02887451279AE01F00E802CA /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		02AFDFE1279EBA800078B52D /* HarksStatus.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarksStatus.graphql; sourceTree = "<group>"; };
+		02AFDFE4279EBD9C0078B52D /* HarksStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarksStatusModel.swift; sourceTree = "<group>"; };
+		02ED71DB2799AEBE00CAE787 /* HarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarksModel.swift; sourceTree = "<group>"; };
+		02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListPresenter.swift; sourceTree = "<group>"; };
+		02ED71E12799D67700CAE787 /* MatchSettings.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatchSettings.graphql; sourceTree = "<group>"; };
+		02ED71E32799D6B200CAE787 /* MatchSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSettingsModel.swift; sourceTree = "<group>"; };
+		02EEBD2127857E57001DA462 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		02EEBD2227857E57001DA462 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		02EEBD2627857E91001DA462 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		02EEBD3027858F41001DA462 /* SF-Compact-Rounded-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Regular.ttf"; sourceTree = "<group>"; };
+		02EEBD3127858F42001DA462 /* SF-Compact-Rounded-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Semibold.ttf"; sourceTree = "<group>"; };
+		02EEBD3227858F43001DA462 /* SF-Compact-Rounded-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Ultralight.ttf"; sourceTree = "<group>"; };
+		02EEBD3327858F43001DA462 /* SF-Compact-Rounded-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Light.ttf"; sourceTree = "<group>"; };
+		02EEBD3427858F44001DA462 /* SF-Compact-Rounded-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Black.ttf"; sourceTree = "<group>"; };
+		02EEBD3527858F45001DA462 /* SF-Compact-Rounded-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Medium.ttf"; sourceTree = "<group>"; };
+		02EEBD3627858F47001DA462 /* SF-Compact-Rounded-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Heavy.ttf"; sourceTree = "<group>"; };
+		02EEBD3727858F47001DA462 /* SF-Compact-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Bold.ttf"; sourceTree = "<group>"; };
+		02EEBD3827858F48001DA462 /* SF-Compact-Rounded-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.ttf"; sourceTree = "<group>"; };
+		02EEBD43278596B6001DA462 /* RegistrationPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhoneController.swift; sourceTree = "<group>"; };
+		02EEBD44278596B6001DA462 /* RegistrationPhoneController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationPhoneController.xib; sourceTree = "<group>"; };
+		02EEBD4B2785AD26001DA462 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		02EEBD4E2785AE9B001DA462 /* Login.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
+		02EEBD512785B069001DA462 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		02EEBD542785B346001DA462 /* LoginPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPhoneController.swift; sourceTree = "<group>"; };
+		02EEBD552785B346001DA462 /* LoginPhoneController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPhoneController.xib; sourceTree = "<group>"; };
+		02EEBD592785BE20001DA462 /* RegistrationVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVerificationController.swift; sourceTree = "<group>"; };
+		02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationVerificationController.xib; sourceTree = "<group>"; };
+		02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVerificationController.swift; sourceTree = "<group>"; };
+		02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVerificationController.xib; sourceTree = "<group>"; };
+		02F558C227A820DC005AEED7 /* HarkEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkEditPresenter.swift; sourceTree = "<group>"; };
+		02F558C527A82243005AEED7 /* HarkDelete.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarkDelete.graphql; sourceTree = "<group>"; };
+		02F558C627A82243005AEED7 /* HarkDeleteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarkDeleteModel.swift; sourceTree = "<group>"; };
+		02F558CA27A822AF005AEED7 /* HarkUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarkUpdateModel.swift; sourceTree = "<group>"; };
+		02F558CB27A822AF005AEED7 /* HarkUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HarkUpdate.graphql; sourceTree = "<group>"; };
+		02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		02F8B7EE2786DE8C00595AA6 /* AuthFillAgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillAgeController.swift; sourceTree = "<group>"; };
+		02F8B7EF2786DE8C00595AA6 /* AuthFillAgeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillAgeController.xib; sourceTree = "<group>"; };
+		02F8B7F52786FFB900595AA6 /* AuthFillGenderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillGenderController.swift; sourceTree = "<group>"; };
+		02F8B7F62786FFB900595AA6 /* AuthFillGenderController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthFillGenderController.xib; sourceTree = "<group>"; };
+		02F8B7FA2787044F00595AA6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		02F8B7FC2787049800595AA6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		02F8B7FF278709C400595AA6 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		02F8B800278709C400595AA6 /* OnboardingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingController.xib; sourceTree = "<group>"; };
+		02F8B80327870A1200595AA6 /* AuthFillPesenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFillPesenter.swift; sourceTree = "<group>"; };
+		02F8B80627870DFB00595AA6 /* ProfileUpdate.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProfileUpdate.graphql; sourceTree = "<group>"; };
+		02F8B80827870E5800595AA6 /* ProfileUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateModel.swift; sourceTree = "<group>"; };
+		02F8B80B2787129C00595AA6 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		02F8B80C2787129C00595AA6 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
+		02F8B80F278714DB00595AA6 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		058CDFB083DF01E78502C39A /* Pods-Hark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hark.release.xcconfig"; path = "Target Support Files/Pods-Hark/Pods-Hark.release.xcconfig"; sourceTree = "<group>"; };
+		3DF17E0FF7613939DBB5E5EB /* Pods-Hark.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hark.staging.xcconfig"; path = "Target Support Files/Pods-Hark/Pods-Hark.staging.xcconfig"; sourceTree = "<group>"; };
+		DFDE0C0A1B8EC17562EE4C38 /* Pods_Hark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41354464559DEBD4D6E81C6 /* Pods-Hark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hark.debug.xcconfig"; path = "Target Support Files/Pods-Hark/Pods-Hark.debug.xcconfig"; sourceTree = "<group>"; };
+		FA1E690A27848D0600030600 /* Me.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
+		FA1E690D278494DF00030600 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FA1E69192785B3A600030600 /* NetwokrManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwokrManager.swift; sourceTree = "<group>"; };
+		FA1E691F2785B5CD00030600 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		FA1E69252785B71F00030600 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		FA1E69272785B75200030600 /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
+		FA29D9E827C64B8700A4B6C6 /* AnalyticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticManager.swift; sourceTree = "<group>"; };
+		FA35693127A2B3C9003468B7 /* call.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = call.json; sourceTree = "<group>"; };
+		FA35693227A2B3D1003468B7 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
+		FA5785E327CE119B0095BC0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA647F1D27A99BA0003607F7 /* BlockUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlockUser.graphql; sourceTree = "<group>"; };
+		FA647F1E27A99BA0003607F7 /* BlockUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUserModel.swift; sourceTree = "<group>"; };
+		FA647F2227A99C70003607F7 /* SendHarkRequest.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SendHarkRequest.graphql; sourceTree = "<group>"; };
+		FA647F2327A99C70003607F7 /* SendHarkRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendHarkRequestModel.swift; sourceTree = "<group>"; };
+		FA65ADA927A967EC00524720 /* SendTalkFeedback.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SendTalkFeedback.graphql; sourceTree = "<group>"; };
+		FA65ADAA27A967ED00524720 /* SendTalkFeedbackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendTalkFeedbackModel.swift; sourceTree = "<group>"; };
+		FA77834127AC0A3800124CB4 /* AcceptHarkRequest.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AcceptHarkRequest.graphql; sourceTree = "<group>"; };
+		FA77834227AC0A3800124CB4 /* AcceptHarkRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptHarkRequestModel.swift; sourceTree = "<group>"; };
+		FA9BCF65277C6ED8009F652E /* Hark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9BCF68277C6ED8009F652E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA9BCF6C277C6ED8009F652E /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		FA9BCF6F277C6ED8009F652E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA9BCF71277C6EDA009F652E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA9BCF74277C6EDA009F652E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA9BCF76277C6EDA009F652E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA9BCF85277C758B009F652E /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		FA9BCF87277C75DB009F652E /* UIApplicathion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplicathion+Extension.swift"; sourceTree = "<group>"; };
+		FA9BCF89277C7614009F652E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		FA9BCF8E277C81D5009F652E /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		FA9BCF90277C822E009F652E /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		FA9BCF93277C82EB009F652E /* SplashController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashController.xib; sourceTree = "<group>"; };
+		FA9EBCEB279E9742007B3867 /* CallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallController.swift; sourceTree = "<group>"; };
+		FA9EBCEC279E9742007B3867 /* CallController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallController.xib; sourceTree = "<group>"; };
+		FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarkListRouter.swift; sourceTree = "<group>"; };
+		FAE6656527B3E9E00002BE50 /* ReportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportController.swift; sourceTree = "<group>"; };
+		FAE6656627B3E9E00002BE50 /* ReportController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportController.xib; sourceTree = "<group>"; };
+		FAE6656927B3E9F00002BE50 /* ReportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPresenter.swift; sourceTree = "<group>"; };
+		FAE6656C27B3EE540002BE50 /* ReportUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUserModel.swift; sourceTree = "<group>"; };
+		FAE6656D27B3EE540002BE50 /* ReportUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReportUser.graphql; sourceTree = "<group>"; };
+		FAE6657227B414A30002BE50 /* CallRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallRouter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA9BCF62277C6ED8009F652E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA62365727BD4698005C593B /* FirebaseAnalytics in Frameworks */,
+				0203C89427A04F2F00720640 /* ApolloWebSocket in Frameworks */,
+				FA1E691D2785B48E00030600 /* Toast in Frameworks */,
+				027629A52785D0B30096DC2E /* NVActivityIndicatorView in Frameworks */,
+				027629A72785D0B30096DC2E /* NVActivityIndicatorViewExtended in Frameworks */,
+				0203C89227A04F2F00720640 /* Apollo in Frameworks */,
+				FA1E69232785B61600030600 /* SwiftKeychainWrapper in Frameworks */,
+				FA5E870927A2E19400163A1D /* Cosmos in Frameworks */,
+				FA35692F27A2B22E003468B7 /* Lottie in Frameworks */,
+				FA1E5B6B27BD0C4200E67B73 /* Pods_Hark.framework in Frameworks */,
+				FABC8CF127A29915002C27C3 /* AgoraRtcKit in Frameworks */,
+				FA29D9EC27C64C0400A4B6C6 /* AppsFlyerLib in Frameworks */,
+				02AFDFDF279E92590078B52D /* ApolloWebSocket in Frameworks */,
+				02AFDFDD279E92590078B52D /* Apollo in Frameworks */,
+				02EEBD492785A6B4001DA462 /* PhoneNumberKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0200AE8A2799272300A91A72 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0200AE8B2799274800A91A72 /* AppConfiguration.swift */,
+				0200AE8D2799275100A91A72 /* ConfigurationBridge */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0200AE8D2799275100A91A72 /* ConfigurationBridge */ = {
+			isa = PBXGroup;
+			children = (
+				0200AE8F2799276C00A91A72 /* AppConfigurationBridge.h */,
+				0200AE902799276C00A91A72 /* AppConfigurationBridge.m */,
+				0200AE8E2799276A00A91A72 /* Hark-Bridging-Header.h */,
+			);
+			path = ConfigurationBridge;
+			sourceTree = "<group>";
+		};
+		0200AE922799278000A91A72 /* ConfigFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0200AE942799279200A91A72 /* Generator.xcconfig */,
+				0200AE932799279100A91A72 /* Debug.xcconfig */,
+				0200AE962799279300A91A72 /* Release.xcconfig */,
+				0200AE952799279200A91A72 /* Staging.xcconfig */,
+			);
+			path = ConfigFiles;
+			sourceTree = "<group>";
+		};
+		0200AE9D27999D2F00A91A72 /* Harks */ = {
+			isa = PBXGroup;
+			children = (
+				0200AE9E27999D4F00A91A72 /* Harks.graphql */,
+				02ED71DB2799AEBE00CAE787 /* HarksModel.swift */,
+			);
+			path = Harks;
+			sourceTree = "<group>";
+		};
+		0203C879279FF01A00720640 /* HarksStatus */ = {
+			isa = PBXGroup;
+			children = (
+				02AFDFE1279EBA800078B52D /* HarksStatus.graphql */,
+				02AFDFE4279EBD9C0078B52D /* HarksStatusModel.swift */,
+			);
+			path = HarksStatus;
+			sourceTree = "<group>";
+		};
+		0203C87A279FF02600720640 /* StartMatching */ = {
+			isa = PBXGroup;
+			children = (
+				0203C87B279FF04B00720640 /* StartMatching.graphql */,
+				0203C87D279FF07800720640 /* StartMatchingModel.swift */,
+			);
+			path = StartMatching;
+			sourceTree = "<group>";
+		};
+		0203C87F279FF6F500720640 /* MainGoSearch */ = {
+			isa = PBXGroup;
+			children = (
+				0203C880279FF71200720640 /* MainGoSearchController.swift */,
+				0203C881279FF71200720640 /* MainGoSearchController.xib */,
+			);
+			path = MainGoSearch;
+			sourceTree = "<group>";
+		};
+		0203C88627A0008B00720640 /* DeclineTalk */ = {
+			isa = PBXGroup;
+			children = (
+				0203C88727A000AB00720640 /* DeclineTalk.graphql */,
+				0203C88927A0017400720640 /* DeclineTalkModel.swift */,
+			);
+			path = DeclineTalk;
+			sourceTree = "<group>";
+		};
+		0203C88B27A035DE00720640 /* Talk */ = {
+			isa = PBXGroup;
+			children = (
+				0203C88C27A0360800720640 /* Talk.graphql */,
+				0203C88E27A0391B00720640 /* TalkModel.swift */,
+			);
+			path = Talk;
+			sourceTree = "<group>";
+		};
+		0227C1CE2797F95D0092F804 /* HarkListTab */ = {
+			isa = PBXGroup;
+			children = (
+				02ED71DE2799B21800CAE787 /* HarkListPresenter.swift */,
+				FA9EBCEF279EC0F7007B3867 /* HarkListRouter.swift */,
+				02ED71DD2799B20500CAE787 /* HarkList */,
+				024E8C0427A809E000C26C26 /* HarkEditController */,
+			);
+			path = HarkListTab;
+			sourceTree = "<group>";
+		};
+		0227C1D1279805DA0092F804 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1D6279827A70092F804 /* ListCell */,
+				0227C1D7279827D90092F804 /* RequestCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0227C1D6279827A70092F804 /* ListCell */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1D2279805E90092F804 /* ListCell.swift */,
+				0227C1D3279805E90092F804 /* ListCell.xib */,
+			);
+			path = ListCell;
+			sourceTree = "<group>";
+		};
+		0227C1D7279827D90092F804 /* RequestCell */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1D8279827EE0092F804 /* RequestCell.swift */,
+				0227C1D9279827EE0092F804 /* RequestCell.xib */,
+			);
+			path = RequestCell;
+			sourceTree = "<group>";
+		};
+		022FB5762796C45E00870064 /* SearchTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				022FB58227970B9500870064 /* SearchTabPresenter.swift */,
+				022FB58427970BAC00870064 /* Search */,
+			);
+			path = SearchTabBar;
+			sourceTree = "<group>";
+		};
+		022FB57D27970AD800870064 /* UpdateMatchSettings */ = {
+			isa = PBXGroup;
+			children = (
+				022FB57E27970AFB00870064 /* UpdateMatchSettings.graphql */,
+				022FB58027970B4B00870064 /* UpdateMatchSettingsModel.swift */,
+			);
+			path = UpdateMatchSettings;
+			sourceTree = "<group>";
+		};
+		022FB58427970BAC00870064 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				022FB5772796C49C00870064 /* SearchTabController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		024E83BA27A2A47A006B970D /* СallHark */ = {
+			isa = PBXGroup;
+			children = (
+				024E83BB27A2A494006B970D /* СallHark.graphql */,
+				024E83BD27A2A5DB006B970D /* CallHarkModel.swift */,
+			);
+			path = "СallHark";
+			sourceTree = "<group>";
+		};
+		024E83BF27A2A670006B970D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				024E83C027A2A68B006B970D /* User.graphql */,
+				024E83C227A2ABE4006B970D /* UserModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		024E83C627A2B919006B970D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				024E83C727A2B931006B970D /* CallProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		024E8BFA27A7CEAD00C26C26 /* DeleteHarkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				024E8BFB27A7CED500C26C26 /* DeleteHarkRequest.graphql */,
+				024E8BFD27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift */,
+			);
+			path = DeleteHarkRequest;
+			sourceTree = "<group>";
+		};
+		024E8BFF27A7F55300C26C26 /* RejectHarkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				024E8C0027A7F57D00C26C26 /* RejectHarkRequest.graphql */,
+				024E8C0127A7F57D00C26C26 /* RejectHarkRequestModel.swift */,
+			);
+			path = RejectHarkRequest;
+			sourceTree = "<group>";
+		};
+		024E8C0427A809E000C26C26 /* HarkEditController */ = {
+			isa = PBXGroup;
+			children = (
+				02F558C227A820DC005AEED7 /* HarkEditPresenter.swift */,
+				02F558C127A820BE005AEED7 /* HarkEdit */,
+			);
+			path = HarkEditController;
+			sourceTree = "<group>";
+		};
+		02675639278DDD5000FBA4E9 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0267563E278E065E00FBA4E9 /* MainPresenter.swift */,
+				0203C884279FF74800720640 /* MainRouter.swift */,
+				02675640278E06B600FBA4E9 /* Main */,
+				0203C87F279FF6F500720640 /* MainGoSearch */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		02675640278E06B600FBA4E9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0267563A278DDD8D00FBA4E9 /* MainController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		02675641278E076100FBA4E9 /* OnlineStatistics */ = {
+			isa = PBXGroup;
+			children = (
+				02675642278E077D00FBA4E9 /* OnlineStatistics.graphql */,
+				02675644278E078E00FBA4E9 /* OnlineStatisticsModel.swift */,
+			);
+			path = OnlineStatistics;
+			sourceTree = "<group>";
+		};
+		02675648278EC93300FBA4E9 /* ProfileTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0267564C278ECCDD00FBA4E9 /* ProfilePresenter.swift */,
+				0267564E278ED2C000FBA4E9 /* ProfileRouter.swift */,
+				0267564B278ECCC900FBA4E9 /* Profile */,
+				02675650278ED2EA00FBA4E9 /* Menu */,
+			);
+			path = ProfileTabBar;
+			sourceTree = "<group>";
+		};
+		0267564B278ECCC900FBA4E9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				02675649278EC95F00FBA4E9 /* ProfileController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		02675650278ED2EA00FBA4E9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				02675651278ED30D00FBA4E9 /* MenuProfileController.swift */,
+				02675652278ED30D00FBA4E9 /* MenuProfileController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		027629A82785DC350096DC2E /* VerifyPhone */ = {
+			isa = PBXGroup;
+			children = (
+				027629A92785DC630096DC2E /* VerifyPhone.graphql */,
+				027629AC2785DCB00096DC2E /* VerifyPhoneModel.swift */,
+			);
+			path = VerifyPhone;
+			sourceTree = "<group>";
+		};
+		027629AE2785F2C80096DC2E /* AuthFillProfile */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B80327870A1200595AA6 /* AuthFillPesenter.swift */,
+				027629AF2785F2E20096DC2E /* AuthFillNickName */,
+				02F8B7ED2786DE6700595AA6 /* AuthFillAge */,
+				02F8B7F42786FF9C00595AA6 /*  AuthFillGender */,
+			);
+			path = AuthFillProfile;
+			sourceTree = "<group>";
+		};
+		027629AF2785F2E20096DC2E /* AuthFillNickName */ = {
+			isa = PBXGroup;
+			children = (
+				027629B02785F3030096DC2E /* AuthFillNickNameController.swift */,
+				027629B12785F3030096DC2E /* AuthFillNickNameController.xib */,
+			);
+			path = AuthFillNickName;
+			sourceTree = "<group>";
+		};
+		02887449279AD9E500E802CA /* HarkRequests */ = {
+			isa = PBXGroup;
+			children = (
+				0288744A279ADA0A00E802CA /* HarkRequests.graphql */,
+				0288744F279ADA5F00E802CA /* HarkRequestsModel.swift */,
+			);
+			path = HarkRequests;
+			sourceTree = "<group>";
+		};
+		02AFDFE0279EBA2E0078B52D /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				024E83BF27A2A670006B970D /* User */,
+				0203C88B27A035DE00720640 /* Talk */,
+				0203C87A279FF02600720640 /* StartMatching */,
+				0203C879279FF01A00720640 /* HarksStatus */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		02ED71DD2799B20500CAE787 /* HarkList */ = {
+			isa = PBXGroup;
+			children = (
+				0227C1CF2797F97A0092F804 /* HarkListController.swift */,
+				0227C1D1279805DA0092F804 /* Cell */,
+			);
+			path = HarkList;
+			sourceTree = "<group>";
+		};
+		02ED71E02799D65700CAE787 /* MatchSettings */ = {
+			isa = PBXGroup;
+			children = (
+				02ED71E12799D67700CAE787 /* MatchSettings.graphql */,
+				02ED71E32799D6B200CAE787 /* MatchSettingsModel.swift */,
+			);
+			path = MatchSettings;
+			sourceTree = "<group>";
+		};
+		02EEBD2027857E36001DA462 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD2127857E57001DA462 /* LoginController.swift */,
+				02EEBD2227857E57001DA462 /* LoginController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		02EEBD2827857E9B001DA462 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD2627857E91001DA462 /* AuthRouter.swift */,
+				02EEBD4B2785AD26001DA462 /* AuthPresenter.swift */,
+				02EEBD2027857E36001DA462 /* Login */,
+				02EEBD4227859696001DA462 /* RegisterPhone */,
+				02EEBD582785BDFB001DA462 /* RegistrationVerification */,
+				02EEBD532785B318001DA462 /* LoginPhone */,
+				02EEBD5D2785CAEA001DA462 /* LoginVerification */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		02EEBD2F27858F2C001DA462 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD3427858F44001DA462 /* SF-Compact-Rounded-Black.ttf */,
+				02EEBD3727858F47001DA462 /* SF-Compact-Rounded-Bold.ttf */,
+				02EEBD3627858F47001DA462 /* SF-Compact-Rounded-Heavy.ttf */,
+				02EEBD3327858F43001DA462 /* SF-Compact-Rounded-Light.ttf */,
+				02EEBD3527858F45001DA462 /* SF-Compact-Rounded-Medium.ttf */,
+				02EEBD3027858F41001DA462 /* SF-Compact-Rounded-Regular.ttf */,
+				02EEBD3127858F42001DA462 /* SF-Compact-Rounded-Semibold.ttf */,
+				02EEBD3827858F48001DA462 /* SF-Compact-Rounded-Thin.ttf */,
+				02EEBD3227858F43001DA462 /* SF-Compact-Rounded-Ultralight.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		02EEBD4227859696001DA462 /* RegisterPhone */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD43278596B6001DA462 /* RegistrationPhoneController.swift */,
+				02EEBD44278596B6001DA462 /* RegistrationPhoneController.xib */,
+			);
+			path = RegisterPhone;
+			sourceTree = "<group>";
+		};
+		02EEBD4D2785AE7E001DA462 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD4E2785AE9B001DA462 /* Login.graphql */,
+				02EEBD512785B069001DA462 /* LoginModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		02EEBD532785B318001DA462 /* LoginPhone */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD542785B346001DA462 /* LoginPhoneController.swift */,
+				02EEBD552785B346001DA462 /* LoginPhoneController.xib */,
+			);
+			path = LoginPhone;
+			sourceTree = "<group>";
+		};
+		02EEBD582785BDFB001DA462 /* RegistrationVerification */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD592785BE20001DA462 /* RegistrationVerificationController.swift */,
+				02EEBD5A2785BE20001DA462 /* RegistrationVerificationController.xib */,
+			);
+			path = RegistrationVerification;
+			sourceTree = "<group>";
+		};
+		02EEBD5D2785CAEA001DA462 /* LoginVerification */ = {
+			isa = PBXGroup;
+			children = (
+				02EEBD5E2785CB0F001DA462 /* LoginVerificationController.swift */,
+				02EEBD5F2785CB0F001DA462 /* LoginVerificationController.xib */,
+			);
+			path = LoginVerification;
+			sourceTree = "<group>";
+		};
+		02F558C127A820BE005AEED7 /* HarkEdit */ = {
+			isa = PBXGroup;
+			children = (
+				024E8C0527A80A0E00C26C26 /* HarkEditController.swift */,
+				024E8C0627A80A0E00C26C26 /* HarkEditController.xib */,
+			);
+			path = HarkEdit;
+			sourceTree = "<group>";
+		};
+		02F558C427A8220C005AEED7 /* HarkDelete */ = {
+			isa = PBXGroup;
+			children = (
+				02F558C527A82243005AEED7 /* HarkDelete.graphql */,
+				02F558C627A82243005AEED7 /* HarkDeleteModel.swift */,
+			);
+			path = HarkDelete;
+			sourceTree = "<group>";
+		};
+		02F558C927A8228F005AEED7 /* HarkUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				02F558CB27A822AF005AEED7 /* HarkUpdate.graphql */,
+				02F558CA27A822AF005AEED7 /* HarkUpdateModel.swift */,
+			);
+			path = HarkUpdate;
+			sourceTree = "<group>";
+		};
+		02F8B7ED2786DE6700595AA6 /* AuthFillAge */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B7EE2786DE8C00595AA6 /* AuthFillAgeController.swift */,
+				02F8B7EF2786DE8C00595AA6 /* AuthFillAgeController.xib */,
+			);
+			path = AuthFillAge;
+			sourceTree = "<group>";
+		};
+		02F8B7F42786FF9C00595AA6 /*  AuthFillGender */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B7F52786FFB900595AA6 /* AuthFillGenderController.swift */,
+				02F8B7F62786FFB900595AA6 /* AuthFillGenderController.xib */,
+			);
+			path = " AuthFillGender";
+			sourceTree = "<group>";
+		};
+		02F8B7F92787042700595AA6 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FA9BCF6E277C6ED8009F652E /* Main.storyboard */,
+				02F8B7FA2787044F00595AA6 /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		02F8B7FE278709A800595AA6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B80A2787128100595AA6 /* Cell */,
+				02F8B7FF278709C400595AA6 /* OnboardingController.swift */,
+				02F8B800278709C400595AA6 /* OnboardingController.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		02F8B80527870DE200595AA6 /* ProfileUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B80627870DFB00595AA6 /* ProfileUpdate.graphql */,
+				02F8B80827870E5800595AA6 /* ProfileUpdateModel.swift */,
+			);
+			path = ProfileUpdate;
+			sourceTree = "<group>";
+		};
+		02F8B80A2787128100595AA6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				02F8B80B2787129C00595AA6 /* OnboardingCell.swift */,
+				02F8B80C2787129C00595AA6 /* OnboardingCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0FAE0738413A6A9003FB4856 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFDE0C0A1B8EC17562EE4C38 /* Pods_Hark.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		999606299F04E717B0EA4A0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F41354464559DEBD4D6E81C6 /* Pods-Hark.debug.xcconfig */,
+				3DF17E0FF7613939DBB5E5EB /* Pods-Hark.staging.xcconfig */,
+				058CDFB083DF01E78502C39A /* Pods-Hark.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA1E690527848C2C00030600 /* Apollo */ = {
+			isa = PBXGroup;
+			children = (
+				FA1E690727848C9E00030600 /* GraphQL */,
+			);
+			path = Apollo;
+			sourceTree = "<group>";
+		};
+		FA1E690727848C9E00030600 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				024E83C627A2B919006B970D /* Protocol */,
+				02AFDFE0279EBA2E0078B52D /* Subscription */,
+				FA1E69242785B6FA00030600 /* GlobalModels */,
+				FA1E690C27848DD700030600 /* Mutation */,
+				FA1E690827848CAE00030600 /* Query */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		FA1E690827848CAE00030600 /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				0203C88627A0008B00720640 /* DeclineTalk */,
+				02887449279AD9E500E802CA /* HarkRequests */,
+				0200AE9D27999D2F00A91A72 /* Harks */,
+				02ED71E02799D65700CAE787 /* MatchSettings */,
+				02675641278E076100FBA4E9 /* OnlineStatistics */,
+				FA1E690927848CD400030600 /* Me */,
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
+		FA1E690927848CD400030600 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				FA1E690A27848D0600030600 /* Me.graphql */,
+				FA1E69272785B75200030600 /* MeModel.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		FA1E690C27848DD700030600 /* Mutation */ = {
+			isa = PBXGroup;
+			children = (
+				FAE6656B27B3ED360002BE50 /* ReportUser */,
+				FA647F2127A99C34003607F7 /* SendHarkRequest */,
+				FA647F1C27A99AD0003607F7 /* BlockUser */,
+				FA65ADA827A9679F00524720 /* SendTalkFeedBack */,
+				02F558C927A8228F005AEED7 /* HarkUpdate */,
+				02F558C427A8220C005AEED7 /* HarkDelete */,
+				FA77834027AC09FA00124CB4 /* AcceptHarkRequest */,
+				024E8BFF27A7F55300C26C26 /* RejectHarkRequest */,
+				024E8BFA27A7CEAD00C26C26 /* DeleteHarkRequest */,
+				024E83BA27A2A47A006B970D /* СallHark */,
+				022FB57D27970AD800870064 /* UpdateMatchSettings */,
+				02F8B80527870DE200595AA6 /* ProfileUpdate */,
+				027629A82785DC350096DC2E /* VerifyPhone */,
+				02EEBD4D2785AE7E001DA462 /* Login */,
+			);
+			path = Mutation;
+			sourceTree = "<group>";
+		};
+		FA1E691E2785B5AD00030600 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA1E691F2785B5CD00030600 /* KeychainService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA1E69242785B6FA00030600 /* GlobalModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA1E69252785B71F00030600 /* AuthModel.swift */,
+				0288744D279ADA5100E802CA /* PaginationModel.swift */,
+				024481DF27B29BC3004C1ECA /* UserBaseModel.swift */,
+			);
+			path = GlobalModels;
+			sourceTree = "<group>";
+		};
+		FA35693027A2B3A2003468B7 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FA35693227A2B3D1003468B7 /* search.json */,
+				FA35693127A2B3C9003468B7 /* call.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		FA647F1C27A99AD0003607F7 /* BlockUser */ = {
+			isa = PBXGroup;
+			children = (
+				FA647F1D27A99BA0003607F7 /* BlockUser.graphql */,
+				FA647F1E27A99BA0003607F7 /* BlockUserModel.swift */,
+			);
+			path = BlockUser;
+			sourceTree = "<group>";
+		};
+		FA647F2127A99C34003607F7 /* SendHarkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FA647F2227A99C70003607F7 /* SendHarkRequest.graphql */,
+				FA647F2327A99C70003607F7 /* SendHarkRequestModel.swift */,
+			);
+			path = SendHarkRequest;
+			sourceTree = "<group>";
+		};
+		FA65ADA827A9679F00524720 /* SendTalkFeedBack */ = {
+			isa = PBXGroup;
+			children = (
+				FA65ADA927A967EC00524720 /* SendTalkFeedback.graphql */,
+				FA65ADAA27A967ED00524720 /* SendTalkFeedbackModel.swift */,
+			);
+			path = SendTalkFeedBack;
+			sourceTree = "<group>";
+		};
+		FA77834027AC09FA00124CB4 /* AcceptHarkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FA77834127AC0A3800124CB4 /* AcceptHarkRequest.graphql */,
+				FA77834227AC0A3800124CB4 /* AcceptHarkRequestModel.swift */,
+			);
+			path = AcceptHarkRequest;
+			sourceTree = "<group>";
+		};
+		FA9BCF5C277C6ED8009F652E = {
+			isa = PBXGroup;
+			children = (
+				FA9BCF67277C6ED8009F652E /* Hark */,
+				FA9BCF66277C6ED8009F652E /* Products */,
+				999606299F04E717B0EA4A0A /* Pods */,
+				0FAE0738413A6A9003FB4856 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA9BCF66277C6ED8009F652E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA9BCF65277C6ED8009F652E /* Hark.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA9BCF67277C6ED8009F652E /* Hark */ = {
+			isa = PBXGroup;
+			children = (
+				FA1E690D278494DF00030600 /* API.swift */,
+				FA9BCF7C277C70DB009F652E /* AppDelegate */,
+				FA9BCF7E277C7199009F652E /* Base */,
+				FA9BCF7D277C7184009F652E /* Controllers */,
+				FA9BCF7F277C71B3009F652E /* Resources */,
+				FA9BCF71277C6EDA009F652E /* Assets.xcassets */,
+				FA9BCF73277C6EDA009F652E /* LaunchScreen.storyboard */,
+				FA9BCF76277C6EDA009F652E /* Info.plist */,
+				FA5785E327CE119B0095BC0F /* GoogleService-Info.plist */,
+			);
+			path = Hark;
+			sourceTree = "<group>";
+		};
+		FA9BCF7C277C70DB009F652E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA9BCF68277C6ED8009F652E /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FA9BCF7D277C7184009F652E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAE6656427B3E9A50002BE50 /* Report */,
+				FA9EBCE6279E96F0007B3867 /* Call */,
+				FA9BCF92277C82AD009F652E /* SplashController */,
+				02F8B7FE278709A800595AA6 /* Onboarding */,
+				02EEBD2827857E9B001DA462 /* Auth */,
+				027629AE2785F2C80096DC2E /* AuthFillProfile */,
+				02F8B7F92787042700595AA6 /* TabBar */,
+				02675639278DDD5000FBA4E9 /* MainTabBar */,
+				022FB5762796C45E00870064 /* SearchTabBar */,
+				0227C1CE2797F95D0092F804 /* HarkListTab */,
+				02675648278EC93300FBA4E9 /* ProfileTabBar */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA9BCF7E277C7199009F652E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FA9BCF90277C822E009F652E /* BaseController.swift */,
+				FA9BCF85277C758B009F652E /* BaseRouter.swift */,
+				FA9BCF8E277C81D5009F652E /* RootRouter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FA9BCF7F277C71B3009F652E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA35693027A2B3A2003468B7 /* Lottie */,
+				0200AE922799278000A91A72 /* ConfigFiles */,
+				0200AE8A2799272300A91A72 /* Application */,
+				02EEBD2F27858F2C001DA462 /* Fonts */,
+				FA1E690527848C2C00030600 /* Apollo */,
+				FA9BCF80277C71C5009F652E /* Managers */,
+				FA1E691E2785B5AD00030600 /* Services */,
+				FA9BCF83277C7202009F652E /* Extension */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA9BCF80277C71C5009F652E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FA29D9E827C64B8700A4B6C6 /* AnalyticManager.swift */,
+				FA1E69192785B3A600030600 /* NetwokrManager.swift */,
+				02F8B7EB2786D7F600595AA6 /* PreferenceManager.swift */,
+				02675655278ED85F00FBA4E9 /* SharedManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FA9BCF83277C7202009F652E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA9BCF87277C75DB009F652E /* UIApplicathion+Extension.swift */,
+				02F8B7FC2787049800595AA6 /* UIColor+Extension.swift */,
+				FA9BCF89277C7614009F652E /* UIViewController+Extension.swift */,
+				02F8B80F278714DB00595AA6 /* Collection+Extension.swift */,
+				02675646278E0B8A00FBA4E9 /* Int+Extension.swift */,
+				02887451279AE01F00E802CA /* UIScrollView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FA9BCF92277C82AD009F652E /* SplashController */ = {
+			isa = PBXGroup;
+			children = (
+				FA9BCF6C277C6ED8009F652E /* SplashController.swift */,
+				FA9BCF93277C82EB009F652E /* SplashController.xib */,
+			);
+			path = SplashController;
+			sourceTree = "<group>";
+		};
+		FA9EBCE6279E96F0007B3867 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				024E83C427A2B62E006B970D /* CallPresenter.swift */,
+				FAE6657227B414A30002BE50 /* CallRouter.swift */,
+				FA9EBCEB279E9742007B3867 /* CallController.swift */,
+				FA9EBCEC279E9742007B3867 /* CallController.xib */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
+		FAE6656427B3E9A50002BE50 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				FAE6656927B3E9F00002BE50 /* ReportPresenter.swift */,
+				FAE6656527B3E9E00002BE50 /* ReportController.swift */,
+				FAE6656627B3E9E00002BE50 /* ReportController.xib */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		FAE6656B27B3ED360002BE50 /* ReportUser */ = {
+			isa = PBXGroup;
+			children = (
+				FAE6656D27B3EE540002BE50 /* ReportUser.graphql */,
+				FAE6656C27B3EE540002BE50 /* ReportUserModel.swift */,
+			);
+			path = ReportUser;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA9BCF64277C6ED8009F652E /* Hark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA9BCF79277C6EDA009F652E /* Build configuration list for PBXNativeTarget "Hark" */;
+			buildPhases = (
+				D3CBDE6BECBF9D2B0ACD9776 /* [CP] Check Pods Manifest.lock */,
+				FA1E6902278488C100030600 /* Generate Apollo GraphQL API */,
+				FA9BCF61277C6ED8009F652E /* Sources */,
+				FA9BCF62277C6ED8009F652E /* Frameworks */,
+				FA9BCF63277C6ED8009F652E /* Resources */,
+				78172BF49791282866922D41 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hark;
+			packageProductDependencies = (
+				02EEBD482785A6B4001DA462 /* PhoneNumberKit */,
+				FA1E691C2785B48E00030600 /* Toast */,
+				FA1E69222785B61600030600 /* SwiftKeychainWrapper */,
+				027629A42785D0B30096DC2E /* NVActivityIndicatorView */,
+				027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */,
+				02AFDFDE279E92590078B52D /* ApolloWebSocket */,
+				0203C89127A04F2F00720640 /* Apollo */,
+				0203C89327A04F2F00720640 /* ApolloWebSocket */,
+				FABC8CF027A29915002C27C3 /* AgoraRtcKit */,
+				FA35692E27A2B22E003468B7 /* Lottie */,
+				FA5E870827A2E19400163A1D /* Cosmos */,
+				FA62365627BD4698005C593B /* FirebaseAnalytics */,
+				FA29D9EB27C64C0400A4B6C6 /* AppsFlyerLib */,
+			);
+			productName = Hark;
+			productReference = FA9BCF65277C6ED8009F652E /* Hark.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA9BCF5D277C6ED8009F652E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = NO;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					FA9BCF64277C6ED8009F652E = {
+						CreatedOnToolsVersion = 13.2;
+						LastSwiftMigration = 1320;
+					};
+				};
+			};
+			buildConfigurationList = FA9BCF60277C6ED8009F652E /* Build configuration list for PBXProject "Hark" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA9BCF5C277C6ED8009F652E;
+			packageReferences = (
+				02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+				FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */,
+				FA62365527BD4697005C593B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FA29D9EA27C64C0400A4B6C6 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+			);
+			productRefGroup = FA9BCF66277C6ED8009F652E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA9BCF64277C6ED8009F652E /* Hark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA9BCF63277C6ED8009F652E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0203C883279FF71200720640 /* MainGoSearchController.xib in Resources */,
+				024E83BC27A2A494006B970D /* СallHark.graphql in Resources */,
+				FA9EBCEE279E9742007B3867 /* CallController.xib in Resources */,
+				02F8B802278709C400595AA6 /* OnboardingController.xib in Resources */,
+				0227C1D5279805E90092F804 /* ListCell.xib in Resources */,
+				02ED71E22799D67800CAE787 /* MatchSettings.graphql in Resources */,
+				FAE6656827B3E9E00002BE50 /* ReportController.xib in Resources */,
+				024E8BFC27A7CED500C26C26 /* DeleteHarkRequest.graphql in Resources */,
+				FA77834327AC0A3800124CB4 /* AcceptHarkRequest.graphql in Resources */,
+				02675643278E077E00FBA4E9 /* OnlineStatistics.graphql in Resources */,
+				027629B32785F3030096DC2E /* AuthFillNickNameController.xib in Resources */,
+				FA9BCF94277C82EB009F652E /* SplashController.xib in Resources */,
+				024E83C127A2A68B006B970D /* User.graphql in Resources */,
+				02EEBD3F27858F48001DA462 /* SF-Compact-Rounded-Heavy.ttf in Resources */,
+				02EEBD46278596B6001DA462 /* RegistrationPhoneController.xib in Resources */,
+				02EEBD2427857E57001DA462 /* LoginController.xib in Resources */,
+				0288744B279ADA0A00E802CA /* HarkRequests.graphql in Resources */,
+				0200AE9F27999D4F00A91A72 /* Harks.graphql in Resources */,
+				FA647F1F27A99BA0003607F7 /* BlockUser.graphql in Resources */,
+				02F558CD27A822AF005AEED7 /* HarkUpdate.graphql in Resources */,
+				FA35693327A2B3D1003468B7 /* call.json in Resources */,
+				02F8B80727870DFB00595AA6 /* ProfileUpdate.graphql in Resources */,
+				0227C1DB279827EE0092F804 /* RequestCell.xib in Resources */,
+				02EEBD3C27858F48001DA462 /* SF-Compact-Rounded-Light.ttf in Resources */,
+				02EEBD3A27858F48001DA462 /* SF-Compact-Rounded-Semibold.ttf in Resources */,
+				02F8B7F82786FFB900595AA6 /* AuthFillGenderController.xib in Resources */,
+				FAE6656F27B3EE540002BE50 /* ReportUser.graphql in Resources */,
+				0203C88827A000AB00720640 /* DeclineTalk.graphql in Resources */,
+				02AFDFE2279EBA800078B52D /* HarksStatus.graphql in Resources */,
+				02EEBD4F2785AE9B001DA462 /* Login.graphql in Resources */,
+				FA9BCF75277C6EDA009F652E /* LaunchScreen.storyboard in Resources */,
+				02EEBD612785CB0F001DA462 /* LoginVerificationController.xib in Resources */,
+				0200AE982799279300A91A72 /* Generator.xcconfig in Resources */,
+				FA9BCF72277C6EDA009F652E /* Assets.xcassets in Resources */,
+				0200AE992799279300A91A72 /* Staging.xcconfig in Resources */,
+				FA647F2427A99C70003607F7 /* SendHarkRequest.graphql in Resources */,
+				FA65ADAB27A967ED00524720 /* SendTalkFeedback.graphql in Resources */,
+				02EEBD4127858F48001DA462 /* SF-Compact-Rounded-Thin.ttf in Resources */,
+				02F558C727A82243005AEED7 /* HarkDelete.graphql in Resources */,
+				0200AE9A2799279300A91A72 /* Release.xcconfig in Resources */,
+				FA35693427A2B3D1003468B7 /* search.json in Resources */,
+				02EEBD572785B346001DA462 /* LoginPhoneController.xib in Resources */,
+				02F8B7F12786DE8C00595AA6 /* AuthFillAgeController.xib in Resources */,
+				02EEBD3E27858F48001DA462 /* SF-Compact-Rounded-Medium.ttf in Resources */,
+				02EEBD3927858F48001DA462 /* SF-Compact-Rounded-Regular.ttf in Resources */,
+				FA1E690B27848D0600030600 /* Me.graphql in Resources */,
+				024E8C0227A7F57D00C26C26 /* RejectHarkRequest.graphql in Resources */,
+				02EEBD4027858F48001DA462 /* SF-Compact-Rounded-Bold.ttf in Resources */,
+				0203C87C279FF04B00720640 /* StartMatching.graphql in Resources */,
+				02F8B80E2787129C00595AA6 /* OnboardingCell.xib in Resources */,
+				02EEBD5C2785BE20001DA462 /* RegistrationVerificationController.xib in Resources */,
+				02675654278ED30D00FBA4E9 /* MenuProfileController.xib in Resources */,
+				FA9BCF70277C6ED8009F652E /* Main.storyboard in Resources */,
+				02EEBD3B27858F48001DA462 /* SF-Compact-Rounded-Ultralight.ttf in Resources */,
+				0200AE972799279300A91A72 /* Debug.xcconfig in Resources */,
+				FA5785E427CE119B0095BC0F /* GoogleService-Info.plist in Resources */,
+				024E8C0827A80A0E00C26C26 /* HarkEditController.xib in Resources */,
+				02EEBD3D27858F48001DA462 /* SF-Compact-Rounded-Black.ttf in Resources */,
+				0203C88D27A0360800720640 /* Talk.graphql in Resources */,
+				027629AA2785DC630096DC2E /* VerifyPhone.graphql in Resources */,
+				022FB57F27970AFC00870064 /* UpdateMatchSettings.graphql in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78172BF49791282866922D41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hark/Pods-Hark-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hark/Pods-Hark-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hark/Pods-Hark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3CBDE6BECBF9D2B0ACD9776 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hark-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA1E6902278488C100030600 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Hark/**/*.graphql",
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Hark/API.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://api.front.dev.hark.mob325.com/graphql\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA9BCF61277C6ED8009F652E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0203C885279FF74800720640 /* MainRouter.swift in Sources */,
+				02675653278ED30D00FBA4E9 /* MenuProfileController.swift in Sources */,
+				0227C1D02797F97A0092F804 /* HarkListController.swift in Sources */,
+				FA647F2527A99C70003607F7 /* SendHarkRequestModel.swift in Sources */,
+				0200AE912799276C00A91A72 /* AppConfigurationBridge.m in Sources */,
+				02F8B7F02786DE8C00595AA6 /* AuthFillAgeController.swift in Sources */,
+				0203C882279FF71200720640 /* MainGoSearchController.swift in Sources */,
+				02EEBD2727857E91001DA462 /* AuthRouter.swift in Sources */,
+				FA9BCF6D277C6ED8009F652E /* SplashController.swift in Sources */,
+				024E83C527A2B62E006B970D /* CallPresenter.swift in Sources */,
+				02ED71E42799D6B200CAE787 /* MatchSettingsModel.swift in Sources */,
+				02F8B7FD2787049800595AA6 /* UIColor+Extension.swift in Sources */,
+				027629B22785F3030096DC2E /* AuthFillNickNameController.swift in Sources */,
+				FA1E69282785B75200030600 /* MeModel.swift in Sources */,
+				FA9BCF86277C758B009F652E /* BaseRouter.swift in Sources */,
+				0267563C278DDD8D00FBA4E9 /* MainController.swift in Sources */,
+				FA9BCF91277C822E009F652E /* BaseController.swift in Sources */,
+				02F558CC27A822AF005AEED7 /* HarkUpdateModel.swift in Sources */,
+				02EEBD602785CB0F001DA462 /* LoginVerificationController.swift in Sources */,
+				02ED71DF2799B21800CAE787 /* HarkListPresenter.swift in Sources */,
+				FAE6656A27B3E9F00002BE50 /* ReportPresenter.swift in Sources */,
+				022FB5782796C49C00870064 /* SearchTabController.swift in Sources */,
+				024E83C827A2B931006B970D /* CallProtocol.swift in Sources */,
+				024E83C327A2ABE4006B970D /* UserModel.swift in Sources */,
+				FAE6656E27B3EE540002BE50 /* ReportUserModel.swift in Sources */,
+				02F8B810278714DB00595AA6 /* Collection+Extension.swift in Sources */,
+				024E8BFE27A7CF6A00C26C26 /* DeleteHarkRequestModel.swift in Sources */,
+				0267564A278EC95F00FBA4E9 /* ProfileController.swift in Sources */,
+				FAE6657327B414A30002BE50 /* CallRouter.swift in Sources */,
+				02EEBD4C2785AD26001DA462 /* AuthPresenter.swift in Sources */,
+				0267563F278E065E00FBA4E9 /* MainPresenter.swift in Sources */,
+				FA9BCF69277C6ED8009F652E /* AppDelegate.swift in Sources */,
+				0203C87E279FF07800720640 /* StartMatchingModel.swift in Sources */,
+				02EEBD2327857E57001DA462 /* LoginController.swift in Sources */,
+				027629AD2785DCB00096DC2E /* VerifyPhoneModel.swift in Sources */,
+				0203C88A27A0017400720640 /* DeclineTalkModel.swift in Sources */,
+				FA647F2027A99BA0003607F7 /* BlockUserModel.swift in Sources */,
+				FA9BCF8A277C7614009F652E /* UIViewController+Extension.swift in Sources */,
+				0227C1DA279827EE0092F804 /* RequestCell.swift in Sources */,
+				FA9EBCED279E9742007B3867 /* CallController.swift in Sources */,
+				FA1E69202785B5CD00030600 /* KeychainService.swift in Sources */,
+				0203C88F27A0391B00720640 /* TalkModel.swift in Sources */,
+				FA1E691A2785B3A600030600 /* NetwokrManager.swift in Sources */,
+				024E83BE27A2A5DB006B970D /* CallHarkModel.swift in Sources */,
+				02EEBD522785B069001DA462 /* LoginModel.swift in Sources */,
+				02675645278E078E00FBA4E9 /* OnlineStatisticsModel.swift in Sources */,
+				02675647278E0B8A00FBA4E9 /* Int+Extension.swift in Sources */,
+				0288744E279ADA5100E802CA /* PaginationModel.swift in Sources */,
+				02AFDFE5279EBD9C0078B52D /* HarksStatusModel.swift in Sources */,
+				02887450279ADA5F00E802CA /* HarkRequestsModel.swift in Sources */,
+				FA9BCF8F277C81D5009F652E /* RootRouter.swift in Sources */,
+				FA1E690E278494DF00030600 /* API.swift in Sources */,
+				024481E027B29BC3004C1ECA /* UserBaseModel.swift in Sources */,
+				02887452279AE01F00E802CA /* UIScrollView+Extension.swift in Sources */,
+				FA29D9E927C64B8700A4B6C6 /* AnalyticManager.swift in Sources */,
+				02F8B7EC2786D7F600595AA6 /* PreferenceManager.swift in Sources */,
+				022FB58327970B9500870064 /* SearchTabPresenter.swift in Sources */,
+				FA77834427AC0A3800124CB4 /* AcceptHarkRequestModel.swift in Sources */,
+				02F8B7F72786FFB900595AA6 /* AuthFillGenderController.swift in Sources */,
+				02F558C827A82243005AEED7 /* HarkDeleteModel.swift in Sources */,
+				FA9EBCF0279EC0F7007B3867 /* HarkListRouter.swift in Sources */,
+				024E8C0327A7F57D00C26C26 /* RejectHarkRequestModel.swift in Sources */,
+				02675656278ED85F00FBA4E9 /* SharedManager.swift in Sources */,
+				024E8C0727A80A0E00C26C26 /* HarkEditController.swift in Sources */,
+				02F8B7FB2787044F00595AA6 /* MainTabBarController.swift in Sources */,
+				02EEBD5B2785BE20001DA462 /* RegistrationVerificationController.swift in Sources */,
+				02F8B80427870A1200595AA6 /* AuthFillPesenter.swift in Sources */,
+				0267564D278ECCDD00FBA4E9 /* ProfilePresenter.swift in Sources */,
+				02F8B80D2787129C00595AA6 /* OnboardingCell.swift in Sources */,
+				0227C1D4279805E90092F804 /* ListCell.swift in Sources */,
+				FA1E69262785B71F00030600 /* AuthModel.swift in Sources */,
+				FAE6656727B3E9E00002BE50 /* ReportController.swift in Sources */,
+				02F558C327A820DC005AEED7 /* HarkEditPresenter.swift in Sources */,
+				02ED71DC2799AEBE00CAE787 /* HarksModel.swift in Sources */,
+				02F8B801278709C400595AA6 /* OnboardingController.swift in Sources */,
+				FA9BCF88277C75DB009F652E /* UIApplicathion+Extension.swift in Sources */,
+				0200AE8C2799274800A91A72 /* AppConfiguration.swift in Sources */,
+				FA65ADAC27A967ED00524720 /* SendTalkFeedbackModel.swift in Sources */,
+				02EEBD562785B346001DA462 /* LoginPhoneController.swift in Sources */,
+				02F8B80927870E5800595AA6 /* ProfileUpdateModel.swift in Sources */,
+				0267564F278ED2C100FBA4E9 /* ProfileRouter.swift in Sources */,
+				022FB58127970B4B00870064 /* UpdateMatchSettingsModel.swift in Sources */,
+				02EEBD45278596B6001DA462 /* RegistrationPhoneController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA9BCF6E277C6ED8009F652E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA9BCF6F277C6ED8009F652E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA9BCF73277C6EDA009F652E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA9BCF74277C6EDA009F652E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0200AE9B279927B800A91A72 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE952799279200A91A72 /* Staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		0200AE9C279927B800A91A72 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF17E0FF7613939DBB5E5EB /* Pods-Hark.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = J544E3RJX6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hark/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To making video call";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Voice Call";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to provide you with tailored personalized experience.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"z\"",
+					"-framework",
+					"\"FBAEMKit\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKCoreKit_Basics\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.hark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hark/Resources/Application/ConfigurationBridge/Hark-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Staging;
+		};
+		FA9BCF77277C6EDA009F652E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE932799279100A91A72 /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA9BCF78277C6EDA009F652E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0200AE962799279300A91A72 /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA9BCF7A277C6EDA009F652E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F41354464559DEBD4D6E81C6 /* Pods-Hark.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = J544E3RJX6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hark/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To making video call";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Voice Call";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to provide you with tailored personalized experience.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"z\"",
+					"-framework",
+					"\"FBAEMKit\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKCoreKit_Basics\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.hark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hark/Resources/Application/ConfigurationBridge/Hark-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FA9BCF7B277C6EDA009F652E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 058CDFB083DF01E78502C39A /* Pods-Hark.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				DEVELOPMENT_TEAM = J544E3RJX6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hark/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To making video call";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Voice Call";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Your data will be used to provide you with tailored personalized experience.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"z\"",
+					"-framework",
+					"\"FBAEMKit\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKCoreKit_Basics\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bgtech.hark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hark/Resources/Application/ConfigurationBridge/Hark-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA9BCF60277C6ED8009F652E /* Build configuration list for PBXProject "Hark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA9BCF77277C6EDA009F652E /* Debug */,
+				0200AE9B279927B800A91A72 /* Staging */,
+				FA9BCF78277C6EDA009F652E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA9BCF79277C6EDA009F652E /* Build configuration list for PBXNativeTarget "Hark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA9BCF7A277C6EDA009F652E /* Debug */,
+				0200AE9C279927B800A91A72 /* Staging */,
+				FA9BCF7B277C6EDA009F652E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.5;
+			};
+		};
+		027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		02AFDFDB279E92590078B52D /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.5;
+			};
+		};
+		02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		FA29D9EA27C64C0400A4B6C6 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		FA62365527BD4697005C593B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0203C89127A04F2F00720640 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		0203C89327A04F2F00720640 /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0203C89027A04F2F00720640 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
+		027629A42785D0B30096DC2E /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		027629A62785D0B30096DC2E /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 027629A32785D0B30096DC2E /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+		02AFDFDC279E92590078B52D /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02AFDFDB279E92590078B52D /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		02AFDFDE279E92590078B52D /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02AFDFDB279E92590078B52D /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
+		02EEBD482785A6B4001DA462 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02EEBD472785A6B4001DA462 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
+		FA1E691C2785B48E00030600 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA1E691B2785B48E00030600 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		FA1E69222785B61600030600 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA1E69212785B61500030600 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+		FA29D9EB27C64C0400A4B6C6 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA29D9EA27C64C0400A4B6C6 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+		FA35692E27A2B22E003468B7 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA35692D27A2B22E003468B7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		FA5E870827A2E19400163A1D /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA5E870727A2E19400163A1D /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+		FA62365627BD4698005C593B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA62365527BD4697005C593B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		FABC8CF027A29915002C27C3 /* AgoraRtcKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FABC8CEF27A29915002C27C3 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = AgoraRtcKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FA9BCF5D277C6ED8009F652E /* Project object */;
+}

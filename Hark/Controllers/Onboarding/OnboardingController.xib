@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Regular.ttf">
+            <string>SFCompactRounded-Regular</string>
+        </array>
+        <array key="SF-Compact-Rounded-Thin.ttf">
+            <string>SFCompactRounded-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingController" customModule="Hark" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutLabel" destination="AyA-ht-hgk" id="cip-RG-pgt"/>
+                <outlet property="collectionView" destination="x27-nf-Ai6" id="sob-kn-mp8"/>
+                <outlet property="pageController" destination="mMd-Au-59u" id="3p6-ie-xeL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboading_logo_ic" translatesAutoresizingMaskIntoConstraints="NO" id="wQg-oq-MSF">
+                    <rect key="frame" x="175.5" y="64" width="63" height="63"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboading_hark_ic" translatesAutoresizingMaskIntoConstraints="NO" id="3Av-Ms-6Tv">
+                    <rect key="frame" x="175.5" y="146" width="63.5" height="16.5"/>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="x27-nf-Ai6">
+                    <rect key="frame" x="0.0" y="252.5" width="414" height="350"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1JM-yd-8vC">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="XAt-Fc-WcJ"/>
+                        <outlet property="delegate" destination="-1" id="91k-R0-UPj"/>
+                    </connections>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Totally Anonymous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyA-ht-hgk">
+                    <rect key="frame" x="143.5" y="692.5" width="127.5" height="19.5"/>
+                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="mMd-Au-59u">
+                    <rect key="frame" x="141" y="752" width="132.5" height="26"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dR-kV-ahv">
+                    <rect key="frame" x="20" y="798" width="374" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="8ag-OI-AYX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Skip">
+                        <color key="titleColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionSkip:" destination="-1" eventType="touchUpInside" id="eqg-I1-ERP"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="AyA-ht-hgk" firstAttribute="centerX" secondItem="x27-nf-Ai6" secondAttribute="centerX" id="2es-Rf-cMs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4dR-kV-ahv" secondAttribute="trailing" constant="20" id="5Qp-Gx-eO5"/>
+                <constraint firstItem="mMd-Au-59u" firstAttribute="top" secondItem="AyA-ht-hgk" secondAttribute="bottom" constant="40" id="8V7-DW-uKp"/>
+                <constraint firstItem="3Av-Ms-6Tv" firstAttribute="top" secondItem="wQg-oq-MSF" secondAttribute="bottom" constant="19" id="Kas-EM-u3k"/>
+                <constraint firstItem="AyA-ht-hgk" firstAttribute="top" secondItem="x27-nf-Ai6" secondAttribute="bottom" constant="90" id="Sb0-n5-Epk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4dR-kV-ahv" secondAttribute="bottom" constant="15" id="Sgm-H2-vjI"/>
+                <constraint firstItem="3Av-Ms-6Tv" firstAttribute="centerX" secondItem="wQg-oq-MSF" secondAttribute="centerX" id="Stb-uA-SZo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x27-nf-Ai6" secondAttribute="trailing" id="T6d-Qz-VNN"/>
+                <constraint firstItem="x27-nf-Ai6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TZZ-cC-N51"/>
+                <constraint firstItem="4dR-kV-ahv" firstAttribute="top" secondItem="mMd-Au-59u" secondAttribute="bottom" constant="20" id="UqO-9S-4cp"/>
+                <constraint firstItem="wQg-oq-MSF" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="XRw-jB-IXh"/>
+                <constraint firstItem="4dR-kV-ahv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dTC-7K-Z66"/>
+                <constraint firstItem="mMd-Au-59u" firstAttribute="centerX" secondItem="AyA-ht-hgk" secondAttribute="centerX" id="jaG-7u-wIW"/>
+                <constraint firstItem="x27-nf-Ai6" firstAttribute="top" secondItem="3Av-Ms-6Tv" secondAttribute="bottom" constant="90" id="pN8-Hd-RZj"/>
+                <constraint firstItem="wQg-oq-MSF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="uU0-aA-1yM"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="96"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="onboading_hark_ic" width="63.5" height="16.5"/>
+        <image name="onboading_logo_ic" width="63" height="63"/>
+    </resources>
+</document>

@@ -1,0 +1,3 @@
+mutation HarkDelete($harkId: String!) {
+    harkDelete(harkId: $harkId)
+}

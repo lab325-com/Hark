@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Bold.ttf">
+            <string>SFCompactRounded-Bold</string>
+        </array>
+        <array key="SF-Compact-Rounded-Medium.ttf">
+            <string>SFCompactRounded-Medium</string>
+        </array>
+        <array key="SF-Compact-Rounded-Thin.ttf">
+            <string>SFCompactRounded-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginPhoneController" customModule="Hark" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmButton" destination="MrW-kG-VHw" id="K8k-PV-mBP"/>
+                <outlet property="phoneLabel" destination="xWT-I2-Yub" id="crY-c9-fH7"/>
+                <outlet property="view" destination="4pX-Mh-gEt" id="iRE-VR-gIq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="4pX-Mh-gEt">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_back_ic" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-Ot-7Xg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="374"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your Phone number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-34-LQ1">
+                    <rect key="frame" x="24" y="68" width="327" height="152"/>
+                    <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZ5-8J-2eA">
+                    <rect key="frame" x="172" y="244" width="31.333333333333343" height="37"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONC-Um-GnP">
+                            <rect key="frame" x="0.0" y="0.0" width="15.333333333333334" height="37"/>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="28"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWT-I2-Yub">
+                            <rect key="frame" x="19.333333333333343" y="0.0" width="0.0" height="37"/>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="28"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4Y-Lp-cLd">
+                            <rect key="frame" x="30.333333333333343" y="0.0" width="1" height="37"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="d6O-7D-WMZ"/>
+                                <constraint firstAttribute="width" constant="1" id="ra4-3M-qoa"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xWT-I2-Yub" firstAttribute="top" secondItem="LZ5-8J-2eA" secondAttribute="top" id="7q7-ab-bp1"/>
+                        <constraint firstAttribute="trailing" secondItem="z4Y-Lp-cLd" secondAttribute="trailing" id="AFL-D8-BEa"/>
+                        <constraint firstItem="ONC-Um-GnP" firstAttribute="leading" secondItem="LZ5-8J-2eA" secondAttribute="leading" id="AQ9-m5-z02"/>
+                        <constraint firstAttribute="bottom" secondItem="xWT-I2-Yub" secondAttribute="bottom" id="EKx-lC-1ch"/>
+                        <constraint firstItem="xWT-I2-Yub" firstAttribute="leading" secondItem="ONC-Um-GnP" secondAttribute="trailing" constant="4" id="OYu-nN-6SL"/>
+                        <constraint firstItem="z4Y-Lp-cLd" firstAttribute="top" secondItem="LZ5-8J-2eA" secondAttribute="top" id="YEp-wB-O5y"/>
+                        <constraint firstItem="z4Y-Lp-cLd" firstAttribute="leading" secondItem="xWT-I2-Yub" secondAttribute="trailing" constant="11" id="a9M-TG-M6i"/>
+                        <constraint firstAttribute="bottom" secondItem="ONC-Um-GnP" secondAttribute="bottom" id="dFk-XG-Z7R"/>
+                        <constraint firstItem="ONC-Um-GnP" firstAttribute="top" secondItem="LZ5-8J-2eA" secondAttribute="top" id="egv-KM-dF1"/>
+                        <constraint firstAttribute="bottom" secondItem="z4Y-Lp-cLd" secondAttribute="bottom" id="xwa-yB-SnH"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrW-kG-VHw">
+                    <rect key="frame" x="30" y="379" width="315" height="54"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.85882352939999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="xwF-1F-ZZP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFCompactRounded-Medium" family="SF Compact Rounded" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Confirm">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionConfirm:" destination="-1" eventType="touchUpInside" id="fvB-ds-buM"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-kz-FD5">
+                    <rect key="frame" x="40" y="473" width="295" height="231"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pXD-2O-cw0">
+                            <rect key="frame" x="0.0" y="0.0" width="295" height="51"/>
+                            <subviews>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X75-6A-QPe">
+                                    <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="Tuz-gQ-x3T"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRB-Wn-e12">
+                                    <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="2">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="bhL-OL-aeK"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5k-4I-VB7">
+                                    <rect key="frame" x="196.66666666666666" y="0.0" width="98.333333333333343" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="3">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="Cyl-Rn-XzW"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6yI-AK-OeM">
+                            <rect key="frame" x="0.0" y="60" width="295" height="51"/>
+                            <subviews>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HM8-zi-Za4">
+                                    <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="4">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="y91-5W-imN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCg-3k-1t5">
+                                    <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="5">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="5Ob-7h-dxj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcP-T9-9B7">
+                                    <rect key="frame" x="196.66666666666666" y="0.0" width="98.333333333333343" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="6">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="hlg-fb-I4f"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="g3x-PD-fBO">
+                            <rect key="frame" x="0.0" y="120" width="295" height="51"/>
+                            <subviews>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOp-2L-Rfj">
+                                    <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="7">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="nJI-CY-m1v"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLO-cv-fJk">
+                                    <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="8">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="v5r-aS-oOH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-Oc-vuJ">
+                                    <rect key="frame" x="196.66666666666666" y="0.0" width="98.333333333333343" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="9">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="CRm-X4-bTD"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uck-8w-VKs">
+                            <rect key="frame" x="0.0" y="180" width="295" height="51"/>
+                            <subviews>
+                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-xR-DGz">
+                                    <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOQ-bp-KGd">
+                                    <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="0">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionPhonePad:" destination="-1" eventType="touchUpInside" id="ewh-44-Wd4"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yct-jD-H85">
+                                    <rect key="frame" x="196.66666666666666" y="0.0" width="98.333333333333343" height="51"/>
+                                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="phone_register_delete_phone_ic">
+                                        <color key="titleColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionDelete:" destination="-1" eventType="touchUpInside" id="cTj-yg-b5E"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFp-SH-bS9">
+                    <rect key="frame" x="138.66666666666666" y="724" width="98" height="34"/>
+                    <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Service rules"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="WRR-f0-jOm"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="WRR-f0-jOm" firstAttribute="trailing" secondItem="oaK-kz-FD5" secondAttribute="trailing" constant="40" id="0xB-Ub-6xC"/>
+                <constraint firstItem="oaK-kz-FD5" firstAttribute="leading" secondItem="WRR-f0-jOm" secondAttribute="leading" constant="40" id="1IF-NA-CZp"/>
+                <constraint firstItem="tbO-Ot-7Xg" firstAttribute="bottom" secondItem="LZ5-8J-2eA" secondAttribute="bottom" constant="93" id="77U-dt-c0D"/>
+                <constraint firstItem="tbO-Ot-7Xg" firstAttribute="leading" secondItem="WRR-f0-jOm" secondAttribute="leading" id="8NZ-m9-K9O"/>
+                <constraint firstItem="1zc-34-LQ1" firstAttribute="leading" secondItem="WRR-f0-jOm" secondAttribute="leading" constant="24" id="9JY-XI-d1z"/>
+                <constraint firstItem="LZ5-8J-2eA" firstAttribute="top" secondItem="1zc-34-LQ1" secondAttribute="bottom" constant="24" id="AoU-QB-uRz"/>
+                <constraint firstItem="oaK-kz-FD5" firstAttribute="top" secondItem="MrW-kG-VHw" secondAttribute="bottom" constant="40" id="G8l-aS-3Zi"/>
+                <constraint firstItem="WRR-f0-jOm" firstAttribute="trailing" secondItem="1zc-34-LQ1" secondAttribute="trailing" constant="24" id="JGZ-qP-fhL"/>
+                <constraint firstItem="MrW-kG-VHw" firstAttribute="top" secondItem="tbO-Ot-7Xg" secondAttribute="bottom" constant="5" id="LrY-Xh-Rbs"/>
+                <constraint firstItem="tbO-Ot-7Xg" firstAttribute="top" secondItem="4pX-Mh-gEt" secondAttribute="top" id="N5D-06-aj6"/>
+                <constraint firstItem="WRR-f0-jOm" firstAttribute="bottom" secondItem="CFp-SH-bS9" secondAttribute="bottom" constant="20" id="RrZ-9Z-lrN"/>
+                <constraint firstItem="CFp-SH-bS9" firstAttribute="top" secondItem="oaK-kz-FD5" secondAttribute="bottom" constant="20" id="Vmd-UK-V7w"/>
+                <constraint firstItem="tbO-Ot-7Xg" firstAttribute="trailing" secondItem="WRR-f0-jOm" secondAttribute="trailing" id="ZTi-rE-hrk"/>
+                <constraint firstItem="LZ5-8J-2eA" firstAttribute="centerX" secondItem="WRR-f0-jOm" secondAttribute="centerX" id="c0V-vd-WdT"/>
+                <constraint firstItem="WRR-f0-jOm" firstAttribute="trailing" secondItem="MrW-kG-VHw" secondAttribute="trailing" constant="30" id="ioC-AP-j2Y"/>
+                <constraint firstItem="CFp-SH-bS9" firstAttribute="centerX" secondItem="WRR-f0-jOm" secondAttribute="centerX" id="pgd-kn-dKf"/>
+                <constraint firstItem="1zc-34-LQ1" firstAttribute="top" secondItem="WRR-f0-jOm" secondAttribute="top" constant="24" id="wRi-Gt-116"/>
+                <constraint firstItem="MrW-kG-VHw" firstAttribute="leading" secondItem="WRR-f0-jOm" secondAttribute="leading" constant="30" id="zZm-am-HsI"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_back_ic" width="390" height="451"/>
+        <image name="phone_register_delete_phone_ic" width="32.666667938232422" height="19.333333969116211"/>
+    </resources>
+</document>

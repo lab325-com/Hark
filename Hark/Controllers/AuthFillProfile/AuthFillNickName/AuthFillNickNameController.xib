@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Rounded-Bold.ttf">
+            <string>SFCompactRounded-Bold</string>
+        </array>
+        <array key="SF-Compact-Rounded-Medium.ttf">
+            <string>SFCompactRounded-Medium</string>
+        </array>
+        <array key="SF-Compact-Rounded-Regular.ttf">
+            <string>SFCompactRounded-Regular</string>
+        </array>
+        <array key="SF-Compact-Rounded-Thin.ttf">
+            <string>SFCompactRounded-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthFillNickNameController" customModule="Hark" customModuleProvider="target">
+            <connections>
+                <outlet property="addNickNameButton" destination="tdm-lH-yC1" id="kSD-Ub-vRm"/>
+                <outlet property="bottomViewConstraint" destination="fr8-9Q-U7F" id="bCp-qr-9nW"/>
+                <outlet property="cancelButton" destination="uzU-wp-CrK" id="OHM-Za-5MR"/>
+                <outlet property="nickTextField" destination="PoB-KS-Jpq" id="Lfh-PN-nri"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth_fill_nick_name_ic" translatesAutoresizingMaskIntoConstraints="NO" id="FCa-KO-RUB">
+                    <rect key="frame" x="33" y="64" width="348" height="153"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="CYI-Va-vkH">
+                    <rect key="frame" x="117" y="297" width="180" height="47.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKt-5X-pjj">
+                            <rect key="frame" x="0.0" y="0.0" width="180" height="24"/>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Medium" family="SF Compact Rounded" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(can be changed in profile)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWa-yp-peD">
+                            <rect key="frame" x="0.0" y="28" width="180" height="19.5"/>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Thin" family="SF Compact Rounded" pointSize="16"/>
+                            <color key="textColor" red="0.66274509803921566" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoB-KS-Jpq">
+                    <rect key="frame" x="20" y="384.5" width="374" height="48"/>
+                    <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="8bR-hj-G7r"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="SFCompactRounded-Regular" family="SF Compact Rounded" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="26"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="actionValueChange:" destination="-1" eventType="editingChanged" id="Cko-im-Y5i"/>
+                    </connections>
+                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nkO-y6-X5M">
+                    <rect key="frame" x="33" y="786" width="348" height="76"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdm-lH-yC1">
+                            <rect key="frame" x="0.0" y="0.0" width="348" height="54"/>
+                            <color key="backgroundColor" red="0.23529411764705882" green="0.85882352941176465" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="qBR-hc-9E4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Bold" family="SF Compact Rounded" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Add Nickname">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionAddNickName:" destination="-1" eventType="touchUpInside" id="gad-Qp-Tao"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzU-wp-CrK">
+                            <rect key="frame" x="0.0" y="59" width="348" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="ZYO-gD-Arg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFCompactRounded-Medium" family="SF Compact Rounded" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="0.10196078431372549" green="0.45882352941176469" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionCancel:" destination="-1" eventType="touchUpInside" id="Gbg-wg-uf0"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-aI-4gq">
+                            <rect key="frame" x="0.0" y="64" width="348" height="12"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="Z8V-yc-sok"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nkO-y6-X5M" secondAttribute="trailing" constant="33" id="83Q-NF-y4w"/>
+                <constraint firstItem="PoB-KS-Jpq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ai0-kU-zgF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FCa-KO-RUB" secondAttribute="trailing" constant="33" id="N8k-uY-VEr"/>
+                <constraint firstItem="nkO-y6-X5M" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PoB-KS-Jpq" secondAttribute="bottom" constant="20" id="SXq-W2-CYL"/>
+                <constraint firstItem="PoB-KS-Jpq" firstAttribute="top" secondItem="CYI-Va-vkH" secondAttribute="bottom" constant="40" id="WSk-Rc-z6K"/>
+                <constraint firstItem="FCa-KO-RUB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="250" constant="20" id="b2E-Uw-2Lv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nkO-y6-X5M" secondAttribute="bottom" id="fr8-9Q-U7F"/>
+                <constraint firstItem="CYI-Va-vkH" firstAttribute="top" secondItem="FCa-KO-RUB" secondAttribute="bottom" constant="80" id="hbO-6r-oQK"/>
+                <constraint firstItem="FCa-KO-RUB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="33" id="iAq-kB-6CU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PoB-KS-Jpq" secondAttribute="trailing" constant="20" id="xAe-ms-29R"/>
+                <constraint firstItem="nkO-y6-X5M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="33" id="xsQ-S2-cQx"/>
+                <constraint firstItem="CYI-Va-vkH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="zoK-ac-Lb4"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="92"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="auth_fill_nick_name_ic" width="325.5" height="153"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

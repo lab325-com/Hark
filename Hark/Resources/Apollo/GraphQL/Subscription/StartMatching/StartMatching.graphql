@@ -1,0 +1,16 @@
+subscription startMatching {
+	startMatching {
+        token
+        talkId
+        channelName
+        role
+		uid
+		matchedUserId
+        User {
+            id
+            nickName
+            age
+            gender
+        }
+	}
+}

@@ -1,0 +1,11 @@
+query OnlineStatistics {
+	onlineStatistics {
+		totalCommons
+        totalInTalk
+        totalMen
+        totalOnline
+        totalWomen
+	}
+}
+
+

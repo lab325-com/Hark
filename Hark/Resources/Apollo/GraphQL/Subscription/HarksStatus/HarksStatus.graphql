@@ -1,0 +1,6 @@
+subscription HarksStatus {
+	harksStatus {
+        userId
+        status
+	}
+}

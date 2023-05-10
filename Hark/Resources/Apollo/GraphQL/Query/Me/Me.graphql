@@ -1,0 +1,15 @@
+query Me {
+	me {
+        id
+        nickName
+		age
+		gender
+		hideStatus
+        totalHarks
+        isGuest
+        profileFilled
+        hasNewRequests
+	}
+}
+
+

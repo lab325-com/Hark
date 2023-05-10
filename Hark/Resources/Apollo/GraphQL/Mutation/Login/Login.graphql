@@ -1,0 +1,6 @@
+mutation Login($record: LoginRecordInput!) {
+    login(record: $record) {
+        authToken
+        smsToken
+    }
+}
