@@ -2,7 +2,7 @@
 //  HarkEditController.swift
 //  Hark
 //
-//  Created by Andrey S on 31.01.2022.
+//  Created by mob325 on 31.01.2022.
 //
 
 import UIKit

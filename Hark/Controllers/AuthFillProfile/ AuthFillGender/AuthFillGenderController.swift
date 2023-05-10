@@ -2,7 +2,7 @@
 //  AuthFillGenderController.swift
 //  Hark
 //
-//  Created by Andrey S on 06.01.2022.
+//  Created by mob325 on 06.01.2022.
 //
 
 import UIKit

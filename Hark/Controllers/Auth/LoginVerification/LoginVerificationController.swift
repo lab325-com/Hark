@@ -2,7 +2,7 @@
 //  LoginVerificationController.swift
 //  Hark
 //
-//  Created by Andrey S on 05.01.2022.
+//  Created by mob325 on 05.01.2022.
 //
 
 import UIKit

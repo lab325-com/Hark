@@ -2,7 +2,7 @@
 //  UserBaseModel.swift
 //  Hark
 //
-//  Created by Andrey S on 08.02.2022.
+//  Created by mob325 on 08.02.2022.
 //
 
 import Foundation

@@ -1,2 +1,1 @@
-# hark-ios
-
+Hark - an app for private, anonymous and secure One-on-One audio conversations without registration.

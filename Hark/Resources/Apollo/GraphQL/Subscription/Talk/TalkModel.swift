@@ -2,7 +2,7 @@
 //  TalkModel.swift
 //  Hark
 //
-//  Created by Andrey S on 25.01.2022.
+//  Created by mob325 on 25.01.2022.
 //
 
 import Foundation

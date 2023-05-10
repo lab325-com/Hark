@@ -2,7 +2,7 @@
 //  ListCell.swift
 //  Hark
 //
-//  Created by Andrey S on 19.01.2022.
+//  Created by mob325 on 19.01.2022.
 //
 
 import UIKit
